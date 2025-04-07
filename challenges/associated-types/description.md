@@ -4,7 +4,7 @@ For example, instead of passing types as generic parameters every time, you can 
 
 In this challenge, you'll define a trait with an associated type and implement it for a struct. The goal is to create a structure for managing a simple Key-Value store where keys and values can have different types specified by the trait implementation.
 
-You can solve the problem using either generics or associated types, but the challenge is made to make you familiar with associated types, so try to solve the challenge by using them intead of generics.
+You can solve the problem using either generics or associated types, but the challenge is made to make you familiar with associated types, so try to solve the challenge by using them instead of generics.
 
 ## Your Task
 
