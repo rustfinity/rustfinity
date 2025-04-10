@@ -31,6 +31,9 @@ assert_eq!(result, Ok(26.85));
 
 let result = convert_temperature(100.0, "C", "X");
 assert_eq!(result, Err("Invalid unit".to_string()));
+
+let result = convert_temperature(37.5, "C", "C");
+assert_eq!(result, Ok(37.5));
 ```
 
 ## Hints

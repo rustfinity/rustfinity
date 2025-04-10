@@ -41,4 +41,9 @@ mod tests {
     fn test_convert_kelvin_to_fahrenheit() {
         assert_eq!(convert_temperature(273.15, "K", "F"), Ok(32.0));
     }
+
+    #[test]
+    fn test_convert_celsius_to_celsius() {
+        assert_eq!(convert_temperature(37.5, "C", "C"), Ok(37.5));
+    }
 }
