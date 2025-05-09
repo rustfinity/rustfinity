@@ -10,8 +10,8 @@ pub fn main() {
     println!("Database URL: {}", db_url);
 
     std::env::remove_var("DATABASE_URL"); // Missing variable scenario
-    let db_url = get_database_url();
+    get_database_url();
 
     std::env::set_var("DATABASE_URL", "mysql://localhost"); // Invalid prefix scenario
-    let db_url = get_database_url();
+    get_database_url();
 }
