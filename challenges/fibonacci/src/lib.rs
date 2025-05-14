@@ -14,7 +14,7 @@
 /// assert_eq!(result, 3);
 //
 /// ```
-pub fn fibonacci_dp(n: u32) -> u32 {
+pub fn fibonacci(n: u32) -> u32 {
     if n == 0 {
         return 0;
     }
