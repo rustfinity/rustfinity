@@ -9,8 +9,8 @@
 /// # Examples
 ///
 /// ```
-/// use fibonacci::fibonacci_dp;
-/// let result = fibonacci_dp(4);
+/// use fibonacci::fibonacci;
+/// let result = fibonacci(4);
 /// assert_eq!(result, 3);
 //
 /// ```
