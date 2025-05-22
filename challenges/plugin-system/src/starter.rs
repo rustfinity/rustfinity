@@ -10,7 +10,25 @@ pub struct PluginManager {
 // 3. Implement the PluginManager
 impl PluginManager {}
 
+
 // Example usage
+pub struct MyPlugin;
+
+impl Plugin for MyPlugin {
+    fn name(&self) -> &str {
+        "MyPlugin"
+    }
+    fn execute(&self) {
+        println!("Executing MyPlugin");
+    }
+}
+
+impl MyPlugin {
+    fn new() -> Self {
+        Self
+    }
+}
+
 pub fn main() {
     let mut manager = PluginManager::new();
 
