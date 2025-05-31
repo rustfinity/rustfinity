@@ -1,7 +1,7 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 
-pub fn update_shared_data<T>(data: Rc<RefCell<Vec<T>>>, element: T) {
+pub fn push<T>(data: Rc<RefCell<Vec<T>>>, element: T) {
     // 1. Finish the function
 }
 
