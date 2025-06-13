@@ -28,4 +28,13 @@ mod tests {
         assert_eq!(fizz_buzz(60), "FizzBuzz");
         assert_eq!(fizz_buzz(75), "FizzBuzz");
     }
+
+    #[test]
+    fn should_return_number() {
+        assert_eq!(fizz_buzz(1), "1");
+        assert_eq!(fizz_buzz(2), "2");
+        assert_eq!(fizz_buzz(4), "4");
+        assert_eq!(fizz_buzz(7), "7");
+        assert_eq!(fizz_buzz(8), "8");
+    }
 }
