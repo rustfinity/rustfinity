@@ -21,7 +21,7 @@ Design and implement a plugin system using trait objects. You will:
   - Have the following methods and associated functions:
     - `new() -> Self` - Creates a new `PluginManager` instance.
     - `add_plugin` - Adds a plugin to the list.
-    - `remove_plugin` - Removes a plugin from the list and returns the removed plugin as `Option<Box<dyn Plugin>`.
+    - `remove_plugin` - Removes a plugin from the list and returns the removed plugin if found.
     - `execute_all` - Executes all registered plugins.
 - If a duplicate plugin is added (with the same name), it should **panic** with the message "Plugin with name '<name>' already exists".
 
