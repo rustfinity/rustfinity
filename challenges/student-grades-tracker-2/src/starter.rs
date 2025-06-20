@@ -38,6 +38,10 @@ impl StudentGrades {
             student.add_grade(grade);
         }
     }
+
+    pub fn get_grades(&self, name: &str) -> &[u8] {
+        &self.students.get(name).unwrap().grades
+    }
 }
 
 pub fn main() {
