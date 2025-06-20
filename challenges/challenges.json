@@ -288,18 +288,6 @@
     "updated_at": "2024-12-29T00:00:00Z"
   },
   {
-    "id": 7,
-    "title": "Animal sanctuary registry",
-    "slug": "animal-sanctuary-registry",
-    "short_description": "Create a program that manages a registry of animals in a sanctuary.",
-    "language": "RUST",
-    "difficulty": "MEDIUM",
-    "track": "RUST_BASICS",
-    "tags": [],
-    "created_at": "2024-04-30T00:00:00Z",
-    "updated_at": "2024-04-30T00:00:00Z"
-  },
-  {
     "id": 45,
     "title": "Implementing Debug Trait for Structs",
     "slug": "derive-debug-for-structs",
@@ -406,6 +394,18 @@
     "tags": ["hashmaps", "collections", "rust"],
     "created_at": "2024-12-30T00:00:00Z",
     "updated_at": "2024-12-30T00:00:00Z"
+  },
+  {
+    "id": 7,
+    "title": "Animal sanctuary registry",
+    "slug": "animal-sanctuary-registry",
+    "short_description": "Create a program that manages a registry of animals in a sanctuary.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_BASICS",
+    "tags": ["hashmaps", "collections", "vectors", "iterators"],
+    "created_at": "2024-04-30T00:00:00Z",
+    "updated_at": "2024-04-30T00:00:00Z"
   },
   {
     "id": 54,

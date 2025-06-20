@@ -4,7 +4,7 @@ In this challenge, you will declare and use **mutable variables in Rust**. You w
 
 ## Your task
 
-- Declare variable `text` with any initial value of type `String` Use `let mut` to make it mutable.
+- Declare variable `text` with an initial value of type `String` Use `let mut` to make it mutable.
 - Re assign the variable `text` to something else of your choice.
 - Call the `mutates_value(&mut text)` function, which will change the value of your `text` variable.
 - Return the final value of the variable.
