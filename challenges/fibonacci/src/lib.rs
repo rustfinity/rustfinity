@@ -12,7 +12,7 @@
 /// use fibonacci::fibonacci;
 /// let result = fibonacci(4);
 /// assert_eq!(result, 3);
-//
+///
 /// ```
 pub fn fibonacci(n: u32) -> u32 {
     if n == 0 {
