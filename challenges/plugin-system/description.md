@@ -23,7 +23,7 @@ Design and implement a plugin system using trait objects. You will:
     - `add_plugin` - Adds a plugin to the list.
     - `remove_plugin` - Removes a plugin from the list and returns the removed plugin if found.
     - `execute_all` - Executes all registered plugins.
-- If a duplicate plugin is added (with the same name), it should **panic** with the message "Plugin with name {name} already exists".
+- If a duplicate plugin is added (with the same name), it should **panic** with the message "Plugin with name [name] already exists".
 
 Make sure you make all relevant items public.
 
