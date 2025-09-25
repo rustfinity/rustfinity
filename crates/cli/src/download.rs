@@ -111,7 +111,7 @@ mod tests {
             env::set_current_dir(&temp_path).ok();
 
             let test_challenge = |challenge: String| async move {
-                get_challenge(&challenge) // Use no_editor=true for tests
+                get_challenge(&challenge)
                     .await
                     .expect("Failed to download challenge");
 
