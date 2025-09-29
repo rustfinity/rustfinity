@@ -6,7 +6,6 @@ mod constants;
 mod crates_io;
 mod dir;
 mod download;
-mod editor;
 
 use clap::Parser;
 use cli::{run, Cli};

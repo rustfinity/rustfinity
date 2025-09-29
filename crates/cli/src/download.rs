@@ -1,7 +1,4 @@
-use crate::{
-    cargo_toml::update_dependency_if_exists, challenge::challenge_exists, constants::*,
-    editor::Editor,
-};
+use crate::{cargo_toml::update_dependency_if_exists, challenge::challenge_exists, constants::*};
 use dload::Downloader;
 use futures::future::join_all;
 use std::fs;
@@ -13,7 +10,7 @@ const FILES: [&'static str; 4] = [
     "tests/tests.rs",
 ];
 
-pub async fn get_challenge(challenge: &str, no_editor: bool) -> anyhow::Result<()> {
+pub async fn get_challenge(challenge: &str) -> anyhow::Result<()> {
     if !challenge_exists(challenge).await? {
         println!("Challenge does not exist 🥺\n\nPlease make sure you've written the challenge name correctly.");
         return Ok(());
@@ -40,12 +37,6 @@ pub async fn get_challenge(challenge: &str, no_editor: bool) -> anyhow::Result<(
 
     // Check all results are successful
     if results.iter().all(Result::is_ok) {
-        if !no_editor {
-            if let Some(editor) = Editor::find() {
-                editor.open(challenge);
-            }
-        }
-
         println!("Challenge downloaded 🥳");
         println!();
         println!();
@@ -120,7 +111,7 @@ mod tests {
             env::set_current_dir(&temp_path).ok();
 
             let test_challenge = |challenge: String| async move {
-                get_challenge(&challenge, true) // Use no_editor=true for tests
+                get_challenge(&challenge)
                     .await
                     .expect("Failed to download challenge");
 
