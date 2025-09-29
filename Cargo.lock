@@ -1502,7 +1502,7 @@ checksum = "583034fd73374156e66797ed8e5b0d5690409c9226b22d87cb7f19821c05d152"
 
 [[package]]
 name = "rustfinity"
-version = "0.2.14"
+version = "0.3.0"
 dependencies = [
  "anyhow",
  "base64",
