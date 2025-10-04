@@ -1,4 +1,4 @@
-Unlike other programming languages, Rust doesn't have a build-in `constructor` keyword to construct instances of a struct. Instead, you can directly create an instance of a struct simply by calling the struct's name and passing the required values.
+Unlike other programming languages, Rust doesn't have a built-in `constructor` keyword to construct instances of a struct. Instead, you can directly create an instance of a struct simply by calling the struct's name and passing the required values.
 
 ```rust
 struct Post {
