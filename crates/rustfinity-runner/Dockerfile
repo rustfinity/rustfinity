@@ -1,5 +1,5 @@
 # --- Stage 1 ---
-FROM rust:slim-buster AS builder
+FROM rust:slim-trixie AS builder
 WORKDIR /app
 
 COPY crates/rustfinity-runner .
@@ -7,13 +7,16 @@ RUN cargo build --release
 
 # --- Stage 2 ---
 
-FROM rust:slim-buster AS runner
+FROM rust:slim-trixie AS runner
 LABEL rustfinity-runner="true"
 
 # Install OpenSSL development packages and pkg-config
 RUN apt-get update && apt-get install -y \
-    heaptrack \
-    && rm -rf /var/lib/apt/lists/*
+  heaptrack=1.5.0+dfsg1-5 \
+  # in trixie these are needed to build some crates
+  pkg-config=1.8.1-4 \
+  libssl-dev=3.5.4-1~deb13u1 \
+  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
@@ -30,7 +33,14 @@ RUN cargo add \
 WORKDIR /app
 RUN cargo build
 
+ENV CARGO_HOME=/home/myuser/.cargo
+RUN mkdir -p $CARGO_HOME
 COPY --from=builder /app/target/release/rustfinity-runner /app/
+
+RUN useradd -u 1000 -ms /bin/bash myuser
+RUN chown -R myuser:myuser /home/myuser
+
+USER myuser
 
 # The final structure:
 # /app/rustfinity-runner (executable)
