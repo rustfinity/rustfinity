@@ -8,7 +8,7 @@ In this challenge, you will define two traits: `Person` and `Student`. The `Pers
 
    - It should require a method `fn name(&self) -> String` that returns the name of the person.
 
-2. Define a trait `Student` that is a supertrait of `Person`:
+2. Define a trait `Student` that has `Person` as a supertrait:
 
    - It should require methods:
      - `fn id(&self) -> u32` to return the student ID.

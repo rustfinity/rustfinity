@@ -32,17 +32,14 @@ fn test_read_file_permission_denied() {
     {
         use std::fs::set_permissions;
         use std::os::unix::fs::PermissionsExt;
+        use tempfile::NamedTempFile;
 
-        let file_path = "test_permission_denied.txt";
-        write(file_path, "Cannot read this file.").unwrap();
+        let tmp_file = NamedTempFile::new().unwrap();
+        write(&tmp_file, "Cannot read this file.").unwrap();
 
-        let permissions = set_permissions(file_path, PermissionsExt::from_mode(0o000));
+        let permissions = set_permissions(&tmp_file, PermissionsExt::from_mode(0o000));
         assert!(permissions.is_ok());
-        assert_eq!(read_file(file_path), None);
-
-        // Clean up
-        set_permissions(file_path, PermissionsExt::from_mode(0o644)).unwrap();
-        remove_file(file_path).unwrap();
+        assert_eq!(read_file(tmp_file.path().to_str().unwrap()), None);
     }
 }
 
