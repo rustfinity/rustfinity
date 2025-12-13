@@ -25,7 +25,8 @@ RUN cargo new challenges/playground && rm -rf challenges/playground/.git
 WORKDIR /app/challenges/playground
 RUN cargo add \
   syn \
-  quote
+  quote \ 
+  tempfile@3.23.0
 
 WORKDIR /app
 RUN cargo build
