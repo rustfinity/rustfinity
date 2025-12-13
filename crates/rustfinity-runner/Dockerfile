@@ -1,5 +1,5 @@
 # --- Stage 1 ---
-FROM rust:slim-buster AS builder
+FROM rust:slim-bookworm AS builder
 WORKDIR /app
 
 COPY crates/rustfinity-runner .
@@ -7,7 +7,7 @@ RUN cargo build --release
 
 # --- Stage 2 ---
 
-FROM rust:slim-buster AS runner
+FROM rust:slim-bookworm AS runner
 LABEL rustfinity-runner="true"
 
 # Install OpenSSL development packages and pkg-config
@@ -25,12 +25,17 @@ RUN cargo new challenges/playground && rm -rf challenges/playground/.git
 WORKDIR /app/challenges/playground
 RUN cargo add \
   syn \
-  quote
+  quote \ 
+  tempfile@3.23.0
 
 WORKDIR /app
 RUN cargo build
 
 COPY --from=builder /app/target/release/rustfinity-runner /app/
+
+RUN chown -R 1000:1000 /app
+
+USER 1000:1000
 
 # The final structure:
 # /app/rustfinity-runner (executable)
