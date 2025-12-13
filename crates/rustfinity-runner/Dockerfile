@@ -1,5 +1,5 @@
 # --- Stage 1 ---
-FROM rust:slim-trixie AS builder
+FROM rust:slim-bookworm AS builder
 WORKDIR /app
 
 COPY crates/rustfinity-runner .
@@ -7,7 +7,7 @@ RUN cargo build --release
 
 # --- Stage 2 ---
 
-FROM rust:slim-trixie AS runner
+FROM rust:slim-bookworm AS runner
 LABEL rustfinity-runner="true"
 
 # Install OpenSSL development packages and pkg-config
@@ -37,10 +37,9 @@ ENV CARGO_HOME=/home/myuser/.cargo
 RUN mkdir -p $CARGO_HOME
 COPY --from=builder /app/target/release/rustfinity-runner /app/
 
-RUN useradd -u 1000 -ms /bin/bash myuser
-RUN chown -R myuser:myuser /home/myuser
+RUN chown -R 1000:1000 /app
 
-USER myuser
+USER 1000:1000
 
 # The final structure:
 # /app/rustfinity-runner (executable)
