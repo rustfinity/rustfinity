@@ -53,19 +53,15 @@ In the example above, we start from `'S'` at `(0, 0)`, the first move would be g
 ## Hints
 
 1. **Collections**:
-
    - `VecDeque`: A double-ended queue from the `std::collections` module, which is useful for implementing a queue for BFS. Methods like `push_back` and `pop_front` will be helpful.
 
 2. **Indexing**:
-
    - Use `usize` for indices and be cautious with arithmetic operations to avoid overflow. The `wrapping_add` method can help with safe arithmetic.
 
 3. **2D Vector Initialization**:
-
    - Initialize 2D vectors for `visited` and `path` tracking. Use nested `vec!` macros for creating the initial structure.
 
 4. **Backtracking Path**:
-
    - Once the end point is reached, backtrack using the `path` vector to reconstruct the path from end to start. Collect these coordinates in a vector and reverse it to get the path from start to end.
 
 5. **Boundary Checks**:

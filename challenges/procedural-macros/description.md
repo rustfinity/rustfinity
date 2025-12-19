@@ -26,7 +26,6 @@ assert_eq!(p.describe(), "Point { x: 1, y: 2 }");
 ### Requirements
 
 1. The `derive_describe` macro should:
-
    - Generate the `Describe` trait implementation for the struct it is applied to.
    - Support structs with named fields. (Tuple structs or unit structs are not required for this challenge.)
 

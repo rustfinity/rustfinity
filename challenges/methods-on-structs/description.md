@@ -1,7 +1,6 @@
 In Rust, methods and associated functions are both defined using `impl` blocks. While they are similar in some ways, they serve different purposes:
 
 1. **Associated Functions**:
-
    - Defined without a `self` parameter.
    - Typically used as constructors or utility functions.
    - Called using the struct's name, e.g., `StructName::function_name()`.
@@ -22,7 +21,6 @@ Define a struct `Counter` that represents a simple counter. Implement methods on
 1. Define a struct `Counter` with a single field `count` of type `i32`.
 2. Define a `new` associated function that acts as a constructor and initializes the `count` field to 0.
 3. Implement the following methods for `Counter`:
-
    - `increment`: Increments the counter by 1.
    - `decrement`: Decrements the counter by 1.
    - `get_count`: Returns the current count.

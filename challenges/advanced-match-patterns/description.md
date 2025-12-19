@@ -7,19 +7,16 @@ This challenge will help you practice advanced pattern matching techniques in a 
 You need to implement a method `check_validity(&self)` for the `BookItem` enum that returns a `bool` indicating whether the item is valid based on the following rules:
 
 1. **Book**:
-
    - The number of pages must be greater than 0.
    - If there is a discount:
      - Must be non-negative (≥ 0)
      - Must not exceed 50% (≤ 50)
 
 2. **EBook**:
-
    - The title (a `String`) must be non-empty.
    - The second field in the tuple must be greater than 0.
 
 3. **Collection**:
-
    - Must not be empty
    - **ALL** items in the collection must be valid
    - This means a collection containing even one invalid item is considered invalid

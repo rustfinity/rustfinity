@@ -5,7 +5,6 @@ In this challenge, you'll create a macro that generates implementations of a tra
 ## Your Task
 
 1. Write a macro named `config_default_impl` that:
-
    - Accepts a type and a default value as arguments.
    - Generates the implementation of `ConfigDefault` for that type.
 

@@ -14,7 +14,6 @@ In this challenge, you'll implement a unit struct named `Logger`. The struct wil
 
 1. Define a unit struct named `Logger`.
 2. Implement a `Logger::log_message` method that:
-
    - Takes a `&str` message as input.
    - Prints the message to the console in the format: `[LOG]: {message}`.
 

@@ -9,7 +9,6 @@ In this challenge, you'll define a simple enum and use `#[derive(PartialEq)]` to
 ## Your Task
 
 1. Define an enum `OrderStatus` with the following variants:
-
    - `Pending` — a unit variant representing an order that is not yet processed.
    - `Shipped` — a unit variant representing an order that has been shipped.
    - `Cancelled(String)` — a tuple variant with a reason for cancellation.

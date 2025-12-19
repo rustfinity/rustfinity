@@ -7,17 +7,14 @@ In this challenge, you'll use `Rc` and `RefCell` together to explore the concept
 Implement the following functions to demonstrate shared ownership and interior mutability:
 
 1. `push`:
-
    - Accept an `Rc<RefCell<Vec<T>>>` as input.
    - Append an element to the shared vector inside the `RefCell`.
 
 2. `iterate_and_print_shared_data`:
-
    - Take an `Rc<RefCell<Vec<T>>>` as input.
    - Iterate through the vector and print each element.
 
 3. `plus_one`:
-
    - Accept an `Rc<RefCell<i32>` as input.
    - Increment the value inside the `RefCell` by one.
 

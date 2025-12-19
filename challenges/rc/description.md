@@ -7,7 +7,6 @@ In this challenge, you'll use `Rc<T>` to share data between functions.
 Implement the functions `use_shared_data` and `share_data_to_other_functions` to work with `Rc<T>`.
 
 - `use_shared_data`:
-
   - Take an `Rc<Vec<T>>` as argument.
   - Loop over each item in the vector and print each element using `println!`.
 

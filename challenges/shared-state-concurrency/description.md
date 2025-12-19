@@ -13,13 +13,11 @@ Implement three functions that demonstrate different aspects of shared state con
 ### Requirements
 
 1. The `create_shared_data` function should:
-
    - Accept any type `T`
    - Wrap it in a `Mutex` and `Arc`
    - Return the thread-safe container
 
 2. The `increment_counter` function should:
-
    - Accept an `Arc<Mutex<i32>>`
    - Spawn the specified number of threads
    - Return handles to all spawned threads

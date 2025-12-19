@@ -55,7 +55,6 @@ The constructor function, `Book::new`, should take three parameters (`title`, `a
 ## Requirements
 
 1. Implement a constructor function `Book::new` that:
-
    - Takes three arguments: `title: &str`, `author: &str`, and `year` (integer).
    - Returns a `Book` instance with the specified values and default `likes` value of `0`.
 
