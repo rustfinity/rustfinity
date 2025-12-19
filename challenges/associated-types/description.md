@@ -13,7 +13,6 @@ Define a trait `KeyValueStore` with an associated type `Key` and `Value`. Implem
 ### Requirements
 
 1. Define a trait `KeyValueStore` with:
-
    - An associated type `Key`.
    - An associated type `Value`.
    - Methods:

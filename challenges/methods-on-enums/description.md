@@ -13,7 +13,6 @@ Create an enum `VehicleStatus` with the following variants:
 Implement the following methods for `VehicleStatus`:
 
 - `is_operational(&self) -> bool`:
-
   - Returns `true` if the vehicle is either `Parked` or `Driving`.
   - Returns `false` if the vehicle is `BrokenDown`.
 

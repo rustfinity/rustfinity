@@ -19,9 +19,9 @@ It's best to run this in a docker container to be completely isolated from the o
    ```js
    const code = `fn main() {
        println!("Hello, world!");
-   }`;
+   }`
 
-   const base64Code = Buffer.from(code).toString("base64");
+   const base64Code = Buffer.from(code).toString("base64")
    ```
 
 3. Run the code using the CLI
@@ -39,14 +39,12 @@ docker run -i \
 ### Commands
 
 - `test`: Runs a [rustfinity challenge](../../challenges/), requires a few arguments:
-
   - `--code`: Base64 encoded code (user submitted)
   - `--tests`: Base64 encoded tests file
   - `--cargo-toml`: Base64 encoded Cargo.toml file for that challenge
   - `--n-tests` (optional): How many times the benchmarks should run (default = 1)
 
 - `playground`: Runs a provided snippet of code, used in [rustfinity.com/playground](https://www.rustfinity.com/playground), requires one argument:
-
   - `--code`: Base64 encoded code (user submitted)
 
 ## How to deploy

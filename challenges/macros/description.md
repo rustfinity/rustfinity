@@ -15,20 +15,17 @@ In this challenge, you will implement a macro named `math_operations!` that:
 1. The macro should format the output as: `"{number} {operator} {number} = {result}"`
 
 2. Input Types:
-
    - The macro expects integer operands only (no floating-point numbers)
    - Both signed and unsigned integers are supported
    - Results will also be **integers** (division rounds towards zero)
 
 3. Supported Operations:
-
    - Addition (`+`)
    - Subtraction (`-`)
    - Multiplication (`*`)
    - Division (`/`)
 
 4. Error Handling:
-
    - Division by zero should panic with message: `"Division by zero"`
    - Invalid operators should panic with message: `"Unsupported operator: {operator}"`
 

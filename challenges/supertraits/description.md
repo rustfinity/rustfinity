@@ -5,11 +5,9 @@ In this challenge, you will define two traits: `Person` and `Student`. The `Pers
 ## Your Task
 
 1. Define a trait `Person`:
-
    - It should require a method `fn name(&self) -> String` that returns the name of the person.
 
 2. Define a trait `Student` that has `Person` as a supertrait:
-
    - It should require methods:
      - `fn id(&self) -> u32` to return the student ID.
      - `fn field_of_study(&self) -> String` to return the student's field of study.

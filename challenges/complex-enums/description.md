@@ -7,11 +7,9 @@ In this challenge, you will create an `Animal` enum that demonstrates all three 
 Create an enum `Animal` with the following variants:
 
 1. **Unit Struct Variant**:
-
    - `Dog` — represents a generic dog.
 
 2. **Tuple Struct Variant**:
-
    - `Cat(String)` — represents a cat, where the `String` contains the cat's name.
 
 3. **Named Field Struct Variant**:

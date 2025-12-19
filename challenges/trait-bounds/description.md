@@ -35,7 +35,6 @@ This means that the generic type `T` must implement both `Trait1` and `Trait2`.
 ## Your Task
 
 1. Define a generic function `compare_and_display` that:
-
    - Takes two parameters of the same type.
    - Prints both parameters using the `Display` trait.
    - Returns the greater of the two using the `PartialOrd` trait.

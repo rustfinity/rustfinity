@@ -5,7 +5,6 @@ Let's improve previous example a little bit by returning a custom error type ins
 The logic of the function remains the same as the previous challenge, but the returned error type is what you need to change.
 
 1. Define an enum `ParsePercentageError` with the following variants:
-
    - `InvalidInput`: for inputs that cannot be parsed as numbers.
    - `OutOfRange`: for numbers that are not in the range 0-100.
 

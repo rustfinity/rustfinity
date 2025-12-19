@@ -10,9 +10,9 @@ Palindromes are fascinating numbers, and finding them within a range will requir
 
 You need to write a function, `find_first_palindrome(start: i32, end: i32) -> Option<i32>`, that takes two **integer** arguments `start` and `end`. The function should return the numerically least non-negative palindrome number within the range.
 
-* The range is inclusive: for example, if `start == 1` and `end == 1` the palindrome `1` is in range.
+- The range is inclusive: for example, if `start == 1` and `end == 1` the palindrome `1` is in range.
 
-* The range may have `start > end`, in which case it is still a valid range: for example, `start == 3` and `end == 1` contains the values `1, 2, 3`.
+- The range may have `start > end`, in which case it is still a valid range: for example, `start == 3` and `end == 1` contains the values `1, 2, 3`.
 
 If there are no palindromes in the range, the function should return `None`.
 
