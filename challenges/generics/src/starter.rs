@@ -1,5 +1,6 @@
-pub struct ItemContainer<T> {
-    pub item: T,
+// TODO: Define a generic struct with a single field `item: T`.
+pub struct ItemContainer {
+    // Add the field here
 }
 
 impl<T> ItemContainer<T> {
