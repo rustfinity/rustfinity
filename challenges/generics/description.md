@@ -22,4 +22,6 @@ If you're stuck, here are some hints to help you solve the challenge:
   }
   ```
 
+- Implement the method in the `impl<T>` block. The method should take `&self` and return `&T`.
+
 </details>
