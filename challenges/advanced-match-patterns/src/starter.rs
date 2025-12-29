@@ -1,4 +1,4 @@
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum BookItem {
     Book { pages: i32, discount: Option<i32> },
     EBook(String, (i32, i32)),
