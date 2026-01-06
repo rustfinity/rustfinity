@@ -33,7 +33,7 @@ Your function signature and return types must be determined by you, but the inpu
 - Use a `HashSet` to track unique items.
 - Use the `filter_map` method to remove invalid entries (e.g., empty or whitespace-only strings).
 - You can use the `trim` method on strings to handle whitespace effectively.
-- `HashSet` provides a method `inesert` that returns a `bool` indicating whether the item was already present.
+- `HashSet` provides a method `insert` that returns a `bool` indicating whether the item was already present.
 - To sort, you can convert to a `Vec` and call the `sort` method.
 
 </details>
