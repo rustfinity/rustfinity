@@ -22,8 +22,14 @@ impl RustlingsParams {
     }
 }
 
+/// Result of running a rustlings exercise
+pub struct RustlingsResult {
+    pub output: String,
+    pub success: bool,
+}
+
 /// Run rustlings exercise with cargo test
-pub async fn run_rustlings_test(params: &RustlingsParams) -> Result<String> {
+pub async fn run_rustlings_test(params: &RustlingsParams) -> Result<RustlingsResult> {
     let code = params.decode_code()?;
     let temp_dir = create_rustlings_project(&code)?;
 
@@ -37,11 +43,14 @@ pub async fn run_rustlings_test(params: &RustlingsParams) -> Result<String> {
     let stdout = String::from_utf8_lossy(&output.stdout);
     let stderr = String::from_utf8_lossy(&output.stderr);
 
-    Ok(format!("{}{}", stderr, stdout))
+    Ok(RustlingsResult {
+        output: format!("{}{}", stderr, stdout),
+        success: output.status.success(),
+    })
 }
 
 /// Run rustlings exercise with cargo check (compilation only)
-pub async fn run_rustlings_check(params: &RustlingsParams) -> Result<String> {
+pub async fn run_rustlings_check(params: &RustlingsParams) -> Result<RustlingsResult> {
     let code = params.decode_code()?;
     let temp_dir = create_rustlings_project(&code)?;
 
@@ -67,14 +76,20 @@ pub async fn run_rustlings_check(params: &RustlingsParams) -> Result<String> {
         let run_stderr = String::from_utf8_lossy(&run_output.stderr);
 
         if run_output.status.success() {
-            return Ok(format!(
-                "{}{}Compiling succeeded!\n\nOutput:\n{}{}",
-                stderr, stdout, run_stderr, run_stdout
-            ));
+            return Ok(RustlingsResult {
+                output: format!(
+                    "{}{}Compiling succeeded!\n\nOutput:\n{}{}",
+                    stderr, stdout, run_stderr, run_stdout
+                ),
+                success: true,
+            });
         }
     }
 
-    Ok(format!("{}{}", stderr, stdout))
+    Ok(RustlingsResult {
+        output: format!("{}{}", stderr, stdout),
+        success: false,
+    })
 }
 
 /// Create a temporary Cargo project for the rustlings exercise
