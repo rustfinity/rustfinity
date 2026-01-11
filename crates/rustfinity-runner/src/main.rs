@@ -3,6 +3,7 @@ use cli::{Cli, Commands};
 use commands::{
     playground::{run_code_in_playground, PlaygroundParams},
     run_tests::{run_tests, RunTestsParams},
+    rustlings::{run_rustlings_check, run_rustlings_test, RustlingsParams},
 };
 use dotenvy::dotenv;
 
@@ -34,6 +35,18 @@ async fn main() {
             let params = PlaygroundParams::new(code_base64);
 
             run_code_in_playground(&params).await
+        }
+
+        Commands::RustlingsTest { code: code_base64 } => {
+            let params = RustlingsParams::new(code_base64);
+
+            run_rustlings_test(&params).await
+        }
+
+        Commands::RustlingsCheck { code: code_base64 } => {
+            let params = RustlingsParams::new(code_base64);
+
+            run_rustlings_check(&params).await
         }
     };
 
