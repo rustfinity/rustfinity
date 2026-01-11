@@ -34,4 +34,18 @@ pub enum Commands {
         #[clap(long)]
         code: String,
     },
+
+    #[clap(about = "Run rustlings exercise with tests (cargo test)")]
+    RustlingsTest {
+        /// Code base64 encoded
+        #[clap(long)]
+        code: String,
+    },
+
+    #[clap(about = "Check rustlings exercise compilation only (cargo check)")]
+    RustlingsCheck {
+        /// Code base64 encoded
+        #[clap(long)]
+        code: String,
+    },
 }
