@@ -1,21 +1,12 @@
-pub trait Renderable {
-    fn render(&self) -> String;
-}
+// 1. Create the Renderable trait
 
-pub struct Circle {
-    pub radius: f64,
-}
+// 2. Create the Circle and Rectangle structs
 
-pub struct Rectangle {
-    pub width: f64,
-    pub height: f64,
-}
+// 3. Implement the trait for Circle and Rectangle
 
-// 1. Implement the trait for Circle and Rectangle
+// 4. Create the Canvas struct
 
-// 2. Create the Canvas struct
-
-// 3. Implement the Canvas struct
+// 5. Implement the Canvas struct
 
 // Example usage
 pub fn main() {
