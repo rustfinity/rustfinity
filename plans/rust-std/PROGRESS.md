@@ -41,13 +41,13 @@
 | 23 | Stdio Operations | `stdio-operations` | EASY | 115 | Done |
 | 24 | Temporary Files | `tempfile-operations` | MEDIUM | 116 | Done |
 
-### Module 4: Advanced Iterators (2/6 completed)
+### Module 4: Advanced Iterators (3/6 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 25 | Iterator Combinators | `iterator-combinators` | EASY | 117 | Done |
 | 26 | Iterator Inspection | `iterator-inspection` | MEDIUM | 118 | Done |
-| 27 | Fold and Scan | `fold-and-scan` | MEDIUM | - | Pending |
+| 27 | Fold and Scan | `fold-and-scan` | MEDIUM | 119 | Done |
 | 28 | Iterator Filtering | `iterator-filtering` | EASY | - | Pending |
 | 29 | Iterator Flattening | `iterator-flattening` | MEDIUM | - | Pending |
 | 30 | Custom Iterators | `custom-iterators` | HARD | - | Pending |
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 26
-- **Remaining**: 29
-- **Progress**: 47.3%
+- **Completed**: 27
+- **Remaining**: 28
+- **Progress**: 49.1%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `fold-and-scan` challenge (ID: 119)
+  - Implemented 8 functions: `sum_with_fold`, `product_with_fold`, `concat_strings`, `running_sum`, `running_max`, `take_while_sum_under`, `count_occurrences`, `running_average`
+  - Added 62 tests covering fold-based sum/product/concat/count, scan-based running sum/max/average, early termination with take_while_sum_under, and integration tests (fold-scan equivalence, monotonic running max, complex pipelines, custom types)
+  - All tests passing including 8 doc tests
+  - Continues Module 4: Advanced Iterators (3/6 challenges)
+
 - Created `iterator-inspection` challenge (ID: 118)
   - Implemented 7 functions: `indexed_elements`, `find_index`, `elements_with_next`, `group_consecutive_duplicates`, `find_first_repeated`, `collect_with_trace`, `sum_with_running_total`
   - Added 55 tests covering enumerate-based indexing, find with index, peekable lookahead, consecutive duplicate grouping, first repeated element detection, inspect-based tracing, running totals, and integration tests (indexed find pattern, differences, longest run, trace pipeline, combined inspection, running total with trace)

@@ -1424,5 +1424,17 @@
     "tags": ["iterators", "enumerate", "peekable", "inspect", "debugging"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 119,
+    "title": "Fold and Scan",
+    "slug": "fold-and-scan",
+    "short_description": "Master stateful iteration with fold() for aggregation and scan() for running computations like cumulative sums and averages.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["iterators", "fold", "scan", "aggregation", "running-totals"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]
