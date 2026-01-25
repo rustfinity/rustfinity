@@ -1316,5 +1316,17 @@
     "tags": ["collections", "HashMap", "performance", "capacity", "optimization"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 110,
+    "title": "Reading Files",
+    "slug": "reading-files",
+    "short_description": "Learn basic file reading patterns: read_to_string, BufReader, counting lines and words, and reading specific lines.",
+    "language": "RUST",
+    "difficulty": "BEGINNER",
+    "track": "RUST_STD",
+    "tags": ["io", "files", "BufReader", "reading", "std::fs"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]

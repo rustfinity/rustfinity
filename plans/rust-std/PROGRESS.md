@@ -29,11 +29,11 @@
 | 16 | LinkedList Usage | `linkedlist-basics` | EASY | 108 | Done |
 | 17 | HashMap Advanced | `hashmap-advanced` | MEDIUM | 109 | Done |
 
-### Module 3: File I/O and Paths (0/7 completed)
+### Module 3: File I/O and Paths (1/7 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
-| 18 | Reading Files | `reading-files` | BEGINNER | - | Pending |
+| 18 | Reading Files | `reading-files` | BEGINNER | 110 | Done |
 | 19 | Writing Files | `writing-files` | EASY | - | Pending |
 | 20 | Path Operations | `path-operations` | EASY | - | Pending |
 | 21 | Directory Traversal | `directory-traversal` | MEDIUM | - | Pending |
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 17
-- **Remaining**: 38
-- **Progress**: 30.9%
+- **Completed**: 18
+- **Remaining**: 37
+- **Progress**: 32.7%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `reading-files` challenge (ID: 110)
+  - Implemented 5 functions: `read_entire_file`, `count_lines`, `count_words`, `read_lines`, `first_n_lines`
+  - Added 34 tests covering reading entire files, counting lines/words, reading lines into Vec, first N lines, empty files, unicode content, and error handling for non-existent files
+  - All tests passing including 5 doc tests
+  - Begins Module 3: File I/O and Paths (1/7 challenges)
+
 - Created `hashmap-advanced` challenge (ID: 109)
   - Implemented 8 functions: `create_with_capacity`, `reserve_additional`, `shrink_map`, `bulk_insert`, `get_capacity_stats`, `clear_and_shrink`, `group_by_key`, `merge_with_capacity`
   - Added 44 tests covering capacity creation, reservation, shrinking, bulk insertion, capacity stats, clear and shrink, grouping by key, merging with capacity, and integration tests (capacity workflow, bulk operations, grouping/merging, memory-efficient processing)
