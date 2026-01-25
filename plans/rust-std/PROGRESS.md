@@ -15,11 +15,11 @@
 | 7 | String Patterns | `string-patterns` | MEDIUM | 99 | Done |
 | 8 | OsString and Platform Strings | `osstring-basics` | MEDIUM | 100 | Done |
 
-### Module 2: Collections (0/9 completed)
+### Module 2: Collections (1/9 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
-| 9 | HashSet Operations | `hashset-operations` | EASY | - | Pending |
+| 9 | HashSet Operations | `hashset-operations` | EASY | 101 | Done |
 | 10 | BTreeMap Basics | `btreemap-basics` | EASY | - | Pending |
 | 11 | VecDeque Usage | `vecdeque-queue` | MEDIUM | - | Pending |
 | 12 | Collection Conversions | `collection-conversions` | MEDIUM | - | Pending |
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 8
-- **Remaining**: 47
-- **Progress**: 14.5%
+- **Completed**: 9
+- **Remaining**: 46
+- **Progress**: 16.4%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `hashset-operations` challenge (ID: 101)
+  - Implemented 7 functions: `unique_elements`, `count_unique`, `find_common`, `find_all`, `find_difference`, `find_symmetric_difference`, `is_subset`
+  - Added 43 tests covering unique element extraction, set intersection, union, difference, symmetric difference, and subset checks
+  - All tests passing including 7 doc tests
+  - Begins Module 2: Collections (1/9 challenges)
+
 - Created `osstring-basics` challenge (ID: 100)
   - Implemented 6 functions: `to_os_string`, `os_str_to_str`, `os_string_to_string_lossy`, `get_file_extension`, `join_path_components`, `is_valid_utf8`
   - Added 49 tests covering OsString/OsStr conversions, path operations, extension extraction, and UTF-8 validation

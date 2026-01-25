@@ -1208,5 +1208,17 @@
     "tags": ["strings", "ffi", "OsString", "OsStr", "paths", "platform"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 101,
+    "title": "HashSet Operations",
+    "slug": "hashset-operations",
+    "short_description": "Learn set operations with HashSet: unique elements, intersection, union, difference, and subset checks.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "RUST_STD",
+    "tags": ["collections", "HashSet", "set-operations", "deduplication"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]
