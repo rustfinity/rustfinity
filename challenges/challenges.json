@@ -1232,5 +1232,17 @@
     "tags": ["collections", "BTreeMap", "ordered-map", "range-queries", "sorting"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 103,
+    "title": "VecDeque Usage",
+    "slug": "vecdeque-queue",
+    "short_description": "Master double-ended queues with VecDeque: FIFO operations, peek, and rotation.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["collections", "VecDeque", "queue", "deque", "FIFO"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]

@@ -15,13 +15,13 @@
 | 7 | String Patterns | `string-patterns` | MEDIUM | 99 | Done |
 | 8 | OsString and Platform Strings | `osstring-basics` | MEDIUM | 100 | Done |
 
-### Module 2: Collections (2/9 completed)
+### Module 2: Collections (3/9 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 9 | HashSet Operations | `hashset-operations` | EASY | 101 | Done |
 | 10 | BTreeMap Basics | `btreemap-basics` | EASY | 102 | Done |
-| 11 | VecDeque Usage | `vecdeque-queue` | MEDIUM | - | Pending |
+| 11 | VecDeque Usage | `vecdeque-queue` | MEDIUM | 103 | Done |
 | 12 | Collection Conversions | `collection-conversions` | MEDIUM | - | Pending |
 | 13 | BTreeSet Ranges | `btreeset-ranges` | MEDIUM | - | Pending |
 | 14 | Entry API Pattern | `entry-api` | HARD | - | Pending |
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 10
-- **Remaining**: 45
-- **Progress**: 18.2%
+- **Completed**: 11
+- **Remaining**: 44
+- **Progress**: 20.0%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `vecdeque-queue` challenge (ID: 103)
+  - Implemented 7 functions: `create_queue`, `enqueue`, `dequeue`, `peek_front`, `peek_back`, `rotate_left`, `rotate_right`
+  - Added 45 tests covering queue creation, FIFO operations, peeking, rotation (left/right), edge cases, and integration tests
+  - All tests passing including 7 doc tests
+  - Continues Module 2: Collections (3/9 challenges)
+
 - Created `btreemap-basics` challenge (ID: 102)
   - Implemented 7 functions: `create_sorted_map`, `get_value`, `get_keys_in_order`, `get_values_in_key_order`, `get_range`, `get_first`, `get_last`
   - Added 36 tests covering map creation, key/value retrieval, sorted iteration, range queries, and first/last element access
