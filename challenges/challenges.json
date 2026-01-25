@@ -1340,5 +1340,17 @@
     "tags": ["io", "files", "BufWriter", "writing", "std::fs"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 112,
+    "title": "Path Operations",
+    "slug": "path-operations",
+    "short_description": "Master cross-platform path handling with Path and PathBuf: joining, extracting components, and modifying extensions.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "RUST_STD",
+    "tags": ["io", "paths", "Path", "PathBuf", "std::path"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]

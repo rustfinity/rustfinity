@@ -29,13 +29,13 @@
 | 16 | LinkedList Usage | `linkedlist-basics` | EASY | 108 | Done |
 | 17 | HashMap Advanced | `hashmap-advanced` | MEDIUM | 109 | Done |
 
-### Module 3: File I/O and Paths (2/7 completed)
+### Module 3: File I/O and Paths (3/7 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 18 | Reading Files | `reading-files` | BEGINNER | 110 | Done |
 | 19 | Writing Files | `writing-files` | EASY | 111 | Done |
-| 20 | Path Operations | `path-operations` | EASY | - | Pending |
+| 20 | Path Operations | `path-operations` | EASY | 112 | Done |
 | 21 | Directory Traversal | `directory-traversal` | MEDIUM | - | Pending |
 | 22 | File Metadata | `file-metadata` | MEDIUM | - | Pending |
 | 23 | Stdio Operations | `stdio-operations` | EASY | - | Pending |
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 19
-- **Remaining**: 36
-- **Progress**: 34.5%
+- **Completed**: 20
+- **Remaining**: 35
+- **Progress**: 36.4%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `path-operations` challenge (ID: 112)
+  - Implemented 8 functions: `join_paths`, `get_extension`, `get_file_name`, `get_file_stem`, `get_parent`, `change_extension`, `is_absolute`, `normalize_path`
+  - Added 53 tests covering path joining, extension extraction, file name/stem retrieval, parent directory, extension modification, absolute path detection, normalization, and integration tests
+  - All tests passing including 8 doc tests
+  - Continues Module 3: File I/O and Paths (3/7 challenges)
+
 - Created `writing-files` challenge (ID: 111)
   - Implemented 5 functions: `write_string`, `write_bytes`, `append_string`, `write_lines`, `write_with_buffer`
   - Added 42 tests covering writing strings, bytes, appending, writing multiple lines, buffered writing, unicode content, overwriting files, error handling for invalid paths, and integration tests (write and append, string and bytes, lines and buffer, log file pattern, large buffered write)
