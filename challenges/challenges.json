@@ -1196,5 +1196,17 @@
     "tags": ["strings", "patterns", "search", "find", "match"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 100,
+    "title": "OsString and Platform Strings",
+    "slug": "osstring-basics",
+    "short_description": "Handle platform-specific strings with OsString and OsStr for cross-platform file path operations.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["strings", "ffi", "OsString", "OsStr", "paths", "platform"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]

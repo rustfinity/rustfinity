@@ -2,7 +2,7 @@
 
 ## Completed Challenges
 
-### Module 1: String Operations (7/8 completed)
+### Module 1: String Operations (8/8 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
@@ -13,7 +13,7 @@
 | 5 | Unicode and Graphemes | `unicode-operations` | MEDIUM | 97 | Done |
 | 6 | String Iterators | `string-iterators` | EASY | 98 | Done |
 | 7 | String Patterns | `string-patterns` | MEDIUM | 99 | Done |
-| 8 | OsString and Platform Strings | `osstring-basics` | MEDIUM | - | Pending |
+| 8 | OsString and Platform Strings | `osstring-basics` | MEDIUM | 100 | Done |
 
 ### Module 2: Collections (0/9 completed)
 
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 7
-- **Remaining**: 48
-- **Progress**: 12.7%
+- **Completed**: 8
+- **Remaining**: 47
+- **Progress**: 14.5%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `osstring-basics` challenge (ID: 100)
+  - Implemented 6 functions: `to_os_string`, `os_str_to_str`, `os_string_to_string_lossy`, `get_file_extension`, `join_path_components`, `is_valid_utf8`
+  - Added 49 tests covering OsString/OsStr conversions, path operations, extension extraction, and UTF-8 validation
+  - All tests passing including 6 doc tests
+  - Completes Module 1: String Operations (8/8 challenges)
+
 - Created `string-patterns` challenge (ID: 99)
   - Implemented 7 functions: `has_prefix`, `has_suffix`, `find_first`, `find_last`, `count_occurrences`, `find_all_indices`, `extract_between`
   - Added 43 tests covering prefix/suffix checks, pattern finding, counting occurrences, finding all indices, and extracting text between markers
