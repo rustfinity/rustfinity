@@ -1184,5 +1184,17 @@
     "tags": ["strings", "iterators", "chars", "lines", "split"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 99,
+    "title": "String Patterns",
+    "slug": "string-patterns",
+    "short_description": "Search for substrings, check prefixes/suffixes, find pattern positions, and extract text between markers.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["strings", "patterns", "search", "find", "match"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]

@@ -2,7 +2,7 @@
 
 ## Completed Challenges
 
-### Module 1: String Operations (6/8 completed)
+### Module 1: String Operations (7/8 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
@@ -12,7 +12,7 @@
 | 4 | String Building | `string-building` | MEDIUM | 96 | Done |
 | 5 | Unicode and Graphemes | `unicode-operations` | MEDIUM | 97 | Done |
 | 6 | String Iterators | `string-iterators` | EASY | 98 | Done |
-| 7 | String Patterns | `string-patterns` | MEDIUM | - | Pending |
+| 7 | String Patterns | `string-patterns` | MEDIUM | 99 | Done |
 | 8 | OsString and Platform Strings | `osstring-basics` | MEDIUM | - | Pending |
 
 ### Module 2: Collections (0/9 completed)
@@ -107,13 +107,18 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 6
-- **Remaining**: 49
-- **Progress**: 10.9%
+- **Completed**: 7
+- **Remaining**: 48
+- **Progress**: 12.7%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `string-patterns` challenge (ID: 99)
+  - Implemented 7 functions: `has_prefix`, `has_suffix`, `find_first`, `find_last`, `count_occurrences`, `find_all_indices`, `extract_between`
+  - Added 43 tests covering prefix/suffix checks, pattern finding, counting occurrences, finding all indices, and extracting text between markers
+  - All tests passing including 7 doc tests
+
 - Created `string-iterators` challenge (ID: 98)
   - Implemented 6 functions: `chars_to_vec`, `words_to_vec`, `lines_to_vec`, `count_words`, `reverse_words`, `capitalize_words`
   - Added 37 tests covering character iteration, word splitting, line splitting, word counting, word reversal, and word capitalization
