@@ -1280,5 +1280,17 @@
     "tags": ["collections", "HashMap", "Entry", "patterns", "caching"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 107,
+    "title": "Binary Heap Operations",
+    "slug": "binary-heap-priority",
+    "short_description": "Master priority queues with BinaryHeap: max-heap, min-heap, top-K elements, and heap sort.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["collections", "BinaryHeap", "priority-queue", "heap", "sorting"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]

@@ -15,7 +15,7 @@
 | 7 | String Patterns | `string-patterns` | MEDIUM | 99 | Done |
 | 8 | OsString and Platform Strings | `osstring-basics` | MEDIUM | 100 | Done |
 
-### Module 2: Collections (6/9 completed)
+### Module 2: Collections (7/9 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
@@ -25,7 +25,7 @@
 | 12 | Collection Conversions | `collection-conversions` | MEDIUM | 104 | Done |
 | 13 | BTreeSet Ranges | `btreeset-ranges` | MEDIUM | 105 | Done |
 | 14 | Entry API Pattern | `entry-api` | HARD | 106 | Done |
-| 15 | Binary Heap Operations | `binary-heap-priority` | MEDIUM | - | Pending |
+| 15 | Binary Heap Operations | `binary-heap-priority` | MEDIUM | 107 | Done |
 | 16 | LinkedList Usage | `linkedlist-basics` | EASY | - | Pending |
 | 17 | HashMap Advanced | `hashmap-advanced` | MEDIUM | - | Pending |
 
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 14
-- **Remaining**: 41
-- **Progress**: 25.5%
+- **Completed**: 15
+- **Remaining**: 40
+- **Progress**: 27.3%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `binary-heap-priority` challenge (ID: 107)
+  - Implemented 8 functions: `create_max_heap`, `create_min_heap`, `pop_max`, `peek_max`, `top_k_largest`, `top_k_smallest`, `merge_heaps`, `heap_sort_descending`
+  - Added 52 tests covering max-heap creation, min-heap creation, pop/peek operations, top-K largest/smallest, heap merging, heap sort, and integration tests (task scheduler, median finding, streaming top-K)
+  - All tests passing including 8 doc tests
+  - Continues Module 2: Collections (7/9 challenges)
+
 - Created `entry-api` challenge (ID: 106)
   - Implemented 7 functions: `count_words`, `group_by_length`, `get_or_compute`, `increment_or_init`, `merge_maps`, `first_occurrence`, `update_or_default`
   - Added 46 tests covering word counting, grouping by length, caching patterns, increment-or-init, map merging, first occurrence tracking, update-or-default, and integration tests
