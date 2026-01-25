@@ -1376,5 +1376,17 @@
     "tags": ["io", "files", "metadata", "permissions", "std::fs"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 115,
+    "title": "Stdio Operations",
+    "slug": "stdio-operations",
+    "short_description": "Master standard I/O operations: reading from stdin, writing to stdout/stderr, and buffer flushing.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "RUST_STD",
+    "tags": ["io", "stdin", "stdout", "stderr", "BufRead", "Write"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]

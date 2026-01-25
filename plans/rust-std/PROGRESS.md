@@ -29,7 +29,7 @@
 | 16 | LinkedList Usage | `linkedlist-basics` | EASY | 108 | Done |
 | 17 | HashMap Advanced | `hashmap-advanced` | MEDIUM | 109 | Done |
 
-### Module 3: File I/O and Paths (5/7 completed)
+### Module 3: File I/O and Paths (6/7 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
@@ -38,7 +38,7 @@
 | 20 | Path Operations | `path-operations` | EASY | 112 | Done |
 | 21 | Directory Traversal | `directory-traversal` | MEDIUM | 113 | Done |
 | 22 | File Metadata | `file-metadata` | MEDIUM | 114 | Done |
-| 23 | Stdio Operations | `stdio-operations` | EASY | - | Pending |
+| 23 | Stdio Operations | `stdio-operations` | EASY | 115 | Done |
 | 24 | Temporary Files | `tempfile-operations` | MEDIUM | - | Pending |
 
 ### Module 4: Advanced Iterators (0/6 completed)
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 22
-- **Remaining**: 33
-- **Progress**: 40.0%
+- **Completed**: 23
+- **Remaining**: 32
+- **Progress**: 41.8%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `stdio-operations` challenge (ID: 115)
+  - Implemented 6 functions: `read_line_from_reader`, `read_all_lines_from_reader`, `write_to_writer`, `writeln_to_writer`, `write_and_flush`, `write_error_to_writer`
+  - Added 38 tests covering reading single/multiple lines, writing without/with newlines, flushing buffers, error formatting, Windows/Unix newlines, Unicode content, and integration tests (read-echo, prompt pattern, read-process-write, error handling, mixed operations, large input)
+  - All tests passing including 6 doc tests
+  - Continues Module 3: File I/O and Paths (6/7 challenges)
+
 - Created `file-metadata` challenge (ID: 114)
   - Implemented 7 functions: `get_file_size`, `get_file_type`, `is_readonly`, `get_modified_time`, `was_modified_within`, `is_executable`, `compare_modified_times`
   - Added 35 tests covering file size (empty, basic, large, binary), file type (file, directory, symlink), read-only permissions, modification times, time comparisons, executable detection (Unix permissions), and integration tests (file lifecycle, directory structure, multiple file comparison, permissions workflow)
