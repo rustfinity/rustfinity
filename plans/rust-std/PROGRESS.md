@@ -15,12 +15,12 @@
 | 7 | String Patterns | `string-patterns` | MEDIUM | 99 | Done |
 | 8 | OsString and Platform Strings | `osstring-basics` | MEDIUM | 100 | Done |
 
-### Module 2: Collections (1/9 completed)
+### Module 2: Collections (2/9 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 9 | HashSet Operations | `hashset-operations` | EASY | 101 | Done |
-| 10 | BTreeMap Basics | `btreemap-basics` | EASY | - | Pending |
+| 10 | BTreeMap Basics | `btreemap-basics` | EASY | 102 | Done |
 | 11 | VecDeque Usage | `vecdeque-queue` | MEDIUM | - | Pending |
 | 12 | Collection Conversions | `collection-conversions` | MEDIUM | - | Pending |
 | 13 | BTreeSet Ranges | `btreeset-ranges` | MEDIUM | - | Pending |
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 9
-- **Remaining**: 46
-- **Progress**: 16.4%
+- **Completed**: 10
+- **Remaining**: 45
+- **Progress**: 18.2%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `btreemap-basics` challenge (ID: 102)
+  - Implemented 7 functions: `create_sorted_map`, `get_value`, `get_keys_in_order`, `get_values_in_key_order`, `get_range`, `get_first`, `get_last`
+  - Added 36 tests covering map creation, key/value retrieval, sorted iteration, range queries, and first/last element access
+  - All tests passing including 7 doc tests
+  - Continues Module 2: Collections (2/9 challenges)
+
 - Created `hashset-operations` challenge (ID: 101)
   - Implemented 7 functions: `unique_elements`, `count_unique`, `find_common`, `find_all`, `find_difference`, `find_symmetric_difference`, `is_subset`
   - Added 43 tests covering unique element extraction, set intersection, union, difference, symmetric difference, and subset checks
