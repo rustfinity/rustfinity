@@ -1,6 +1,8 @@
 - Study plans/rust-std/SPEC.md and pick the most important task and implement it
 - ONLY DO ONE TASK
+- After you're done with the task save your progress in PROGRESS.md file in same dir as SPEC.md file.
 - If all tasks are done add a `# Done` to the top of this file at root dir `PROMPT.md`
 - Make a git commit after done with the task
 - Make sure you run cargo check and test for the task you done to make sure it passes correctly
 - If you think the task is ambigious and not clear enough, or the task has lots of assumptions and impossible, STOP IMMEDIATLY and don't process and stop and summarize the issue and ask me questions.
+- use the create-challenge skill

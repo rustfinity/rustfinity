@@ -259,6 +259,56 @@ edition = "2021"
 - Use minimal dependencies
 - Only add dependencies if truly needed for the challenge concept
 
+### When to Use syntest
+
+The `syntest` crate is **only needed when you need to capture stdout/stderr output** (e.g., testing `println!` output). For most challenges that test return values, you don't need it.
+
+**Add syntest only for output capture:**
+
+```toml
+[package]
+name = "challenge-slug"
+version = "0.1.0"
+edition = "2021"
+
+[dev-dependencies]
+syntest = { path = "../../crates/syntest" }
+```
+
+**Example test using syntest to capture printed output:**
+
+```rust
+use my_challenge::*;
+use syntest::quote;
+
+#[test]
+fn test_prints_hello() {
+    let code = quote! {
+        use my_challenge::*;
+
+        greet("Alice");  // Function that prints to stdout
+    };
+
+    let result = syntest::create_bin_and_run(&code);
+
+    assert!(
+        result.stdout().contains("Hello, Alice"),
+        "Expected greeting to be printed"
+    );
+}
+```
+
+**For most challenges, no syntest needed:**
+
+```toml
+[package]
+name = "challenge-slug"
+version = "0.1.0"
+edition = "2021"
+
+# No dev-dependencies needed for testing return values
+```
+
 ## Metadata in challenges.json
 
 ### Required Fields
