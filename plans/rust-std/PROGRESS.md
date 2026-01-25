@@ -2,14 +2,14 @@
 
 ## Completed Challenges
 
-### Module 1: String Operations (3/8 completed)
+### Module 1: String Operations (4/8 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 1 | String Basics | `string-basics` | BEGINNER | 93 | Done |
 | 2 | String Manipulation | `string-manipulation` | EASY | 94 | Done |
 | 3 | String Parsing | `string-parsing` | EASY | 95 | Done |
-| 4 | String Building | `string-building` | MEDIUM | - | Pending |
+| 4 | String Building | `string-building` | MEDIUM | 96 | Done |
 | 5 | Unicode and Graphemes | `unicode-operations` | MEDIUM | - | Pending |
 | 6 | String Iterators | `string-iterators` | EASY | - | Pending |
 | 7 | String Patterns | `string-patterns` | MEDIUM | - | Pending |
@@ -107,13 +107,18 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 3
-- **Remaining**: 52
-- **Progress**: 5.5%
+- **Completed**: 4
+- **Remaining**: 51
+- **Progress**: 7.3%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `string-building` challenge (ID: 96)
+  - Implemented 5 components: `build_greeting`, `build_list`, `Person` with `Display`, `build_table`, `concat_with_separator`
+  - Added 32 tests covering greeting formatting, numbered lists, Display trait, table building, and string concatenation
+  - All tests passing including 5 doc tests
+
 - Created `string-parsing` challenge (ID: 95)
   - Implemented 5 components: `parse_int`, `parse_bool`, `parse_key_value`, `Color` with `FromStr`, `parse_list<T>`
   - Added 43 tests covering integer parsing, boolean parsing, key-value parsing, Color struct parsing, and generic list parsing
