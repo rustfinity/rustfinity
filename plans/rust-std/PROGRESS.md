@@ -15,7 +15,7 @@
 | 7 | String Patterns | `string-patterns` | MEDIUM | 99 | Done |
 | 8 | OsString and Platform Strings | `osstring-basics` | MEDIUM | 100 | Done |
 
-### Module 2: Collections (7/9 completed)
+### Module 2: Collections (8/9 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
@@ -26,7 +26,7 @@
 | 13 | BTreeSet Ranges | `btreeset-ranges` | MEDIUM | 105 | Done |
 | 14 | Entry API Pattern | `entry-api` | HARD | 106 | Done |
 | 15 | Binary Heap Operations | `binary-heap-priority` | MEDIUM | 107 | Done |
-| 16 | LinkedList Usage | `linkedlist-basics` | EASY | - | Pending |
+| 16 | LinkedList Usage | `linkedlist-basics` | EASY | 108 | Done |
 | 17 | HashMap Advanced | `hashmap-advanced` | MEDIUM | - | Pending |
 
 ### Module 3: File I/O and Paths (0/7 completed)
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 15
-- **Remaining**: 40
-- **Progress**: 27.3%
+- **Completed**: 16
+- **Remaining**: 39
+- **Progress**: 29.1%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `linkedlist-basics` challenge (ID: 108)
+  - Implemented 9 functions: `create_list`, `add_front`, `add_back`, `remove_front`, `remove_back`, `peek_front`, `peek_back`, `move_to_front`, `concat_lists`
+  - Added 48 tests covering list creation, add/remove from both ends, peeking, move-to-front (LRU pattern), list concatenation, and integration tests (LRU cache simulation, queue/stack/deque operations)
+  - All tests passing including 9 doc tests
+  - Continues Module 2: Collections (8/9 challenges)
+
 - Created `binary-heap-priority` challenge (ID: 107)
   - Implemented 8 functions: `create_max_heap`, `create_min_heap`, `pop_max`, `peek_max`, `top_k_largest`, `top_k_smallest`, `merge_heaps`, `heap_sort_descending`
   - Added 52 tests covering max-heap creation, min-heap creation, pop/peek operations, top-K largest/smallest, heap merging, heap sort, and integration tests (task scheduler, median finding, streaming top-K)

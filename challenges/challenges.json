@@ -1292,5 +1292,17 @@
     "tags": ["collections", "BinaryHeap", "priority-queue", "heap", "sorting"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 108,
+    "title": "LinkedList Basics",
+    "slug": "linkedlist-basics",
+    "short_description": "Learn LinkedList operations: add/remove from both ends, peek, move-to-front for LRU patterns, and list concatenation.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "RUST_STD",
+    "tags": ["collections", "LinkedList", "doubly-linked-list", "LRU", "queue"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]
