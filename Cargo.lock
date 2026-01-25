@@ -2151,6 +2151,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "unicode-operations"
+version = "0.1.0"
+
+[[package]]
 name = "unique-items"
 version = "0.1.0"
 

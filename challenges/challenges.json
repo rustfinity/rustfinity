@@ -1160,5 +1160,17 @@
     "tags": ["strings", "format", "write", "Display", "formatting"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 97,
+    "title": "Unicode and Graphemes",
+    "slug": "unicode-operations",
+    "short_description": "Understand UTF-8 encoding, count characters vs bytes, and safely slice Unicode strings.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["strings", "unicode", "utf-8", "chars", "bytes"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]

@@ -2,7 +2,7 @@
 
 ## Completed Challenges
 
-### Module 1: String Operations (4/8 completed)
+### Module 1: String Operations (5/8 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
@@ -10,7 +10,7 @@
 | 2 | String Manipulation | `string-manipulation` | EASY | 94 | Done |
 | 3 | String Parsing | `string-parsing` | EASY | 95 | Done |
 | 4 | String Building | `string-building` | MEDIUM | 96 | Done |
-| 5 | Unicode and Graphemes | `unicode-operations` | MEDIUM | - | Pending |
+| 5 | Unicode and Graphemes | `unicode-operations` | MEDIUM | 97 | Done |
 | 6 | String Iterators | `string-iterators` | EASY | - | Pending |
 | 7 | String Patterns | `string-patterns` | MEDIUM | - | Pending |
 | 8 | OsString and Platform Strings | `osstring-basics` | MEDIUM | - | Pending |
@@ -107,13 +107,18 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 4
-- **Remaining**: 51
-- **Progress**: 7.3%
+- **Completed**: 5
+- **Remaining**: 50
+- **Progress**: 9.1%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `unicode-operations` challenge (ID: 97)
+  - Implemented 5 functions: `char_count`, `byte_count`, `safe_substring`, `char_at`, `is_single_char`
+  - Added 32 tests covering ASCII, Cyrillic, Chinese, emojis, and edge cases (combining characters, ZWJ sequences)
+  - All tests passing including 5 doc tests
+
 - Created `string-building` challenge (ID: 96)
   - Implemented 5 components: `build_greeting`, `build_list`, `Person` with `Display`, `build_table`, `concat_with_separator`
   - Added 32 tests covering greeting formatting, numbered lists, Display trait, table building, and string concatenation
