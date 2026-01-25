@@ -15,14 +15,14 @@
 | 7 | String Patterns | `string-patterns` | MEDIUM | 99 | Done |
 | 8 | OsString and Platform Strings | `osstring-basics` | MEDIUM | 100 | Done |
 
-### Module 2: Collections (3/9 completed)
+### Module 2: Collections (4/9 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 9 | HashSet Operations | `hashset-operations` | EASY | 101 | Done |
 | 10 | BTreeMap Basics | `btreemap-basics` | EASY | 102 | Done |
 | 11 | VecDeque Usage | `vecdeque-queue` | MEDIUM | 103 | Done |
-| 12 | Collection Conversions | `collection-conversions` | MEDIUM | - | Pending |
+| 12 | Collection Conversions | `collection-conversions` | MEDIUM | 104 | Done |
 | 13 | BTreeSet Ranges | `btreeset-ranges` | MEDIUM | - | Pending |
 | 14 | Entry API Pattern | `entry-api` | HARD | - | Pending |
 | 15 | Binary Heap Operations | `binary-heap-priority` | MEDIUM | - | Pending |
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 11
-- **Remaining**: 44
-- **Progress**: 20.0%
+- **Completed**: 12
+- **Remaining**: 43
+- **Progress**: 21.8%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `collection-conversions` challenge (ID: 104)
+  - Implemented 8 functions: `vec_to_hashset`, `vec_to_btreeset`, `hashset_to_sorted_vec`, `pairs_to_hashmap`, `pairs_to_btreemap`, `hashmap_to_pairs`, `merge_vecs`, `chain_and_collect`
+  - Added 49 tests covering all conversion functions, empty/single/multiple elements, duplicate handling, strings, and integration tests
+  - All tests passing including 8 doc tests
+  - Continues Module 2: Collections (4/9 challenges)
+
 - Created `vecdeque-queue` challenge (ID: 103)
   - Implemented 7 functions: `create_queue`, `enqueue`, `dequeue`, `peek_front`, `peek_back`, `rotate_left`, `rotate_right`
   - Added 45 tests covering queue creation, FIFO operations, peeking, rotation (left/right), edge cases, and integration tests

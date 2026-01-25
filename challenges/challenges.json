@@ -1244,5 +1244,17 @@
     "tags": ["collections", "VecDeque", "queue", "deque", "FIFO"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 104,
+    "title": "Collection Conversions",
+    "slug": "collection-conversions",
+    "short_description": "Master iterator-based collection conversions: Vec to HashSet, HashMap from tuples, and more.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["collections", "iterators", "FromIterator", "IntoIterator", "collect"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]
