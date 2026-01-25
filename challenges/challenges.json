@@ -1124,5 +1124,17 @@
     "tags": ["strings", "string-slice", "utf-8", "ascii"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 94,
+    "title": "String Manipulation",
+    "slug": "string-manipulation",
+    "short_description": "Master common string methods: trimming, case conversion, searching, replacing, and splitting.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "RUST_STD",
+    "tags": ["strings", "trim", "split", "replace", "search"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]

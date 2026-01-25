@@ -2,12 +2,12 @@
 
 ## Completed Challenges
 
-### Module 1: String Operations (1/8 completed)
+### Module 1: String Operations (2/8 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 1 | String Basics | `string-basics` | BEGINNER | 93 | Done |
-| 2 | String Manipulation | `string-manipulation` | EASY | - | Pending |
+| 2 | String Manipulation | `string-manipulation` | EASY | 94 | Done |
 | 3 | String Parsing | `string-parsing` | EASY | - | Pending |
 | 4 | String Building | `string-building` | MEDIUM | - | Pending |
 | 5 | Unicode and Graphemes | `unicode-operations` | MEDIUM | - | Pending |
@@ -107,13 +107,18 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 1
-- **Remaining**: 54
-- **Progress**: 1.8%
+- **Completed**: 2
+- **Remaining**: 53
+- **Progress**: 3.6%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `string-manipulation` challenge (ID: 94)
+  - Implemented 5 functions: `clean_string`, `contains_word`, `replace_word`, `split_and_trim`, `normalize_whitespace`
+  - Added 28 tests covering trimming, case conversion, searching, replacing, and splitting
+  - All tests passing including 5 doc tests
+
 - Created `string-basics` challenge (ID: 93)
   - Added RUST_STD track to Track enum in `challenges/lib.rs`
   - Implemented 5 functions: `to_owned_string`, `count_chars`, `count_bytes`, `is_ascii_only`, `first_char`
