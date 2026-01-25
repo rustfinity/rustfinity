@@ -17,15 +17,8 @@ RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
 # Verify Node.js installation
 RUN node --version && npm --version
 
-# Install Claude Code
+# Install Claude Code (must be installed as root for global access)
 RUN npm install -g @anthropic-ai/claude-code
-
-# Run claude install
-RUN claude install
-
-# Make claude accessible to all users by copying to /usr/local/bin
-RUN cp -r /root/.local/share/claude /usr/local/share/ && \
-    ln -sf /usr/local/share/claude/versions/2.1.19 /usr/local/bin/claude
 
 # User ubuntu with UID 1000 already exists in the base image
 # Ensure home directory exists for the user
@@ -34,11 +27,14 @@ RUN mkdir -p /home/ubuntu && chown -R 1000:1000 /home/ubuntu
 USER 1000:1000
 ENV HOME=/home/ubuntu
 
+# Run claude install as ubuntu user
+RUN claude install
+
 # Install Rust toolchain as ubuntu user
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain stable
 
 # Make Claude Code and Rust available to ubuntu user
-ENV PATH="/root/.local/bin:/home/ubuntu/.cargo/bin:${PATH}"
+ENV PATH="/home/ubuntu/.local/bin:/home/ubuntu/.cargo/bin:${PATH}"
 
 # Verify Rust installation
 RUN rustc --version && cargo --version
