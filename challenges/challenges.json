@@ -1304,5 +1304,17 @@
     "tags": ["collections", "LinkedList", "doubly-linked-list", "LRU", "queue"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 109,
+    "title": "HashMap Advanced",
+    "slug": "hashmap-advanced",
+    "short_description": "Optimize HashMap performance with capacity management, reserve, shrink, bulk operations, and efficient merging.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["collections", "HashMap", "performance", "capacity", "optimization"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]

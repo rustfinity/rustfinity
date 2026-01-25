@@ -15,7 +15,7 @@
 | 7 | String Patterns | `string-patterns` | MEDIUM | 99 | Done |
 | 8 | OsString and Platform Strings | `osstring-basics` | MEDIUM | 100 | Done |
 
-### Module 2: Collections (8/9 completed)
+### Module 2: Collections (9/9 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
@@ -27,7 +27,7 @@
 | 14 | Entry API Pattern | `entry-api` | HARD | 106 | Done |
 | 15 | Binary Heap Operations | `binary-heap-priority` | MEDIUM | 107 | Done |
 | 16 | LinkedList Usage | `linkedlist-basics` | EASY | 108 | Done |
-| 17 | HashMap Advanced | `hashmap-advanced` | MEDIUM | - | Pending |
+| 17 | HashMap Advanced | `hashmap-advanced` | MEDIUM | 109 | Done |
 
 ### Module 3: File I/O and Paths (0/7 completed)
 
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 16
-- **Remaining**: 39
-- **Progress**: 29.1%
+- **Completed**: 17
+- **Remaining**: 38
+- **Progress**: 30.9%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `hashmap-advanced` challenge (ID: 109)
+  - Implemented 8 functions: `create_with_capacity`, `reserve_additional`, `shrink_map`, `bulk_insert`, `get_capacity_stats`, `clear_and_shrink`, `group_by_key`, `merge_with_capacity`
+  - Added 44 tests covering capacity creation, reservation, shrinking, bulk insertion, capacity stats, clear and shrink, grouping by key, merging with capacity, and integration tests (capacity workflow, bulk operations, grouping/merging, memory-efficient processing)
+  - All tests passing including 8 doc tests
+  - Completes Module 2: Collections (9/9 challenges)
+
 - Created `linkedlist-basics` challenge (ID: 108)
   - Implemented 9 functions: `create_list`, `add_front`, `add_back`, `remove_front`, `remove_back`, `peek_front`, `peek_back`, `move_to_front`, `concat_lists`
   - Added 48 tests covering list creation, add/remove from both ends, peeking, move-to-front (LRU pattern), list concatenation, and integration tests (LRU cache simulation, queue/stack/deque operations)
