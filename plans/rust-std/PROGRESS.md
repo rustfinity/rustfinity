@@ -41,7 +41,7 @@
 | 23 | Stdio Operations | `stdio-operations` | EASY | 115 | Done |
 | 24 | Temporary Files | `tempfile-operations` | MEDIUM | 116 | Done |
 
-### Module 4: Advanced Iterators (4/6 completed)
+### Module 4: Advanced Iterators (5/6 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
@@ -49,7 +49,7 @@
 | 26 | Iterator Inspection | `iterator-inspection` | MEDIUM | 118 | Done |
 | 27 | Fold and Scan | `fold-and-scan` | MEDIUM | 119 | Done |
 | 28 | Iterator Filtering | `iterator-filtering` | EASY | 120 | Done |
-| 29 | Iterator Flattening | `iterator-flattening` | MEDIUM | - | Pending |
+| 29 | Iterator Flattening | `iterator-flattening` | MEDIUM | 121 | Done |
 | 30 | Custom Iterators | `custom-iterators` | HARD | - | Pending |
 
 ### Module 5: Conversion Traits (0/6 completed)
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 28
-- **Remaining**: 27
-- **Progress**: 50.9%
+- **Completed**: 29
+- **Remaining**: 26
+- **Progress**: 52.7%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `iterator-flattening` challenge (ID: 121)
+  - Implemented 8 functions: `flatten_nested`, `flatten_options`, `flatten_results`, `chars_from_words`, `expand_ranges`, `flatten_to_depth_one`, `words_from_lines`, `flatten_and_filter`
+  - Added 68 tests covering nested vector flattening, Option/Result flattening, character extraction, range expansion, partial flattening, word extraction, filter after flatten, and integration tests (pipelines, text processing, combined operations)
+  - All tests passing including 8 doc tests
+  - Continues Module 4: Advanced Iterators (5/6 challenges)
+
 - Created `iterator-filtering` challenge (ID: 120)
   - Implemented 8 functions: `filter_even`, `filter_by_predicate`, `parse_valid_numbers`, `filter_map_with`, `take_while_positive`, `skip_while_negative`, `filter_in_range`, `first_matching`
   - Added 69 tests covering filter operations, filter_map, take_while/skip_while, range filtering, first matching element, and integration tests (chained filtering, parse then filter, filter_map chain, complex pipeline, custom structs)

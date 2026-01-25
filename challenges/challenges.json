@@ -1448,5 +1448,17 @@
     "tags": ["iterators", "filter", "filter_map", "take_while", "skip_while"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 121,
+    "title": "Iterator Flattening",
+    "slug": "iterator-flattening",
+    "short_description": "Process nested collections with flatten() and flat_map() to work with hierarchical data structures.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["iterators", "flatten", "flat_map", "nested", "collections"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]
