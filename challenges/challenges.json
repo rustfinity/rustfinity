@@ -1172,5 +1172,17 @@
     "tags": ["strings", "unicode", "utf-8", "chars", "bytes"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 98,
+    "title": "String Iterators",
+    "slug": "string-iterators",
+    "short_description": "Iterate over characters, words, and lines using Rust's string iterator methods.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "RUST_STD",
+    "tags": ["strings", "iterators", "chars", "lines", "split"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]

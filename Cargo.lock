@@ -1790,6 +1790,10 @@ name = "string-building"
 version = "0.1.0"
 
 [[package]]
+name = "string-iterators"
+version = "0.1.0"
+
+[[package]]
 name = "string-manipulation"
 version = "0.1.0"
 

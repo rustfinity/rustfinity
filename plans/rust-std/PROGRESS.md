@@ -2,7 +2,7 @@
 
 ## Completed Challenges
 
-### Module 1: String Operations (5/8 completed)
+### Module 1: String Operations (6/8 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
@@ -11,7 +11,7 @@
 | 3 | String Parsing | `string-parsing` | EASY | 95 | Done |
 | 4 | String Building | `string-building` | MEDIUM | 96 | Done |
 | 5 | Unicode and Graphemes | `unicode-operations` | MEDIUM | 97 | Done |
-| 6 | String Iterators | `string-iterators` | EASY | - | Pending |
+| 6 | String Iterators | `string-iterators` | EASY | 98 | Done |
 | 7 | String Patterns | `string-patterns` | MEDIUM | - | Pending |
 | 8 | OsString and Platform Strings | `osstring-basics` | MEDIUM | - | Pending |
 
@@ -107,13 +107,18 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 5
-- **Remaining**: 50
-- **Progress**: 9.1%
+- **Completed**: 6
+- **Remaining**: 49
+- **Progress**: 10.9%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `string-iterators` challenge (ID: 98)
+  - Implemented 6 functions: `chars_to_vec`, `words_to_vec`, `lines_to_vec`, `count_words`, `reverse_words`, `capitalize_words`
+  - Added 37 tests covering character iteration, word splitting, line splitting, word counting, word reversal, and word capitalization
+  - All tests passing including 6 doc tests
+
 - Created `unicode-operations` challenge (ID: 97)
   - Implemented 5 functions: `char_count`, `byte_count`, `safe_substring`, `char_at`, `is_single_char`
   - Added 32 tests covering ASCII, Cyrillic, Chinese, emojis, and edge cases (combining characters, ZWJ sequences)
