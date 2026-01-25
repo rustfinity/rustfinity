@@ -1256,5 +1256,17 @@
     "tags": ["collections", "iterators", "FromIterator", "IntoIterator", "collect"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 105,
+    "title": "BTreeSet Ranges",
+    "slug": "btreeset-ranges",
+    "short_description": "Master ordered sets with BTreeSet: range queries, finding closest elements, and efficient subset iteration.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["collections", "BTreeSet", "ordered-set", "range-queries", "Bound"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]
