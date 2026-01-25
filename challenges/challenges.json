@@ -1268,5 +1268,17 @@
     "tags": ["collections", "BTreeSet", "ordered-set", "range-queries", "Bound"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 106,
+    "title": "Entry API Pattern",
+    "slug": "entry-api",
+    "short_description": "Master HashMap's Entry API for efficient map updates: or_insert, or_insert_with, and_modify patterns.",
+    "language": "RUST",
+    "difficulty": "HARD",
+    "track": "RUST_STD",
+    "tags": ["collections", "HashMap", "Entry", "patterns", "caching"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]

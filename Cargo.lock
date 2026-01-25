@@ -428,6 +428,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "entry-api"
+version = "0.1.0"
+
+[[package]]
 name = "enums"
 version = "0.1.0"
 

@@ -15,7 +15,7 @@
 | 7 | String Patterns | `string-patterns` | MEDIUM | 99 | Done |
 | 8 | OsString and Platform Strings | `osstring-basics` | MEDIUM | 100 | Done |
 
-### Module 2: Collections (5/9 completed)
+### Module 2: Collections (6/9 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
@@ -24,7 +24,7 @@
 | 11 | VecDeque Usage | `vecdeque-queue` | MEDIUM | 103 | Done |
 | 12 | Collection Conversions | `collection-conversions` | MEDIUM | 104 | Done |
 | 13 | BTreeSet Ranges | `btreeset-ranges` | MEDIUM | 105 | Done |
-| 14 | Entry API Pattern | `entry-api` | HARD | - | Pending |
+| 14 | Entry API Pattern | `entry-api` | HARD | 106 | Done |
 | 15 | Binary Heap Operations | `binary-heap-priority` | MEDIUM | - | Pending |
 | 16 | LinkedList Usage | `linkedlist-basics` | EASY | - | Pending |
 | 17 | HashMap Advanced | `hashmap-advanced` | MEDIUM | - | Pending |
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 13
-- **Remaining**: 42
-- **Progress**: 23.6%
+- **Completed**: 14
+- **Remaining**: 41
+- **Progress**: 25.5%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `entry-api` challenge (ID: 106)
+  - Implemented 7 functions: `count_words`, `group_by_length`, `get_or_compute`, `increment_or_init`, `merge_maps`, `first_occurrence`, `update_or_default`
+  - Added 46 tests covering word counting, grouping by length, caching patterns, increment-or-init, map merging, first occurrence tracking, update-or-default, and integration tests
+  - All tests passing including 7 doc tests
+  - Continues Module 2: Collections (6/9 challenges)
+
 - Created `btreeset-ranges` challenge (ID: 105)
   - Implemented 8 functions: `create_number_set`, `get_range`, `get_range_inclusive`, `get_elements_before`, `get_elements_from`, `count_in_range`, `find_closest_less_than`, `find_closest_greater_than`
   - Added 50 tests covering set creation, half-open ranges, inclusive ranges, unbounded ranges, counting, finding closest elements, edge cases with negative numbers and empty sets, and integration tests
