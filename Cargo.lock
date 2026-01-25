@@ -1970,6 +1970,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "tempfile-operations"
+version = "0.1.0"
+
+[[package]]
 name = "the-as-ref-trait"
 version = "0.1.0"
 

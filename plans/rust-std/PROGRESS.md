@@ -29,7 +29,7 @@
 | 16 | LinkedList Usage | `linkedlist-basics` | EASY | 108 | Done |
 | 17 | HashMap Advanced | `hashmap-advanced` | MEDIUM | 109 | Done |
 
-### Module 3: File I/O and Paths (6/7 completed)
+### Module 3: File I/O and Paths (7/7 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
@@ -39,7 +39,7 @@
 | 21 | Directory Traversal | `directory-traversal` | MEDIUM | 113 | Done |
 | 22 | File Metadata | `file-metadata` | MEDIUM | 114 | Done |
 | 23 | Stdio Operations | `stdio-operations` | EASY | 115 | Done |
-| 24 | Temporary Files | `tempfile-operations` | MEDIUM | - | Pending |
+| 24 | Temporary Files | `tempfile-operations` | MEDIUM | 116 | Done |
 
 ### Module 4: Advanced Iterators (0/6 completed)
 
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 23
-- **Remaining**: 32
-- **Progress**: 41.8%
+- **Completed**: 24
+- **Remaining**: 31
+- **Progress**: 43.6%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `tempfile-operations` challenge (ID: 116)
+  - Implemented 6 functions/types: `get_temp_dir`, `create_temp_file`, `create_temp_file_with_content`, `TempFile` struct (with new/path/write/read/Drop), `create_temp_dir`, `cleanup_temp_files`
+  - Added 38 tests covering temp directory access, unique file creation, content writing, TempFile RAII pattern (automatic cleanup on drop), temp directory creation, batch cleanup with prefix matching, and integration tests (workflow, RAII, processing pipeline, batch creation, nested dirs, concurrent files)
+  - All tests passing including 10 doc tests
+  - Completes Module 3: File I/O and Paths (7/7 challenges)
+
 - Created `stdio-operations` challenge (ID: 115)
   - Implemented 6 functions: `read_line_from_reader`, `read_all_lines_from_reader`, `write_to_writer`, `writeln_to_writer`, `write_and_flush`, `write_error_to_writer`
   - Added 38 tests covering reading single/multiple lines, writing without/with newlines, flushing buffers, error formatting, Windows/Unix newlines, Unicode content, and integration tests (read-echo, prompt pattern, read-process-write, error handling, mixed operations, large input)

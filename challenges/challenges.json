@@ -1388,5 +1388,17 @@
     "tags": ["io", "stdin", "stdout", "stderr", "BufRead", "Write"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 116,
+    "title": "Temporary Files",
+    "slug": "tempfile-operations",
+    "short_description": "Work with temporary files and directories: creation, cleanup patterns, and RAII-style automatic deletion.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["io", "tempfile", "filesystem", "RAII", "Drop"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]
