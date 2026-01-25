@@ -20,6 +20,9 @@ RUN node --version && npm --version
 # Install Claude Code
 RUN npm install -g @anthropic-ai/claude-code
 
+# Run claude install
+RUN claude install
+
 # User ubuntu with UID 1000 already exists in the base image
 # Ensure home directory exists for the user
 RUN mkdir -p /home/ubuntu && chown -R 1000:1000 /home/ubuntu
