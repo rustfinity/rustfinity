@@ -1400,5 +1400,17 @@
     "tags": ["io", "tempfile", "filesystem", "RAII", "Drop"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 117,
+    "title": "Iterator Combinators",
+    "slug": "iterator-combinators",
+    "short_description": "Master iterator combinators: chain, zip, take, skip, rev, and create interleaved and sliding pair sequences.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "RUST_STD",
+    "tags": ["iterators", "combinators", "chain", "zip", "take", "skip", "rev"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]

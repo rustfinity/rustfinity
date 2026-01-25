@@ -41,11 +41,11 @@
 | 23 | Stdio Operations | `stdio-operations` | EASY | 115 | Done |
 | 24 | Temporary Files | `tempfile-operations` | MEDIUM | 116 | Done |
 
-### Module 4: Advanced Iterators (0/6 completed)
+### Module 4: Advanced Iterators (1/6 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
-| 25 | Iterator Combinators | `iterator-combinators` | EASY | - | Pending |
+| 25 | Iterator Combinators | `iterator-combinators` | EASY | 117 | Done |
 | 26 | Iterator Inspection | `iterator-inspection` | MEDIUM | - | Pending |
 | 27 | Fold and Scan | `fold-and-scan` | MEDIUM | - | Pending |
 | 28 | Iterator Filtering | `iterator-filtering` | EASY | - | Pending |
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 24
-- **Remaining**: 31
-- **Progress**: 43.6%
+- **Completed**: 25
+- **Remaining**: 30
+- **Progress**: 45.5%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `iterator-combinators` challenge (ID: 117)
+  - Implemented 7 functions: `chain_sequences`, `zip_pairs`, `take_first`, `skip_first`, `reverse_sequence`, `interleave`, `sliding_pairs`
+  - Added 55 tests covering chain operations, zip pairing, take/skip operations, reversal, interleaving with unequal lengths, sliding pairs, and integration tests (chain then take/skip, reverse then take, interleave then reverse, complex pipelines)
+  - All tests passing including 7 doc tests
+  - Begins Module 4: Advanced Iterators (1/6 challenges)
+
 - Created `tempfile-operations` challenge (ID: 116)
   - Implemented 6 functions/types: `get_temp_dir`, `create_temp_file`, `create_temp_file_with_content`, `TempFile` struct (with new/path/write/read/Drop), `create_temp_dir`, `cleanup_temp_files`
   - Added 38 tests covering temp directory access, unique file creation, content writing, TempFile RAII pattern (automatic cleanup on drop), temp directory creation, batch cleanup with prefix matching, and integration tests (workflow, RAII, processing pipeline, batch creation, nested dirs, concurrent files)
