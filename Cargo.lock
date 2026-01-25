@@ -478,6 +478,10 @@ name = "fibonacci"
 version = "0.1.0"
 
 [[package]]
+name = "file-metadata"
+version = "0.1.0"
+
+[[package]]
 name = "find-the-first-palindrome"
 version = "0.1.0"
 

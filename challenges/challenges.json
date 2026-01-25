@@ -1364,5 +1364,17 @@
     "tags": ["io", "files", "directories", "recursion", "std::fs"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 114,
+    "title": "File Metadata",
+    "slug": "file-metadata",
+    "short_description": "Learn to work with file metadata: get file size, type, permissions, modification times, and compare files.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["io", "files", "metadata", "permissions", "std::fs"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]

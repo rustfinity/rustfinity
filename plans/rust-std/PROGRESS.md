@@ -29,7 +29,7 @@
 | 16 | LinkedList Usage | `linkedlist-basics` | EASY | 108 | Done |
 | 17 | HashMap Advanced | `hashmap-advanced` | MEDIUM | 109 | Done |
 
-### Module 3: File I/O and Paths (4/7 completed)
+### Module 3: File I/O and Paths (5/7 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
@@ -37,7 +37,7 @@
 | 19 | Writing Files | `writing-files` | EASY | 111 | Done |
 | 20 | Path Operations | `path-operations` | EASY | 112 | Done |
 | 21 | Directory Traversal | `directory-traversal` | MEDIUM | 113 | Done |
-| 22 | File Metadata | `file-metadata` | MEDIUM | - | Pending |
+| 22 | File Metadata | `file-metadata` | MEDIUM | 114 | Done |
 | 23 | Stdio Operations | `stdio-operations` | EASY | - | Pending |
 | 24 | Temporary Files | `tempfile-operations` | MEDIUM | - | Pending |
 
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 21
-- **Remaining**: 34
-- **Progress**: 38.2%
+- **Completed**: 22
+- **Remaining**: 33
+- **Progress**: 40.0%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `file-metadata` challenge (ID: 114)
+  - Implemented 7 functions: `get_file_size`, `get_file_type`, `is_readonly`, `get_modified_time`, `was_modified_within`, `is_executable`, `compare_modified_times`
+  - Added 35 tests covering file size (empty, basic, large, binary), file type (file, directory, symlink), read-only permissions, modification times, time comparisons, executable detection (Unix permissions), and integration tests (file lifecycle, directory structure, multiple file comparison, permissions workflow)
+  - All tests passing including 7 doc tests
+  - Continues Module 3: File I/O and Paths (5/7 challenges)
+
 - Created `directory-traversal` challenge (ID: 113)
   - Implemented 7 functions: `list_files`, `list_directories`, `list_all_recursive`, `find_by_extension`, `find_by_name`, `calculate_dir_size`, `count_files_recursive`
   - Added 38 tests covering listing files/directories, recursive traversal, finding by extension/name, calculating directory sizes, counting files, and integration tests (complex structure, find all matches, size vs count)
