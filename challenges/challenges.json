@@ -1136,5 +1136,17 @@
     "tags": ["strings", "trim", "split", "replace", "search"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 95,
+    "title": "String Parsing",
+    "slug": "string-parsing",
+    "short_description": "Learn to parse strings into typed values using parse(), FromStr trait, and error handling.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "RUST_STD",
+    "tags": ["strings", "parsing", "FromStr", "Result", "error-handling"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]
