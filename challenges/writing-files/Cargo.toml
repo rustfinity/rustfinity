@@ -1,0 +1,4 @@
+[package]
+name = "writing-files"
+version = "0.1.0"
+edition = "2021"

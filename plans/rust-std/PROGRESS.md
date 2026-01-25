@@ -29,12 +29,12 @@
 | 16 | LinkedList Usage | `linkedlist-basics` | EASY | 108 | Done |
 | 17 | HashMap Advanced | `hashmap-advanced` | MEDIUM | 109 | Done |
 
-### Module 3: File I/O and Paths (1/7 completed)
+### Module 3: File I/O and Paths (2/7 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 18 | Reading Files | `reading-files` | BEGINNER | 110 | Done |
-| 19 | Writing Files | `writing-files` | EASY | - | Pending |
+| 19 | Writing Files | `writing-files` | EASY | 111 | Done |
 | 20 | Path Operations | `path-operations` | EASY | - | Pending |
 | 21 | Directory Traversal | `directory-traversal` | MEDIUM | - | Pending |
 | 22 | File Metadata | `file-metadata` | MEDIUM | - | Pending |
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 18
-- **Remaining**: 37
-- **Progress**: 32.7%
+- **Completed**: 19
+- **Remaining**: 36
+- **Progress**: 34.5%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `writing-files` challenge (ID: 111)
+  - Implemented 5 functions: `write_string`, `write_bytes`, `append_string`, `write_lines`, `write_with_buffer`
+  - Added 42 tests covering writing strings, bytes, appending, writing multiple lines, buffered writing, unicode content, overwriting files, error handling for invalid paths, and integration tests (write and append, string and bytes, lines and buffer, log file pattern, large buffered write)
+  - All tests passing including 5 doc tests
+  - Continues Module 3: File I/O and Paths (2/7 challenges)
+
 - Created `reading-files` challenge (ID: 110)
   - Implemented 5 functions: `read_entire_file`, `count_lines`, `count_words`, `read_lines`, `first_n_lines`
   - Added 34 tests covering reading entire files, counting lines/words, reading lines into Vec, first N lines, empty files, unicode content, and error handling for non-existent files
