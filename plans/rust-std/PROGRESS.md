@@ -41,12 +41,12 @@
 | 23 | Stdio Operations | `stdio-operations` | EASY | 115 | Done |
 | 24 | Temporary Files | `tempfile-operations` | MEDIUM | 116 | Done |
 
-### Module 4: Advanced Iterators (1/6 completed)
+### Module 4: Advanced Iterators (2/6 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 25 | Iterator Combinators | `iterator-combinators` | EASY | 117 | Done |
-| 26 | Iterator Inspection | `iterator-inspection` | MEDIUM | - | Pending |
+| 26 | Iterator Inspection | `iterator-inspection` | MEDIUM | 118 | Done |
 | 27 | Fold and Scan | `fold-and-scan` | MEDIUM | - | Pending |
 | 28 | Iterator Filtering | `iterator-filtering` | EASY | - | Pending |
 | 29 | Iterator Flattening | `iterator-flattening` | MEDIUM | - | Pending |
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 25
-- **Remaining**: 30
-- **Progress**: 45.5%
+- **Completed**: 26
+- **Remaining**: 29
+- **Progress**: 47.3%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `iterator-inspection` challenge (ID: 118)
+  - Implemented 7 functions: `indexed_elements`, `find_index`, `elements_with_next`, `group_consecutive_duplicates`, `find_first_repeated`, `collect_with_trace`, `sum_with_running_total`
+  - Added 55 tests covering enumerate-based indexing, find with index, peekable lookahead, consecutive duplicate grouping, first repeated element detection, inspect-based tracing, running totals, and integration tests (indexed find pattern, differences, longest run, trace pipeline, combined inspection, running total with trace)
+  - All tests passing including 7 doc tests
+  - Continues Module 4: Advanced Iterators (2/6 challenges)
+
 - Created `iterator-combinators` challenge (ID: 117)
   - Implemented 7 functions: `chain_sequences`, `zip_pairs`, `take_first`, `skip_first`, `reverse_sequence`, `interleave`, `sliding_pairs`
   - Added 55 tests covering chain operations, zip pairing, take/skip operations, reversal, interleaving with unequal lengths, sliding pairs, and integration tests (chain then take/skip, reverse then take, interleave then reverse, complex pipelines)

@@ -1412,5 +1412,17 @@
     "tags": ["iterators", "combinators", "chain", "zip", "take", "skip", "rev"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 118,
+    "title": "Iterator Inspection",
+    "slug": "iterator-inspection",
+    "short_description": "Learn iterator inspection methods: enumerate for indices, peekable for lookahead, and inspect for debugging.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["iterators", "enumerate", "peekable", "inspect", "debugging"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]

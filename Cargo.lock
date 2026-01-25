@@ -908,6 +908,10 @@ name = "iterator-combinators"
 version = "0.1.0"
 
 [[package]]
+name = "iterator-inspection"
+version = "0.1.0"
+
+[[package]]
 name = "iterators"
 version = "0.1.0"
 
