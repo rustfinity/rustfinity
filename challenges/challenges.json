@@ -1112,5 +1112,17 @@
     "tags": ["control flow", "algorithms", "path-finding"],
     "created_at": "2024-06-07T00:00:00Z",
     "updated_at": "2024-06-07T00:00:00Z"
+  },
+  {
+    "id": 93,
+    "title": "String Basics",
+    "slug": "string-basics",
+    "short_description": "Learn the difference between String and &str, and practice basic string operations in Rust.",
+    "language": "RUST",
+    "difficulty": "BEGINNER",
+    "track": "RUST_STD",
+    "tags": ["strings", "string-slice", "utf-8", "ascii"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]
