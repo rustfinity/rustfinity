@@ -1460,5 +1460,17 @@
     "tags": ["iterators", "flatten", "flat_map", "nested", "collections"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 122,
+    "title": "Custom Iterators",
+    "slug": "custom-iterators",
+    "short_description": "Implement the Iterator trait to create custom iterators: Fibonacci, StepRange, Collatz, Windows, and Unfold patterns.",
+    "language": "RUST",
+    "difficulty": "HARD",
+    "track": "RUST_STD",
+    "tags": ["iterators", "Iterator-trait", "next", "state-management", "custom-types"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]

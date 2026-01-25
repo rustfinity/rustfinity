@@ -41,7 +41,7 @@
 | 23 | Stdio Operations | `stdio-operations` | EASY | 115 | Done |
 | 24 | Temporary Files | `tempfile-operations` | MEDIUM | 116 | Done |
 
-### Module 4: Advanced Iterators (5/6 completed)
+### Module 4: Advanced Iterators (6/6 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
@@ -50,7 +50,7 @@
 | 27 | Fold and Scan | `fold-and-scan` | MEDIUM | 119 | Done |
 | 28 | Iterator Filtering | `iterator-filtering` | EASY | 120 | Done |
 | 29 | Iterator Flattening | `iterator-flattening` | MEDIUM | 121 | Done |
-| 30 | Custom Iterators | `custom-iterators` | HARD | - | Pending |
+| 30 | Custom Iterators | `custom-iterators` | HARD | 122 | Done |
 
 ### Module 5: Conversion Traits (0/6 completed)
 
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 29
-- **Remaining**: 26
-- **Progress**: 52.7%
+- **Completed**: 30
+- **Remaining**: 25
+- **Progress**: 54.5%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `custom-iterators` challenge (ID: 122)
+  - Implemented 6 custom iterator types: `Fibonacci`, `StepRange`, `CycleN<T>`, `Collatz`, `Windows<T>`, `Unfold<T, F>`
+  - Added 63 tests covering Fibonacci sequence (first N, skip/take, sum), StepRange (ascending/descending, edge cases), CycleN (repeat cycles, empty/single element), Collatz (various starting points, sequence length), Windows (overlapping slices, edge cases), Unfold (state-based generation, early termination), and integration tests (filter, chain, enumerate, zip, map)
+  - All tests passing including 6 doc tests
+  - Completes Module 4: Advanced Iterators (6/6 challenges)
+
 - Created `iterator-flattening` challenge (ID: 121)
   - Implemented 8 functions: `flatten_nested`, `flatten_options`, `flatten_results`, `chars_from_words`, `expand_ranges`, `flatten_to_depth_one`, `words_from_lines`, `flatten_and_filter`
   - Added 68 tests covering nested vector flattening, Option/Result flattening, character extraction, range expansion, partial flattening, word extraction, filter after flatten, and integration tests (pipelines, text processing, combined operations)
