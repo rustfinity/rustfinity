@@ -1,0 +1,43 @@
+FROM ubuntu:24.04
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    build-essential \
+    git \
+    pkg-config \
+    libssl-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Node.js (required for Claude Code)
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+    && apt-get install -y nodejs \
+    && rm -rf /var/lib/apt/lists/*
+
+# Verify Node.js installation
+RUN node --version && npm --version
+
+# Install Claude Code
+RUN npm install -g @anthropic-ai/claude-code
+
+# User ubuntu with UID 1000 already exists in the base image
+# Ensure home directory exists for the user
+RUN mkdir -p /home/ubuntu && chown -R 1000:1000 /home/ubuntu
+
+USER 1000:1000
+ENV HOME=/home/ubuntu
+
+# Install Rust toolchain as the ubuntu user
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain stable
+
+# Add Rust to PATH
+ENV PATH="/home/ubuntu/.cargo/bin:${PATH}"
+
+# Verify Rust installation
+RUN rustc --version && cargo --version
+
+# Configure git
+RUN git config --global user.name dcodesdev
+RUN git config --global user.email 101001810+dcodesdev@users.noreply.github.com
+
+WORKDIR /workspace
