@@ -1352,5 +1352,17 @@
     "tags": ["io", "paths", "Path", "PathBuf", "std::path"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 113,
+    "title": "Directory Traversal",
+    "slug": "directory-traversal",
+    "short_description": "Learn to traverse directory trees: list files, find by extension/name, calculate sizes, and count files recursively.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["io", "files", "directories", "recursion", "std::fs"],
+    "created_at": "2025-01-25T00:00:00Z",
+    "updated_at": "2025-01-25T00:00:00Z"
   }
 ]

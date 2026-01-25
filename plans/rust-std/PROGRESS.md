@@ -29,14 +29,14 @@
 | 16 | LinkedList Usage | `linkedlist-basics` | EASY | 108 | Done |
 | 17 | HashMap Advanced | `hashmap-advanced` | MEDIUM | 109 | Done |
 
-### Module 3: File I/O and Paths (3/7 completed)
+### Module 3: File I/O and Paths (4/7 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 18 | Reading Files | `reading-files` | BEGINNER | 110 | Done |
 | 19 | Writing Files | `writing-files` | EASY | 111 | Done |
 | 20 | Path Operations | `path-operations` | EASY | 112 | Done |
-| 21 | Directory Traversal | `directory-traversal` | MEDIUM | - | Pending |
+| 21 | Directory Traversal | `directory-traversal` | MEDIUM | 113 | Done |
 | 22 | File Metadata | `file-metadata` | MEDIUM | - | Pending |
 | 23 | Stdio Operations | `stdio-operations` | EASY | - | Pending |
 | 24 | Temporary Files | `tempfile-operations` | MEDIUM | - | Pending |
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 20
-- **Remaining**: 35
-- **Progress**: 36.4%
+- **Completed**: 21
+- **Remaining**: 34
+- **Progress**: 38.2%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `directory-traversal` challenge (ID: 113)
+  - Implemented 7 functions: `list_files`, `list_directories`, `list_all_recursive`, `find_by_extension`, `find_by_name`, `calculate_dir_size`, `count_files_recursive`
+  - Added 38 tests covering listing files/directories, recursive traversal, finding by extension/name, calculating directory sizes, counting files, and integration tests (complex structure, find all matches, size vs count)
+  - All tests passing including 7 doc tests
+  - Continues Module 3: File I/O and Paths (4/7 challenges)
+
 - Created `path-operations` challenge (ID: 112)
   - Implemented 8 functions: `join_paths`, `get_extension`, `get_file_name`, `get_file_stem`, `get_parent`, `change_extension`, `is_absolute`, `normalize_path`
   - Added 53 tests covering path joining, extension extraction, file name/stem retrieval, parent directory, extension modification, absolute path detection, normalization, and integration tests
