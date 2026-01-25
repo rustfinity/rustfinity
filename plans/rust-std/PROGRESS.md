@@ -41,14 +41,14 @@
 | 23 | Stdio Operations | `stdio-operations` | EASY | 115 | Done |
 | 24 | Temporary Files | `tempfile-operations` | MEDIUM | 116 | Done |
 
-### Module 4: Advanced Iterators (3/6 completed)
+### Module 4: Advanced Iterators (4/6 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 25 | Iterator Combinators | `iterator-combinators` | EASY | 117 | Done |
 | 26 | Iterator Inspection | `iterator-inspection` | MEDIUM | 118 | Done |
 | 27 | Fold and Scan | `fold-and-scan` | MEDIUM | 119 | Done |
-| 28 | Iterator Filtering | `iterator-filtering` | EASY | - | Pending |
+| 28 | Iterator Filtering | `iterator-filtering` | EASY | 120 | Done |
 | 29 | Iterator Flattening | `iterator-flattening` | MEDIUM | - | Pending |
 | 30 | Custom Iterators | `custom-iterators` | HARD | - | Pending |
 
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 27
-- **Remaining**: 28
-- **Progress**: 49.1%
+- **Completed**: 28
+- **Remaining**: 27
+- **Progress**: 50.9%
 
 ## Changelog
 
 ### 2025-01-25
+- Created `iterator-filtering` challenge (ID: 120)
+  - Implemented 8 functions: `filter_even`, `filter_by_predicate`, `parse_valid_numbers`, `filter_map_with`, `take_while_positive`, `skip_while_negative`, `filter_in_range`, `first_matching`
+  - Added 69 tests covering filter operations, filter_map, take_while/skip_while, range filtering, first matching element, and integration tests (chained filtering, parse then filter, filter_map chain, complex pipeline, custom structs)
+  - All tests passing including 8 doc tests
+  - Continues Module 4: Advanced Iterators (4/6 challenges)
+
 - Created `fold-and-scan` challenge (ID: 119)
   - Implemented 8 functions: `sum_with_fold`, `product_with_fold`, `concat_strings`, `running_sum`, `running_max`, `take_while_sum_under`, `count_occurrences`, `running_average`
   - Added 62 tests covering fold-based sum/product/concat/count, scan-based running sum/max/average, early termination with take_while_sum_under, and integration tests (fold-scan equivalence, monotonic running max, complex pipelines, custom types)
