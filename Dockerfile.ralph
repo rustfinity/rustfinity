@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Node.js (required for Claude Code)
+# Install Node.js (includes npm)
 RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
     && apt-get install -y nodejs \
     && rm -rf /var/lib/apt/lists/*
@@ -23,6 +23,10 @@ RUN npm install -g @anthropic-ai/claude-code
 # Run claude install
 RUN claude install
 
+# Make claude accessible to all users by copying to /usr/local/bin
+RUN cp -r /root/.local/share/claude /usr/local/share/ && \
+    ln -sf /usr/local/share/claude/versions/2.1.19 /usr/local/bin/claude
+
 # User ubuntu with UID 1000 already exists in the base image
 # Ensure home directory exists for the user
 RUN mkdir -p /home/ubuntu && chown -R 1000:1000 /home/ubuntu
@@ -30,11 +34,11 @@ RUN mkdir -p /home/ubuntu && chown -R 1000:1000 /home/ubuntu
 USER 1000:1000
 ENV HOME=/home/ubuntu
 
-# Install Rust toolchain as the ubuntu user
+# Install Rust toolchain as ubuntu user
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain stable
 
-# Add Rust to PATH
-ENV PATH="/home/ubuntu/.cargo/bin:${PATH}"
+# Make Claude Code and Rust available to ubuntu user
+ENV PATH="/root/.local/bin:/home/ubuntu/.cargo/bin:${PATH}"
 
 # Verify Rust installation
 RUN rustc --version && cargo --version
@@ -44,3 +48,6 @@ RUN git config --global user.name dcodesdev
 RUN git config --global user.email 101001810+dcodesdev@users.noreply.github.com
 
 WORKDIR /workspace
+
+# Default command
+CMD ["/bin/bash"]
