@@ -1496,5 +1496,17 @@
     "tags": ["conversion-traits", "TryFrom", "TryInto", "fallible-conversion", "Result", "error-handling"],
     "created_at": "2025-01-26T00:00:00Z",
     "updated_at": "2025-01-26T00:00:00Z"
+  },
+  {
+    "id": 125,
+    "title": "AsRef and AsMut",
+    "slug": "asref-asmut",
+    "short_description": "Learn AsRef and AsMut traits for cheap reference-to-reference conversions, enabling generic functions that accept multiple types.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["conversion-traits", "AsRef", "AsMut", "borrowing", "generics", "references"],
+    "created_at": "2025-01-26T00:00:00Z",
+    "updated_at": "2025-01-26T00:00:00Z"
   }
 ]

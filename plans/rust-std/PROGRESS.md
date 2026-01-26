@@ -52,13 +52,13 @@
 | 29 | Iterator Flattening | `iterator-flattening` | MEDIUM | 121 | Done |
 | 30 | Custom Iterators | `custom-iterators` | HARD | 122 | Done |
 
-### Module 5: Conversion Traits (2/6 completed)
+### Module 5: Conversion Traits (3/6 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 31 | From and Into Traits | `from-into-traits` | EASY | 123 | Done |
 | 32 | TryFrom and TryInto | `tryfrom-tryinto` | MEDIUM | 124 | Done |
-| 33 | AsRef and AsMut | `asref-asmut` | MEDIUM | - | Pending |
+| 33 | AsRef and AsMut | `asref-asmut` | MEDIUM | 125 | Done |
 | 34 | Borrow and ToOwned | `borrow-toowned` | MEDIUM | - | Pending |
 | 35 | Deref and DerefMut | `deref-derefmut` | HARD | - | Pending |
 | 36 | ToString and Display | `tostring-display` | EASY | - | Pending |
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 32
-- **Remaining**: 23
-- **Progress**: 58.2%
+- **Completed**: 33
+- **Remaining**: 22
+- **Progress**: 60.0%
 
 ## Changelog
 
 ### 2025-01-26
+- Created `asref-asmut` challenge (ID: 125)
+  - Implemented 8 functions/types demonstrating AsRef and AsMut traits: `string_length`, `slice_sum`, `contains_element`, `double_all`, `Text` struct (with AsRef<str>, AsRef<[u8]>, AsMut<String>), `print_as_uppercase`, `append_value`, `get_extension`
+  - Added 57 tests covering string operations with &str/String, slice operations with arrays/vecs, mutable slice modifications, Text type multiple AsRef implementations, path extension extraction, and integration tests (chained operations, text modification, generic function flexibility, path various types)
+  - All tests passing including 8 doc tests
+  - Continues Module 5: Conversion Traits (3/6 challenges)
+
 - Created `tryfrom-tryinto` challenge (ID: 124)
   - Implemented 5 wrapper types with TryFrom: PositiveNumber (validates >0), Percentage (0-100), NonEmptyString (from String and &str), EvenNumber (even validation), AsciiChar (from char and u8)
   - Added 62 tests covering validation success/failure for all types, try_into usage, error messages, edge cases (zero, min/max values, empty strings, non-ASCII chars), and integration tests (chained conversions, Result combinators, collecting results)
