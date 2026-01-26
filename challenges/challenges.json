@@ -1508,5 +1508,17 @@
     "tags": ["conversion-traits", "AsRef", "AsMut", "borrowing", "generics", "references"],
     "created_at": "2025-01-26T00:00:00Z",
     "updated_at": "2025-01-26T00:00:00Z"
+  },
+  {
+    "id": 126,
+    "title": "Borrow and ToOwned",
+    "slug": "borrow-toowned",
+    "short_description": "Master Borrow and ToOwned traits for owned vs borrowed patterns, and use Cow for efficient copy-on-write data handling.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["conversion-traits", "Borrow", "ToOwned", "Cow", "clone-on-write", "HashMap"],
+    "created_at": "2025-01-26T00:00:00Z",
+    "updated_at": "2025-01-26T00:00:00Z"
   }
 ]

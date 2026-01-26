@@ -52,14 +52,14 @@
 | 29 | Iterator Flattening | `iterator-flattening` | MEDIUM | 121 | Done |
 | 30 | Custom Iterators | `custom-iterators` | HARD | 122 | Done |
 
-### Module 5: Conversion Traits (3/6 completed)
+### Module 5: Conversion Traits (4/6 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 31 | From and Into Traits | `from-into-traits` | EASY | 123 | Done |
 | 32 | TryFrom and TryInto | `tryfrom-tryinto` | MEDIUM | 124 | Done |
 | 33 | AsRef and AsMut | `asref-asmut` | MEDIUM | 125 | Done |
-| 34 | Borrow and ToOwned | `borrow-toowned` | MEDIUM | - | Pending |
+| 34 | Borrow and ToOwned | `borrow-toowned` | MEDIUM | 126 | Done |
 | 35 | Deref and DerefMut | `deref-derefmut` | HARD | - | Pending |
 | 36 | ToString and Display | `tostring-display` | EASY | - | Pending |
 
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 33
-- **Remaining**: 22
-- **Progress**: 60.0%
+- **Completed**: 34
+- **Remaining**: 21
+- **Progress**: 61.8%
 
 ## Changelog
 
 ### 2025-01-26
+- Created `borrow-toowned` challenge (ID: 126)
+  - Implemented 8 functions/types demonstrating Borrow, ToOwned, and Cow: `lookup` (generic HashMap lookup using Borrow), `make_owned` (str to String with ToOwned), `normalize_whitespace` (Cow for whitespace normalization), `ensure_prefix` (Cow for prefix handling), `CaseInsensitiveString` (custom type with Borrow<str>, Hash, Eq), `append_if_missing` (Cow for slice operations), `normalize_path` (Cow for path normalization), `to_owned_vec` (slice to Vec with ToOwned)
+  - Added 64 tests covering HashMap lookups with borrowed keys, ToOwned conversions, Cow borrowed/owned variants, case-insensitive string equality/hashing in HashMap, slice append operations, path normalization, and integration tests (lookup with owned/borrowed, Cow modifications, prefix chaining, case-insensitive word count, append multiple, path normalization with prefix, to_owned and modify, Borrow trait semantics)
+  - All tests passing including 8 doc tests
+  - Continues Module 5: Conversion Traits (4/6 challenges)
+
 - Created `asref-asmut` challenge (ID: 125)
   - Implemented 8 functions/types demonstrating AsRef and AsMut traits: `string_length`, `slice_sum`, `contains_element`, `double_all`, `Text` struct (with AsRef<str>, AsRef<[u8]>, AsMut<String>), `print_as_uppercase`, `append_value`, `get_extension`
   - Added 57 tests covering string operations with &str/String, slice operations with arrays/vecs, mutable slice modifications, Text type multiple AsRef implementations, path extension extraction, and integration tests (chained operations, text modification, generic function flexibility, path various types)
