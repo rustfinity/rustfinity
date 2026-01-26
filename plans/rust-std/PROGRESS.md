@@ -63,12 +63,12 @@
 | 35 | Deref and DerefMut | `deref-derefmut` | HARD | 128 | Done |
 | 36 | ToString and Display | `tostring-display` | EASY | 127 | Done |
 
-### Module 6: Time and Environment (1/4 completed)
+### Module 6: Time and Environment (2/4 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 37 | Duration Operations | `duration-operations` | EASY | 129 | Done |
-| 38 | SystemTime Usage | `systemtime-usage` | MEDIUM | - | Pending |
+| 38 | SystemTime Usage | `systemtime-usage` | MEDIUM | 130 | Done |
 | 39 | Environment Variables | `env-variables` | EASY | - | Pending |
 | 40 | Process and Exit | `process-exit` | MEDIUM | - | Pending |
 
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 37
-- **Remaining**: 18
-- **Progress**: 67.3%
+- **Completed**: 38
+- **Remaining**: 17
+- **Progress**: 69.1%
 
 ## Changelog
 
 ### 2025-01-26
+- Created `systemtime-usage` challenge (ID: 130)
+  - Implemented 8 functions demonstrating std::time::SystemTime: `current_unix_timestamp` (get current timestamp), `from_unix_timestamp` (create SystemTime from u64), `to_unix_timestamp` (convert to u64 with Option), `seconds_between` (calculate difference with Option), `is_in_past` (check if before now), `is_in_future` (check if after now), `add_seconds` (add seconds to a SystemTime), `time_until` (get Duration until deadline with Option)
+  - Added 44 tests covering current_unix_timestamp (reasonable/consistent), from_unix_timestamp (zero/one/typical/large), to_unix_timestamp (epoch/one second/typical/round trip/truncates), seconds_between (same time/one/many/wrong order/from epoch/large gap/truncates), is_in_past (epoch/old date/year 2020/far future), is_in_future (epoch/old date/far future/year 2200), add_seconds (zero/one/many/to epoch/large/preserves subseconds), time_until (past/epoch/future/far future), and integration tests (round trip, add and compare, past/future consistency, time until and add, seconds between and to_timestamp, chain add, current to systemtime, seconds between epoch and now)
+  - All tests passing including 8 doc tests
+  - Continues Module 6: Time and Environment (2/4 challenges)
+
 - Created `duration-operations` challenge (ID: 129)
   - Implemented 8 functions demonstrating std::time::Duration: `from_minutes` (create Duration from minutes), `from_hours` (create Duration from hours), `to_minutes` (convert Duration to minutes), `to_hours` (convert Duration to hours), `format_duration` (format as "Xh Ym Zs"), `add_durations` (sum slice of Durations), `average_duration` (average of Durations with Option), `is_longer_than` (compare two Durations)
   - Added 63 tests covering from_minutes (zero/one/30/60/large), from_hours (zero/one/two/24/large), to_minutes (zero/one minute/partial/exact/large/with millis), to_hours (zero/one hour/partial/exact/large/less than hour), format_duration (zero/seconds only/minutes and seconds/hours minutes seconds/edge cases), add_durations (empty/single/multiple/with zero/all same/with millis), average_duration (empty/single/multiple/even/preserves precision/all zeros/with millis), is_longer_than (true/false equal/false shorter/zero/millis/nanos), and integration tests (round trips, format consistency, add/average relationship, mixed units, edge cases)
