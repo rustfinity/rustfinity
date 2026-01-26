@@ -52,12 +52,12 @@
 | 29 | Iterator Flattening | `iterator-flattening` | MEDIUM | 121 | Done |
 | 30 | Custom Iterators | `custom-iterators` | HARD | 122 | Done |
 
-### Module 5: Conversion Traits (1/6 completed)
+### Module 5: Conversion Traits (2/6 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 31 | From and Into Traits | `from-into-traits` | EASY | 123 | Done |
-| 32 | TryFrom and TryInto | `tryfrom-tryinto` | MEDIUM | - | Pending |
+| 32 | TryFrom and TryInto | `tryfrom-tryinto` | MEDIUM | 124 | Done |
 | 33 | AsRef and AsMut | `asref-asmut` | MEDIUM | - | Pending |
 | 34 | Borrow and ToOwned | `borrow-toowned` | MEDIUM | - | Pending |
 | 35 | Deref and DerefMut | `deref-derefmut` | HARD | - | Pending |
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 31
-- **Remaining**: 24
-- **Progress**: 56.4%
+- **Completed**: 32
+- **Remaining**: 23
+- **Progress**: 58.2%
 
 ## Changelog
 
 ### 2025-01-26
+- Created `tryfrom-tryinto` challenge (ID: 124)
+  - Implemented 5 wrapper types with TryFrom: PositiveNumber (validates >0), Percentage (0-100), NonEmptyString (from String and &str), EvenNumber (even validation), AsciiChar (from char and u8)
+  - Added 62 tests covering validation success/failure for all types, try_into usage, error messages, edge cases (zero, min/max values, empty strings, non-ASCII chars), and integration tests (chained conversions, Result combinators, collecting results)
+  - All tests passing including 5 doc tests
+  - Continues Module 5: Conversion Traits (2/6 challenges)
+
 - Created `from-into-traits` challenge (ID: 123)
   - Implemented 5 conversion type pairs: Celsius/Fahrenheit, Rgb/HexColor, Email from &str and String, Point2D to Point3D, generic Wrapper<T>
   - Added 47 tests covering temperature conversions (freezing/boiling/body temp, round-trips), RGB to hex (colors, leading zeros), Email from various sources, Point2D to Point3D, and generic Wrapper with various types (integers, strings, custom structs, Option, Result)
