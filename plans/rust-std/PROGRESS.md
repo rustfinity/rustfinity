@@ -52,7 +52,7 @@
 | 29 | Iterator Flattening | `iterator-flattening` | MEDIUM | 121 | Done |
 | 30 | Custom Iterators | `custom-iterators` | HARD | 122 | Done |
 
-### Module 5: Conversion Traits (4/6 completed)
+### Module 5: Conversion Traits (5/6 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
@@ -61,7 +61,7 @@
 | 33 | AsRef and AsMut | `asref-asmut` | MEDIUM | 125 | Done |
 | 34 | Borrow and ToOwned | `borrow-toowned` | MEDIUM | 126 | Done |
 | 35 | Deref and DerefMut | `deref-derefmut` | HARD | - | Pending |
-| 36 | ToString and Display | `tostring-display` | EASY | - | Pending |
+| 36 | ToString and Display | `tostring-display` | EASY | 127 | Done |
 
 ### Module 6: Time and Environment (0/4 completed)
 
@@ -107,13 +107,20 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 34
-- **Remaining**: 21
-- **Progress**: 61.8%
+- **Completed**: 35
+- **Remaining**: 20
+- **Progress**: 63.6%
 
 ## Changelog
 
 ### 2025-01-26
+- Created `tostring-display` challenge (ID: 127)
+  - Implemented 5 types with Display trait: `Point` (2D coordinate formatting), `Color` (enum with named colors and RGB), `Temperature` (Celsius/Fahrenheit with degree symbol), `Money` (currency formatting with USD/EUR symbols), `Person` (name and age formatting)
+  - Implemented 2 utility functions: `list_to_string<T: Display>` (generic slice to bracketed comma-separated string), `format_table` (headers and rows to text table with separators)
+  - Added 57 tests covering Point (positive/negative/zero/large coords), Color (named and custom RGB), Temperature (integer/decimal/negative for both units), Money (USD/EUR/other currencies, negative amounts, cents-only), Person (basic/zero age/long names), list_to_string (empty/single/many elements, custom types), format_table (basic/single row/empty/multi-column), and integration tests (combined Display usage, trait objects, format macro equivalence)
+  - All tests passing including 7 doc tests
+  - Continues Module 5: Conversion Traits (5/6 challenges)
+
 - Created `borrow-toowned` challenge (ID: 126)
   - Implemented 8 functions/types demonstrating Borrow, ToOwned, and Cow: `lookup` (generic HashMap lookup using Borrow), `make_owned` (str to String with ToOwned), `normalize_whitespace` (Cow for whitespace normalization), `ensure_prefix` (Cow for prefix handling), `CaseInsensitiveString` (custom type with Borrow<str>, Hash, Eq), `append_if_missing` (Cow for slice operations), `normalize_path` (Cow for path normalization), `to_owned_vec` (slice to Vec with ToOwned)
   - Added 64 tests covering HashMap lookups with borrowed keys, ToOwned conversions, Cow borrowed/owned variants, case-insensitive string equality/hashing in HashMap, slice append operations, path normalization, and integration tests (lookup with owned/borrowed, Cow modifications, prefix chaining, case-insensitive word count, append multiple, path normalization with prefix, to_owned and modify, Borrow trait semantics)

@@ -1520,5 +1520,17 @@
     "tags": ["conversion-traits", "Borrow", "ToOwned", "Cow", "clone-on-write", "HashMap"],
     "created_at": "2025-01-26T00:00:00Z",
     "updated_at": "2025-01-26T00:00:00Z"
+  },
+  {
+    "id": 127,
+    "title": "ToString and Display",
+    "slug": "tostring-display",
+    "short_description": "Learn the Display trait for user-facing output and how ToString is automatically implemented when you implement Display.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "RUST_STD",
+    "tags": ["conversion-traits", "Display", "ToString", "formatting", "traits"],
+    "created_at": "2025-01-26T00:00:00Z",
+    "updated_at": "2025-01-26T00:00:00Z"
   }
 ]
