@@ -63,13 +63,13 @@
 | 35 | Deref and DerefMut | `deref-derefmut` | HARD | 128 | Done |
 | 36 | ToString and Display | `tostring-display` | EASY | 127 | Done |
 
-### Module 6: Time and Environment (2/4 completed)
+### Module 6: Time and Environment (3/4 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 37 | Duration Operations | `duration-operations` | EASY | 129 | Done |
 | 38 | SystemTime Usage | `systemtime-usage` | MEDIUM | 130 | Done |
-| 39 | Environment Variables | `env-variables` | EASY | - | Pending |
+| 39 | Environment Variables | `env-variables` | EASY | 131 | Done |
 | 40 | Process and Exit | `process-exit` | MEDIUM | - | Pending |
 
 ### Module 7: Number Handling (0/4 completed)
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 38
-- **Remaining**: 17
-- **Progress**: 69.1%
+- **Completed**: 39
+- **Remaining**: 16
+- **Progress**: 70.9%
 
 ## Changelog
 
 ### 2025-01-26
+- Created `env-variables` challenge (ID: 131)
+  - Implemented 8 functions demonstrating std::env: `get_env_var` (retrieve env var as Option), `get_env_var_or_default` (with fallback value), `get_multiple_env_vars` (batch retrieval returning Vec of key-value pairs), `parse_env_var<T: FromStr>` (generic parsing), `get_args` (command-line arguments as Vec), `get_current_dir` (current working directory), `get_current_exe_name` (executable file name only), `env_var_is_set` (check if variable exists)
+  - Added 47 tests covering get_env_var (exists/not exists/empty/spaces/special chars/unicode), get_env_var_or_default (exists/not exists/empty value/empty default/complex default), get_multiple_env_vars (all exist/some missing/all missing/empty slice/single/preserves order), parse_env_var (u16/bool true/false/i32 negative/f64/missing/invalid format/overflow/string/char/multi-char fails), get_args (not empty/first is string), get_current_dir (exists/not empty/valid path), get_current_exe_name (exists/not empty/no path separator), env_var_is_set (true/false/empty string/after remove), and integration tests (set-get-parse workflow, multiple vars workflow, config pattern, environment info, var lifecycle, path-like value, URL value)
+  - All tests passing including 8 doc tests
+  - Continues Module 6: Time and Environment (3/4 challenges)
+
 - Created `systemtime-usage` challenge (ID: 130)
   - Implemented 8 functions demonstrating std::time::SystemTime: `current_unix_timestamp` (get current timestamp), `from_unix_timestamp` (create SystemTime from u64), `to_unix_timestamp` (convert to u64 with Option), `seconds_between` (calculate difference with Option), `is_in_past` (check if before now), `is_in_future` (check if after now), `add_seconds` (add seconds to a SystemTime), `time_until` (get Duration until deadline with Option)
   - Added 44 tests covering current_unix_timestamp (reasonable/consistent), from_unix_timestamp (zero/one/typical/large), to_unix_timestamp (epoch/one second/typical/round trip/truncates), seconds_between (same time/one/many/wrong order/from epoch/large gap/truncates), is_in_past (epoch/old date/year 2020/far future), is_in_future (epoch/old date/far future/year 2200), add_seconds (zero/one/many/to epoch/large/preserves subseconds), time_until (past/epoch/future/far future), and integration tests (round trip, add and compare, past/future consistency, time until and add, seconds between and to_timestamp, chain add, current to systemtime, seconds between epoch and now)

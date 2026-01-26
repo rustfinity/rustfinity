@@ -1568,5 +1568,17 @@
     "tags": ["time", "SystemTime", "UNIX_EPOCH", "timestamps", "std"],
     "created_at": "2025-01-26T00:00:00Z",
     "updated_at": "2025-01-26T00:00:00Z"
+  },
+  {
+    "id": 131,
+    "title": "Environment Variables",
+    "slug": "env-variables",
+    "short_description": "Learn to read environment variables, parse configuration values, and access process information using std::env.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "RUST_STD",
+    "tags": ["environment", "env", "configuration", "args", "process", "std"],
+    "created_at": "2025-01-26T00:00:00Z",
+    "updated_at": "2025-01-26T00:00:00Z"
   }
 ]
