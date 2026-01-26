@@ -63,14 +63,14 @@
 | 35 | Deref and DerefMut | `deref-derefmut` | HARD | 128 | Done |
 | 36 | ToString and Display | `tostring-display` | EASY | 127 | Done |
 
-### Module 6: Time and Environment (3/4 completed)
+### Module 6: Time and Environment (4/4 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 37 | Duration Operations | `duration-operations` | EASY | 129 | Done |
 | 38 | SystemTime Usage | `systemtime-usage` | MEDIUM | 130 | Done |
 | 39 | Environment Variables | `env-variables` | EASY | 131 | Done |
-| 40 | Process and Exit | `process-exit` | MEDIUM | - | Pending |
+| 40 | Process and Exit | `process-exit` | MEDIUM | 132 | Done |
 
 ### Module 7: Number Handling (0/4 completed)
 
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 39
-- **Remaining**: 16
-- **Progress**: 70.9%
+- **Completed**: 40
+- **Remaining**: 15
+- **Progress**: 72.7%
 
 ## Changelog
 
 ### 2025-01-26
+- Created `process-exit` challenge (ID: 132)
+  - Implemented 8 functions demonstrating std::process: `get_process_id` (returns current PID), `exit_code_success` (returns ExitCode::SUCCESS), `exit_code_failure` (returns ExitCode::FAILURE), `exit_code_from_u8` (converts u8 to ExitCode), `is_success_code` (checks if exit code is 0), `is_failure_code` (checks if exit code is non-zero), `describe_exit_code` (returns description for common Unix exit codes), `validate_exit_code` (validates Optional exit code returning Result)
+  - Added 48 tests covering get_process_id (positive/consistent/reasonable), exit_code_success (returns success/is standard), exit_code_failure (returns failure/is standard/different from success), exit_code_from_u8 (zero/one/custom/max/common codes), is_success_code (zero/one/various/boundary), is_failure_code (zero/one/various/boundary), success and failure mutually exclusive, describe_exit_code (all known codes: 0/1/2/126/127/128/130, unknown codes small/large/medium), validate_exit_code (success/failure codes/none/returns code/various failures), and integration tests (exit code workflow, failed command workflow, success-failure consistency, describe all known codes, exit codes match standard, process info, error handling pattern)
+  - All tests passing including 8 doc tests
+  - Completes Module 6: Time and Environment (4/4 challenges)
+
 - Created `env-variables` challenge (ID: 131)
   - Implemented 8 functions demonstrating std::env: `get_env_var` (retrieve env var as Option), `get_env_var_or_default` (with fallback value), `get_multiple_env_vars` (batch retrieval returning Vec of key-value pairs), `parse_env_var<T: FromStr>` (generic parsing), `get_args` (command-line arguments as Vec), `get_current_dir` (current working directory), `get_current_exe_name` (executable file name only), `env_var_is_set` (check if variable exists)
   - Added 47 tests covering get_env_var (exists/not exists/empty/spaces/special chars/unicode), get_env_var_or_default (exists/not exists/empty value/empty default/complex default), get_multiple_env_vars (all exist/some missing/all missing/empty slice/single/preserves order), parse_env_var (u16/bool true/false/i32 negative/f64/missing/invalid format/overflow/string/char/multi-char fails), get_args (not empty/first is string), get_current_dir (exists/not empty/valid path), get_current_exe_name (exists/not empty/no path separator), env_var_is_set (true/false/empty string/after remove), and integration tests (set-get-parse workflow, multiple vars workflow, config pattern, environment info, var lifecycle, path-like value, URL value)
