@@ -52,7 +52,7 @@
 | 29 | Iterator Flattening | `iterator-flattening` | MEDIUM | 121 | Done |
 | 30 | Custom Iterators | `custom-iterators` | HARD | 122 | Done |
 
-### Module 5: Conversion Traits (5/6 completed)
+### Module 5: Conversion Traits (6/6 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
@@ -60,7 +60,7 @@
 | 32 | TryFrom and TryInto | `tryfrom-tryinto` | MEDIUM | 124 | Done |
 | 33 | AsRef and AsMut | `asref-asmut` | MEDIUM | 125 | Done |
 | 34 | Borrow and ToOwned | `borrow-toowned` | MEDIUM | 126 | Done |
-| 35 | Deref and DerefMut | `deref-derefmut` | HARD | - | Pending |
+| 35 | Deref and DerefMut | `deref-derefmut` | HARD | 128 | Done |
 | 36 | ToString and Display | `tostring-display` | EASY | 127 | Done |
 
 ### Module 6: Time and Environment (0/4 completed)
@@ -107,13 +107,20 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 35
-- **Remaining**: 20
-- **Progress**: 63.6%
+- **Completed**: 36
+- **Remaining**: 19
+- **Progress**: 65.5%
 
 ## Changelog
 
 ### 2025-01-26
+- Created `deref-derefmut` challenge (ID: 128)
+  - Implemented 4 wrapper types demonstrating Deref and DerefMut: `MyBox<T>` (simple wrapper with both Deref and DerefMut), `CachedValue<T>` (tracks access count using Cell for interior mutability), `NonEmptyVec<T>` (Vec wrapper guaranteeing at least one element, derefs to slice), `UppercaseString` (string wrapper maintaining uppercase invariant, only Deref, no DerefMut)
+  - Implemented 1 utility function: `describe_length<T: Deref<Target = str>>` (generic function demonstrating deref coercion)
+  - Added 51 tests covering MyBox (deref/derefmut for integers/strings, deref coercion, nested boxes, clone), CachedValue (access counting, preserving value, various types), NonEmptyVec (construction, push, first_guaranteed methods, slice operations via Deref, mutable operations via DerefMut, sort/binary_search), UppercaseString (basic, mixed case, unicode, deref methods, clone, equality), describe_length (with String, Box<str>, UppercaseString), and integration tests (nested deref, cached uppercase, deref coercion chains)
+  - All tests passing including 5 doc tests
+  - Completes Module 5: Conversion Traits (6/6 challenges)
+
 - Created `tostring-display` challenge (ID: 127)
   - Implemented 5 types with Display trait: `Point` (2D coordinate formatting), `Color` (enum with named colors and RGB), `Temperature` (Celsius/Fahrenheit with degree symbol), `Money` (currency formatting with USD/EUR symbols), `Person` (name and age formatting)
   - Implemented 2 utility functions: `list_to_string<T: Display>` (generic slice to bracketed comma-separated string), `format_table` (headers and rows to text table with separators)

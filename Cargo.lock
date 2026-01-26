@@ -395,6 +395,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "deref-derefmut"
+version = "0.1.0"
+
+[[package]]
 name = "derive-debug-for-structs"
 version = "0.1.0"
 
