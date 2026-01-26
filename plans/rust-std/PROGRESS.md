@@ -52,11 +52,11 @@
 | 29 | Iterator Flattening | `iterator-flattening` | MEDIUM | 121 | Done |
 | 30 | Custom Iterators | `custom-iterators` | HARD | 122 | Done |
 
-### Module 5: Conversion Traits (0/6 completed)
+### Module 5: Conversion Traits (1/6 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
-| 31 | From and Into Traits | `from-into-traits` | EASY | - | Pending |
+| 31 | From and Into Traits | `from-into-traits` | EASY | 123 | Done |
 | 32 | TryFrom and TryInto | `tryfrom-tryinto` | MEDIUM | - | Pending |
 | 33 | AsRef and AsMut | `asref-asmut` | MEDIUM | - | Pending |
 | 34 | Borrow and ToOwned | `borrow-toowned` | MEDIUM | - | Pending |
@@ -107,11 +107,18 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 30
-- **Remaining**: 25
-- **Progress**: 54.5%
+- **Completed**: 31
+- **Remaining**: 24
+- **Progress**: 56.4%
 
 ## Changelog
+
+### 2025-01-26
+- Created `from-into-traits` challenge (ID: 123)
+  - Implemented 5 conversion type pairs: Celsius/Fahrenheit, Rgb/HexColor, Email from &str and String, Point2D to Point3D, generic Wrapper<T>
+  - Added 47 tests covering temperature conversions (freezing/boiling/body temp, round-trips), RGB to hex (colors, leading zeros), Email from various sources, Point2D to Point3D, and generic Wrapper with various types (integers, strings, custom structs, Option, Result)
+  - All tests passing including 6 doc tests
+  - Begins Module 5: Conversion Traits (1/6 challenges)
 
 ### 2025-01-25
 - Created `custom-iterators` challenge (ID: 122)

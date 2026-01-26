@@ -532,6 +532,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "from-into-traits"
+version = "0.1.0"
+
+[[package]]
 name = "functions"
 version = "0.1.0"
 

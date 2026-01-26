@@ -1472,5 +1472,17 @@
     "tags": ["iterators", "Iterator-trait", "next", "state-management", "custom-types"],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "id": 123,
+    "title": "From and Into Traits",
+    "slug": "from-into-traits",
+    "short_description": "Master Rust's standard conversion traits From and Into for type-safe, ergonomic conversions between types.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "RUST_STD",
+    "tags": ["conversion-traits", "From", "Into", "type-conversion", "generics"],
+    "created_at": "2025-01-26T00:00:00Z",
+    "updated_at": "2025-01-26T00:00:00Z"
   }
 ]
