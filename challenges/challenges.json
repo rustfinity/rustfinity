@@ -1544,5 +1544,17 @@
     "tags": ["conversion-traits", "Deref", "DerefMut", "smart-pointers", "coercion", "traits"],
     "created_at": "2025-01-26T00:00:00Z",
     "updated_at": "2025-01-26T00:00:00Z"
+  },
+  {
+    "id": 129,
+    "title": "Duration Operations",
+    "slug": "duration-operations",
+    "short_description": "Learn to work with std::time::Duration for time spans, formatting, arithmetic, and comparisons.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "RUST_STD",
+    "tags": ["time", "Duration", "formatting", "arithmetic", "std"],
+    "created_at": "2025-01-26T00:00:00Z",
+    "updated_at": "2025-01-26T00:00:00Z"
   }
 ]

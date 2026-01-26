@@ -63,11 +63,11 @@
 | 35 | Deref and DerefMut | `deref-derefmut` | HARD | 128 | Done |
 | 36 | ToString and Display | `tostring-display` | EASY | 127 | Done |
 
-### Module 6: Time and Environment (0/4 completed)
+### Module 6: Time and Environment (1/4 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
-| 37 | Duration Operations | `duration-operations` | EASY | - | Pending |
+| 37 | Duration Operations | `duration-operations` | EASY | 129 | Done |
 | 38 | SystemTime Usage | `systemtime-usage` | MEDIUM | - | Pending |
 | 39 | Environment Variables | `env-variables` | EASY | - | Pending |
 | 40 | Process and Exit | `process-exit` | MEDIUM | - | Pending |
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 36
-- **Remaining**: 19
-- **Progress**: 65.5%
+- **Completed**: 37
+- **Remaining**: 18
+- **Progress**: 67.3%
 
 ## Changelog
 
 ### 2025-01-26
+- Created `duration-operations` challenge (ID: 129)
+  - Implemented 8 functions demonstrating std::time::Duration: `from_minutes` (create Duration from minutes), `from_hours` (create Duration from hours), `to_minutes` (convert Duration to minutes), `to_hours` (convert Duration to hours), `format_duration` (format as "Xh Ym Zs"), `add_durations` (sum slice of Durations), `average_duration` (average of Durations with Option), `is_longer_than` (compare two Durations)
+  - Added 63 tests covering from_minutes (zero/one/30/60/large), from_hours (zero/one/two/24/large), to_minutes (zero/one minute/partial/exact/large/with millis), to_hours (zero/one hour/partial/exact/large/less than hour), format_duration (zero/seconds only/minutes and seconds/hours minutes seconds/edge cases), add_durations (empty/single/multiple/with zero/all same/with millis), average_duration (empty/single/multiple/even/preserves precision/all zeros/with millis), is_longer_than (true/false equal/false shorter/zero/millis/nanos), and integration tests (round trips, format consistency, add/average relationship, mixed units, edge cases)
+  - All tests passing including 8 doc tests
+  - Begins Module 6: Time and Environment (1/4 challenges)
+
 - Created `deref-derefmut` challenge (ID: 128)
   - Implemented 4 wrapper types demonstrating Deref and DerefMut: `MyBox<T>` (simple wrapper with both Deref and DerefMut), `CachedValue<T>` (tracks access count using Cell for interior mutability), `NonEmptyVec<T>` (Vec wrapper guaranteeing at least one element, derefs to slice), `UppercaseString` (string wrapper maintaining uppercase invariant, only Deref, no DerefMut)
   - Implemented 1 utility function: `describe_length<T: Deref<Target = str>>` (generic function demonstrating deref coercion)
