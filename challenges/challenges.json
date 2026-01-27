@@ -1652,5 +1652,17 @@
     "tags": ["derive-macros", "Clone", "Copy", "traits", "ownership", "std"],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
+  },
+  {
+    "id": 138,
+    "title": "Debug and Display Derive",
+    "slug": "debug-display-derive",
+    "short_description": "Master Debug and Display traits for formatting types: derive Debug automatically, implement Display manually for user-facing output.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "RUST_STD",
+    "tags": ["derive-macros", "Debug", "Display", "formatting", "traits", "std"],
+    "created_at": "2025-01-27T00:00:00Z",
+    "updated_at": "2025-01-27T00:00:00Z"
   }
 ]

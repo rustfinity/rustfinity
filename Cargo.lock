@@ -392,6 +392,10 @@ name = "custom-iterators"
 version = "0.1.0"
 
 [[package]]
+name = "debug-display-derive"
+version = "0.1.0"
+
+[[package]]
 name = "declaring-variables"
 version = "0.1.0"
 dependencies = [
