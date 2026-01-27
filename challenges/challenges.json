@@ -1712,5 +1712,17 @@
     "tags": ["derive-macros", "Default", "traits", "initialization", "builder-pattern", "std"],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
+  },
+  {
+    "id": 143,
+    "title": "Box and Heap Allocation",
+    "slug": "box-heap-allocation",
+    "short_description": "Learn heap allocation with Box<T>: boxing values, recursive types, and modifying boxed data.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "RUST_STD",
+    "tags": ["smart-pointers", "Box", "heap", "allocation", "recursive-types", "std"],
+    "created_at": "2025-01-27T00:00:00Z",
+    "updated_at": "2025-01-27T00:00:00Z"
   }
 ]

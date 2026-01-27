@@ -92,11 +92,11 @@
 | 49  | Hash Trait               | `hash-trait`             | MEDIUM     | 141 | Done   |
 | 50  | Default Trait Patterns   | `default-trait-patterns` | EASY       | 142 | Done   |
 
-### Module 9: Memory and Pointers (0/5 completed)
+### Module 9: Memory and Pointers (1/5 completed)
 
 | #   | Challenge                 | Slug                    | Difficulty | ID  | Status  |
 | --- | ------------------------- | ----------------------- | ---------- | --- | ------- |
-| 51  | Box and Heap Allocation   | `box-heap-allocation`   | EASY       | -   | Pending |
+| 51  | Box and Heap Allocation   | `box-heap-allocation`   | EASY       | 143 | Done    |
 | 52  | Rc and Reference Counting | `rc-reference-counting` | MEDIUM     | -   | Pending |
 | 53  | Arc and Thread Safety     | `arc-thread-safety`     | MEDIUM     | -   | Pending |
 | 54  | Cell and RefCell          | `cell-refcell`          | HARD       | -   | Pending |
@@ -107,13 +107,25 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 50
-- **Remaining**: 5
-- **Progress**: 90.9%
+- **Completed**: 51
+- **Remaining**: 4
+- **Progress**: 92.7%
 
 ## Changelog
 
 ### 2025-01-27
+
+- Created `box-heap-allocation` challenge (ID: 143)
+
+  - Implemented 2 generic functions: `boxed_value<T>` (creates Box from any value), `unbox<T>` (extracts value from Box)
+  - Implemented `List` recursive enum demonstrating Box for recursive types: Nil variant (end of list), Cons(i32, Box<List>) variant (node with value and pointer to next)
+  - Implemented 6 List methods: `new` (create empty list), `prepend` (add value to front), `len` (count elements recursively), `is_empty` (check if Nil), `sum` (sum all elements recursively), `to_vec` (convert to Vec preserving order)
+  - Implemented `LargeData` struct with 1000-byte array demonstrating heap allocation for large data, with `new` and `filled` constructors
+  - Implemented `box_large_data` function to box large data structures
+  - Implemented `modify_boxed<T, F>` generic function demonstrating DerefMut for modifying boxed values through closures
+  - Added 73 tests covering boxed_value (integer/zero/negative/string/empty string/float/bool/tuple/vec/option), unbox (integer/zero/string/vec/nested box/roundtrip), List::new (empty/len zero/sum zero/to_vec empty/default), List::prepend (single/multiple/zero/negative/mixed/duplicates), List::len (zero/one/many), List::is_empty (true/false), List::sum (empty/single/multiple/negative/mixed/zeros/large), List::to_vec (empty/single/preserves order/with negatives), List clone and equality, LargeData (new/filled/default/size), box_large_data (basic/filled/modify via deref/clone), modify_boxed (integer add/multiply/set, string push/clear, vec push/clear/sort, struct, large data), and integration tests (box unbox list, nested boxes, box and modify, list workflow, large data workflow, generic types, recursive list deep, modify multiple times, box of boxes)
+  - All 73 tests passing including 10 doc tests
+  - Begins Module 9: Memory and Pointers (1/5 challenges)
 
 - Created `default-trait-patterns` challenge (ID: 142)
 
