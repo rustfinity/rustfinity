@@ -1604,5 +1604,17 @@
     "tags": ["numbers", "conversion", "TryFrom", "checked", "saturating", "wrapping", "overflow", "std"],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
+  },
+  {
+    "id": 134,
+    "title": "Floating Point Edge Cases",
+    "slug": "floating-point",
+    "short_description": "Handle floating-point special values (NaN, infinity), rounding, approximate comparisons, and safe arithmetic operations.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["numbers", "floating-point", "NaN", "infinity", "rounding", "comparison", "std"],
+    "created_at": "2025-01-27T00:00:00Z",
+    "updated_at": "2025-01-27T00:00:00Z"
   }
 ]
