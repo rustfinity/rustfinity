@@ -92,14 +92,14 @@
 | 49  | Hash Trait               | `hash-trait`             | MEDIUM     | 141 | Done   |
 | 50  | Default Trait Patterns   | `default-trait-patterns` | EASY       | 142 | Done   |
 
-### Module 9: Memory and Pointers (3/5 completed)
+### Module 9: Memory and Pointers (4/5 completed)
 
 | #   | Challenge                 | Slug                    | Difficulty | ID  | Status  |
 | --- | ------------------------- | ----------------------- | ---------- | --- | ------- |
 | 51  | Box and Heap Allocation   | `box-heap-allocation`   | EASY       | 143 | Done    |
 | 52  | Rc and Reference Counting | `rc-reference-counting` | MEDIUM     | 144 | Done    |
 | 53  | Arc and Thread Safety     | `arc-thread-safety`     | MEDIUM     | 145 | Done    |
-| 54  | Cell and RefCell          | `cell-refcell`          | HARD       | -   | Pending |
+| 54  | Cell and RefCell          | `cell-refcell`          | HARD       | 146 | Done    |
 | 55  | Cow (Copy-on-Write)       | `cow-copy-on-write`     | MEDIUM     | -   | Pending |
 
 ---
@@ -107,13 +107,26 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 53
-- **Remaining**: 2
-- **Progress**: 96.4%
+- **Completed**: 54
+- **Remaining**: 1
+- **Progress**: 98.2%
 
 ## Changelog
 
 ### 2025-01-27
+
+- Created `cell-refcell` challenge (ID: 146)
+
+  - Implemented `Counter` struct using Cell<i32>: `new`, `get`, `set`, `increment`, `decrement` - demonstrates basic Cell usage for Copy types
+  - Implemented `CachedValue<T: Copy + Default>` with access tracking using two Cell fields: `new`, `get` (increments access_count), `set` (resets access_count), `access_count`
+  - Implemented `SharedString` struct using RefCell<String>: `new`, `get`, `set`, `append`, `len`, `is_empty` - demonstrates RefCell for non-Copy types
+  - Implemented `SharedVec<T>` using RefCell<Vec<T>>: `new`, `push`, `pop`, `len`, `is_empty`, `get` (where T: Clone)
+  - Implemented `SafeCell<T>` wrapper with non-panicking borrow operations using try_borrow: `new`, `try_read`, `try_write`, `is_borrowed`, `with_value`, `with_value_mut`
+  - Implemented `SharedCounter` demonstrating Rc<RefCell> pattern: `new` (returns Rc<Self>), `get`, `increment`, `decrement`, `add`
+  - Implemented `TreeNode<T>` for mutable trees using RefCell: `new` (returns Rc<Self>), `value`, `set_value`, `add_child`, `children_count`
+  - Added 80 tests covering Counter (new/increment/decrement/set/negative/mixed_operations/default), CachedValue (new/get/multiple_gets/set_resets_count/float/bool/char/default), SharedString (new/empty/set/append/multiple_appends/len/is_empty/unicode/set_after_append/default), SharedVec (new/push/pop/get/is_empty/strings/mixed_operations/default), SafeCell (new/try_read/try_write/multiple_reads/write_fails_during_read/read_fails_during_write/is_borrowed/with_value/with_value_mut/fails_during_borrow/default/guard_lifetime), SharedCounter (new/increment/decrement/add/shared_ownership/rc_count/negative/mixed_operations/parallel_style), TreeNode (new/string_value/set_value/add_child/multiple_children/shared_child/nested/modify_after_add/diamond_pattern), and integration tests (counter_through_function, cached_value_in_struct, shared_string_builder_pattern, shared_vec_stack_behavior, safe_cell_transaction_pattern, rc_refcell_pattern, tree_node_file_system, cell_vs_refcell_difference, tree_modification_through_shared_ref, counter_immutable_interface, shared_vec_with_complex_type, cached_value_reset_workflow)
+  - All 80 tests + 7 unit tests + 44 doc tests passing
+  - Continues Module 9: Memory and Pointers (4/5 challenges)
 
 - Created `arc-thread-safety` challenge (ID: 145)
 
