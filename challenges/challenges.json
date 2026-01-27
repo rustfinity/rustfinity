@@ -1700,5 +1700,17 @@
     "tags": ["derive-macros", "Hash", "Eq", "HashMap", "HashSet", "traits", "hashing", "std"],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
+  },
+  {
+    "id": 142,
+    "title": "Default Trait Patterns",
+    "slug": "default-trait-patterns",
+    "short_description": "Master the Default trait for creating default values: derive for standard defaults, implement custom defaults, struct update syntax patterns.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "RUST_STD",
+    "tags": ["derive-macros", "Default", "traits", "initialization", "builder-pattern", "std"],
+    "created_at": "2025-01-27T00:00:00Z",
+    "updated_at": "2025-01-27T00:00:00Z"
   }
 ]

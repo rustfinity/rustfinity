@@ -81,7 +81,7 @@
 | 43 | Integer Parsing | `integer-parsing` | EASY | 135 | Done |
 | 44 | Number Formatting | `number-formatting` | EASY | 136 | Done |
 
-### Module 8: Derive Macros and Common Traits (5/6 completed)
+### Module 8: Derive Macros and Common Traits (6/6 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
@@ -90,7 +90,7 @@
 | 47 | PartialEq and Eq | `partialeq-eq` | EASY | 139 | Done |
 | 48 | PartialOrd and Ord | `partialord-ord` | MEDIUM | 140 | Done |
 | 49 | Hash Trait | `hash-trait` | MEDIUM | 141 | Done |
-| 50 | Default Trait Patterns | `default-trait-patterns` | EASY | - | Pending |
+| 50 | Default Trait Patterns | `default-trait-patterns` | EASY | 142 | Done |
 
 ### Module 9: Memory and Pointers (0/5 completed)
 
@@ -107,13 +107,21 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 49
-- **Remaining**: 6
-- **Progress**: 89.1%
+- **Completed**: 50
+- **Remaining**: 5
+- **Progress**: 90.9%
 
 ## Changelog
 
 ### 2025-01-27
+- Created `default-trait-patterns` challenge (ID: 142)
+  - Implemented 4 types demonstrating Default trait: `AppConfig` (manual Default with custom values for theme/dark_mode/font_size/max_connections), `Counter` (simple struct with count defaulting to 0), `BoundedValue<T>` (generic with Default where T: Default + Clone), `Status` (enum defaulting to Pending)
+  - Implemented 1 helper struct: `PartialConfig` (with all Option fields for merge_with_defaults pattern)
+  - Implemented 3 utility functions: `create_with_defaults<T: Default>` (generic wrapper returning T::default()), `merge_with_defaults` (merges PartialConfig with AppConfig defaults), `default_vec<T: Default>` (creates Vec of default-initialized elements)
+  - Added 74 tests covering AppConfig (default values, struct update syntax, partial update, clone), Counter (default, new, increment/decrement), BoundedValue (default for i32/f64/String/bool, new, clamp operations), Status (default Pending, all variants, equality, clone), create_with_defaults (primitives, String, Vec, Option, Counter, AppConfig, Status), merge_with_defaults (all None, individual fields, multiple fields, all Some, edge cases), default_vec (empty/single/multiple elements, various types, nested structures), and integration tests (config workflow, partial config builder, counter reset, bounded value workflow, status state machine, create and modify, generic default chain, nested defaults, default vec of bounded, status vec, partial config default)
+  - All 74 tests passing including 7 doc tests
+  - Completes Module 8: Derive Macros and Common Traits (6/6 challenges)
+
 - Created `hash-trait` challenge (ID: 141)
   - Implemented 5 types demonstrating Hash trait patterns: `Point` (2D point with derived Hash/Eq), `UserId` (newtype wrapper with derived Hash for HashMap keys), `CaseInsensitiveString` (manual Hash implementation hashing lowercase form to match case-insensitive PartialEq), `Document` (manual Hash hashing only id field to match id-only equality), `Rgb` (color with derived Hash)
   - Implemented 3 utility functions: `count_unique<T: Hash + Eq>` (counts distinct elements using HashSet), `find_duplicates<T: Hash + Eq + Clone>` (returns elements appearing more than once), `group_by_hash<T, K, F>` (groups items by key function into HashMap)

@@ -403,6 +403,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "default-trait-patterns"
+version = "0.1.0"
+
+[[package]]
 name = "deref-derefmut"
 version = "0.1.0"
 
