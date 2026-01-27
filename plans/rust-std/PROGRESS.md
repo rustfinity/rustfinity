@@ -72,11 +72,11 @@
 | 39 | Environment Variables | `env-variables` | EASY | 131 | Done |
 | 40 | Process and Exit | `process-exit` | MEDIUM | 132 | Done |
 
-### Module 7: Number Handling (0/4 completed)
+### Module 7: Number Handling (1/4 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
-| 41 | Number Conversions | `number-conversions` | MEDIUM | - | Pending |
+| 41 | Number Conversions | `number-conversions` | MEDIUM | 133 | Done |
 | 42 | Floating Point Edge Cases | `floating-point` | MEDIUM | - | Pending |
 | 43 | Integer Parsing | `integer-parsing` | EASY | - | Pending |
 | 44 | Number Formatting | `number-formatting` | EASY | - | Pending |
@@ -107,11 +107,18 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 40
-- **Remaining**: 15
-- **Progress**: 72.7%
+- **Completed**: 41
+- **Remaining**: 14
+- **Progress**: 74.5%
 
 ## Changelog
+
+### 2025-01-27
+- Created `number-conversions` challenge (ID: 133)
+  - Implemented 8 functions demonstrating safe numeric conversions and overflow-handling arithmetic: `safe_i32_to_i16` (TryFrom i32 to i16), `safe_u64_to_u32` (TryFrom u64 to u32), `safe_i64_to_usize` (TryFrom i64 to usize), `checked_multiply` (checked_mul for i32), `checked_power` (checked_pow for u32), `saturating_sum` (fold with saturating_add), `wrapping_factorial` (fold with wrapping_mul), `safe_average` (checked sum then divide)
+  - Added 50 tests covering safe_i32_to_i16 (zero/positive in range/negative in range/positive overflow/negative overflow/boundary), safe_u64_to_u32 (zero/in range/at boundary/overflow), safe_i64_to_usize (zero/positive/negative/large positive), checked_multiply (basic/zero/negative/overflow positive/overflow negative/boundary), checked_power (zero exponent/one exponent/basic/large valid/overflow/zero base), saturating_sum (empty/single/basic/positive overflow/negative overflow/mixed), wrapping_factorial (zero/one/small/medium/overflow), safe_average (empty/single/basic/mixed/truncation/overflow/large valid), and integration tests (conversion chain, checked vs saturating, power and multiply relationship, factorial and average, all boundary values, practical use case)
+  - All tests passing including 8 doc tests
+  - Begins Module 7: Number Handling (1/4 challenges)
 
 ### 2025-01-26
 - Created `process-exit` challenge (ID: 132)

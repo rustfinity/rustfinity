@@ -1592,5 +1592,17 @@
     "tags": ["process", "exit-codes", "ExitCode", "process-id", "std"],
     "created_at": "2025-01-26T00:00:00Z",
     "updated_at": "2025-01-26T00:00:00Z"
+  },
+  {
+    "id": 133,
+    "title": "Number Conversions",
+    "slug": "number-conversions",
+    "short_description": "Learn safe numeric type conversions using TryFrom/TryInto and overflow-safe arithmetic with checked, saturating, and wrapping operations.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["numbers", "conversion", "TryFrom", "checked", "saturating", "wrapping", "overflow", "std"],
+    "created_at": "2025-01-27T00:00:00Z",
+    "updated_at": "2025-01-27T00:00:00Z"
   }
 ]
