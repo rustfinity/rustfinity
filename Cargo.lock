@@ -1323,6 +1323,10 @@ name = "partialeq-eq"
 version = "0.1.0"
 
 [[package]]
+name = "partialord-ord"
+version = "0.1.0"
+
+[[package]]
 name = "path-operations"
 version = "0.1.0"
 

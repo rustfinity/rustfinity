@@ -81,14 +81,14 @@
 | 43 | Integer Parsing | `integer-parsing` | EASY | 135 | Done |
 | 44 | Number Formatting | `number-formatting` | EASY | 136 | Done |
 
-### Module 8: Derive Macros and Common Traits (3/6 completed)
+### Module 8: Derive Macros and Common Traits (4/6 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 45 | Clone and Copy | `clone-copy-traits` | BEGINNER | 137 | Done |
 | 46 | Debug and Display Derive | `debug-display-derive` | EASY | 138 | Done |
 | 47 | PartialEq and Eq | `partialeq-eq` | EASY | 139 | Done |
-| 48 | PartialOrd and Ord | `partialord-ord` | MEDIUM | - | Pending |
+| 48 | PartialOrd and Ord | `partialord-ord` | MEDIUM | 140 | Done |
 | 49 | Hash Trait | `hash-trait` | MEDIUM | - | Pending |
 | 50 | Default Trait Patterns | `default-trait-patterns` | EASY | - | Pending |
 
@@ -107,13 +107,20 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 47
-- **Remaining**: 8
-- **Progress**: 85.5%
+- **Completed**: 48
+- **Remaining**: 7
+- **Progress**: 87.3%
 
 ## Changelog
 
 ### 2025-01-27
+- Created `partialord-ord` challenge (ID: 140)
+  - Implemented 5 types demonstrating PartialOrd and Ord traits: `Score` (simple wrapper with derived ordering), `Version` (semantic version with manual Ord - major/minor/patch comparison), `Temperature` (enum with Celsius/Fahrenheit variants implementing PartialOrd via normalization to Celsius - no Ord due to floating-point), `Priority` (enum with Low/Medium/High/Critical derived ordering), `Player` (struct with score/name implementing Ord for descending score then ascending name)
+  - Implemented 4 utility functions: `find_min<T: Ord>` (returns minimum element in slice), `find_max<T: Ord>` (returns maximum element in slice), `is_sorted<T: Ord>` (checks if slice is sorted ascending), `clamp<T: Ord>` (clamps value to min/max bounds)
+  - Added 74 tests covering Score (less than/greater than/equal/cmp/zero/max), Version (major/minor/patch comparison, equal, cmp, zero, sorting, partial_cmp), Temperature (celsius/fahrenheit comparison, cross-unit equal/boiling/comparison, negative, fahrenheit_to_celsius, partial_cmp), Priority (ordering/equal/cmp/sorting/min_max), Player (higher_score_first/same_score_alphabetical/equal/sorting/cmp/zero_score), find_min (basic/single/empty/negative/strings/scores/all_same), find_max (same variations), is_sorted (ascending/duplicates/not_sorted/empty/single/all_same/descending/strings/versions), clamp (within_bounds/below_min/above_max/at_min/at_max/negative_range/single_value_range/strings/scores), and integration tests (version_min_max, player_leaderboard, priority_queue_order, temperature_range_check, version_range, find_and_clamp, sorted_check_after_sort, score_ranking, cross_unit_temperature_sorting)
+  - All 74 tests passing including 9 doc tests
+  - Continues Module 8: Derive Macros and Common Traits (4/6 challenges)
+
 - Created `partialeq-eq` challenge (ID: 139)
   - Implemented 6 types demonstrating PartialEq and Eq traits: `Point` (2D point with derived equality), `CaseInsensitiveString` (manual PartialEq with case-insensitive comparison), `ApproximateFloat` (epsilon-based PartialEq without Eq), `UserId` (derived PartialEq, Eq, Hash for HashMap/HashSet usage), `Person` (manual PartialEq based only on id field), `Status` (enum with derived equality)
   - Implemented 3 utility functions: `are_all_equal<T: Eq>` (checks if all slice elements are equal), `count_matches<T: PartialEq>` (counts occurrences of target), `find_first_match<T: PartialEq>` (returns index of first match)
