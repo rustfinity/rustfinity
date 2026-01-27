@@ -81,7 +81,7 @@
 | 43 | Integer Parsing | `integer-parsing` | EASY | 135 | Done |
 | 44 | Number Formatting | `number-formatting` | EASY | 136 | Done |
 
-### Module 8: Derive Macros and Common Traits (4/6 completed)
+### Module 8: Derive Macros and Common Traits (5/6 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
@@ -89,7 +89,7 @@
 | 46 | Debug and Display Derive | `debug-display-derive` | EASY | 138 | Done |
 | 47 | PartialEq and Eq | `partialeq-eq` | EASY | 139 | Done |
 | 48 | PartialOrd and Ord | `partialord-ord` | MEDIUM | 140 | Done |
-| 49 | Hash Trait | `hash-trait` | MEDIUM | - | Pending |
+| 49 | Hash Trait | `hash-trait` | MEDIUM | 141 | Done |
 | 50 | Default Trait Patterns | `default-trait-patterns` | EASY | - | Pending |
 
 ### Module 9: Memory and Pointers (0/5 completed)
@@ -107,13 +107,20 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 48
-- **Remaining**: 7
-- **Progress**: 87.3%
+- **Completed**: 49
+- **Remaining**: 6
+- **Progress**: 89.1%
 
 ## Changelog
 
 ### 2025-01-27
+- Created `hash-trait` challenge (ID: 141)
+  - Implemented 5 types demonstrating Hash trait patterns: `Point` (2D point with derived Hash/Eq), `UserId` (newtype wrapper with derived Hash for HashMap keys), `CaseInsensitiveString` (manual Hash implementation hashing lowercase form to match case-insensitive PartialEq), `Document` (manual Hash hashing only id field to match id-only equality), `Rgb` (color with derived Hash)
+  - Implemented 3 utility functions: `count_unique<T: Hash + Eq>` (counts distinct elements using HashSet), `find_duplicates<T: Hash + Eq + Clone>` (returns elements appearing more than once), `group_by_hash<T, K, F>` (groups items by key function into HashMap)
+  - Added 64 tests covering Point (equal/different hash, HashSet/HashMap usage, negative/zero coordinates), UserId (equal/different hash, HashSet/HashMap usage, zero/max values), CaseInsensitiveString (same/different case equality and hashing, HashSet/HashMap, preserves original, empty/special chars/unicode), Document (same/different id equality and hashing, HashSet/HashMap, empty strings, zero id), Rgb (equal/different colors, HashSet/HashMap, black/white), count_unique (basic/empty/single/all same/all different/strings/points/case-insensitive), find_duplicates (basic/empty/no duplicates/all same/single/strings/points/userids), group_by_hash (basic/empty/single group/by first char/by length/by quadrant/by channel), and integration tests (HashSet of documents, case-insensitive word count, unique and duplicates combined, group and count, color palette, userid lookup, hash consistency, equal implies same hash, complex grouping)
+  - All 64 tests passing including 8 doc tests
+  - Continues Module 8: Derive Macros and Common Traits (5/6 challenges)
+
 - Created `partialord-ord` challenge (ID: 140)
   - Implemented 5 types demonstrating PartialOrd and Ord traits: `Score` (simple wrapper with derived ordering), `Version` (semantic version with manual Ord - major/minor/patch comparison), `Temperature` (enum with Celsius/Fahrenheit variants implementing PartialOrd via normalization to Celsius - no Ord due to floating-point), `Priority` (enum with Low/Medium/High/Critical derived ordering), `Player` (struct with score/name implementing Ord for descending score then ascending name)
   - Implemented 4 utility functions: `find_min<T: Ord>` (returns minimum element in slice), `find_max<T: Ord>` (returns maximum element in slice), `is_sorted<T: Ord>` (checks if slice is sorted ascending), `clamp<T: Ord>` (clamps value to min/max bounds)
