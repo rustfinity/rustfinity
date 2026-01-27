@@ -1628,5 +1628,17 @@
     "tags": ["numbers", "parsing", "radix", "FromStr", "from_str_radix", "std"],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
+  },
+  {
+    "id": 136,
+    "title": "Number Formatting",
+    "slug": "number-formatting",
+    "short_description": "Format numbers for display with padding, alignment, different bases (binary, hex, octal), precision, and currency formatting.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "RUST_STD",
+    "tags": ["numbers", "formatting", "format", "binary", "hex", "octal", "precision", "std"],
+    "created_at": "2025-01-27T00:00:00Z",
+    "updated_at": "2025-01-27T00:00:00Z"
   }
 ]

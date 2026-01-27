@@ -1150,6 +1150,10 @@ name = "number-conversions"
 version = "0.1.0"
 
 [[package]]
+name = "number-formatting"
+version = "0.1.0"
+
+[[package]]
 name = "objc-sys"
 version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"

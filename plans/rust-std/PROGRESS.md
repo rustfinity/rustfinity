@@ -72,14 +72,14 @@
 | 39 | Environment Variables | `env-variables` | EASY | 131 | Done |
 | 40 | Process and Exit | `process-exit` | MEDIUM | 132 | Done |
 
-### Module 7: Number Handling (3/4 completed)
+### Module 7: Number Handling (4/4 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 41 | Number Conversions | `number-conversions` | MEDIUM | 133 | Done |
 | 42 | Floating Point Edge Cases | `floating-point` | MEDIUM | 134 | Done |
 | 43 | Integer Parsing | `integer-parsing` | EASY | 135 | Done |
-| 44 | Number Formatting | `number-formatting` | EASY | - | Pending |
+| 44 | Number Formatting | `number-formatting` | EASY | 136 | Done |
 
 ### Module 8: Derive Macros and Common Traits (0/6 completed)
 
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 43
-- **Remaining**: 12
-- **Progress**: 78.2%
+- **Completed**: 44
+- **Remaining**: 11
+- **Progress**: 80.0%
 
 ## Changelog
 
 ### 2025-01-27
+- Created `number-formatting` challenge (ID: 136)
+  - Implemented 10 functions demonstrating number formatting techniques: `format_padded` (leading zeros with width), `format_aligned` (right-aligned with spaces), `format_binary` (binary without prefix), `format_binary_prefixed` (binary with 0b prefix), `format_hex_lower` (lowercase hex without prefix), `format_hex_upper_prefixed` (uppercase hex with 0x prefix), `format_octal` (octal without prefix), `format_float_precision` (fixed decimal places), `format_scientific` (scientific notation), `format_currency` (USD currency format with negative handling)
+  - Added 86 tests covering format_padded (basic/exact width/wider/zero/negative/single digit/width zero/large width), format_aligned (basic/exact width/wider/zero/negative/single digit/width zero/large width), format_binary (basic/zero/one/255/powers of two/large), format_binary_prefixed (basic/zero/one/255/large), format_hex_lower (basic/zero/16/171/large/mixed digits), format_hex_upper_prefixed (basic/zero/16/171/large/mixed digits), format_octal (basic/zero/seven/63/permissions/large), format_float_precision (two places/zero places/many places/negative/zero/rounds up/rounds down/large/small/one place), format_scientific (basic/small/one/negative/zero/large/very small/with decimal), format_currency (basic/negative/round number/zero/small/one decimal/rounds up/rounds down/large/negative cents/negative zero), and integration tests (table formatting, hex and binary, currency calculations, padded IDs, mixed precision, byte values, permissions, memory addresses, scientific vs regular, binary powers of two)
+  - All tests passing including 10 doc tests
+  - Completes Module 7: Number Handling (4/4 challenges)
+
 - Created `integer-parsing` challenge (ID: 135)
   - Implemented 8 functions demonstrating integer parsing from strings: `parse_decimal` (base 10 i32 with trim), `parse_binary` (base 2 u32 without 0b prefix), `parse_hex` (base 16 u32 case-insensitive without 0x prefix), `parse_octal` (base 8 u32 without 0o prefix), `parse_with_radix` (any radix 2-36), `parse_multiple` (comma-separated list skipping invalid), `try_parse_u8` (returns Result with descriptive error), `detect_and_parse` (auto-detects base from 0x/0b/0o prefix)
   - Added 73 tests covering parse_decimal (positive/negative/zero/whitespace/large/invalid/overflow), parse_binary (basic/zero/one/max u32/whitespace/invalid digit/empty), parse_hex (uppercase/lowercase/mixed case/zero/numbers only/whitespace/invalid/max u32), parse_octal (basic/zero/one/permissions/whitespace/invalid digit/empty), parse_with_radix (binary/decimal/hex/base36/base3/zero/invalid radix/invalid digit/whitespace), parse_multiple (basic/with invalid/empty/single/whitespace/negative/mixed/trailing comma/leading comma), try_parse_u8 (valid/boundary/whitespace/overflow/negative/invalid/empty/large overflow), detect_and_parse (decimal/hex lowercase/hex uppercase/binary lowercase/binary uppercase/octal lowercase/octal uppercase/whitespace/invalid/large numbers/zero variants), and integration tests (same value different bases, detect_and_parse equivalence, parse config values, parse CSV data, try parse RGB values, radix conversion, error messages are descriptive)
