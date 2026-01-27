@@ -1760,5 +1760,17 @@
     "tags": ["smart-pointers", "Cell", "RefCell", "interior-mutability", "borrow-checking", "Rc", "std"],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
+  },
+  {
+    "id": 147,
+    "title": "Cow (Copy-on-Write)",
+    "slug": "cow-copy-on-write",
+    "short_description": "Master the Cow smart pointer for efficient borrowed vs owned data handling: avoid unnecessary clones with copy-on-write semantics.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["smart-pointers", "Cow", "copy-on-write", "optimization", "borrowing", "ownership", "std"],
+    "created_at": "2025-01-27T00:00:00Z",
+    "updated_at": "2025-01-27T00:00:00Z"
   }
 ]

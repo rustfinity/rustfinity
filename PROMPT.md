@@ -1,3 +1,5 @@
+# Done
+
 - Study plans/rust-std/SPEC.md and pick the most important task and implement it
 - ONLY DO ONE TASK
 - After you're done with the task save your progress in PROGRESS.md file in same dir as SPEC.md file.
