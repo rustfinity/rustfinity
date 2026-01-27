@@ -917,6 +917,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "integer-parsing"
+version = "0.1.0"
+
+[[package]]
 name = "interior-mutability"
 version = "0.1.0"
 dependencies = [

@@ -1616,5 +1616,17 @@
     "tags": ["numbers", "floating-point", "NaN", "infinity", "rounding", "comparison", "std"],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
+  },
+  {
+    "id": 135,
+    "title": "Integer Parsing",
+    "slug": "integer-parsing",
+    "short_description": "Parse integers from strings in various bases (decimal, binary, hex, octal) with error handling and automatic base detection.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "RUST_STD",
+    "tags": ["numbers", "parsing", "radix", "FromStr", "from_str_radix", "std"],
+    "created_at": "2025-01-27T00:00:00Z",
+    "updated_at": "2025-01-27T00:00:00Z"
   }
 ]

@@ -72,13 +72,13 @@
 | 39 | Environment Variables | `env-variables` | EASY | 131 | Done |
 | 40 | Process and Exit | `process-exit` | MEDIUM | 132 | Done |
 
-### Module 7: Number Handling (2/4 completed)
+### Module 7: Number Handling (3/4 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 41 | Number Conversions | `number-conversions` | MEDIUM | 133 | Done |
 | 42 | Floating Point Edge Cases | `floating-point` | MEDIUM | 134 | Done |
-| 43 | Integer Parsing | `integer-parsing` | EASY | - | Pending |
+| 43 | Integer Parsing | `integer-parsing` | EASY | 135 | Done |
 | 44 | Number Formatting | `number-formatting` | EASY | - | Pending |
 
 ### Module 8: Derive Macros and Common Traits (0/6 completed)
@@ -107,13 +107,19 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 42
-- **Remaining**: 13
-- **Progress**: 76.4%
+- **Completed**: 43
+- **Remaining**: 12
+- **Progress**: 78.2%
 
 ## Changelog
 
 ### 2025-01-27
+- Created `integer-parsing` challenge (ID: 135)
+  - Implemented 8 functions demonstrating integer parsing from strings: `parse_decimal` (base 10 i32 with trim), `parse_binary` (base 2 u32 without 0b prefix), `parse_hex` (base 16 u32 case-insensitive without 0x prefix), `parse_octal` (base 8 u32 without 0o prefix), `parse_with_radix` (any radix 2-36), `parse_multiple` (comma-separated list skipping invalid), `try_parse_u8` (returns Result with descriptive error), `detect_and_parse` (auto-detects base from 0x/0b/0o prefix)
+  - Added 73 tests covering parse_decimal (positive/negative/zero/whitespace/large/invalid/overflow), parse_binary (basic/zero/one/max u32/whitespace/invalid digit/empty), parse_hex (uppercase/lowercase/mixed case/zero/numbers only/whitespace/invalid/max u32), parse_octal (basic/zero/one/permissions/whitespace/invalid digit/empty), parse_with_radix (binary/decimal/hex/base36/base3/zero/invalid radix/invalid digit/whitespace), parse_multiple (basic/with invalid/empty/single/whitespace/negative/mixed/trailing comma/leading comma), try_parse_u8 (valid/boundary/whitespace/overflow/negative/invalid/empty/large overflow), detect_and_parse (decimal/hex lowercase/hex uppercase/binary lowercase/binary uppercase/octal lowercase/octal uppercase/whitespace/invalid/large numbers/zero variants), and integration tests (same value different bases, detect_and_parse equivalence, parse config values, parse CSV data, try parse RGB values, radix conversion, error messages are descriptive)
+  - All tests passing including 8 doc tests
+  - Continues Module 7: Number Handling (3/4 challenges)
+
 - Created `floating-point` challenge (ID: 134)
   - Implemented 8 functions demonstrating floating-point edge case handling: `is_valid_number` (checks if finite and not NaN), `classify_float` (returns category string: "nan", "infinite", "zero", "normal", "subnormal"), `safe_divide` (returns None for invalid inputs), `round_to_places` (rounds to N decimal places), `approx_equal` (epsilon-based comparison), `clamp_to_range` (with NaN/invalid range handling), `safe_sqrt` (returns None for negative or NaN), `sum_finite` (sums only finite values in slice)
   - Added 64 tests covering is_valid_number (positive/negative/zero/nan/infinity/subnormal), classify_float (nan/infinite/zero/normal/subnormal), safe_divide (basic/by zero/with nan/with infinity/zero numerator/small numbers), round_to_places (basic/negative/half up/zero/whole numbers/many places), approx_equal (exact/within epsilon/outside epsilon/with nan/negative/across zero/infinity), clamp_to_range (within/at boundary/below/above/nan input/nan min/nan max/inverted/equal bounds/negative range), safe_sqrt (positive/zero/negative/nan/infinity/small positive/perfect squares), sum_finite (all valid/with nan/with infinity/mixed special/empty/all special/negative/with zero), and integration tests (validate then operate, classify and count, safe sqrt and round, clamp and approx, safe divide chain, real world average, floating point comparison pitfall, normalize and sum, error propagation)
