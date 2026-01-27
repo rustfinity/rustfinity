@@ -81,13 +81,13 @@
 | 43 | Integer Parsing | `integer-parsing` | EASY | 135 | Done |
 | 44 | Number Formatting | `number-formatting` | EASY | 136 | Done |
 
-### Module 8: Derive Macros and Common Traits (2/6 completed)
+### Module 8: Derive Macros and Common Traits (3/6 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
 | 45 | Clone and Copy | `clone-copy-traits` | BEGINNER | 137 | Done |
 | 46 | Debug and Display Derive | `debug-display-derive` | EASY | 138 | Done |
-| 47 | PartialEq and Eq | `partialeq-eq` | EASY | - | Pending |
+| 47 | PartialEq and Eq | `partialeq-eq` | EASY | 139 | Done |
 | 48 | PartialOrd and Ord | `partialord-ord` | MEDIUM | - | Pending |
 | 49 | Hash Trait | `hash-trait` | MEDIUM | - | Pending |
 | 50 | Default Trait Patterns | `default-trait-patterns` | EASY | - | Pending |
@@ -107,13 +107,20 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 46
-- **Remaining**: 9
-- **Progress**: 83.6%
+- **Completed**: 47
+- **Remaining**: 8
+- **Progress**: 85.5%
 
 ## Changelog
 
 ### 2025-01-27
+- Created `partialeq-eq` challenge (ID: 139)
+  - Implemented 6 types demonstrating PartialEq and Eq traits: `Point` (2D point with derived equality), `CaseInsensitiveString` (manual PartialEq with case-insensitive comparison), `ApproximateFloat` (epsilon-based PartialEq without Eq), `UserId` (derived PartialEq, Eq, Hash for HashMap/HashSet usage), `Person` (manual PartialEq based only on id field), `Status` (enum with derived equality)
+  - Implemented 3 utility functions: `are_all_equal<T: Eq>` (checks if all slice elements are equal), `count_matches<T: PartialEq>` (counts occurrences of target), `find_first_match<T: PartialEq>` (returns index of first match)
+  - Added 88 tests covering Point (equal/not equal, zeros, negatives, reflexive, symmetric), CaseInsensitiveString (same/different case, unicode, special chars, whitespace), ApproximateFloat (exact/within epsilon/outside epsilon, boundary, reflexive), UserId (equality, HashSet/HashMap usage, no duplicates), Person (equality based on id, transitive, symmetric), Status (all variants, combinations), are_all_equal (empty/single/all same/different), count_matches (empty/none/one/multiple/strings/custom types), find_first_match (positions, not found, custom types), and integration tests (filter by status, deduplicate userids, person lookup, case-insensitive word count, approximate clustering, find and count, equality chain, combined operations)
+  - All 88 tests passing including 9 doc tests
+  - Continues Module 8: Derive Macros and Common Traits (3/6 challenges)
+
 - Created `debug-display-derive` challenge (ID: 138)
   - Implemented 5 types demonstrating Debug and Display traits: `Coordinate` (2D point with x/y f64 fields), `Color` (enum with Red/Green/Blue unit variants and Rgb/Hex tuple variants), `TemperatureUnit` (enum with Celsius/Fahrenheit/Kelvin), `Temperature` (struct with value and unit), `LogLevel` (enum with Error/Warning/Info/Debug), `LogMessage` (struct with level and message)
   - Implemented 3 utility functions: `debug_string<T: Debug>` (returns {:?} format), `display_string<T: Display>` (returns {} format), `pretty_debug<T: Debug>` (returns {:#?} format)
