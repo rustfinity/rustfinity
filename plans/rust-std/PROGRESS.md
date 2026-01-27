@@ -92,12 +92,12 @@
 | 49  | Hash Trait               | `hash-trait`             | MEDIUM     | 141 | Done   |
 | 50  | Default Trait Patterns   | `default-trait-patterns` | EASY       | 142 | Done   |
 
-### Module 9: Memory and Pointers (1/5 completed)
+### Module 9: Memory and Pointers (2/5 completed)
 
 | #   | Challenge                 | Slug                    | Difficulty | ID  | Status  |
 | --- | ------------------------- | ----------------------- | ---------- | --- | ------- |
 | 51  | Box and Heap Allocation   | `box-heap-allocation`   | EASY       | 143 | Done    |
-| 52  | Rc and Reference Counting | `rc-reference-counting` | MEDIUM     | -   | Pending |
+| 52  | Rc and Reference Counting | `rc-reference-counting` | MEDIUM     | 144 | Done    |
 | 53  | Arc and Thread Safety     | `arc-thread-safety`     | MEDIUM     | -   | Pending |
 | 54  | Cell and RefCell          | `cell-refcell`          | HARD       | -   | Pending |
 | 55  | Cow (Copy-on-Write)       | `cow-copy-on-write`     | MEDIUM     | -   | Pending |
@@ -107,13 +107,24 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 51
-- **Remaining**: 4
-- **Progress**: 92.7%
+- **Completed**: 52
+- **Remaining**: 3
+- **Progress**: 94.5%
 
 ## Changelog
 
 ### 2025-01-27
+
+- Created `rc-reference-counting` challenge (ID: 144)
+
+  - Implemented 4 basic Rc functions: `create_shared<T>` (wraps value in Rc), `clone_shared<T>` (clones Rc reference), `get_strong_count<T>` (returns strong reference count), `get_value<T: Clone>` (clones inner value)
+  - Implemented `SharedBuffer` struct for shared byte buffers: `new` (creates Rc-wrapped buffer), `len`, `is_empty`, `get` (byte at index), `as_slice`
+  - Implemented 3 weak reference functions: `create_weak<T>` (creates Weak from Rc), `upgrade_weak<T>` (upgrades Weak to Option<Rc>), `get_weak_count<T>` (returns weak reference count)
+  - Implemented `Node<T>` graph node with shared children using Rc<RefCell<...>> pattern: `new`, `value`, `add_child`, `children`, `children_count`
+  - Implemented `Observer<T>` trait and `Observable<T>` type demonstrating weak reference observer pattern: `new`, `get`, `set`, `subscribe` (stores observers as Weak), `notify` (notifies live observers, removes dead ones), `observer_count`
+  - Added 75 tests covering create_shared (integer/string/vec/zero/negative/float/tuple/initial count), clone_shared (increments count/multiple clones/share same value/clone of clone/drop decrements/string), get_strong_count (one/increases with clones/through clone), get_value (integer/string/vec/independent clone/empty string/negative), SharedBuffer (new/empty/get valid/invalid/from empty/as_slice/shared between owners/large/is_empty), weak references (create/doesnt affect strong count/multiple/upgrade succeeds when alive/fails when dropped/increments count/count zero initially/with string/survives strong drop/multiple upgrade attempts), Node (new/string/empty children/add single/multiple/preserve values/shared child/nested tree/reference counting/children are clones), Observable (new/set/multiple sets/subscribe/notify/multiple observers/notifications/dead observer removed/some survive/string/no observers/count accurate), and integration tests (shared buffer workflow, tree structure, diamond pattern, weak ref observer pattern, rc vs weak semantics, clone vs get_value, observable lifecycle, buffer with weak reference, node reference cleanup, complex sharing)
+  - All 75 tests + 6 unit tests + 20 doc tests passing
+  - Continues Module 9: Memory and Pointers (2/5 challenges)
 
 - Created `box-heap-allocation` challenge (ID: 143)
 
