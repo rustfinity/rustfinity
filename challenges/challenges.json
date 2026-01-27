@@ -1640,5 +1640,17 @@
     "tags": ["numbers", "formatting", "format", "binary", "hex", "octal", "precision", "std"],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
+  },
+  {
+    "id": 137,
+    "title": "Clone and Copy Traits",
+    "slug": "clone-copy-traits",
+    "short_description": "Understand Clone and Copy traits for duplicating values: derive macros, Copy constraints, and generic clone patterns.",
+    "language": "RUST",
+    "difficulty": "BEGINNER",
+    "track": "RUST_STD",
+    "tags": ["derive-macros", "Clone", "Copy", "traits", "ownership", "std"],
+    "created_at": "2025-01-27T00:00:00Z",
+    "updated_at": "2025-01-27T00:00:00Z"
   }
 ]

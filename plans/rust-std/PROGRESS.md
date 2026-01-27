@@ -81,11 +81,11 @@
 | 43 | Integer Parsing | `integer-parsing` | EASY | 135 | Done |
 | 44 | Number Formatting | `number-formatting` | EASY | 136 | Done |
 
-### Module 8: Derive Macros and Common Traits (0/6 completed)
+### Module 8: Derive Macros and Common Traits (1/6 completed)
 
 | # | Challenge | Slug | Difficulty | ID | Status |
 |---|-----------|------|------------|-----|--------|
-| 45 | Clone and Copy | `clone-copy-traits` | BEGINNER | - | Pending |
+| 45 | Clone and Copy | `clone-copy-traits` | BEGINNER | 137 | Done |
 | 46 | Debug and Display Derive | `debug-display-derive` | EASY | - | Pending |
 | 47 | PartialEq and Eq | `partialeq-eq` | EASY | - | Pending |
 | 48 | PartialOrd and Ord | `partialord-ord` | MEDIUM | - | Pending |
@@ -107,13 +107,21 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 44
-- **Remaining**: 11
-- **Progress**: 80.0%
+- **Completed**: 45
+- **Remaining**: 10
+- **Progress**: 81.8%
 
 ## Changelog
 
 ### 2025-01-27
+- Created `clone-copy-traits` challenge (ID: 137)
+  - Implemented 4 struct types demonstrating Clone and Copy traits: `Color` (Copy type with RGB u8 fields), `Dimensions` (Copy type with width/height f64 fields), `Label` (Clone-only type with String field), `Document` (Clone-only type with String title and Vec<String> pages)
+  - Implemented 1 generic struct: `TaggedValue<T>` (Clone-only generic type with String tag and generic value)
+  - Implemented 3 utility functions: `duplicate_copy` (duplicates Copy types), `duplicate_clone` (clones referenced values), `clone_vec` (clones slice into Vec)
+  - Added 58 tests covering Color (copy/clone/equality/debug/function), Dimensions (copy/clone/equality/debug/function), Label (clone/independence/equality/debug/empty), Document (clone/independence/equality/debug/empty/many pages), TaggedValue (integer/string/vec/independence/equality/debug/float/bool), duplicate_copy (color/dimensions/integer/float/bool/char/tuple), duplicate_clone (label/document/string/vec/color/tagged), clone_vec (integers/strings/empty/single/labels/colors/independence/slice/nested), and integration tests (copy vs clone behavior, duplicate functions, tagged values, document workflow, generic types, collection operations, nested clone)
+  - All tests passing including 8 doc tests
+  - Begins Module 8: Derive Macros and Common Traits (1/6 challenges)
+
 - Created `number-formatting` challenge (ID: 136)
   - Implemented 10 functions demonstrating number formatting techniques: `format_padded` (leading zeros with width), `format_aligned` (right-aligned with spaces), `format_binary` (binary without prefix), `format_binary_prefixed` (binary with 0b prefix), `format_hex_lower` (lowercase hex without prefix), `format_hex_upper_prefixed` (uppercase hex with 0x prefix), `format_octal` (octal without prefix), `format_float_precision` (fixed decimal places), `format_scientific` (scientific notation), `format_currency` (USD currency format with negative handling)
   - Added 86 tests covering format_padded (basic/exact width/wider/zero/negative/single digit/width zero/large width), format_aligned (basic/exact width/wider/zero/negative/single digit/width zero/large width), format_binary (basic/zero/one/255/powers of two/large), format_binary_prefixed (basic/zero/one/255/large), format_hex_lower (basic/zero/16/171/large/mixed digits), format_hex_upper_prefixed (basic/zero/16/171/large/mixed digits), format_octal (basic/zero/seven/63/permissions/large), format_float_precision (two places/zero places/many places/negative/zero/rounds up/rounds down/large/small/one place), format_scientific (basic/small/one/negative/zero/large/very small/with decimal), format_currency (basic/negative/round number/zero/small/one decimal/rounds up/rounds down/large/negative cents/negative zero), and integration tests (table formatting, hex and binary, currency calculations, padded IDs, mixed precision, byte values, permissions, memory addresses, scientific vs regular, binary powers of two)
