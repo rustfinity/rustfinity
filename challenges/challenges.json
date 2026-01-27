@@ -1736,5 +1736,17 @@
     "tags": ["smart-pointers", "Rc", "Weak", "reference-counting", "shared-ownership", "std"],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
+  },
+  {
+    "id": 145,
+    "title": "Arc and Thread Safety",
+    "slug": "arc-thread-safety",
+    "short_description": "Learn thread-safe shared ownership with Arc<T>: atomic reference counting, Mutex for shared mutable state, and AtomicUsize for lock-free counters.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "RUST_STD",
+    "tags": ["smart-pointers", "Arc", "Weak", "thread-safety", "Mutex", "atomic", "concurrency", "std"],
+    "created_at": "2025-01-27T00:00:00Z",
+    "updated_at": "2025-01-27T00:00:00Z"
   }
 ]

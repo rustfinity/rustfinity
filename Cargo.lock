@@ -109,6 +109,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4c95c10ba0b00a02636238b814946408b1322d5ac4760326e6fb8ec956d85775"
 
 [[package]]
+name = "arc-thread-safety"
+version = "0.1.0"
+
+[[package]]
 name = "asref-asmut"
 version = "0.1.0"
 

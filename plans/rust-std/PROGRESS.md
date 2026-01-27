@@ -92,13 +92,13 @@
 | 49  | Hash Trait               | `hash-trait`             | MEDIUM     | 141 | Done   |
 | 50  | Default Trait Patterns   | `default-trait-patterns` | EASY       | 142 | Done   |
 
-### Module 9: Memory and Pointers (2/5 completed)
+### Module 9: Memory and Pointers (3/5 completed)
 
 | #   | Challenge                 | Slug                    | Difficulty | ID  | Status  |
 | --- | ------------------------- | ----------------------- | ---------- | --- | ------- |
 | 51  | Box and Heap Allocation   | `box-heap-allocation`   | EASY       | 143 | Done    |
 | 52  | Rc and Reference Counting | `rc-reference-counting` | MEDIUM     | 144 | Done    |
-| 53  | Arc and Thread Safety     | `arc-thread-safety`     | MEDIUM     | -   | Pending |
+| 53  | Arc and Thread Safety     | `arc-thread-safety`     | MEDIUM     | 145 | Done    |
 | 54  | Cell and RefCell          | `cell-refcell`          | HARD       | -   | Pending |
 | 55  | Cow (Copy-on-Write)       | `cow-copy-on-write`     | MEDIUM     | -   | Pending |
 
@@ -107,13 +107,24 @@
 ## Summary
 
 - **Total Challenges**: 55
-- **Completed**: 52
-- **Remaining**: 3
-- **Progress**: 94.5%
+- **Completed**: 53
+- **Remaining**: 2
+- **Progress**: 96.4%
 
 ## Changelog
 
 ### 2025-01-27
+
+- Created `arc-thread-safety` challenge (ID: 145)
+
+  - Implemented 4 basic Arc functions: `create_arc<T>` (wraps value in Arc), `clone_arc<T>` (clones Arc reference), `get_strong_count<T>` (returns strong reference count), `get_value<T: Clone>` (clones inner value)
+  - Implemented `SharedConfig` struct for thread-safe configuration sharing: `new` (creates Arc-wrapped config), `app_name`, `max_connections`, `debug_mode`
+  - Implemented 3 weak reference functions: `create_weak<T>` (creates Weak from Arc), `upgrade_weak<T>` (upgrades Weak to Option<Arc>), `get_weak_count<T>` (returns weak reference count)
+  - Implemented `AtomicCounter` for lock-free thread-safe counting using Arc<AtomicUsize>: `new`, `new_with_value`, `get`, `increment`, `decrement`, `add`, `clone_counter`
+  - Implemented `SharedVec<T>` for thread-safe vector using Arc<Mutex<Vec<T>>>: `new`, `push`, `pop`, `len`, `is_empty`, `get` (where T: Clone), `clone_vec`
+  - Added 85 tests covering create_arc (integer/string/vec/zero/negative/float/tuple/initial count), clone_arc (increments count/multiple clones/share same value/clone of clone/drop decrements/string), get_strong_count (one/increases with clones/through clone), get_value (integer/string/vec/independent clone/empty string/negative), SharedConfig (new/app_name/max_connections/debug_mode true/false/empty name/zero/large connections/shared between clones/is arc), weak references (create/doesnt affect strong count/multiple/upgrade succeeds when alive/fails when dropped/increments count/count zero initially/with string/survives strong drop/multiple upgrade attempts), AtomicCounter (new/new_with_value/increment/decrement/add/clone_counter/default/large value), SharedVec (new/push/pop/get/is_empty/clone_vec/with strings/default), thread safety tests (arc can be sent to thread/config shared across threads/counter works across threads/counter multiple threads/shared_vec works across threads/multiple readers/strong count across threads), and integration tests (arc vs weak semantics, clone vs get_value, config workflow, counter add and increment, shared_vec push pop workflow, multiple handles to counter, weak reference with threads, complex sharing pattern, shared_vec with strings, producer consumer pattern)
+  - All 85 tests + 6 unit tests + 25 doc tests passing
+  - Continues Module 9: Memory and Pointers (3/5 challenges)
 
 - Created `rc-reference-counting` challenge (ID: 144)
 
