@@ -29,5 +29,5 @@ Implement the following methods for `VehicleStatus`:
 - Use a `match` expression inside the methods to handle each variant.
 - Remember to use `&self` for the methods since they should not consume the enum.
 - Use `format!` to construct strings with dynamic values, such as `speed` and `reason`.
-
+- When pattern matching, use .. to ignore remaining named fields (e.g., Driving { speed, .. } extracts only speed, or Driving { .. } ignores all fields) and use _ to ignore specific tuple positions (e.g., BrokenDown(code, _, _) extracts only the first element, or BrokenDown(_, _, _) ignores all elements). This prevents "unused variable" warnings when you only need specific fields.
 </details>
