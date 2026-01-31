@@ -25,9 +25,12 @@ assert_eq!(set.len(), 3);  // Only unique values
 
 Implement the following functions for working with `HashSet`:
 
-1. `unique_elements(items: &[i32]) -> HashSet<i32>` - Return a set containing only the unique elements from the slice
+1. `unique_elements(items: &[i32]) -> HashSet<i32>`
+   - Return a set containing only the unique elements from
+     the slice
 
-2. `count_unique(items: &[i32]) -> usize` - Return the count of unique elements in the slice
+2. `count_unique(items: &[i32]) -> usize`
+   - Return the count of unique elements in the slice
 
 3. `find_common(set1: &HashSet<i32>, set2: &HashSet<i32>) -> HashSet<i32>` - Return elements that appear in both sets (intersection)
 
@@ -37,7 +40,10 @@ Implement the following functions for working with `HashSet`:
 
 6. `find_symmetric_difference(set1: &HashSet<i32>, set2: &HashSet<i32>) -> HashSet<i32>` - Return elements that are in exactly one of the sets (symmetric difference)
 
-7. `is_subset(potential_subset: &HashSet<i32>, potential_superset: &HashSet<i32>) -> bool` - Check if all elements of `potential_subset` are contained in `potential_superset`
+7. `is_subset(potential_subset: &HashSet<i32>,
+              potential_superset: &HashSet<i32>) -> bool`
+   - Check if all elements of `potential_subset` are
+     contained in `potential_superset`
 
 ## Examples
 

@@ -49,13 +49,20 @@ let pattern: Vec<i32> = [1, 2].iter().copied().cycle().take(6).collect();
 
 Implement the following functions that use iterator combinators:
 
-1. `chain_sequences<T: Clone>(first: &[T], second: &[T]) -> Vec<T>` - Combine two slices into a single Vec using `chain()`
-2. `zip_pairs<T: Clone, U: Clone>(first: &[T], second: &[U]) -> Vec<(T, U)>` - Pair elements from two slices using `zip()`
+1. `chain_sequences<T: Clone>(first: &[T], second: &[T]) -> Vec<T>`
+   - Combine two slices into a single Vec using `chain()`
+2. `zip_pairs<T: Clone, U: Clone>(first: &[T],
+                                   second: &[U]) -> Vec<(T, U)>`
+   - Pair elements from two slices using `zip()`
 3. `take_first<T: Clone>(items: &[T], n: usize) -> Vec<T>` - Return the first `n` elements using `take()`
 4. `skip_first<T: Clone>(items: &[T], n: usize) -> Vec<T>` - Skip the first `n` elements using `skip()`
 5. `reverse_sequence<T: Clone>(items: &[T]) -> Vec<T>` - Reverse a sequence using `rev()`
-6. `interleave<T: Clone>(first: &[T], second: &[T]) -> Vec<T>` - Interleave elements from two slices (alternating elements)
-7. `sliding_pairs<T: Clone>(items: &[T]) -> Vec<(T, T)>` - Create pairs of consecutive elements using `zip()` with a skipped version
+6. `interleave<T: Clone>(first: &[T], second: &[T]) -> Vec<T>`
+   - Interleave elements from two slices
+     (alternating elements)
+7. `sliding_pairs<T: Clone>(items: &[T]) -> Vec<(T, T)>`
+   - Create pairs of consecutive elements using `zip()`
+     with a skipped version
 
 ## Examples
 

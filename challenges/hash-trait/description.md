@@ -14,9 +14,13 @@ Implement several types demonstrating `Hash` trait patterns:
 
 1. **`Point`**: A 2D point with `x` and `y` coordinates (`i32`). Use derived `Hash`, `Eq`, and `PartialEq`.
 
-2. **`UserId`**: A newtype wrapper around `u64`. Use derived traits to make it usable as a `HashMap` key.
+2. **`UserId`**: A newtype wrapper around `u64`.
+   Use derived traits to make it usable as a `HashMap` key.
 
-3. **`CaseInsensitiveString`**: A string wrapper where equality and hashing are case-insensitive. Implement `Hash` manually by hashing the lowercase form of the string. This must match the `PartialEq`/`Eq` implementation.
+3. **`CaseInsensitiveString`**: A string wrapper where
+   equality and hashing are case-insensitive. Implement `Hash`
+   manually by hashing the lowercase form of the string.
+   This must match the `PartialEq`/`Eq` implementation.
 
 4. **`Document`**: A document with `id` (`u64`), `title` (`String`), and `content` (`String`). Two documents are equal if they have the same `id`, regardless of title or content. Implement `Hash` to only hash the `id` field (matching the equality semantics).
 
@@ -24,7 +28,8 @@ Implement several types demonstrating `Hash` trait patterns:
 
 Implement the following utility functions:
 
-1. **`count_unique<T: Hash + Eq>(items: &[T]) -> usize`**: Returns the count of unique elements using a `HashSet`.
+1. **`count_unique<T: Hash + Eq>(items: &[T]) -> usize`**:
+   Returns the count of unique elements using a `HashSet`.
 
 2. **`find_duplicates<T: Hash + Eq + Clone>(items: &[T]) -> Vec<T>`**: Returns a vector of elements that appear more than once.
 

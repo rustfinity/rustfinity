@@ -83,12 +83,17 @@ Implement the following functions that demonstrate `fold()` and `scan()` pattern
 
 1. `sum_with_fold(numbers: &[i32]) -> i32` - Sum all numbers using `fold()`
 2. `product_with_fold(numbers: &[i32]) -> i64` - Multiply all numbers using `fold()` (use i64 to avoid overflow)
-3. `concat_strings(strings: &[&str], separator: &str) -> String` - Join strings with a separator using `fold()`
-4. `running_sum(numbers: &[i32]) -> Vec<i32>` - Return cumulative sums using `scan()`
-5. `running_max(numbers: &[i32]) -> Vec<i32>` - Return running maximum values using `scan()`
+3. `concat_strings(strings: &[&str], separator: &str) -> String`
+   - Join strings with a separator using `fold()`
+4. `running_sum(numbers: &[i32]) -> Vec<i32>`
+   - Return cumulative sums using `scan()`
+5. `running_max(numbers: &[i32]) -> Vec<i32>`
+   - Return running maximum values using `scan()`
 6. `take_while_sum_under(numbers: &[i32], limit: i32) -> Vec<i32>` - Take numbers while running sum stays under limit using `scan()`
-7. `count_occurrences<T: PartialEq>(items: &[T], target: &T) -> usize` - Count occurrences using `fold()`
-8. `running_average(numbers: &[f64]) -> Vec<f64>` - Return running average at each position using `scan()`
+7. `count_occurrences<T: PartialEq>(items: &[T], target: &T) -> usize`
+   - Count occurrences using `fold()`
+8. `running_average(numbers: &[f64]) -> Vec<f64>`
+   - Return running average at each position using `scan()`
 
 ## Examples
 

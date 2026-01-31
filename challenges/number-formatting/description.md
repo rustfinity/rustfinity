@@ -1,6 +1,10 @@
 # Number Formatting
 
-Formatting numbers for display is a common task in Rust programming. Whether you're building command-line tools, generating reports, or creating user interfaces, you'll need to convert numeric values into human-readable strings with specific formatting requirements.
+Formatting numbers for display is a common task in Rust
+programming. Whether you're building command-line tools,
+generating reports, or creating user interfaces, you'll need
+to convert numeric values into human-readable strings with
+specific formatting requirements.
 
 Rust's `format!` macro and the `std::fmt` module provide powerful formatting capabilities. You can control padding, alignment, precision for floating-point numbers, and display integers in different bases (binary, octal, hexadecimal). Understanding format specifiers like `{:05}`, `{:.2}`, `{:#x}`, and `{:>10}` is essential for producing well-formatted output.
 

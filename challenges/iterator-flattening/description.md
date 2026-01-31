@@ -38,14 +38,22 @@ This is equivalent to but more efficient than `.map(...).flatten()`.
 
 Implement the following functions that demonstrate iterator flattening patterns:
 
-1. `flatten_nested(nested: Vec<Vec<i32>>) -> Vec<i32>` - Flatten a vector of vectors into a single vector
-2. `flatten_options(options: Vec<Option<i32>>) -> Vec<i32>` - Extract all `Some` values, discarding `None`
-3. `flatten_results(results: Vec<Result<i32, &str>>) -> Vec<i32>` - Extract all `Ok` values, discarding `Err`
+1. `flatten_nested(nested: Vec<Vec<i32>>) -> Vec<i32>`
+   - Flatten a vector of vectors into a single vector
+2. `flatten_options(options: Vec<Option<i32>>) -> Vec<i32>`
+   - Extract all `Some` values, discarding `None`
+3. `flatten_results(results: Vec<Result<i32, &str>>) -> Vec<i32>`
+   - Extract all `Ok` values, discarding `Err`
 4. `chars_from_words(words: &[&str]) -> Vec<char>` - Get all characters from a slice of string slices
-5. `expand_ranges(ranges: &[(i32, i32)]) -> Vec<i32>` - Expand (start, end) tuples into sequences (inclusive ranges)
+5. `expand_ranges(ranges: &[(i32, i32)]) -> Vec<i32>`
+   - Expand (start, end) tuples into sequences
+     (inclusive ranges)
 6. `flatten_to_depth_one(nested: Vec<Vec<Vec<i32>>>) -> Vec<Vec<i32>>` - Flatten only the outer layer, keeping inner vectors intact
 7. `words_from_lines(lines: &[&str]) -> Vec<String>` - Split each line into words, collecting all words
-8. `flatten_and_filter<T, F>(nested: Vec<Vec<T>>, predicate: F) -> Vec<T>` - Flatten then filter with a predicate (where `T: Clone`, `F: Fn(&T) -> bool`)
+8. `flatten_and_filter<T, F>(nested: Vec<Vec<T>>,
+                              predicate: F) -> Vec<T>`
+   - Flatten then filter with a predicate
+     (where `T: Clone`, `F: Fn(&T) -> bool`)
 
 ## Examples
 

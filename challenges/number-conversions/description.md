@@ -46,11 +46,17 @@ Rust integers provide methods for safe arithmetic that handle overflow explicitl
 
 Implement the following functions to demonstrate safe numeric conversions and arithmetic:
 
-1. **`safe_i32_to_i16(value: i32) -> Option<i16>`** - Convert an `i32` to `i16`, returning `None` if the value doesn't fit.
+1. **`safe_i32_to_i16(value: i32) -> Option<i16>`**
+   - Convert an `i32` to `i16`, returning `None` if the
+     value doesn't fit.
 
-2. **`safe_u64_to_u32(value: u64) -> Option<u32>`** - Convert a `u64` to `u32`, returning `None` if the value doesn't fit.
+2. **`safe_u64_to_u32(value: u64) -> Option<u32>`**
+   - Convert a `u64` to `u32`, returning `None` if the
+     value doesn't fit.
 
-3. **`safe_i64_to_usize(value: i64) -> Option<usize>`** - Convert an `i64` to `usize`, returning `None` if the value is negative or too large.
+3. **`safe_i64_to_usize(value: i64) -> Option<usize>`**
+   - Convert an `i64` to `usize`, returning `None` if
+     the value is negative or too large.
 
 4. **`checked_multiply(a: i32, b: i32) -> Option<i32>`** - Multiply two `i32` values, returning `None` on overflow.
 
