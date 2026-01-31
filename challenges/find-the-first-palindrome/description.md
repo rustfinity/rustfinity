@@ -41,10 +41,12 @@ If there are no palindromes in the range, the function should return `None`.
 
 ```rust
 let result = find_first_palindrome(10, 30);
-assert_eq!(result, Some(11)); // 11 is the first palindrome in the range
+// 11 is the first palindrome in the range
+assert_eq!(result, Some(11));
 
 let result = find_first_palindrome(100, 105);
-assert_eq!(result, Some(101)); // 101 is the first palindrome in the range
+// 101 is the first palindrome in the range
+assert_eq!(result, Some(101));
 
 let result = find_first_palindrome(123, 130);
 assert_eq!(result, None); // No palindromes in this range
@@ -53,7 +55,8 @@ let result = find_first_palindrome(-130, -1);
 assert_eq!(result, None); // No palindromes in this range
 
 let result = find_first_palindrome(100, -105);
-assert_eq!(result, Some(0)); // 0 is the first palindrome in the range
+// 0 is the first palindrome in the range
+assert_eq!(result, Some(0));
 ```
 
 ## Did you know?

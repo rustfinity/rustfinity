@@ -19,7 +19,8 @@ The `?Sized` bound allows these traits to work with dynamically-sized types like
 ## Standard Library Examples
 
 ```rust
-// String implements AsRef<str>, AsRef<[u8]>, and AsRef<Path>
+// String implements AsRef<str>, AsRef<[u8]>,
+// and AsRef<Path>
 fn print_length<S: AsRef<str>>(s: S) {
     println!("Length: {}", s.as_ref().len());
 }
@@ -160,7 +161,10 @@ assert_eq!(bytes, b"Hello");
 
 // Uppercase
 assert_eq!(print_as_uppercase("hello"), "HELLO");
-assert_eq!(print_as_uppercase(String::from("World")), "WORLD");
+assert_eq!(
+    print_as_uppercase(String::from("World")),
+    "WORLD"
+);
 
 // Append value
 let mut vec = vec![1, 2];
@@ -168,7 +172,10 @@ append_value(&mut vec, 3);
 assert_eq!(vec, vec![1, 2, 3]);
 
 // Path extension
-assert_eq!(get_extension("file.txt"), Some("txt".to_string()));
+assert_eq!(
+    get_extension("file.txt"),
+    Some("txt".to_string())
+);
 assert_eq!(
     get_extension(
         std::path::PathBuf::from("image.png")

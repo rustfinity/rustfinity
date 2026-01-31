@@ -8,14 +8,19 @@ Range queries in Rust use the `std::ops::Bound` enum to specify inclusive, exclu
 use std::collections::BTreeSet;
 use std::ops::Bound;
 
-let numbers: BTreeSet<i32> = [1, 3, 5, 7, 9, 11, 13].into_iter().collect();
+let numbers: BTreeSet<i32> = [
+    1, 3, 5, 7, 9, 11, 13
+].into_iter().collect();
 
 // Range from 3 to 9 (exclusive end)
 let range: Vec<_> = numbers.range(3..9).copied().collect();
 assert_eq!(range, vec![3, 5, 7]);
 
 // Range from 5 to 11 (inclusive end)
-let range: Vec<_> = numbers.range(5..=11).copied().collect();
+let range: Vec<_> = numbers
+    .range(5..=11)
+    .copied()
+    .collect();
 assert_eq!(range, vec![5, 7, 9, 11]);
 
 // Everything up to 7 (exclusive)

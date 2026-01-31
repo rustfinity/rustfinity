@@ -75,7 +75,12 @@ Implement the following collection conversion functions:
 ## Examples
 
 ```rust
-use std::collections::{HashSet, BTreeSet, HashMap, BTreeMap};
+use std::collections::{
+    HashSet,
+    BTreeSet,
+    HashMap,
+    BTreeMap
+};
 
 // vec_to_hashset
 let unique = vec_to_hashset(vec![1, 2, 2, 3, 3, 3]);
@@ -101,7 +106,11 @@ let map = pairs_to_hashmap(vec![("a", 1), ("b", 2)]);
 assert_eq!(map.get("a"), Some(&1));
 
 // pairs_to_btreemap
-let map = pairs_to_btreemap(vec![("c", 3), ("a", 1), ("b", 2)]);
+let map = pairs_to_btreemap(vec![
+    ("c", 3),
+    ("a", 1),
+    ("b", 2)
+]);
 let keys: Vec<_> = map.keys().collect();
 // sorted!
 assert_eq!(keys, vec![&"a", &"b", &"c"]);

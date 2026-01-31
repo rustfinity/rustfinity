@@ -105,7 +105,11 @@ let handle = thread::spawn(move || {
 handle.join().unwrap();
 
 // Shared configuration
-let config = SharedConfig::new("MyApp".to_string(), 100, true);
+let config = SharedConfig::new(
+    "MyApp".to_string(),
+    100,
+    true
+);
 let config_clone = Arc::clone(&config);
 
 thread::spawn(move || {

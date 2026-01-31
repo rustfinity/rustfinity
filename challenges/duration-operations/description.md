@@ -59,7 +59,8 @@ let checked = d1.checked_add(d2);  // Some(8 seconds)
 let overflow = Duration::MAX.checked_add(d1); // None
 
 // Saturating operations (clamp at bounds)
-let saturated = Duration::MAX.saturating_add(d1); // Duration::MAX
+let saturated = Duration::MAX.saturating_add(d1);
+// Duration::MAX
 
 // Multiplication and division
 let doubled = d1 * 2;        // 10 seconds
@@ -140,7 +141,10 @@ let durations = vec![
     Duration::from_secs(120),
     Duration::from_secs(180),
 ];
-assert_eq!(add_durations(&durations), Duration::from_secs(360));
+assert_eq!(
+    add_durations(&durations),
+    Duration::from_secs(360)
+);
 
 // Average duration
 let durations = vec![
@@ -155,8 +159,14 @@ assert_eq!(
 assert_eq!(average_duration(&[]), None);
 
 // Comparison
-assert!(is_longer_than(Duration::from_secs(10), Duration::from_secs(5)));
-assert!(!is_longer_than(Duration::from_secs(5), Duration::from_secs(5)));
+assert!(is_longer_than(
+    Duration::from_secs(10),
+    Duration::from_secs(5)
+));
+assert!(!is_longer_than(
+    Duration::from_secs(5),
+    Duration::from_secs(5)
+));
 ```
 
 ## Hints
