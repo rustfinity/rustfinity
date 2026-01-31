@@ -19,7 +19,8 @@ let inf = f64::INFINITY;
 assert!(inf.is_infinite());
 assert!(inf > f64::MAX);
 
-assert_eq!(0.0, -0.0);  // Negative zero equals positive zero
+// Negative zero equals positive zero
+assert_eq!(0.0, -0.0);
 ```
 
 ## Checking for Special Values
@@ -31,7 +32,8 @@ let x = 1.0_f64;
 assert!(x.is_finite());      // Not NaN, not infinite
 assert!(!x.is_nan());
 assert!(!x.is_infinite());
-assert!(x.is_normal());      // Not zero, subnormal, infinite, or NaN
+// Not zero, subnormal, infinite, or NaN
+assert!(x.is_normal());
 
 let zero = 0.0_f64;
 assert!(!zero.is_normal());  // Zero is not "normal"
@@ -44,9 +46,12 @@ Rust provides several methods for converting floats to integers or rounding:
 
 ```rust
 let x = 3.7_f64;
-assert_eq!(x.floor(), 3.0);   // Round toward negative infinity
-assert_eq!(x.ceil(), 4.0);    // Round toward positive infinity
-assert_eq!(x.round(), 4.0);   // Round to nearest, ties away from zero
+// Round toward negative infinity
+assert_eq!(x.floor(), 3.0);
+// Round toward positive infinity
+assert_eq!(x.ceil(), 4.0);
+// Round to nearest, ties away from zero
+assert_eq!(x.round(), 4.0);
 assert_eq!(x.trunc(), 3.0);   // Round toward zero
 
 let y = -3.7_f64;
@@ -132,7 +137,10 @@ assert_eq!(safe_sqrt(4.0), Some(2.0));
 assert_eq!(safe_sqrt(-1.0), None);
 
 // Sum finite values
-assert_eq!(sum_finite(&[1.0, f64::NAN, 2.0, f64::INFINITY, 3.0]), 6.0);
+assert_eq!(
+    sum_finite(&[1.0, f64::NAN, 2.0, f64::INFINITY, 3.0]),
+    6.0
+);
 ```
 
 ## Hints

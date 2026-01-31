@@ -55,9 +55,11 @@ assert!(!set.insert(p2)); // Returns false, p2 is duplicate
 // CaseInsensitiveString with manual Hash
 let s1 = CaseInsensitiveString::new("Hello");
 let s2 = CaseInsensitiveString::new("HELLO");
-let mut set: HashSet<CaseInsensitiveString> = HashSet::new();
+let mut set: HashSet<CaseInsensitiveString> =
+    HashSet::new();
 set.insert(s1);
-assert!(!set.insert(s2)); // Same hash due to case-insensitivity
+// Same hash due to case-insensitivity
+assert!(!set.insert(s2));
 
 // Document with id-only hashing
 let doc1 = Document::new(1, "Draft", "Content v1");
@@ -68,7 +70,10 @@ assert!(!set.insert(doc2)); // Same id, same hash
 
 // Utility functions
 assert_eq!(count_unique(&[1, 2, 2, 3, 3, 3]), 3);
-assert_eq!(find_duplicates(&[1, 2, 2, 3, 3, 3]), vec![2, 3]);
+assert_eq!(
+    find_duplicates(&[1, 2, 2, 3, 3, 3]),
+    vec![2, 3]
+);
 ```
 
 ## Hints

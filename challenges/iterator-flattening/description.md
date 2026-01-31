@@ -37,8 +37,14 @@ The `flat_map()` method combines `map()` and `flatten()` into a single operation
 let words = vec!["hello", "world"];
 
 // Split each word into characters
-let chars: Vec<char> = words.iter().flat_map(|s| s.chars()).collect();
-assert_eq!(chars, vec!['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd']);
+let chars: Vec<char> = words
+    .iter()
+    .flat_map(|s| s.chars())
+    .collect();
+assert_eq!(
+    chars,
+    vec!['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd']
+);
 ```
 
 This is equivalent to but more efficient than `.map(...).flatten()`.
@@ -69,7 +75,11 @@ Implement the following functions that demonstrate iterator flattening patterns:
 ```rust
 // flatten_nested
 assert_eq!(
-    flatten_nested(vec![vec![1, 2], vec![3], vec![4, 5, 6]]),
+    flatten_nested(vec![
+        vec![1, 2],
+        vec![3],
+        vec![4, 5, 6]
+    ]),
     vec![1, 2, 3, 4, 5, 6]
 );
 
@@ -80,7 +90,11 @@ assert_eq!(
 );
 
 // flatten_results
-let results: Vec<Result<i32, &str>> = vec![Ok(1), Err("bad"), Ok(3)];
+let results: Vec<Result<i32, &str>> = vec![
+    Ok(1),
+    Err("bad"),
+    Ok(3)
+];
 assert_eq!(flatten_results(results), vec![1, 3]);
 
 // chars_from_words

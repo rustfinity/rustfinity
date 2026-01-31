@@ -21,7 +21,8 @@ let time = UNIX_EPOCH + Duration::from_secs(timestamp);
 // Compare times
 let earlier = UNIX_EPOCH + Duration::from_secs(1000);
 let later = UNIX_EPOCH + Duration::from_secs(2000);
-let elapsed = later.duration_since(earlier).unwrap(); // 1000 seconds
+let elapsed = later.duration_since(earlier).unwrap();
+// 1000 seconds
 ```
 
 ## Error Handling
@@ -35,10 +36,12 @@ let earlier = UNIX_EPOCH + Duration::from_secs(1000);
 let later = UNIX_EPOCH + Duration::from_secs(2000);
 
 // This works - later is after earlier
-let ok = later.duration_since(earlier); // Ok(Duration::from_secs(1000))
+let ok = later.duration_since(earlier);
+// Ok(Duration::from_secs(1000))
 
 // This fails - earlier is before later
-let err = earlier.duration_since(later); // Err(SystemTimeError)
+let err = earlier.duration_since(later);
+// Err(SystemTimeError)
 ```
 
 ## Your Task
@@ -97,7 +100,8 @@ assert_eq!(seconds_between(t2, t1), None); // t2 is after t1
 let past = UNIX_EPOCH + Duration::from_secs(1);
 assert!(is_in_past(past));
 
-let far_future = UNIX_EPOCH + Duration::from_secs(u64::MAX / 2);
+let far_future = UNIX_EPOCH
+    + Duration::from_secs(u64::MAX / 2);
 assert!(is_in_future(far_future));
 
 // Adding time

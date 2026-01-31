@@ -26,7 +26,8 @@ fn visit_dirs(dir: &Path) -> io::Result<()> {
         let entry = entry?;
         let path = entry.path();
         if path.is_dir() {
-            visit_dirs(&path)?;  // Recurse into subdirectory
+            // Recurse into subdirectory
+            visit_dirs(&path)?;
         } else {
             println!("File: {}", path.display());
         }

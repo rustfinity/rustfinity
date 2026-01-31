@@ -77,22 +77,28 @@ assert_eq!(
 );
 
 // find_difference
-let diff = find_difference(&set1, &set2);  // In set1 but not set2
+// In set1 but not set2
+let diff = find_difference(&set1, &set2);
 assert_eq!(
     diff,
     [1].into_iter().collect()
 );
 
 // find_symmetric_difference
-let sym_diff = find_symmetric_difference(&set1, &set2);  // In exactly one set
+// In exactly one set
+let sym_diff = find_symmetric_difference(&set1, &set2);
 assert_eq!(
     sym_diff,
     [1, 4].into_iter().collect()
 );
 
 // is_subset
-let small: HashSet<i32> = [2, 3].into_iter().collect();
-let large: HashSet<i32> = [1, 2, 3, 4].into_iter().collect();
+let small: HashSet<i32> = [2, 3]
+    .into_iter()
+    .collect();
+let large: HashSet<i32> = [1, 2, 3, 4]
+    .into_iter()
+    .collect();
 assert!(is_subset(&small, &large));
 assert!(!is_subset(&large, &small));
 ```

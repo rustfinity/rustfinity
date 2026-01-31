@@ -17,7 +17,9 @@ assert_eq!(product, 120);
 
 // Build a string
 let words = vec!["Hello", "World"];
-let sentence = words.iter().fold(String::new(), |acc, &word| {
+let sentence = words
+    .iter()
+    .fold(String::new(), |acc, &word| {
     if acc.is_empty() {
         word.to_string()
     } else {
@@ -74,7 +76,8 @@ let until_exceeds_5: Vec<i32> = numbers
         }
     })
     .collect();
-assert_eq!(until_exceeds_5, vec![1, 3]);  // Stops before exceeding 5
+// Stops before exceeding 5
+assert_eq!(until_exceeds_5, vec![1, 3]);
 ```
 
 ## Your Task
@@ -111,10 +114,14 @@ assert_eq!(concat_strings(&["a", "b", "c"], "-"), "a-b-c");
 assert_eq!(running_sum(&[1, 2, 3, 4]), vec![1, 3, 6, 10]);
 
 // running_max
-assert_eq!(running_max(&[3, 1, 4, 1, 5]), vec![3, 3, 4, 4, 5]);
+assert_eq!(
+    running_max(&[3, 1, 4, 1, 5]),
+    vec![3, 3, 4, 4, 5]
+);
 
 // take_while_sum_under
-// Takes [1, 2, 3] but stops before adding 4 (sum would be 10 >= 10)
+// Takes [1, 2, 3] but stops before adding 4
+// (sum would be 10 >= 10)
 assert_eq!(
     take_while_sum_under(&[1, 2, 3, 4, 5], 10),
     vec![1, 2, 3]
@@ -124,7 +131,10 @@ assert_eq!(
 assert_eq!(count_occurrences(&[1, 2, 1, 3, 1], &1), 3);
 
 // running_average
-assert_eq!(running_average(&[2.0, 4.0, 6.0]), vec![2.0, 3.0, 4.0]);
+assert_eq!(
+    running_average(&[2.0, 4.0, 6.0]),
+    vec![2.0, 3.0, 4.0]
+);
 ```
 
 ## Hints

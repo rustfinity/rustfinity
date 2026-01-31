@@ -18,7 +18,10 @@ let combined: Vec<i32> = numbers.iter()
 // zip() pairs elements from two iterators
 let names = vec!["Alice", "Bob", "Charlie"];
 let ages = vec![30, 25, 35];
-let people: Vec<_> = names.iter().zip(ages.iter()).collect();
+let people: Vec<_> = names
+    .iter()
+    .zip(ages.iter())
+    .collect();
 // people = [("Alice", 30), ("Bob", 25), ("Charlie", 35)]
 ```
 
@@ -37,11 +40,19 @@ let nums: Vec<i32> = (1..=10).skip(2).take(5).collect();
 // nums = [3, 4, 5, 6, 7]
 
 // rev() to reverse
-let reversed: Vec<i32> = vec![1, 2, 3].into_iter().rev().collect();
+let reversed: Vec<i32> = vec![1, 2, 3]
+    .into_iter()
+    .rev()
+    .collect();
 // reversed = [3, 2, 1]
 
 // cycle() for infinite repetition (use with take!)
-let pattern: Vec<i32> = [1, 2].iter().copied().cycle().take(6).collect();
+let pattern: Vec<i32> = [1, 2]
+    .iter()
+    .copied()
+    .cycle()
+    .take(6)
+    .collect();
 // pattern = [1, 2, 1, 2, 1, 2]
 ```
 
@@ -68,7 +79,10 @@ Implement the following functions that use iterator combinators:
 
 ```rust
 // chain_sequences
-assert_eq!(chain_sequences(&[1, 2], &[3, 4]), vec![1, 2, 3, 4]);
+assert_eq!(
+    chain_sequences(&[1, 2], &[3, 4]),
+    vec![1, 2, 3, 4]
+);
 
 // zip_pairs
 assert_eq!(
