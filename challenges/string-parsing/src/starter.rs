@@ -3,7 +3,6 @@ use std::str::FromStr;
 /// Parse a string into an i32, returning a descriptive error message on failure.
 pub fn parse_int(s: &str) -> Result<i32, String> {
     // TODO: Parse the string as an i32
-    // Hint: Use .parse::<i32>() and .map_err() to convert the error
     unimplemented!()
 }
 
@@ -11,14 +10,12 @@ pub fn parse_int(s: &str) -> Result<i32, String> {
 /// Accepts: "true", "false", "1", "0", "yes", "no"
 pub fn parse_bool(s: &str) -> Result<bool, String> {
     // TODO: Match on the lowercase version of the string
-    // Hint: Use .to_lowercase().as_str() in a match expression
     unimplemented!()
 }
 
 /// Parse a "key=value" string into a tuple.
 pub fn parse_key_value(s: &str) -> Result<(String, String), String> {
     // TODO: Split the string at '=' and return (key, value)
-    // Hint: Use .splitn(2, '=') to split at only the first '='
     unimplemented!()
 }
 
@@ -37,7 +34,6 @@ impl FromStr for Color {
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         // TODO: Parse the "r,g,b" format
-        // Hint: Split by ',', parse each part as u8
         unimplemented!()
     }
 }
@@ -45,7 +41,6 @@ impl FromStr for Color {
 /// Parse a delimited list of values into a Vec.
 pub fn parse_list<T: FromStr>(s: &str, delimiter: char) -> Result<Vec<T>, String> {
     // TODO: Split by delimiter, parse each part, collect into Result<Vec<T>, String>
-    // Hint: Use .split(), .map() with .parse(), and .collect::<Result<Vec<T>, _>>()
     unimplemented!()
 }
 

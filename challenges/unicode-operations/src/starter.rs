@@ -3,7 +3,6 @@
 /// This counts Unicode scalar values, not bytes or grapheme clusters.
 pub fn char_count(s: &str) -> usize {
     // TODO: Use .chars() to iterate over Unicode characters
-    // Hint: .len() returns bytes, not characters!
     unimplemented!()
 }
 
@@ -18,10 +17,6 @@ pub fn byte_count(s: &str) -> usize {
 /// Returns `None` if indices are out of bounds or if start > end.
 pub fn safe_substring(s: &str, start: usize, end: usize) -> Option<String> {
     // TODO: Implement safe substring extraction
-    // 1. Check if start > end (return None)
-    // 2. Collect characters into a Vec<char>
-    // 3. Check if end is within bounds
-    // 4. Extract and return the substring
     unimplemented!()
 }
 
@@ -29,7 +24,7 @@ pub fn safe_substring(s: &str, start: usize, end: usize) -> Option<String> {
 ///
 /// Returns `None` if the index is out of bounds.
 pub fn char_at(s: &str, index: usize) -> Option<char> {
-    // TODO: Use .chars().nth(index) to get the character at position
+    // TODO: Get the character at the given position
     unimplemented!()
 }
 

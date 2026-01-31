@@ -11,7 +11,6 @@ pub fn build_greeting(name: &str, age: u32) -> String {
 pub fn build_list(items: &[&str]) -> String {
     // TODO: Create a numbered list using std::fmt::Write
     // Format: "1. item1\n2. item2\n3. item3"
-    // Hint: Use write!(string, ...) and iterate with enumerate()
     unimplemented!()
 }
 
@@ -26,7 +25,7 @@ pub struct Person {
 // Format: "Name (Age years old)"
 impl Display for Person {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
-        // TODO: Write the person's info in the format: "Name (Age years old)"
+        // TODO: Write the person's info in the format
         unimplemented!()
     }
 }
@@ -47,7 +46,6 @@ pub fn build_table(headers: &[&str], rows: &[Vec<String>]) -> String {
     // 2. Build header row with pipes: | Header1 | Header2 |
     // 3. Build separator row: |---------|---------|
     // 4. Build each data row: | Value1  | Value2  |
-    // Hint: Use write!(output, "{:<width$}", value, width = w) for left-aligned padding
     unimplemented!()
 }
 
@@ -55,7 +53,6 @@ pub fn build_table(headers: &[&str], rows: &[Vec<String>]) -> String {
 pub fn concat_with_separator(parts: &[&str], sep: &str) -> String {
     // TODO: Join the parts with the separator
     // Don't use the .join() method - implement it manually
-    // Hint: Iterate and conditionally add separator before each item (except first)
     unimplemented!()
 }
 

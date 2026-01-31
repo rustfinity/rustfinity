@@ -1,46 +1,45 @@
 /// Check if a string starts with the given prefix.
 pub fn has_prefix(s: &str, prefix: &str) -> bool {
-    // TODO: Use the appropriate string method to check for a prefix
+    // TODO: Check for a prefix
     unimplemented!()
 }
 
 /// Check if a string ends with the given suffix.
 pub fn has_suffix(s: &str, suffix: &str) -> bool {
-    // TODO: Use the appropriate string method to check for a suffix
+    // TODO: Check for a suffix
     unimplemented!()
 }
 
 /// Find the first occurrence of a pattern in the string.
 /// Returns the byte index of the match, or None if not found.
 pub fn find_first(s: &str, pattern: &str) -> Option<usize> {
-    // TODO: Use the appropriate string method to find the first occurrence
+    // TODO: Find the first occurrence
     unimplemented!()
 }
 
 /// Find the last occurrence of a pattern in the string.
 /// Returns the byte index of the match, or None if not found.
 pub fn find_last(s: &str, pattern: &str) -> Option<usize> {
-    // TODO: Use the appropriate string method to find the last occurrence
+    // TODO: Find the last occurrence
     unimplemented!()
 }
 
 /// Count how many times a pattern appears in the string.
 pub fn count_occurrences(s: &str, pattern: &str) -> usize {
-    // TODO: Use an iterator method to count pattern matches
+    // TODO: Count pattern matches
     unimplemented!()
 }
 
 /// Find all byte indices where the pattern occurs.
 pub fn find_all_indices(s: &str, pattern: &str) -> Vec<usize> {
-    // TODO: Use match_indices to find all positions
+    // TODO: Find all positions
     unimplemented!()
 }
 
 /// Extract text between the first occurrence of start and end markers.
 /// Returns None if either marker is not found or if end comes before start.
 pub fn extract_between(s: &str, start: &str, end: &str) -> Option<String> {
-    // TODO: Find the start marker, then find the end marker in the remaining string
-    // Return the text between them
+    // TODO: Find the start and end markers, return text between them
     unimplemented!()
 }
 

@@ -3,42 +3,40 @@ use std::path::Path;
 
 /// Convert a `&str` to an `OsString`.
 pub fn to_os_string(s: &str) -> OsString {
-    // TODO: Use OsString::from() to convert the string
+    // TODO: Convert the string
     unimplemented!()
 }
 
 /// Try to convert an `OsStr` to `&str`.
 /// Returns `None` if the `OsStr` is not valid UTF-8.
 pub fn os_str_to_str(os: &OsStr) -> Option<&str> {
-    // TODO: Use the .to_str() method on OsStr
+    // TODO: Convert OsStr to str
     unimplemented!()
 }
 
 /// Convert `OsStr` to `String`, replacing invalid UTF-8 with the replacement character.
 pub fn os_string_to_string_lossy(os: &OsStr) -> String {
-    // TODO: Use .to_string_lossy() and convert to owned String
+    // TODO: Convert to String with lossy conversion
     unimplemented!()
 }
 
 /// Extract the file extension from a path as a `String`.
 /// Returns `None` if there is no extension or if the extension isn't valid UTF-8.
 pub fn get_file_extension(path: &Path) -> Option<String> {
-    // TODO: Use path.extension() to get the extension as OsStr
-    // Then convert it to a String using .to_str()
+    // TODO: Extract the extension
     unimplemented!()
 }
 
 /// Join multiple path components into a single `OsString` path.
 /// Uses the platform-appropriate path separator.
 pub fn join_path_components(components: &[&str]) -> OsString {
-    // TODO: Use PathBuf to build the path, then convert to OsString
-    // Hint: PathBuf::new() creates an empty path, .push() adds components
+    // TODO: Join the components
     unimplemented!()
 }
 
 /// Check if an `OsStr` contains valid UTF-8.
 pub fn is_valid_utf8(os: &OsStr) -> bool {
-    // TODO: Check if .to_str() returns Some
+    // TODO: Check if valid UTF-8
     unimplemented!()
 }
 
