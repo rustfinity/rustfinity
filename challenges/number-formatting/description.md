@@ -102,7 +102,8 @@ assert_eq!(format_currency(1000.0), "$1000.00");
 <details>
   <summary>Click here to reveal hints</summary>
 
-- Use `format!("{:0width$}", num, width = w)` for zero-padded formatting
+- Use `format!("{:0width$}", num, width = w)` for
+  zero-padded formatting
 - Use `format!("{:>width$}", num, width = w)` for right-aligned formatting
 - Use `format!("{:b}", num)` for binary, `format!("{:x}", num)` for hex, `format!("{:o}", num)` for octal
 - The `#` flag adds prefixes: `{:#b}` gives "0b...", `{:#x}` gives "0x..."

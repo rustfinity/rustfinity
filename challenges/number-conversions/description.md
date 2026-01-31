@@ -13,7 +13,8 @@ let big: i64 = 1000;
 let small: Result<i16, _> = i16::try_from(big);  // Ok(1000)
 
 let too_big: i64 = 100_000;
-let overflow: Result<i16, _> = i16::try_from(too_big);  // Err(...)
+// Err(...)
+let overflow: Result<i16, _> = i16::try_from(too_big);
 ```
 
 ## Safe Arithmetic Operations
@@ -58,11 +59,16 @@ Implement the following functions to demonstrate safe numeric conversions and ar
    - Convert an `i64` to `usize`, returning `None` if
      the value is negative or too large.
 
-4. **`checked_multiply(a: i32, b: i32) -> Option<i32>`** - Multiply two `i32` values, returning `None` on overflow.
+4. **`checked_multiply(a: i32, b: i32) -> Option<i32>`**
+   - Multiply two `i32` values, returning `None` on
+     overflow.
 
-5. **`checked_power(base: u32, exp: u32) -> Option<u32>`** - Calculate `base^exp`, returning `None` on overflow.
+5. **`checked_power(base: u32, exp: u32) -> Option<u32>`**
+   - Calculate `base^exp`, returning `None` on overflow.
 
-6. **`saturating_sum(numbers: &[i32]) -> i32`** - Sum all numbers using saturating arithmetic (clamp at `i32::MIN` or `i32::MAX`).
+6. **`saturating_sum(numbers: &[i32]) -> i32`**
+   - Sum all numbers using saturating arithmetic
+     (clamp at `i32::MIN` or `i32::MAX`).
 
 7. **`wrapping_factorial(n: u32) -> u32`** - Calculate `n!` using wrapping arithmetic (allows overflow to wrap around).
 
@@ -85,7 +91,8 @@ assert_eq!(saturating_sum(&[i32::MIN, -1]), i32::MIN);
 
 // Wrapping arithmetic
 assert_eq!(wrapping_factorial(5), 120);
-assert_eq!(wrapping_factorial(20), 2_192_834_560);  // Wrapped value
+// Wrapped value
+assert_eq!(wrapping_factorial(20), 2_192_834_560);
 ```
 
 ## Hints
