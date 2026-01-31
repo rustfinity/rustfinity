@@ -15,8 +15,17 @@ assert_eq!(flat, vec![1, 2, 3, 4, 5]);
 `flatten()` also works with `Option` and `Result` iterators, effectively filtering out `None` and `Err` values:
 
 ```rust
-let maybe_values = vec![Some(1), None, Some(3), None, Some(5)];
-let values: Vec<i32> = maybe_values.into_iter().flatten().collect();
+let maybe_values = vec![
+    Some(1),
+    None,
+    Some(3),
+    None,
+    Some(5)
+];
+let values: Vec<i32> = maybe_values
+    .into_iter()
+    .flatten()
+    .collect();
 assert_eq!(values, vec![1, 3, 5]);
 ```
 

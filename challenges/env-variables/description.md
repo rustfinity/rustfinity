@@ -8,13 +8,17 @@ Environment variables are key-value pairs that configure how programs behave. Th
 use std::env;
 
 // Reading environment variables
-let path = env::var("PATH");           // Result<String, VarError>
-let home = env::var("HOME").ok();      // Option<String>
+let path = env::var("PATH");
+// Result<String, VarError>
+let home = env::var("HOME").ok();
+// Option<String>
 
 // Check if a variable exists (returns OsString)
-let exists = env::var_os("MY_VAR");    // Option<OsString>
+let exists = env::var_os("MY_VAR");
+// Option<OsString>
 
-// Setting environment variables (affects only current process)
+// Setting environment variables
+// (affects only current process)
 env::set_var("MY_VAR", "my_value");
 env::remove_var("MY_VAR");
 
@@ -23,10 +27,12 @@ let args: Vec<String> = env::args().collect();
 let program_name = &args[0];
 
 // Current directory
-let cwd = env::current_dir();          // Result<PathBuf, Error>
+let cwd = env::current_dir();
+// Result<PathBuf, Error>
 
 // Executable path
-let exe = env::current_exe();          // Result<PathBuf, Error>
+let exe = env::current_exe();
+// Result<PathBuf, Error>
 ```
 
 ## Error Handling
@@ -38,12 +44,17 @@ use std::env;
 
 match env::var("DATABASE_URL") {
     Ok(url) => println!("Database URL: {}", url),
-    Err(env::VarError::NotPresent) => println!("DATABASE_URL not set"),
-    Err(env::VarError::NotUnicode(_)) => println!("DATABASE_URL contains invalid UTF-8"),
+    Err(env::VarError::NotPresent) => {
+        println!("DATABASE_URL not set")
+    }
+    Err(env::VarError::NotUnicode(_)) => {
+        println!("DATABASE_URL contains invalid UTF-8")
+    }
 }
 
 // For optional variables, use .ok() or .unwrap_or()
-let debug = env::var("DEBUG").unwrap_or_else(|_| String::from("false"));
+let debug = env::var("DEBUG")
+    .unwrap_or_else(|_| String::from("false"));
 ```
 
 ## Your Task
@@ -103,7 +114,10 @@ env::set_var("MY_APP_DEBUG", "true");
 env::set_var("MY_APP_NAME", "test-app");
 
 // Basic retrieval
-assert_eq!(get_env_var("MY_APP_NAME"), Some("test-app".to_string()));
+assert_eq!(
+    get_env_var("MY_APP_NAME"),
+    Some("test-app".to_string())
+);
 assert_eq!(get_env_var("NONEXISTENT"), None);
 
 // With default

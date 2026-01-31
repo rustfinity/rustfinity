@@ -10,11 +10,19 @@ The `filter()` method retains only elements that satisfy a predicate:
 let numbers = vec![1, 2, 3, 4, 5, 6];
 
 // Keep only even numbers
-let evens: Vec<i32> = numbers.iter().filter(|&x| x % 2 == 0).cloned().collect();
+let evens: Vec<i32> = numbers
+    .iter()
+    .filter(|&x| x % 2 == 0)
+    .cloned()
+    .collect();
 assert_eq!(evens, vec![2, 4, 6]);
 
 // Keep only numbers greater than 3
-let large: Vec<i32> = numbers.iter().filter(|&x| *x > 3).cloned().collect();
+let large: Vec<i32> = numbers
+    .iter()
+    .filter(|&x| *x > 3)
+    .cloned()
+    .collect();
 assert_eq!(large, vec![4, 5, 6]);
 ```
 
@@ -40,12 +48,22 @@ These methods process elements based on a condition at the beginning of the sequ
 ```rust
 let numbers = vec![1, 2, 3, 4, 5, 1, 2];
 
-// Take elements while they're less than 4 (stops at first failure)
-let taken: Vec<i32> = numbers.iter().take_while(|&&x| x < 4).cloned().collect();
+// Take elements while they're less than 4
+// (stops at first failure)
+let taken: Vec<i32> = numbers
+    .iter()
+    .take_while(|&&x| x < 4)
+    .cloned()
+    .collect();
 assert_eq!(taken, vec![1, 2, 3]);
 
-// Skip elements while they're less than 4 (takes the rest after first failure)
-let skipped: Vec<i32> = numbers.iter().skip_while(|&&x| x < 4).cloned().collect();
+// Skip elements while they're less than 4
+// (takes the rest after first failure)
+let skipped: Vec<i32> = numbers
+    .iter()
+    .skip_while(|&&x| x < 4)
+    .cloned()
+    .collect();
 assert_eq!(skipped, vec![4, 5, 1, 2]);
 ```
 
