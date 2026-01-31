@@ -54,38 +54,56 @@ Implement the following functions that demonstrate various Entry API patterns:
 use std::collections::HashMap;
 
 // count_words
-let counts = count_words("the quick brown fox jumps over the lazy dog");
+let counts = count_words(
+    "the quick brown fox jumps over the lazy dog"
+);
 assert_eq!(counts["the"], 2);
 assert_eq!(counts["quick"], 1);
 
 // group_by_length
-let grouped = group_by_length(&["hi", "hello", "hey", "world"]);
+let grouped = group_by_length(
+    &["hi", "hello", "hey", "world"]
+);
 assert_eq!(grouped[&2], vec!["hi"]);
 assert_eq!(grouped[&5], vec!["hello", "world"]);
 assert_eq!(grouped[&3], vec!["hey"]);
 
 // get_or_compute
 let mut cache: HashMap<String, i32> = HashMap::new();
-let value = get_or_compute(&mut cache, "answer", || 42);
+let value = get_or_compute(
+    &mut cache,
+    "answer",
+    || 42
+);
 assert_eq!(value, 42);
 assert_eq!(cache["answer"], 42);
 
 // increment_or_init
 let mut scores: HashMap<String, i32> = HashMap::new();
-increment_or_init(&mut scores, "alice", 100);  // Inserts 100
-increment_or_init(&mut scores, "alice", 100);  // Increments to 101
+// Inserts 100
+increment_or_init(&mut scores, "alice", 100);
+// Increments to 101
+increment_or_init(&mut scores, "alice", 100);
 assert_eq!(scores["alice"], 101);
 
 // merge_maps
-let map1: HashMap<String, i32> = [("a".to_string(), 1), ("b".to_string(), 2)].into();
-let map2: HashMap<String, i32> = [("b".to_string(), 3), ("c".to_string(), 4)].into();
+let map1: HashMap<String, i32> = [
+    ("a".to_string(), 1),
+    ("b".to_string(), 2)
+].into();
+let map2: HashMap<String, i32> = [
+    ("b".to_string(), 3),
+    ("c".to_string(), 4)
+].into();
 let merged = merge_maps(map1, map2);
 assert_eq!(merged["a"], 1);
 assert_eq!(merged["b"], 5);  // 2 + 3
 assert_eq!(merged["c"], 4);
 
 // first_occurrence
-let firsts = first_occurrence(&["a", "b", "a", "c", "b"]);
+let firsts = first_occurrence(
+    &["a", "b", "a", "c", "b"]
+);
 assert_eq!(firsts["a"], 0);
 assert_eq!(firsts["b"], 1);
 assert_eq!(firsts["c"], 3);

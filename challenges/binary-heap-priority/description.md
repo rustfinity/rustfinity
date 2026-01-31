@@ -26,7 +26,8 @@ min_heap.push(Reverse(3));
 min_heap.push(Reverse(1));
 min_heap.push(Reverse(4));
 
-assert_eq!(min_heap.pop(), Some(Reverse(1)));  // Smallest first
+// Smallest first
+assert_eq!(min_heap.pop(), Some(Reverse(1)));
 assert_eq!(min_heap.pop(), Some(Reverse(3)));
 ```
 

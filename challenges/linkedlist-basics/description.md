@@ -78,9 +78,11 @@ assert_eq!(peek_back(&list), Some(&30));
 
 // move_to_front (LRU-style operation)
 let mut list = create_list(&[1, 2, 3, 4, 5]);
-assert!(move_to_front(&mut list, &3));  // Move 3 to front
+// Move 3 to front
+assert!(move_to_front(&mut list, &3));
 // List is now: [3, 1, 2, 4, 5]
-assert!(!move_to_front(&mut list, &99));  // 99 not found
+// 99 not found
+assert!(!move_to_front(&mut list, &99));
 
 // concat_lists
 let list1 = create_list(&[1, 2]);

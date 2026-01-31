@@ -55,25 +55,43 @@ use std::collections::BTreeSet;
 let set = create_number_set(&[1, 3, 5, 7, 9, 11, 13, 15]);
 
 // get_range: [5, 12) -> 5, 7, 9, 11
-assert_eq!(get_range(&set, 5, 12), vec![5, 7, 9, 11]);
+assert_eq!(
+    get_range(&set, 5, 12),
+    vec![5, 7, 9, 11]
+);
 
 // get_range_inclusive: [5, 11] -> 5, 7, 9, 11
-assert_eq!(get_range_inclusive(&set, 5, 11), vec![5, 7, 9, 11]);
+assert_eq!(
+    get_range_inclusive(&set, 5, 11),
+    vec![5, 7, 9, 11]
+);
 
 // get_elements_before: < 7 -> 1, 3, 5
-assert_eq!(get_elements_before(&set, 7), vec![1, 3, 5]);
+assert_eq!(
+    get_elements_before(&set, 7),
+    vec![1, 3, 5]
+);
 
 // get_elements_from: >= 9 -> 9, 11, 13, 15
-assert_eq!(get_elements_from(&set, 9), vec![9, 11, 13, 15]);
+assert_eq!(
+    get_elements_from(&set, 9),
+    vec![9, 11, 13, 15]
+);
 
 // count_in_range: [3, 11] -> 5 elements (3, 5, 7, 9, 11)
 assert_eq!(count_in_range(&set, 3, 11), 5);
 
 // find_closest_less_than: largest element < 10 is 9
-assert_eq!(find_closest_less_than(&set, 10), Some(9));
+assert_eq!(
+    find_closest_less_than(&set, 10),
+    Some(9)
+);
 
 // find_closest_greater_than: smallest element > 10 is 11
-assert_eq!(find_closest_greater_than(&set, 10), Some(11));
+assert_eq!(
+    find_closest_greater_than(&set, 10),
+    Some(11)
+);
 ```
 
 ## Hints

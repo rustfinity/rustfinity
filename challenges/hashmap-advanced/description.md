@@ -8,11 +8,13 @@ The default hasher (`RandomState`) is designed to be secure against HashDoS atta
 use std::collections::HashMap;
 
 // Pre-allocating capacity when you know the size
-let mut scores: HashMap<String, i32> = HashMap::with_capacity(100);
+let mut scores: HashMap<String, i32> =
+    HashMap::with_capacity(100);
 assert!(scores.capacity() >= 100);
 
 // Adding capacity to an existing map
-scores.reserve(50);  // Reserve space for at least 50 more entries
+// Reserve space for at least 50 more entries
+scores.reserve(50);
 
 // Reclaiming memory after removing elements
 for i in 0..100 {
@@ -21,7 +23,8 @@ for i in 0..100 {
 for i in 0..90 {
     scores.remove(&format!("player_{}", i));
 }
-scores.shrink_to_fit();  // Release unused memory
+// Release unused memory
+scores.shrink_to_fit();
 ```
 
 ## Your Task
@@ -61,7 +64,8 @@ reserve_additional(&mut map, 100);
 assert!(map.capacity() >= 101);
 
 // shrink_map
-let mut map: HashMap<String, i32> = HashMap::with_capacity(1000);
+let mut map: HashMap<String, i32> =
+    HashMap::with_capacity(1000);
 map.insert("a".to_string(), 1);
 map.insert("b".to_string(), 2);
 shrink_map(&mut map);
@@ -80,7 +84,9 @@ assert_eq!(len, 0);
 assert!(cap >= 50);
 
 // clear_and_shrink
-let mut map = bulk_insert(&[("a", 1), ("b", 2), ("c", 3)]);
+let mut map = bulk_insert(
+    &[("a", 1), ("b", 2), ("c", 3)]
+);
 clear_and_shrink(&mut map);
 assert_eq!(map.len(), 0);
 
@@ -90,13 +96,20 @@ let items = vec![
     ("apricot".to_string(), 2),
     ("banana".to_string(), 3),
 ];
-let grouped = group_by_key(&items, |s| s.chars().next().unwrap().to_string());
+let grouped = group_by_key(
+    &items,
+    |s| s.chars().next().unwrap().to_string()
+);
 assert_eq!(grouped["a"], vec![1, 2]);
 assert_eq!(grouped["b"], vec![3]);
 
 // merge_with_capacity
-let map1: HashMap<String, i32> = [("a".to_string(), 1)].into();
-let map2: HashMap<String, i32> = [("a".to_string(), 2), ("b".to_string(), 3)].into();
+let map1: HashMap<String, i32> =
+    [("a".to_string(), 1)].into();
+let map2: HashMap<String, i32> = [
+    ("a".to_string(), 2),
+    ("b".to_string(), 3)
+].into();
 let merged = merge_with_capacity(vec![map1, map2]);
 assert_eq!(merged["a"], 3);  // 1 + 2
 assert_eq!(merged["b"], 3);

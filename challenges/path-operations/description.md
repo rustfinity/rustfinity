@@ -53,26 +53,47 @@ Implement the following functions for path manipulation:
 
 ```rust
 // Join paths safely
-let result = join_paths("/home/user", &["documents", "reports", "2024"]);
-assert_eq!(result, PathBuf::from("/home/user/documents/reports/2024"));
+let result = join_paths(
+    "/home/user",
+    &["documents", "reports", "2024"]
+);
+assert_eq!(
+    result,
+    PathBuf::from("/home/user/documents/reports/2024")
+);
 
 // Extract extension
 assert_eq!(get_extension("report.pdf"), Some("pdf".to_string()));
 assert_eq!(get_extension("Makefile"), None);
 
 // Get file name
-assert_eq!(get_file_name("/home/user/doc.txt"), Some("doc.txt".to_string()));
+assert_eq!(
+    get_file_name("/home/user/doc.txt"),
+    Some("doc.txt".to_string())
+);
 
 // Get file stem (name without extension)
-assert_eq!(get_file_stem("archive.tar.gz"), Some("archive.tar".to_string()));
+assert_eq!(
+    get_file_stem("archive.tar.gz"),
+    Some("archive.tar".to_string())
+);
 
 // Get parent directory
-assert_eq!(get_parent("/home/user/file.txt"), Some(PathBuf::from("/home/user")));
+assert_eq!(
+    get_parent("/home/user/file.txt"),
+    Some(PathBuf::from("/home/user"))
+);
 assert_eq!(get_parent("/"), None);
 
 // Change extension
-assert_eq!(change_extension("report.doc", "pdf"), PathBuf::from("report.pdf"));
-assert_eq!(change_extension("Makefile", "bak"), PathBuf::from("Makefile.bak"));
+assert_eq!(
+    change_extension("report.doc", "pdf"),
+    PathBuf::from("report.pdf")
+);
+assert_eq!(
+    change_extension("Makefile", "bak"),
+    PathBuf::from("Makefile.bak")
+);
 
 // Check if absolute
 assert!(is_absolute("/home/user"));

@@ -19,7 +19,8 @@ assert_eq!(map.get("a"), Some(&1));
 
 // HashSet to sorted Vec (via BTreeSet)
 let set: HashSet<i32> = [3, 1, 2].into_iter().collect();
-let sorted: Vec<i32> = set.into_iter()
+let sorted: Vec<i32> = set
+    .into_iter()
     .collect::<BTreeSet<_>>()
     .into_iter()
     .collect();
@@ -58,11 +59,15 @@ assert!(unique.contains(&1));
 
 // vec_to_btreeset
 let sorted_unique = vec_to_btreeset(vec![3, 1, 2, 2]);
-let as_vec: Vec<_> = sorted_unique.into_iter().collect();
+let as_vec: Vec<_> = sorted_unique
+    .into_iter()
+    .collect();
 assert_eq!(as_vec, vec![1, 2, 3]);
 
 // hashset_to_sorted_vec
-let set: HashSet<i32> = [3, 1, 4, 1, 5].into_iter().collect();
+let set: HashSet<i32> = [3, 1, 4, 1, 5]
+    .into_iter()
+    .collect();
 let sorted = hashset_to_sorted_vec(set);
 assert_eq!(sorted, vec![1, 3, 4, 5]);
 
@@ -83,11 +88,18 @@ let pairs = hashmap_to_pairs(map);
 assert_eq!(pairs.len(), 1);
 
 // merge_vecs
-let merged = merge_vecs(vec![vec![1, 2], vec![3, 4], vec![5]]);
+let merged = merge_vecs(vec![
+    vec![1, 2],
+    vec![3, 4],
+    vec![5]
+]);
 assert_eq!(merged, vec![1, 2, 3, 4, 5]);
 
 // chain_and_collect
-let chained = chain_and_collect(vec![1, 2], vec![3, 4]);
+let chained = chain_and_collect(
+    vec![1, 2],
+    vec![3, 4]
+);
 assert_eq!(chained, vec![1, 2, 3, 4]);
 ```
 

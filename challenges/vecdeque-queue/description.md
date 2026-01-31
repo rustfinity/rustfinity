@@ -54,9 +54,18 @@ assert_eq!(queue.back(), Some(&3));
 // enqueue and dequeue (FIFO behavior)
 let mut queue = create_queue(&["first", "second"]);
 enqueue(&mut queue, "third");
-assert_eq!(dequeue(&mut queue), Some("first"));
-assert_eq!(dequeue(&mut queue), Some("second"));
-assert_eq!(dequeue(&mut queue), Some("third"));
+assert_eq!(
+    dequeue(&mut queue),
+    Some("first")
+);
+assert_eq!(
+    dequeue(&mut queue),
+    Some("second")
+);
+assert_eq!(
+    dequeue(&mut queue),
+    Some("third")
+);
 
 // peek_front and peek_back
 let queue = create_queue(&[10, 20, 30]);

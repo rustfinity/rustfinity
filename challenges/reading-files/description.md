@@ -59,11 +59,20 @@ Implement the following functions for reading file contents:
 // This is a test
 // Rust is great
 
-assert_eq!(read_entire_file("example.txt")?, "Hello World\nThis is a test\nRust is great\n");
+assert_eq!(
+    read_entire_file("example.txt")?,
+    "Hello World\nThis is a test\nRust is great\n"
+);
 assert_eq!(count_lines("example.txt")?, 3);
 assert_eq!(count_words("example.txt")?, 9);
-assert_eq!(read_lines("example.txt")?, vec!["Hello World", "This is a test", "Rust is great"]);
-assert_eq!(first_n_lines("example.txt", 2)?, vec!["Hello World", "This is a test"]);
+assert_eq!(
+    read_lines("example.txt")?,
+    vec!["Hello World", "This is a test", "Rust is great"]
+);
+assert_eq!(
+    first_n_lines("example.txt", 2)?,
+    vec!["Hello World", "This is a test"]
+);
 ```
 
 ## Hints
