@@ -6,8 +6,7 @@
 /// # Returns
 /// A Vec of (index, element) tuples
 pub fn indexed_elements<T: Clone>(items: &[T]) -> Vec<(usize, T)> {
-    // TODO: Use .iter().enumerate() to pair each element with its index
-    // Remember to clone the elements when collecting
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -20,8 +19,7 @@ pub fn indexed_elements<T: Clone>(items: &[T]) -> Vec<(usize, T)> {
 /// # Returns
 /// Some(index) if found, None otherwise
 pub fn find_index<T: PartialEq>(items: &[T], target: &T) -> Option<usize> {
-    // TODO: Use enumerate() with find() to locate the target
-    // Then extract just the index from the tuple
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -35,9 +33,7 @@ pub fn find_index<T: PartialEq>(items: &[T], target: &T) -> Option<usize> {
 /// # Returns
 /// A Vec of (element, Option<next_element>) tuples
 pub fn elements_with_next<T: Clone>(items: &[T]) -> Vec<(T, Option<T>)> {
-    // TODO: Create a peekable iterator with .iter().peekable()
-    // For each element, use peek() to look at the next element
-    // Remember: peek() returns Option<&&T>, so handle references carefully
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -51,9 +47,7 @@ pub fn elements_with_next<T: Clone>(items: &[T]) -> Vec<(T, Option<T>)> {
 /// # Returns
 /// A Vec of (element, count) tuples for each consecutive group
 pub fn group_consecutive_duplicates<T: Clone + PartialEq>(items: &[T]) -> Vec<(T, usize)> {
-    // TODO: Use a peekable iterator to detect when the next element differs
-    // Count consecutive equal elements before moving to the next group
-    // Hint: while loop with peek() comparison works well here
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -67,8 +61,7 @@ pub fn group_consecutive_duplicates<T: Clone + PartialEq>(items: &[T]) -> Vec<(T
 /// # Returns
 /// Some(element) for the first repeated element, None if no consecutive duplicates
 pub fn find_first_repeated<T: Clone + PartialEq>(items: &[T]) -> Option<T> {
-    // TODO: Use peekable() to compare current with peek()
-    // Return as soon as you find adjacent equal elements
+    // TODO: Implement this function
     unimplemented!()
 }
 

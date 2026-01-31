@@ -8,7 +8,6 @@ pub struct Point {
 }
 
 // TODO: Implement the Display trait for Point
-// Format: "(x, y)" - e.g., "(3, -4)"
 impl fmt::Display for Point {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         // TODO: Use write!(f, ...) to format the point
@@ -26,8 +25,6 @@ pub enum Color {
 }
 
 // TODO: Implement the Display trait for Color
-// Named colors display as their name: "Red", "Green", "Blue"
-// Custom colors display as: "RGB(r, g, b)"
 impl fmt::Display for Color {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         // TODO: Match on self and format each variant appropriately
@@ -43,13 +40,9 @@ pub enum Temperature {
 }
 
 // TODO: Implement the Display trait for Temperature
-// Celsius format: "25.5°C" (use ° for the degree symbol)
-// Fahrenheit format: "77°F"
-// Remove trailing zeros from the number (25.0 should display as "25°C")
 impl fmt::Display for Temperature {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         // TODO: Match on self and format each variant
-        // Hint: You may want a helper function to format floats without trailing zeros
         todo!()
     }
 }
@@ -62,15 +55,9 @@ pub struct Money {
 }
 
 // TODO: Implement the Display trait for Money
-// USD format: "$12.34" (or "-$12.34" for negative)
-// EUR format: "€50.00" (or "-€50.00" for negative)
-// Other currencies: "9.99 GBP" (or "-9.99 GBP" for negative)
-// Always show exactly 2 decimal places
 impl fmt::Display for Money {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         // TODO: Convert cents to dollars/cents
-        // Hint: dollars = amount / 100, cents = amount % 100
-        // Handle negative amounts and different currencies
         todo!()
     }
 }
@@ -83,7 +70,6 @@ pub struct Person {
 }
 
 // TODO: Implement the Display trait for Person
-// Format: "Name (age X)" - e.g., "Alice (age 30)"
 impl fmt::Display for Person {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         // TODO: Format the person

@@ -4,7 +4,7 @@ use std::path::{Path, PathBuf};
 
 /// Returns the system's temporary directory.
 pub fn get_temp_dir() -> PathBuf {
-    // TODO: Use std::env::temp_dir() to get the system temp directory
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -12,21 +12,13 @@ pub fn get_temp_dir() -> PathBuf {
 /// The filename should include the prefix, some unique identifier (like process ID
 /// and/or timestamp), and the suffix.
 pub fn create_temp_file(prefix: &str, suffix: &str) -> io::Result<PathBuf> {
-    // TODO:
-    // 1. Get the temp directory
-    // 2. Generate a unique filename using prefix, suffix, and some unique identifier
-    // 3. Create the file and return its path
-    // Hint: Use std::process::id() for process ID
-    // Hint: Use std::time::SystemTime for timestamps
+    // TODO: Implement this function
     unimplemented!()
 }
 
 /// Creates a temporary file with the given content and returns its path.
 pub fn create_temp_file_with_content(prefix: &str, suffix: &str, content: &str) -> io::Result<PathBuf> {
-    // TODO:
-    // 1. Create a temp file path (similar to create_temp_file)
-    // 2. Create the file and write the content to it
-    // 3. Return the path
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -38,54 +30,45 @@ pub struct TempFile {
 impl TempFile {
     /// Creates a new temporary file with a unique name.
     pub fn new(prefix: &str, suffix: &str) -> io::Result<Self> {
-        // TODO: Create a temp file and return a TempFile instance
+        // TODO: Implement this function
         unimplemented!()
     }
 
     /// Returns a reference to the file's path.
     pub fn path(&self) -> &Path {
-        // TODO: Return reference to the path
+        // TODO: Implement this function
         unimplemented!()
     }
 
     /// Writes content to the temporary file, overwriting any existing content.
     pub fn write(&self, content: &str) -> io::Result<()> {
-        // TODO: Open the file for writing and write the content
+        // TODO: Implement this function
         unimplemented!()
     }
 
     /// Reads the entire content of the temporary file as a string.
     pub fn read(&self) -> io::Result<String> {
-        // TODO: Open the file for reading and return its content
+        // TODO: Implement this function
         unimplemented!()
     }
 }
 
 impl Drop for TempFile {
     fn drop(&mut self) {
-        // TODO: Delete the file when this struct is dropped
-        // Hint: Use std::fs::remove_file and ignore errors
+        // TODO: Implement this function
     }
 }
 
 /// Creates a uniquely named temporary directory and returns its path.
 pub fn create_temp_dir(prefix: &str) -> io::Result<PathBuf> {
-    // TODO:
-    // 1. Get the temp directory
-    // 2. Generate a unique directory name
-    // 3. Create the directory and return its path
-    // Hint: Use std::fs::create_dir()
+    // TODO: Implement this function
     unimplemented!()
 }
 
 /// Deletes all files in a directory that start with the given prefix.
 /// Returns the count of successfully deleted files.
 pub fn cleanup_temp_files(dir: &Path, prefix: &str) -> io::Result<usize> {
-    // TODO:
-    // 1. Iterate over files in the directory using std::fs::read_dir()
-    // 2. For each file, check if its name starts with the prefix
-    // 3. Delete matching files and count them
-    // 4. Return the count
+    // TODO: Implement this function
     unimplemented!()
 }
 

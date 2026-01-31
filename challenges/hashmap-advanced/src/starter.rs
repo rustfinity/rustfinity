@@ -2,26 +2,25 @@ use std::collections::HashMap;
 
 /// Creates a HashMap with at least the specified capacity.
 pub fn create_with_capacity(capacity: usize) -> HashMap<String, i32> {
-    // TODO: Use HashMap::with_capacity() to pre-allocate space
+    // TODO: Use HashMap::with_capacity()
     unimplemented!()
 }
 
 /// Reserves space for at least `additional` more elements.
 pub fn reserve_additional(map: &mut HashMap<String, i32>, additional: usize) {
-    // TODO: Use the reserve() method to add capacity
+    // TODO: Use the reserve() method
     unimplemented!()
 }
 
 /// Shrinks the map's capacity to fit its current number of elements.
 pub fn shrink_map(map: &mut HashMap<String, i32>) {
-    // TODO: Use shrink_to_fit() to release unused memory
+    // TODO: Use shrink_to_fit()
     unimplemented!()
 }
 
 /// Efficiently inserts multiple items by pre-allocating capacity.
 pub fn bulk_insert(items: &[(&str, i32)]) -> HashMap<String, i32> {
     // TODO: Create a HashMap with capacity for all items, then insert each one
-    // Hint: Use with_capacity(items.len()) before the loop
     unimplemented!()
 }
 
@@ -34,7 +33,6 @@ pub fn get_capacity_stats(map: &HashMap<String, i32>) -> (usize, usize) {
 /// Clears all elements from the map and shrinks its capacity.
 pub fn clear_and_shrink(map: &mut HashMap<String, i32>) {
     // TODO: Clear the map and then shrink it
-    // Hint: Use clear() followed by shrink_to_fit()
     unimplemented!()
 }
 
@@ -44,7 +42,6 @@ where
     F: Fn(&str) -> String,
 {
     // TODO: Group items by the result of key_fn applied to each key
-    // Hint: Use entry().or_default().push() pattern
     unimplemented!()
 }
 
@@ -52,8 +49,6 @@ where
 /// If a key appears in multiple maps, sum the values.
 pub fn merge_with_capacity(maps: Vec<HashMap<String, i32>>) -> HashMap<String, i32> {
     // TODO: Calculate total capacity, create map, then merge all maps
-    // Hint: Sum the lengths of all maps for capacity estimate
-    // Hint: Use entry().or_insert(0) += value pattern for merging
     unimplemented!()
 }
 

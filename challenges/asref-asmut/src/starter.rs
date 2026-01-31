@@ -38,7 +38,6 @@ pub fn contains_element<V: AsRef<[i32]>>(values: V, target: i32) -> bool {
 /// * `values` - Any type that implements `AsMut<[i32]>`
 pub fn double_all<V: AsMut<[i32]>>(values: &mut V) {
     // TODO: Use as_mut() to get a &mut [i32] and double each element
-    // Hint: Use iter_mut() to iterate over mutable references
     todo!()
 }
 
@@ -73,7 +72,6 @@ impl Text {
 // impl AsRef<[u8]> for Text {
 //     fn as_ref(&self) -> &[u8] {
 //         // Return the bytes of the content
-//         // Hint: String has an as_bytes() method
 //     }
 // }
 
@@ -114,7 +112,6 @@ pub fn get_extension<P: AsRef<Path>>(path: P) -> Option<String> {
     // TODO: Use as_ref() to get a &Path
     // Then use extension() to get Option<&OsStr>
     // Convert to Option<String> using and_then() or map()
-    // Hint: OsStr has a to_str() method that returns Option<&str>
     todo!()
 }
 

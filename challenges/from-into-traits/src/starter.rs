@@ -7,10 +7,8 @@ pub struct Celsius(pub f64);
 pub struct Fahrenheit(pub f64);
 
 // TODO: Implement From<Celsius> for Fahrenheit
-// Formula: F = C × 9/5 + 32
 
 // TODO: Implement From<Fahrenheit> for Celsius
-// Formula: C = (F - 32) × 5/9
 
 /// An RGB color with red, green, and blue components.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -25,8 +23,6 @@ pub struct Rgb {
 pub struct HexColor(pub String);
 
 // TODO: Implement From<Rgb> for HexColor
-// Convert RGB to hex string like "#FF5733"
-// Hint: Use format!("{:02X}{:02X}{:02X}", r, g, b)
 
 /// An email address wrapper.
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -52,7 +48,6 @@ pub struct Point3D {
 }
 
 // TODO: Implement From<Point2D> for Point3D
-// Convert 2D point to 3D with z=0.0
 
 /// A generic wrapper that can hold any value.
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -67,7 +62,6 @@ impl<T> Wrapper<T> {
 }
 
 // TODO: Implement From<T> for Wrapper<T>
-// This should be a generic implementation
 
 pub fn main() {
     // Temperature conversion example

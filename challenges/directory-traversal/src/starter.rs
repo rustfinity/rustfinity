@@ -13,9 +13,7 @@ use std::path::{Path, PathBuf};
 ///
 /// A `Result` containing a `Vec<PathBuf>` of file paths, or an `io::Error`
 pub fn list_files(dir: &Path) -> io::Result<Vec<PathBuf>> {
-    // TODO: Use fs::read_dir() to iterate over directory entries
-    // TODO: Filter to include only files (not directories)
-    // TODO: Collect the paths into a Vec
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -30,9 +28,7 @@ pub fn list_files(dir: &Path) -> io::Result<Vec<PathBuf>> {
 ///
 /// A `Result` containing a `Vec<PathBuf>` of directory paths, or an `io::Error`
 pub fn list_directories(dir: &Path) -> io::Result<Vec<PathBuf>> {
-    // TODO: Use fs::read_dir() to iterate over directory entries
-    // TODO: Filter to include only directories (not files)
-    // TODO: Collect the paths into a Vec
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -46,10 +42,7 @@ pub fn list_directories(dir: &Path) -> io::Result<Vec<PathBuf>> {
 ///
 /// A `Result` containing a `Vec<PathBuf>` of all paths (files and directories), or an `io::Error`
 pub fn list_all_recursive(dir: &Path) -> io::Result<Vec<PathBuf>> {
-    // TODO: Iterate over directory entries
-    // TODO: Add each entry's path to results
-    // TODO: If entry is a directory, recursively call this function
-    // TODO: Append recursive results to the main results
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -64,9 +57,7 @@ pub fn list_all_recursive(dir: &Path) -> io::Result<Vec<PathBuf>> {
 ///
 /// A `Result` containing a `Vec<PathBuf>` of matching file paths, or an `io::Error`
 pub fn find_by_extension(dir: &Path, ext: &str) -> io::Result<Vec<PathBuf>> {
-    // TODO: Recursively search through directories
-    // TODO: Check if each file's extension matches using path.extension()
-    // TODO: Collect matching files
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -81,9 +72,7 @@ pub fn find_by_extension(dir: &Path, ext: &str) -> io::Result<Vec<PathBuf>> {
 ///
 /// A `Result` containing a `Vec<PathBuf>` of matching paths, or an `io::Error`
 pub fn find_by_name(dir: &Path, name: &str) -> io::Result<Vec<PathBuf>> {
-    // TODO: Recursively search through directories
-    // TODO: Check if each entry's file_name() matches the target name
-    // TODO: Collect matching paths (both files and directories)
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -97,10 +86,7 @@ pub fn find_by_name(dir: &Path, name: &str) -> io::Result<Vec<PathBuf>> {
 ///
 /// A `Result` containing the total size in bytes, or an `io::Error`
 pub fn calculate_dir_size(dir: &Path) -> io::Result<u64> {
-    // TODO: Recursively traverse the directory tree
-    // TODO: For files, add their size (using entry.metadata()?.len())
-    // TODO: For directories, recursively calculate their size
-    // TODO: Return the total
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -114,9 +100,7 @@ pub fn calculate_dir_size(dir: &Path) -> io::Result<u64> {
 ///
 /// A `Result` containing the file count, or an `io::Error`
 pub fn count_files_recursive(dir: &Path) -> io::Result<usize> {
-    // TODO: Recursively traverse the directory tree
-    // TODO: Count files (not directories)
-    // TODO: Return the total count
+    // TODO: Implement this function
     unimplemented!()
 }
 

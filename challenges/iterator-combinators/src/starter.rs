@@ -7,8 +7,7 @@
 /// # Returns
 /// A Vec containing all elements from first, followed by all elements from second
 pub fn chain_sequences<T: Clone>(first: &[T], second: &[T]) -> Vec<T> {
-    // TODO: Use .iter().chain() to combine the two slices
-    // Don't forget to use .cloned() to convert references to owned values
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -23,8 +22,7 @@ pub fn chain_sequences<T: Clone>(first: &[T], second: &[T]) -> Vec<T> {
 /// # Returns
 /// A Vec of tuples pairing elements from both slices
 pub fn zip_pairs<T: Clone, U: Clone>(first: &[T], second: &[U]) -> Vec<(T, U)> {
-    // TODO: Use .iter().zip() to pair elements from both slices
-    // Remember to clone the values when collecting
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -39,7 +37,7 @@ pub fn zip_pairs<T: Clone, U: Clone>(first: &[T], second: &[U]) -> Vec<(T, U)> {
 /// # Returns
 /// A Vec containing at most n elements from the beginning
 pub fn take_first<T: Clone>(items: &[T], n: usize) -> Vec<T> {
-    // TODO: Use .iter().take(n) to get the first n elements
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -54,7 +52,7 @@ pub fn take_first<T: Clone>(items: &[T], n: usize) -> Vec<T> {
 /// # Returns
 /// A Vec containing all elements after skipping the first n
 pub fn skip_first<T: Clone>(items: &[T], n: usize) -> Vec<T> {
-    // TODO: Use .iter().skip(n) to skip the first n elements
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -66,7 +64,7 @@ pub fn skip_first<T: Clone>(items: &[T], n: usize) -> Vec<T> {
 /// # Returns
 /// A Vec with elements in reverse order
 pub fn reverse_sequence<T: Clone>(items: &[T]) -> Vec<T> {
-    // TODO: Use .iter().rev() to reverse the sequence
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -82,9 +80,7 @@ pub fn reverse_sequence<T: Clone>(items: &[T]) -> Vec<T> {
 /// # Returns
 /// A Vec with elements interleaved from both slices
 pub fn interleave<T: Clone>(first: &[T], second: &[T]) -> Vec<T> {
-    // TODO: Use zip() to pair elements, then flatten the pairs
-    // Hint: flat_map can convert tuples into arrays of elements
-    // Don't forget to handle the remaining elements if lengths differ
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -98,8 +94,7 @@ pub fn interleave<T: Clone>(first: &[T], second: &[T]) -> Vec<T> {
 /// # Returns
 /// A Vec of tuples containing consecutive element pairs
 pub fn sliding_pairs<T: Clone>(items: &[T]) -> Vec<(T, T)> {
-    // TODO: Zip the slice with itself, but skip the first element of the second iterator
-    // This creates pairs of consecutive elements
+    // TODO: Implement this function
     unimplemented!()
 }
 

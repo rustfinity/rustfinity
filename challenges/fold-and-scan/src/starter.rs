@@ -6,8 +6,7 @@
 /// # Returns
 /// The sum of all numbers (0 for empty slice)
 pub fn sum_with_fold(numbers: &[i32]) -> i32 {
-    // TODO: Use iter().fold() to sum all numbers
-    // fold() takes an initial value and a closure that combines the accumulator with each element
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -21,8 +20,7 @@ pub fn sum_with_fold(numbers: &[i32]) -> i32 {
 /// # Returns
 /// The product of all numbers (1 for empty slice)
 pub fn product_with_fold(numbers: &[i32]) -> i64 {
-    // TODO: Use iter().fold() to multiply all numbers
-    // Start with 1i64 as the initial value
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -35,8 +33,7 @@ pub fn product_with_fold(numbers: &[i32]) -> i64 {
 /// # Returns
 /// A single string with all inputs joined by the separator
 pub fn concat_strings(strings: &[&str], separator: &str) -> String {
-    // TODO: Use enumerate().fold() to concatenate strings with a separator
-    // Hint: Use enumerate to track the index, and only add separator when i > 0
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -48,9 +45,7 @@ pub fn concat_strings(strings: &[&str], separator: &str) -> String {
 /// # Returns
 /// A Vec where each element is the sum of all elements up to that position
 pub fn running_sum(numbers: &[i32]) -> Vec<i32> {
-    // TODO: Use iter().scan() to compute running sums
-    // scan() takes an initial state and a closure that receives &mut state and each element
-    // The closure returns Option<output> - return Some(value) to yield values
+    // TODO: Implement this function
     unimplemented!()
 }
 

@@ -12,7 +12,6 @@ use std::path::{Path, PathBuf};
 /// A `PathBuf` containing the joined path
 pub fn join_paths(base: &str, parts: &[&str]) -> PathBuf {
     // TODO: Create a PathBuf from base and join all parts
-    // Hint: Use PathBuf::from() and the .push() method
     unimplemented!()
 }
 
@@ -27,7 +26,6 @@ pub fn join_paths(base: &str, parts: &[&str]) -> PathBuf {
 /// `Some(String)` containing the extension, or `None` if no extension exists
 pub fn get_extension(path: &str) -> Option<String> {
     // TODO: Use Path::new() and the .extension() method
-    // Remember to convert OsStr to String
     unimplemented!()
 }
 
@@ -70,7 +68,6 @@ pub fn get_file_stem(path: &str) -> Option<String> {
 /// `Some(PathBuf)` containing the parent directory, or `None` if the path has no parent
 pub fn get_parent(path: &str) -> Option<PathBuf> {
     // TODO: Use Path::new() and the .parent() method
-    // Consider: what should happen for "/" or "file.txt"?
     unimplemented!()
 }
 

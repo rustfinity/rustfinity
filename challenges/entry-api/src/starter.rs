@@ -4,14 +4,12 @@ use std::collections::HashMap;
 /// Words are converted to lowercase and split on whitespace.
 pub fn count_words(text: &str) -> HashMap<String, u32> {
     // TODO: Use the Entry API to count word frequencies
-    // Hint: Use .entry(word).or_insert(0) and then increment
     unimplemented!()
 }
 
 /// Groups words by their length.
 pub fn group_by_length(words: &[&str]) -> HashMap<usize, Vec<String>> {
     // TODO: Use the Entry API to group words by their length
-    // Hint: Use .entry(len).or_default() to get an empty Vec, then push
     unimplemented!()
 }
 
@@ -22,14 +20,12 @@ where
     F: FnOnce() -> i32,
 {
     // TODO: Use .or_insert_with() for lazy evaluation
-    // Hint: The closure should only be called if the key is missing
     unimplemented!()
 }
 
 /// Increments the value at the key by 1 if it exists, otherwise inserts the initial value.
 pub fn increment_or_init(map: &mut HashMap<String, i32>, key: &str, init: i32) {
     // TODO: Use .and_modify() combined with .or_insert()
-    // Hint: .and_modify(|v| *v += 1).or_insert(init)
     unimplemented!()
 }
 
@@ -39,21 +35,19 @@ pub fn merge_maps(
     map2: HashMap<String, i32>,
 ) -> HashMap<String, i32> {
     // TODO: Use the Entry API to merge maps
-    // Hint: Iterate over map2 and use .entry().or_insert() to add to map1's values
     unimplemented!()
 }
 
 /// Creates a map where each key is an item and the value is the index of its first occurrence.
 pub fn first_occurrence(items: &[&str]) -> HashMap<String, usize> {
     // TODO: Use .or_insert() to only insert the first occurrence index
-    // Hint: .or_insert() doesn't overwrite existing values
     unimplemented!()
 }
 
 /// Adds a value to the vector at the given key.
 /// If the key doesn't exist, creates a new vector with that value.
 pub fn update_or_default(map: &mut HashMap<String, Vec<i32>>, key: &str, value: i32) {
-    // TODO: Use .or_default() to get an empty Vec, then push the value
+    // TODO: Use .or_default()
     unimplemented!()
 }
 

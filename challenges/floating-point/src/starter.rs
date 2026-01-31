@@ -2,8 +2,7 @@
 ///
 /// Returns `true` if `x` is a number you can safely do math with.
 pub fn is_valid_number(x: f64) -> bool {
-    // TODO: Check if x is finite (not NaN and not infinite)
-    // Hint: Look at the is_finite() method on f64
+    // TODO
     unimplemented!()
 }
 
@@ -11,8 +10,7 @@ pub fn is_valid_number(x: f64) -> bool {
 ///
 /// Returns one of: `"nan"`, `"infinite"`, `"zero"`, `"normal"`, or `"subnormal"`.
 pub fn classify_float(x: f64) -> &'static str {
-    // TODO: Use the classify() method and match on FpCategory
-    // You'll need: use std::num::FpCategory;
+    // TODO
     unimplemented!()
 }
 
@@ -23,15 +21,13 @@ pub fn classify_float(x: f64) -> &'static str {
 /// - Either `a` or `b` is NaN
 /// - Either `a` or `b` is infinite
 pub fn safe_divide(a: f64, b: f64) -> Option<f64> {
-    // TODO: Check for invalid inputs before dividing
-    // Consider: What makes division unsafe?
+    // TODO
     unimplemented!()
 }
 
 /// Rounds a number to the specified number of decimal places.
 pub fn round_to_places(x: f64, places: u32) -> f64 {
-    // TODO: Multiply, round, then divide to achieve decimal place rounding
-    // Hint: 10_f64.powi(places as i32) gives you the multiplier
+    // TODO
     unimplemented!()
 }
 
@@ -39,7 +35,7 @@ pub fn round_to_places(x: f64, places: u32) -> f64 {
 ///
 /// Returns `false` if either number is NaN (since NaN comparisons are always false).
 pub fn approx_equal(a: f64, b: f64, epsilon: f64) -> bool {
-    // TODO: Handle NaN case first, then check if |a - b| <= epsilon
+    // TODO
     unimplemented!()
 }
 
@@ -49,8 +45,7 @@ pub fn approx_equal(a: f64, b: f64, epsilon: f64) -> bool {
 /// - Any of the inputs is NaN
 /// - `min > max`
 pub fn clamp_to_range(x: f64, min: f64, max: f64) -> Option<f64> {
-    // TODO: Validate inputs, then clamp x to [min, max]
-    // Note: Don't use the built-in clamp() as it doesn't handle NaN correctly
+    // TODO
     unimplemented!()
 }
 
@@ -60,7 +55,7 @@ pub fn clamp_to_range(x: f64, min: f64, max: f64) -> Option<f64> {
 /// - `x` is negative
 /// - `x` is NaN
 pub fn safe_sqrt(x: f64) -> Option<f64> {
-    // TODO: Check for invalid inputs before computing sqrt
+    // TODO
     unimplemented!()
 }
 
@@ -68,8 +63,7 @@ pub fn safe_sqrt(x: f64) -> Option<f64> {
 ///
 /// Returns 0.0 for an empty slice.
 pub fn sum_finite(numbers: &[f64]) -> f64 {
-    // TODO: Filter out non-finite values, then sum the rest
-    // Hint: Use filter() with is_finite()
+    // TODO
     unimplemented!()
 }
 

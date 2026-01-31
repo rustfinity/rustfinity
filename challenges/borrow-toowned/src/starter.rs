@@ -36,8 +36,6 @@ pub fn make_owned(s: &str) -> String {
 /// * `input` - The string to normalize
 pub fn normalize_whitespace(input: &str) -> Cow<'_, str> {
     // TODO: Check if normalization is needed
-    // If no consecutive whitespace, return Cow::Borrowed(input)
-    // Otherwise, build a new string and return Cow::Owned(result)
     unimplemented!()
 }
 
@@ -51,8 +49,6 @@ pub fn normalize_whitespace(input: &str) -> Cow<'_, str> {
 /// * `prefix` - The prefix to ensure exists
 pub fn ensure_prefix<'a>(s: &'a str, prefix: &str) -> Cow<'a, str> {
     // TODO: Check if s starts with prefix
-    // If yes, return Cow::Borrowed(s)
-    // If no, return Cow::Owned with prefix prepended
     unimplemented!()
 }
 
@@ -62,8 +58,6 @@ pub fn ensure_prefix<'a>(s: &'a str, prefix: &str) -> Cow<'a, str> {
 /// strings differing only in case are considered equal and hash the same.
 #[derive(Debug, Clone)]
 pub struct CaseInsensitiveString {
-    // TODO: Store the original string and possibly a lowercase version
-    // for efficient hashing and comparison
     original: String,
     lowercase: String,
 }
@@ -118,8 +112,6 @@ where
     T: Clone + PartialEq,
 {
     // TODO: Check if items contains value
-    // If yes, return Cow::Borrowed(items)
-    // If no, create a new vec with value appended and return Cow::Owned
     unimplemented!()
 }
 
@@ -132,8 +124,6 @@ where
 /// * `path` - The path string to normalize
 pub fn normalize_path(path: &str) -> Cow<'_, str> {
     // TODO: Check if path contains "./"
-    // If not, return Cow::Borrowed(path)
-    // Otherwise, remove "./" components and return Cow::Owned
     unimplemented!()
 }
 

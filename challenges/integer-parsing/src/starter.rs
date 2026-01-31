@@ -3,8 +3,7 @@
 /// Returns `Some(value)` on success, `None` on failure.
 /// Handles positive and negative numbers and leading/trailing whitespace.
 pub fn parse_decimal(s: &str) -> Option<i32> {
-    // TODO: Parse the string as a decimal i32
-    // Hint: Use .trim() and .parse()
+    // TODO
     unimplemented!()
 }
 
@@ -13,8 +12,7 @@ pub fn parse_decimal(s: &str) -> Option<i32> {
 /// The input should NOT include the "0b" prefix.
 /// Returns `Some(value)` on success, `None` on failure.
 pub fn parse_binary(s: &str) -> Option<u32> {
-    // TODO: Parse the string as binary (base 2)
-    // Hint: Use u32::from_str_radix(s, radix)
+    // TODO
     unimplemented!()
 }
 
@@ -24,8 +22,7 @@ pub fn parse_binary(s: &str) -> Option<u32> {
 /// Case-insensitive: both "FF" and "ff" work.
 /// Returns `Some(value)` on success, `None` on failure.
 pub fn parse_hex(s: &str) -> Option<u32> {
-    // TODO: Parse the string as hexadecimal (base 16)
-    // Hint: Use u32::from_str_radix(s, radix)
+    // TODO
     unimplemented!()
 }
 
@@ -34,8 +31,7 @@ pub fn parse_hex(s: &str) -> Option<u32> {
 /// The input should NOT include the "0o" prefix.
 /// Returns `Some(value)` on success, `None` on failure.
 pub fn parse_octal(s: &str) -> Option<u32> {
-    // TODO: Parse the string as octal (base 8)
-    // Hint: Use u32::from_str_radix(s, radix)
+    // TODO
     unimplemented!()
 }
 
@@ -44,8 +40,7 @@ pub fn parse_octal(s: &str) -> Option<u32> {
 /// Returns `Some(value)` on success, `None` on failure.
 /// Valid radix values are 2 through 36.
 pub fn parse_with_radix(s: &str, radix: u32) -> Option<u32> {
-    // TODO: Parse the string with the given radix
-    // Hint: Validate radix is in range 2-36, then use from_str_radix
+    // TODO
     unimplemented!()
 }
 
@@ -54,8 +49,7 @@ pub fn parse_with_radix(s: &str, radix: u32) -> Option<u32> {
 /// Returns a `Vec<i32>` containing all successfully parsed numbers.
 /// Values that fail to parse are silently skipped.
 pub fn parse_multiple(s: &str) -> Vec<i32> {
-    // TODO: Split by comma and parse each part
-    // Hint: Use .split(','), .filter_map(), and .parse()
+    // TODO
     unimplemented!()
 }
 
@@ -64,8 +58,7 @@ pub fn parse_multiple(s: &str) -> Vec<i32> {
 /// Returns `Ok(value)` on success.
 /// Returns `Err(String)` with a descriptive error message on failure.
 pub fn try_parse_u8(s: &str) -> Result<u8, String> {
-    // TODO: Parse as u8 and convert the error to a descriptive String
-    // Hint: Use .map_err() to convert ParseIntError to String
+    // TODO
     unimplemented!()
 }
 
@@ -78,8 +71,7 @@ pub fn try_parse_u8(s: &str) -> Result<u8, String> {
 ///
 /// Returns `Some(i64)` on success, `None` on failure.
 pub fn detect_and_parse(s: &str) -> Option<i64> {
-    // TODO: Check for prefixes and parse with appropriate base
-    // Hint: Use strip_prefix() to check and remove prefixes
+    // TODO
     unimplemented!()
 }
 

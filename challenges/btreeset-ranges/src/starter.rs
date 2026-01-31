@@ -6,38 +6,36 @@ use std::ops::Bound;
 /// The resulting set will contain all unique elements in sorted order.
 pub fn create_number_set(numbers: &[i32]) -> BTreeSet<i32> {
     // TODO: Convert the slice into a BTreeSet
-    // Hint: Use .iter().copied().collect()
     unimplemented!()
 }
 
 /// Returns all elements in the range [start, end) (inclusive start, exclusive end).
 pub fn get_range(set: &BTreeSet<i32>, start: i32, end: i32) -> Vec<i32> {
     // TODO: Use .range(start..end) to get elements in the half-open range
-    // Remember to .copied().collect() the results
     unimplemented!()
 }
 
 /// Returns all elements in the range [start, end] (both inclusive).
 pub fn get_range_inclusive(set: &BTreeSet<i32>, start: i32, end: i32) -> Vec<i32> {
-    // TODO: Use .range(start..=end) for an inclusive range
+    // TODO: Use .range(start..=end)
     unimplemented!()
 }
 
 /// Returns all elements strictly less than the threshold.
 pub fn get_elements_before(set: &BTreeSet<i32>, threshold: i32) -> Vec<i32> {
-    // TODO: Use .range(..threshold) for an unbounded lower range
+    // TODO: Use .range(..threshold)
     unimplemented!()
 }
 
 /// Returns all elements greater than or equal to the threshold.
 pub fn get_elements_from(set: &BTreeSet<i32>, threshold: i32) -> Vec<i32> {
-    // TODO: Use .range(threshold..) for an unbounded upper range
+    // TODO: Use .range(threshold..)
     unimplemented!()
 }
 
 /// Counts how many elements fall within the range [start, end] (inclusive).
 pub fn count_in_range(set: &BTreeSet<i32>, start: i32, end: i32) -> usize {
-    // TODO: Use .range(...).count() to count elements
+    // TODO: Use .range(...).count()
     unimplemented!()
 }
 
@@ -46,7 +44,6 @@ pub fn count_in_range(set: &BTreeSet<i32>, start: i32, end: i32) -> usize {
 /// Returns None if no such element exists.
 pub fn find_closest_less_than(set: &BTreeSet<i32>, value: i32) -> Option<i32> {
     // TODO: Use .range(..value) and get the last element
-    // Hint: .next_back() gets the last element from an iterator
     unimplemented!()
 }
 
@@ -55,7 +52,6 @@ pub fn find_closest_less_than(set: &BTreeSet<i32>, value: i32) -> Option<i32> {
 /// Returns None if no such element exists.
 pub fn find_closest_greater_than(set: &BTreeSet<i32>, value: i32) -> Option<i32> {
     // TODO: Use .range() with Bound::Excluded for the lower bound
-    // Hint: .range((Bound::Excluded(value), Bound::Unbounded))
     unimplemented!()
 }
 

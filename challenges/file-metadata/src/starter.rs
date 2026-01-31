@@ -8,7 +8,7 @@ use std::time::{Duration, SystemTime};
 ///
 /// Use `std::fs::metadata()` to get file information.
 pub fn get_file_size(path: &Path) -> io::Result<u64> {
-    // TODO: Get the file metadata and return its size using .len()
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -17,8 +17,7 @@ pub fn get_file_size(path: &Path) -> io::Result<u64> {
 /// Returns "file", "directory", or "symlink".
 /// Use `std::fs::symlink_metadata()` to detect symlinks properly.
 pub fn get_file_type(path: &Path) -> io::Result<String> {
-    // TODO: Get the metadata and check file_type()
-    // Use is_symlink(), is_dir(), is_file() methods
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -26,7 +25,7 @@ pub fn get_file_type(path: &Path) -> io::Result<String> {
 ///
 /// Use the permissions() method on Metadata.
 pub fn is_readonly(path: &Path) -> io::Result<bool> {
-    // TODO: Get metadata, then permissions, then check readonly()
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -34,7 +33,7 @@ pub fn is_readonly(path: &Path) -> io::Result<bool> {
 ///
 /// Returns the modification time as a SystemTime.
 pub fn get_modified_time(path: &Path) -> io::Result<SystemTime> {
-    // TODO: Get metadata and call modified()
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -42,8 +41,7 @@ pub fn get_modified_time(path: &Path) -> io::Result<SystemTime> {
 ///
 /// Compare the modification time with the current time.
 pub fn was_modified_within(path: &Path, duration: Duration) -> io::Result<bool> {
-    // TODO: Get modification time, compare with SystemTime::now()
-    // Use duration_since() to calculate elapsed time
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -52,9 +50,7 @@ pub fn was_modified_within(path: &Path, duration: Duration) -> io::Result<bool> 
 /// On Unix, check the execute bits using PermissionsExt.
 /// On Windows, check for executable extensions (.exe, .bat, .cmd, .com).
 pub fn is_executable(path: &Path) -> io::Result<bool> {
-    // TODO: Implement platform-specific executable check
-    // Use #[cfg(unix)] and std::os::unix::fs::PermissionsExt
-    // Execute bits: mode & 0o111 != 0
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -64,8 +60,7 @@ pub fn is_executable(path: &Path) -> io::Result<bool> {
 /// Ordering::Greater if path1 was modified after path2,
 /// Ordering::Equal if they have the same modification time.
 pub fn compare_modified_times(path1: &Path, path2: &Path) -> io::Result<Ordering> {
-    // TODO: Get modification times for both files and compare them
-    // SystemTime implements Ord, so you can use .cmp()
+    // TODO: Implement this function
     unimplemented!()
 }
 

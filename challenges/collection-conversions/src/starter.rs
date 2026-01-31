@@ -6,7 +6,6 @@ use std::hash::Hash;
 /// T must implement Eq and Hash traits.
 pub fn vec_to_hashset<T: Eq + Hash>(vec: Vec<T>) -> HashSet<T> {
     // TODO: Convert the vec into a HashSet
-    // Hint: Use .into_iter() and .collect()
     unimplemented!()
 }
 
@@ -15,7 +14,6 @@ pub fn vec_to_hashset<T: Eq + Hash>(vec: Vec<T>) -> HashSet<T> {
 /// T must implement Ord trait.
 pub fn vec_to_btreeset<T: Ord>(vec: Vec<T>) -> BTreeSet<T> {
     // TODO: Convert the vec into a BTreeSet
-    // The elements will be automatically sorted
     unimplemented!()
 }
 
@@ -24,7 +22,6 @@ pub fn vec_to_btreeset<T: Ord>(vec: Vec<T>) -> BTreeSet<T> {
 /// T must implement Ord trait for sorting.
 pub fn hashset_to_sorted_vec<T: Ord>(set: HashSet<T>) -> Vec<T> {
     // TODO: Convert the set to a Vec and sort it
-    // Hint: Collect to Vec first, then sort
     unimplemented!()
 }
 
@@ -43,7 +40,6 @@ pub fn pairs_to_hashmap<K: Eq + Hash, V>(pairs: Vec<(K, V)>) -> HashMap<K, V> {
 /// If duplicate keys exist, later values overwrite earlier ones.
 pub fn pairs_to_btreemap<K: Ord, V>(pairs: Vec<(K, V)>) -> BTreeMap<K, V> {
     // TODO: Convert the pairs into a BTreeMap
-    // Keys will be automatically sorted
     unimplemented!()
 }
 
@@ -58,7 +54,6 @@ pub fn hashmap_to_pairs<K, V>(map: HashMap<K, V>) -> Vec<(K, V)> {
 /// Flattens multiple Vecs into a single Vec, preserving order.
 pub fn merge_vecs<T>(vecs: Vec<Vec<T>>) -> Vec<T> {
     // TODO: Flatten all inner vecs into one
-    // Hint: Look at .flatten() iterator adapter
     unimplemented!()
 }
 
@@ -67,7 +62,6 @@ pub fn merge_vecs<T>(vecs: Vec<Vec<T>>) -> Vec<T> {
 /// First's elements come before second's elements.
 pub fn chain_and_collect<T>(first: Vec<T>, second: Vec<T>) -> Vec<T> {
     // TODO: Chain the two vecs together
-    // Hint: Look at .chain() iterator adapter
     unimplemented!()
 }
 
