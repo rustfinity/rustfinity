@@ -108,8 +108,12 @@ assert_eq!(running_sum(&[1, 2, 3, 4]), vec![1, 3, 6, 10]);
 // running_max
 assert_eq!(running_max(&[3, 1, 4, 1, 5]), vec![3, 3, 4, 4, 5]);
 
-// take_while_sum_under - takes [1, 2, 3] but stops before adding 4 (sum would be 10 >= 10)
-assert_eq!(take_while_sum_under(&[1, 2, 3, 4, 5], 10), vec![1, 2, 3]);
+// take_while_sum_under
+// Takes [1, 2, 3] but stops before adding 4 (sum would be 10 >= 10)
+assert_eq!(
+    take_while_sum_under(&[1, 2, 3, 4, 5], 10),
+    vec![1, 2, 3]
+);
 
 // count_occurrences
 assert_eq!(count_occurrences(&[1, 2, 1, 3, 1], &1), 3);

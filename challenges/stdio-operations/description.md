@@ -85,7 +85,10 @@ assert_eq!(line, "Hello, World!");
 // Reading multiple lines
 let input = Cursor::new("Line 1\nLine 2\nLine 3\n");
 let lines = read_all_lines_from_reader(input)?;
-assert_eq!(lines, vec!["Line 1", "Line 2", "Line 3"]);
+assert_eq!(
+    lines,
+    vec!["Line 1", "Line 2", "Line 3"]
+);
 
 // Writing to a buffer
 let mut output = Vec::new();
@@ -95,12 +98,18 @@ assert_eq!(String::from_utf8(output).unwrap(), "Hello");
 // Writing with newline
 let mut output = Vec::new();
 writeln_to_writer(&mut output, "Hello")?;
-assert_eq!(String::from_utf8(output).unwrap(), "Hello\n");
+assert_eq!(
+    String::from_utf8(output).unwrap(),
+    "Hello\n"
+);
 
 // Writing an error message
 let mut output = Vec::new();
 write_error_to_writer(&mut output, "Something went wrong")?;
-assert_eq!(String::from_utf8(output).unwrap(), "[ERROR] Something went wrong\n");
+assert_eq!(
+    String::from_utf8(output).unwrap(),
+    "[ERROR] Something went wrong\n"
+);
 ```
 
 ## Hints
@@ -109,7 +118,7 @@ assert_eq!(String::from_utf8(output).unwrap(), "[ERROR] Something went wrong\n")
   <summary>Click here for hints</summary>
 
 - Use `reader.read_line(&mut buffer)` to read a single line
-- Use `buffer.trim_end_matches('\n').trim_end_matches('\r')` to handle both Unix and Windows line endings
+- Use `buffer.trim_end_matches('\n').trim_end_matches('\r')` to strip line endings for both Unix and Windows
 - The `lines()` iterator from `BufRead` automatically strips newlines
 - Use `write!(writer, "{}", message)` or `writer.write_all(message.as_bytes())` to write
 - Use `writeln!(writer, "{}", message)` to write with a newline

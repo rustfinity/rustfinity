@@ -104,7 +104,10 @@ Create an `Unfold<T, F>` struct that generates values from a state and function:
 // Fibonacci
 let fib = Fibonacci::new();
 let first_ten: Vec<u64> = fib.take(10).collect();
-assert_eq!(first_ten, vec![0, 1, 1, 2, 3, 5, 8, 13, 21, 34]);
+assert_eq!(
+    first_ten,
+    vec![0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+);
 
 // StepRange
 let range = StepRange::new(0, 10, 2);
@@ -118,17 +121,26 @@ assert_eq!(nums, vec![5, 4, 3, 2, 1]);
 // CycleN
 let cycle = CycleN::new(&[1, 2, 3], 2);
 let repeated: Vec<i32> = cycle.collect();
-assert_eq!(repeated, vec![1, 2, 3, 1, 2, 3]);
+assert_eq!(
+    repeated,
+    vec![1, 2, 3, 1, 2, 3]
+);
 
 // Collatz
 let collatz = Collatz::new(6);
 let sequence: Vec<u64> = collatz.collect();
-assert_eq!(sequence, vec![6, 3, 10, 5, 16, 8, 4, 2, 1]);
+assert_eq!(
+    sequence,
+    vec![6, 3, 10, 5, 16, 8, 4, 2, 1]
+);
 
 // Windows
 let windows = Windows::new(&[1, 2, 3, 4, 5], 3);
 let groups: Vec<Vec<i32>> = windows.collect();
-assert_eq!(groups, vec![vec![1, 2, 3], vec![2, 3, 4], vec![3, 4, 5]]);
+assert_eq!(
+    groups,
+    vec![vec![1, 2, 3], vec![2, 3, 4], vec![3, 4, 5]]
+);
 
 // Unfold (powers of 2 until > 100)
 let powers = Unfold::new(1u32, |&n| {
@@ -136,7 +148,10 @@ let powers = Unfold::new(1u32, |&n| {
     if next <= 100 { Some(next) } else { None }
 });
 let result: Vec<u32> = powers.collect();
-assert_eq!(result, vec![1, 2, 4, 8, 16, 32, 64]);
+assert_eq!(
+    result,
+    vec![1, 2, 4, 8, 16, 32, 64]
+);
 ```
 
 ## Hints
@@ -145,7 +160,7 @@ assert_eq!(result, vec![1, 2, 4, 8, 16, 32, 64]);
   <summary>Click here for hints</summary>
 
 - For `Fibonacci`, store two consecutive numbers and update them each iteration
-- For `StepRange`, check the direction of step vs. the relationship between start and end
+- For `StepRange`, validate step direction matches the relationship between start and end
 - For `CycleN`, track both the current index in the slice and how many complete cycles remain
 - For `Collatz`, use a flag or Option to track when you've yielded 1 and should stop
 - For `Windows`, track the starting index and yield a slice/clone from that position

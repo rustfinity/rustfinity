@@ -80,7 +80,11 @@ assert!(path.to_string_lossy().contains("myapp"));
 std::fs::remove_file(&path)?; // Manual cleanup
 
 // Create temp file with content
-let path = create_temp_file_with_content("data", ".txt", "Hello, World!")?;
+let path = create_temp_file_with_content(
+    "data",
+    ".txt",
+    "Hello, World!"
+)?;
 let content = std::fs::read_to_string(&path)?;
 assert_eq!(content, "Hello, World!");
 std::fs::remove_file(&path)?;
@@ -103,7 +107,10 @@ std::fs::remove_dir(&temp_dir)?;
 let dir = get_temp_dir();
 create_temp_file_with_content("cleanup_test", ".tmp", "test")?;
 create_temp_file_with_content("cleanup_test", ".tmp", "test")?;
-let deleted = cleanup_temp_files(&dir, "cleanup_test")?;
+let deleted = cleanup_temp_files(
+    &dir,
+    "cleanup_test"
+)?;
 assert!(deleted >= 2);
 ```
 
@@ -117,7 +124,7 @@ assert!(deleted >= 2);
 - Use `std::time::SystemTime::now()` for additional uniqueness in filenames
 - For the `TempFile` struct, store the path and implement `Drop` to call `std::fs::remove_file`
 - Use `std::fs::create_dir()` to create directories
-- For `cleanup_temp_files`, use `std::fs::read_dir()` to iterate over files and `starts_with()` to check prefixes
+- For `cleanup_temp_files`, use `std::fs::read_dir()` to iterate and `starts_with()` for prefix checks
 - Remember to handle errors gracefully - cleanup operations shouldn't panic if a file doesn't exist
 
 </details>

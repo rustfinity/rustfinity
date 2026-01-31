@@ -102,7 +102,10 @@ let readonly = is_readonly(Path::new("config.txt"))?;
 let modified = get_modified_time(Path::new("file.txt"))?;
 
 // Check if recently modified (within last hour)
-let recent = was_modified_within(Path::new("log.txt"), Duration::from_secs(3600))?;
+let recent = was_modified_within(
+    Path::new("log.txt"),
+    Duration::from_secs(3600)
+)?;
 
 // Check if executable
 let executable = is_executable(Path::new("script.sh"))?;

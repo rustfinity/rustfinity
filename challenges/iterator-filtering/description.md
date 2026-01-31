@@ -71,27 +71,52 @@ Implement the following functions that demonstrate iterator filtering patterns:
 assert_eq!(filter_even(&[1, 2, 3, 4, 5, 6]), vec![2, 4, 6]);
 
 // filter_by_predicate
-assert_eq!(filter_by_predicate(&[1, 2, 3, 4, 5], |&x| x > 3), vec![4, 5]);
+assert_eq!(
+    filter_by_predicate(&[1, 2, 3, 4, 5], |&x| x > 3),
+    vec![4, 5]
+);
 
 // parse_valid_numbers
-assert_eq!(parse_valid_numbers(&["1", "hello", "3", "world"]), vec![1, 3]);
+assert_eq!(
+    parse_valid_numbers(&["1", "hello", "3", "world"]),
+    vec![1, 3]
+);
 
 // filter_map_with
-let doubled: Vec<i32> = filter_map_with(&[1, 2, 3], |x| if x % 2 == 0 { Some(x * 2) } else { None });
-assert_eq!(doubled, vec![4]);  // Only 2 is even, doubled to 4
+let doubled: Vec<i32> = filter_map_with(
+    &[1, 2, 3],
+    |x| if x % 2 == 0 { Some(x * 2) } else { None }
+);
+// Only 2 is even, doubled to 4
+assert_eq!(doubled, vec![4]);
 
 // take_while_positive
-assert_eq!(take_while_positive(&[3, 5, -1, 2, 4]), vec![3, 5]);
+assert_eq!(
+    take_while_positive(&[3, 5, -1, 2, 4]),
+    vec![3, 5]
+);
 
 // skip_while_negative
-assert_eq!(skip_while_negative(&[-3, -1, 2, -4, 5]), vec![2, -4, 5]);
+assert_eq!(
+    skip_while_negative(&[-3, -1, 2, -4, 5]),
+    vec![2, -4, 5]
+);
 
 // filter_in_range
-assert_eq!(filter_in_range(&[1, 5, 10, 15, 20], 5, 15), vec![5, 10, 15]);
+assert_eq!(
+    filter_in_range(&[1, 5, 10, 15, 20], 5, 15),
+    vec![5, 10, 15]
+);
 
 // first_matching
-assert_eq!(first_matching(&[1, 2, 3, 4, 5], |&x| x > 3), Some(4));
-assert_eq!(first_matching(&[1, 2, 3], |&x| x > 10), None);
+assert_eq!(
+    first_matching(&[1, 2, 3, 4, 5], |&x| x > 3),
+    Some(4)
+);
+assert_eq!(
+    first_matching(&[1, 2, 3], |&x| x > 10),
+    None
+);
 ```
 
 ## Hints
@@ -102,7 +127,7 @@ assert_eq!(first_matching(&[1, 2, 3], |&x| x > 10), None);
 - `filter()` takes a closure that receives `&&T` when iterating over `&[T]`, so use `|&&x|` or `|&x|` patterns
 - `filter_map()` combines filter and map - return `Some(value)` to keep, `None` to skip
 - `take_while()` stops at the first element that doesn't match the predicate
-- `skip_while()` skips elements until one doesn't match, then takes all remaining elements
+- `skip_while()` skips until predicate fails, then takes all remaining elements
 - Use `.cloned()` to convert from `&T` to `T` when collecting
 - For `first_matching`, consider using `.find()` or `.filter().next()`
 - Remember that `parse::<i32>()` returns a `Result`, use `.ok()` to convert to `Option`

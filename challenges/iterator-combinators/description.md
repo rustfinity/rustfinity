@@ -64,7 +64,10 @@ Implement the following functions that use iterator combinators:
 assert_eq!(chain_sequences(&[1, 2], &[3, 4]), vec![1, 2, 3, 4]);
 
 // zip_pairs
-assert_eq!(zip_pairs(&[1, 2, 3], &["a", "b"]), vec![(1, "a"), (2, "b")]);
+assert_eq!(
+    zip_pairs(&[1, 2, 3], &["a", "b"]),
+    vec![(1, "a"), (2, "b")]
+);
 
 // take_first
 assert_eq!(take_first(&[1, 2, 3, 4, 5], 3), vec![1, 2, 3]);
@@ -76,10 +79,16 @@ assert_eq!(skip_first(&[1, 2, 3, 4, 5], 2), vec![3, 4, 5]);
 assert_eq!(reverse_sequence(&[1, 2, 3]), vec![3, 2, 1]);
 
 // interleave - alternates elements from both slices
-assert_eq!(interleave(&[1, 3, 5], &[2, 4, 6]), vec![1, 2, 3, 4, 5, 6]);
+assert_eq!(
+    interleave(&[1, 3, 5], &[2, 4, 6]),
+    vec![1, 2, 3, 4, 5, 6]
+);
 
 // sliding_pairs - pairs consecutive elements
-assert_eq!(sliding_pairs(&[1, 2, 3, 4]), vec![(1, 2), (2, 3), (3, 4)]);
+assert_eq!(
+    sliding_pairs(&[1, 2, 3, 4]),
+    vec![(1, 2), (2, 3), (3, 4)]
+);
 ```
 
 ## Hints
@@ -89,8 +98,8 @@ assert_eq!(sliding_pairs(&[1, 2, 3, 4]), vec![(1, 2), (2, 3), (3, 4)]);
 
 - For `chain_sequences`, use `.iter().chain(other.iter())` and then `.cloned().collect()`
 - For `zip_pairs`, use `.iter().zip(other.iter())` - remember zip stops at the shorter iterator
-- For `interleave`, you can use `zip()` combined with `flat_map()` to flatten tuples into individual elements
-- For `sliding_pairs`, think about zipping the original iterator with a version that skips the first element
+- For `interleave`, use `zip()` with `flat_map()` to flatten tuples into individual elements
+- For `sliding_pairs`, zip the original iterator with a version that skips the first element
 - Most combinators work with iterators, so start with `.iter()` on the slice
 - Use `.cloned()` to convert `&T` to `T` when you need owned values
 

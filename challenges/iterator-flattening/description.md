@@ -51,31 +51,52 @@ Implement the following functions that demonstrate iterator flattening patterns:
 
 ```rust
 // flatten_nested
-assert_eq!(flatten_nested(vec![vec![1, 2], vec![3], vec![4, 5, 6]]), vec![1, 2, 3, 4, 5, 6]);
+assert_eq!(
+    flatten_nested(vec![vec![1, 2], vec![3], vec![4, 5, 6]]),
+    vec![1, 2, 3, 4, 5, 6]
+);
 
 // flatten_options
-assert_eq!(flatten_options(vec![Some(1), None, Some(3)]), vec![1, 3]);
+assert_eq!(
+    flatten_options(vec![Some(1), None, Some(3)]),
+    vec![1, 3]
+);
 
 // flatten_results
 let results: Vec<Result<i32, &str>> = vec![Ok(1), Err("bad"), Ok(3)];
 assert_eq!(flatten_results(results), vec![1, 3]);
 
 // chars_from_words
-assert_eq!(chars_from_words(&["hi", "there"]), vec!['h', 'i', 't', 'h', 'e', 'r', 'e']);
+assert_eq!(
+    chars_from_words(&["hi", "there"]),
+    vec!['h', 'i', 't', 'h', 'e', 'r', 'e']
+);
 
 // expand_ranges
-assert_eq!(expand_ranges(&[(1, 3), (5, 6)]), vec![1, 2, 3, 5, 6]);
+assert_eq!(
+    expand_ranges(&[(1, 3), (5, 6)]),
+    vec![1, 2, 3, 5, 6]
+);
 
 // flatten_to_depth_one
 let deep = vec![vec![vec![1, 2], vec![3]], vec![vec![4]]];
-assert_eq!(flatten_to_depth_one(deep), vec![vec![1, 2], vec![3], vec![4]]);
+assert_eq!(
+    flatten_to_depth_one(deep),
+    vec![vec![1, 2], vec![3], vec![4]]
+);
 
 // words_from_lines
-assert_eq!(words_from_lines(&["hello world", "foo bar"]), vec!["hello", "world", "foo", "bar"]);
+assert_eq!(
+    words_from_lines(&["hello world", "foo bar"]),
+    vec!["hello", "world", "foo", "bar"]
+);
 
 // flatten_and_filter
 let nested = vec![vec![1, 2, 3], vec![4, 5, 6]];
-assert_eq!(flatten_and_filter(nested, |&x| x % 2 == 0), vec![2, 4, 6]);
+assert_eq!(
+    flatten_and_filter(nested, |&x| x % 2 == 0),
+    vec![2, 4, 6]
+);
 ```
 
 ## Hints
@@ -86,7 +107,7 @@ assert_eq!(flatten_and_filter(nested, |&x| x % 2 == 0), vec![2, 4, 6]);
 - `flatten()` works on any iterator whose items implement `IntoIterator`
 - `flat_map(f)` is equivalent to `map(f).flatten()` but more efficient
 - For `expand_ranges`, use `flat_map` with a range expression `start..=end`
-- `Option<T>` and `Result<T, E>` both implement `IntoIterator`, so `flatten()` naturally filters them
+- `Option<T>` and `Result<T, E>` implement `IntoIterator`, so `flatten()` filters them naturally
 - For `flatten_to_depth_one`, call `flatten()` only once on the outer iterator
 - Use `split_whitespace()` to split strings into words
 - Remember that `into_iter()` takes ownership while `iter()` borrows

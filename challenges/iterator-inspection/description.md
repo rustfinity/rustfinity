@@ -60,7 +60,10 @@ Implement the following functions that use iterator inspection methods:
 
 ```rust
 // indexed_elements
-assert_eq!(indexed_elements(&["a", "b", "c"]), vec![(0, "a"), (1, "b"), (2, "c")]);
+assert_eq!(
+    indexed_elements(&["a", "b", "c"]),
+    vec![(0, "a"), (1, "b"), (2, "c")]
+);
 
 // find_index
 assert_eq!(find_index(&[10, 20, 30, 40], &30), Some(2));
@@ -101,12 +104,12 @@ assert_eq!(totals, vec![10, 30, 60]);
   <summary>Click here for hints</summary>
 
 - For `indexed_elements`, use `.iter().enumerate()` and clone the elements when collecting
-- For `find_index`, combine `enumerate()` with `find()` to locate the target, then extract the index
-- For `elements_with_next`, create a `peekable()` iterator and use `peek()` to look at the next element before calling `next()`
-- For `group_consecutive_duplicates`, use `peekable()` to compare current with next and count runs of equal elements
+- For `find_index`, use `enumerate()` with `find()` to locate the target, then extract the index
+- For `elements_with_next`, use `peekable()` with `peek()` to look at the next element before calling `next()`
+- For `group_consecutive_duplicates`, use `peekable()` to compare current with next and count runs
 - For `find_first_repeated`, use `peekable()` to compare each element with its successor via `peek()`
 - For `collect_with_trace`, use `inspect()` to push formatted elements into the trace vector
-- For `sum_with_running_total`, combine `inspect()` with a running total variable that gets updated and pushed at each step
+- For `sum_with_running_total`, use `inspect()` with a running total that gets updated and pushed
 - Remember: `peek()` returns `Option<&T>`, so you may need to handle references carefully
 
 </details>
