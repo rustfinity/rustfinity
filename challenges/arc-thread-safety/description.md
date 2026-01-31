@@ -43,7 +43,11 @@ Implement the following types and functions to demonstrate `Arc<T>` patterns:
 ### Part 2: Thread-Safe Shared Data
 
 5. **`SharedConfig`** - A thread-safe configuration that can be shared across threads:
-   - `new(app_name: String, max_connections: usize, debug_mode: bool) -> Arc<Self>`
+   - `new(
+        app_name: String,
+        max_connections: usize,
+        debug_mode: bool
+    ) -> Arc<Self>`
    - `app_name(&self) -> &str`
    - `max_connections(&self) -> usize`
    - `debug_mode(&self) -> bool`

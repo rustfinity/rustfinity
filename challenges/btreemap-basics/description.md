@@ -30,19 +30,47 @@ for (name, score) in scores.range("B".."D") {
 
 Implement the following functions for working with `BTreeMap`:
 
-1. `create_sorted_map(pairs: &[(String, i32)]) -> BTreeMap<String, i32>` - Create a BTreeMap from a slice of key-value pairs
+1. `create_sorted_map(
+    pairs: &[(String, i32)]
+) -> BTreeMap<String, i32>`
+   - Create a BTreeMap from a slice of key-value
+     pairs
 
-2. `get_value(map: &BTreeMap<String, i32>, key: &str) -> Option<i32>` - Get a value by key, returning `None` if the key doesn't exist
+2. `get_value(
+    map: &BTreeMap<String, i32>,
+    key: &str
+) -> Option<i32>`
+   - Get a value by key, returning `None` if the
+     key doesn't exist
 
-3. `get_keys_in_order(map: &BTreeMap<String, i32>) -> Vec<String>` - Return all keys in sorted order
+3. `get_keys_in_order(
+    map: &BTreeMap<String, i32>
+) -> Vec<String>`
+   - Return all keys in sorted order
 
-4. `get_values_in_key_order(map: &BTreeMap<String, i32>) -> Vec<i32>` - Return all values in the order of their sorted keys
+4. `get_values_in_key_order(
+    map: &BTreeMap<String, i32>
+) -> Vec<i32>`
+   - Return all values in the order of their
+     sorted keys
 
-5. `get_range(map: &BTreeMap<String, i32>, start: &str, end: &str) -> Vec<(String, i32)>` - Return all key-value pairs where the key is >= start and < end (half-open range)
+5. `get_range(
+    map: &BTreeMap<String, i32>,
+    start: &str,
+    end: &str
+) -> Vec<(String, i32)>`
+   - Return all key-value pairs where the key is
+     >= start and < end (half-open range)
 
-6. `get_first(map: &BTreeMap<String, i32>) -> Option<(String, i32)>` - Return the first (smallest key) entry
+6. `get_first(
+    map: &BTreeMap<String, i32>
+) -> Option<(String, i32)>`
+   - Return the first (smallest key) entry
 
-7. `get_last(map: &BTreeMap<String, i32>) -> Option<(String, i32)>` - Return the last (largest key) entry
+7. `get_last(
+    map: &BTreeMap<String, i32>
+) -> Option<(String, i32)>`
+   - Return the last (largest key) entry
 
 ## Examples
 
@@ -104,12 +132,23 @@ assert_eq!(
 <details>
   <summary>Click here for hints</summary>
 
-- For `create_sorted_map`, you can iterate over the slice and insert each pair, or use `.iter().cloned().collect()`
-- For `get_value`, use the `.get()` method which returns an `Option<&V>`, then use `.copied()` to get `Option<V>`
-- For `get_keys_in_order`, iterate over `.keys()` and collect into a Vec
-- For `get_values_in_key_order`, iterate over `.values()` and collect into a Vec
-- For `get_range`, use the `.range()` method with a range pattern like `start..end`
-- For `get_first` and `get_last`, use `.first_key_value()` and `.last_key_value()` methods, which return `Option<(&K, &V)>`
-- Remember that `BTreeMap` iteration methods return references, so you may need to clone values when collecting
+- For `create_sorted_map`, you can iterate over
+  the slice and insert each pair, or use
+  `.iter().cloned().collect()`
+- For `get_value`, use the `.get()` method which
+  returns an `Option<&V>`, then use `.copied()`
+  to get `Option<V>`
+- For `get_keys_in_order`, iterate over `.keys()`
+  and collect into a Vec
+- For `get_values_in_key_order`, iterate over
+  `.values()` and collect into a Vec
+- For `get_range`, use the `.range()` method
+  with a range pattern like `start..end`
+- For `get_first` and `get_last`, use
+  `.first_key_value()` and `.last_key_value()`
+  methods, which return `Option<(&K, &V)>`
+- Remember that `BTreeMap` iteration methods
+  return references, so you may need to clone
+  values when collecting
 
 </details>

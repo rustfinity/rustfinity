@@ -53,7 +53,9 @@ pub fn string_length<S: AsRef<str>>(s: S) -> usize
 Implement `slice_sum` that sums all elements in anything that can be borrowed as an `i32` slice:
 
 ```rust
-pub fn slice_sum<V: AsRef<[i32]>>(values: V) -> i32
+pub fn slice_sum<V: AsRef<[i32]>>(
+    values: V
+) -> i32
 ```
 
 ### 3. Generic Contains Function
@@ -61,7 +63,10 @@ pub fn slice_sum<V: AsRef<[i32]>>(values: V) -> i32
 Implement `contains_element` that checks if a slice contains a specific element:
 
 ```rust
-pub fn contains_element<V: AsRef<[i32]>>(values: V, target: i32) -> bool
+pub fn contains_element<V: AsRef<[i32]>>(
+    values: V,
+    target: i32
+) -> bool
 ```
 
 ### 4. Double All Elements (AsMut)
@@ -103,7 +108,10 @@ pub fn print_as_uppercase<S: AsRef<str>>(s: S) -> String
 Implement `append_value` that appends an `i32` to anything that can be mutably borrowed as a `Vec<i32>`:
 
 ```rust
-pub fn append_value<V: AsMut<Vec<i32>>>(buffer: &mut V, value: i32)
+pub fn append_value<V: AsMut<Vec<i32>>>(
+    buffer: &mut V,
+    value: i32
+)
 ```
 
 ### 8. Path-like Operations
@@ -111,7 +119,9 @@ pub fn append_value<V: AsMut<Vec<i32>>>(buffer: &mut V, value: i32)
 Implement `get_extension` that extracts a file extension from any path-like type:
 
 ```rust
-pub fn get_extension<P: AsRef<std::path::Path>>(path: P) -> Option<String>
+pub fn get_extension<P: AsRef<std::path::Path>>(
+    path: P
+) -> Option<String>
 ```
 
 ## Examples
@@ -160,7 +170,9 @@ assert_eq!(vec, vec![1, 2, 3]);
 // Path extension
 assert_eq!(get_extension("file.txt"), Some("txt".to_string()));
 assert_eq!(
-    get_extension(std::path::PathBuf::from("image.png")),
+    get_extension(
+        std::path::PathBuf::from("image.png")
+    ),
     Some("png".to_string())
 );
 ```

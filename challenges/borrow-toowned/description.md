@@ -42,7 +42,10 @@ Implement the following functions and types using `Borrow`, `ToOwned`, and `Cow`
 Implement `lookup` that searches a `HashMap` using any type that can be borrowed as the key type:
 
 ```rust
-pub fn lookup<'a, K, V, Q>(map: &'a HashMap<K, V>, key: &Q) -> Option<&'a V>
+pub fn lookup<'a, K, V, Q>(
+    map: &'a HashMap<K, V>,
+    key: &Q
+) -> Option<&'a V>
 where
     K: Borrow<Q> + Eq + Hash,
     Q: Eq + Hash + ?Sized,
@@ -69,7 +72,10 @@ pub fn normalize_whitespace(input: &str) -> Cow<str>
 Implement `ensure_prefix` that ensures a string starts with a given prefix. Use `Cow` to return borrowed data when the prefix already exists:
 
 ```rust
-pub fn ensure_prefix<'a>(s: &'a str, prefix: &str) -> Cow<'a, str>
+pub fn ensure_prefix<'a>(
+    s: &'a str,
+    prefix: &str
+) -> Cow<'a, str>
 ```
 
 ### 5. Custom Type with Borrow
@@ -91,7 +97,10 @@ The type should implement `Borrow<str>`, `Hash`, and `Eq` such that "Hello" and 
 Implement `append_if_missing` that appends an element to a slice only if it's not already present. Use `Cow` to avoid cloning the entire vector when the element exists:
 
 ```rust
-pub fn append_if_missing<'a, T>(items: &'a [T], value: T) -> Cow<'a, [T]>
+pub fn append_if_missing<'a, T>(
+    items: &'a [T],
+    value: T
+) -> Cow<'a, [T]>
 where
     T: Clone + PartialEq,
 ```
@@ -145,7 +154,8 @@ let result = ensure_prefix("world", "hello_");
 assert_eq!(result, "hello_world");
 
 // Case insensitive string in HashMap
-let mut map: HashMap<CaseInsensitiveString, i32> = HashMap::new();
+let mut map: HashMap<CaseInsensitiveString, i32> =
+    HashMap::new();
 map.insert(CaseInsensitiveString::new("Hello"), 1);
 assert_eq!(
     map.get(&CaseInsensitiveString::new("HELLO")),
@@ -176,13 +186,27 @@ assert_eq!(vec, vec![1, 2, 3]);
 <details>
   <summary>Click here to reveal hints</summary>
 
-- For `lookup`, use `HashMap::get()` which accepts any type `Q` where `K: Borrow<Q>`
-- `ToOwned::to_owned()` is implemented for `str` (returns `String`) and `[T]` (returns `Vec<T>`)
-- For `Cow`, use `Cow::Borrowed(data)` when no modification is needed
-- Use `Cow::Owned(modified_data)` when you need to return modified data
-- For `CaseInsensitiveString`, the key insight is that `Hash` and `Eq` must be based on the lowercase form
-- When implementing `Borrow<str>` for `CaseInsensitiveString`, note that the `borrow()` method must return `&str` - this is the internal string, not the lowercase version. The equality and hashing are what make lookups work case-insensitively.
-- `Cow<'a, str>` implements `Deref<Target = str>`, so you can use string methods directly on it
-- For checking if modifications are needed, do a pass to detect first, then only allocate if necessary
+- For `lookup`, use `HashMap::get()` which accepts
+  any type `Q` where `K: Borrow<Q>`
+- `ToOwned::to_owned()` is implemented for `str`
+  (returns `String`) and `[T]` (returns `Vec<T>`)
+- For `Cow`, use `Cow::Borrowed(data)` when no
+  modification is needed
+- Use `Cow::Owned(modified_data)` when you need
+  to return modified data
+- For `CaseInsensitiveString`, the key insight
+  is that `Hash` and `Eq` must be based on the
+  lowercase form
+- When implementing `Borrow<str>` for
+  `CaseInsensitiveString`, note that the
+  `borrow()` method must return `&str` - this
+  is the internal string, not the lowercase
+  version. The equality and hashing are what
+  make lookups work case-insensitively.
+- `Cow<'a, str>` implements `Deref<Target = str>`,
+  so you can use string methods directly on it
+- For checking if modifications are needed, do a
+  pass to detect first, then only allocate if
+  necessary
 
 </details>

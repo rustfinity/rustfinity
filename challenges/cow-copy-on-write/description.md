@@ -36,16 +36,20 @@ Implement the following functions demonstrating `Cow` patterns:
 
 ### Part 1: Basic Cow Usage
 
-1. **`maybe_uppercase`** - Convert to uppercase only if any lowercase letters exist
-   - Returns `Cow::Borrowed` if already all uppercase (or empty)
+1. **`maybe_uppercase`** - Convert to uppercase
+   only if any lowercase letters exist
+   - Returns `Cow::Borrowed` if already all
+     uppercase (or empty)
    - Returns `Cow::Owned` if conversion was needed
 
 2. **`ensure_suffix`** - Ensure string ends with suffix
    - Returns `Cow::Borrowed` if suffix already present
    - Returns `Cow::Owned` with suffix appended otherwise
 
-3. **`trim_and_lowercase`** - Trim whitespace and convert to lowercase
-   - Returns `Cow::Borrowed` only if string is already trimmed and lowercase
+3. **`trim_and_lowercase`** - Trim whitespace and
+   convert to lowercase
+   - Returns `Cow::Borrowed` only if string is
+     already trimmed and lowercase
    - Returns `Cow::Owned` otherwise
 
 ### Part 2: Cow with Collections
@@ -64,23 +68,31 @@ Implement the following functions demonstrating `Cow` patterns:
 
 ### Part 3: Modifying Cow with to_mut()
 
-7. **`ensure_capacity`** - Ensure string has at least N characters, padding with char if needed
+7. **`ensure_capacity`** - Ensure string has at
+   least N characters, padding with char if needed
    - Uses `to_mut()` to modify only when necessary
    - Returns the modified/unmodified Cow
 
-8. **`modify_if_needed`** - Apply a transformation function only if predicate returns true
+8. **`modify_if_needed`** - Apply a transformation
+   function only if predicate returns true
    - Generic over the transformation
-   - Uses `to_mut()` for efficient in-place modification when already owned
+   - Uses `to_mut()` for efficient in-place
+     modification when already owned
 
 ### Part 4: Cow in Data Structures
 
-9. **`TextProcessor`** - A struct demonstrating Cow in a real-world scenario
+9. **`TextProcessor`** - A struct demonstrating
+   Cow in a real-world scenario
    - Stores text as `Cow<'a, str>`
-   - `new(text: &'a str)` - Create with borrowed text
-   - `from_owned(text: String)` - Create with owned text
-   - `process(&mut self)` - Apply processing (trim + normalize whitespace)
+   - `new(text: &'a str)` - Create with borrowed
+     text
+   - `from_owned(text: String)` - Create with
+     owned text
+   - `process(&mut self)` - Apply processing
+     (trim + normalize whitespace)
    - `into_string(self)` - Convert to String
-   - `is_borrowed(&self)` - Check if currently borrowing
+   - `is_borrowed(&self)` - Check if currently
+     borrowing
 
 ## Examples
 
@@ -90,14 +102,16 @@ use std::borrow::Cow;
 
 // Basic string operations
 let result = maybe_uppercase("HELLO");
-assert!(matches!(result, Cow::Borrowed(_))); // Already uppercase
+// Already uppercase
+assert!(matches!(result, Cow::Borrowed(_)));
 
 let result = maybe_uppercase("Hello");
 assert_eq!(result, "HELLO"); // Needed conversion
 
 // Suffix handling
 let result = ensure_suffix("file.txt", ".txt");
-assert!(matches!(result, Cow::Borrowed(_))); // Already has suffix
+// Already has suffix
+assert!(matches!(result, Cow::Borrowed(_)));
 
 let result = ensure_suffix("file", ".txt");
 assert_eq!(result, "file.txt");
@@ -131,11 +145,18 @@ assert_eq!(processor.into_string(), "hello world");
 
 - Use `matches!(cow, Cow::Borrowed(_))` to check if borrowed
 - `to_mut()` returns `&mut B::Owned` and clones if currently borrowed
-- `into_owned()` consumes the Cow and returns owned data
-- For strings: `Cow<'a, str>` with `Cow::Borrowed(&str)` and `Cow::Owned(String)`
-- For slices: `Cow<'a, [T]>` with `Cow::Borrowed(&[T])` and `Cow::Owned(Vec<T>)`
-- Check conditions BEFORE creating Cow to decide borrowed vs owned
-- The `Cow::from()` trait creates `Cow::Borrowed` from references and `Cow::Owned` from owned types
-- When returning Cow from a function, the lifetime ties to the input reference
+- `into_owned()` consumes the Cow and returns
+  owned data
+- For strings: `Cow<'a, str>` with
+  `Cow::Borrowed(&str)` and `Cow::Owned(String)`
+- For slices: `Cow<'a, [T]>` with
+  `Cow::Borrowed(&[T])` and `Cow::Owned(Vec<T>)`
+- Check conditions BEFORE creating Cow to
+  decide borrowed vs owned
+- The `Cow::from()` trait creates
+  `Cow::Borrowed` from references and
+  `Cow::Owned` from owned types
+- When returning Cow from a function, the
+  lifetime ties to the input reference
 
 </details>

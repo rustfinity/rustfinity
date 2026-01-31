@@ -31,17 +31,42 @@ assert_eq!(sorted, vec![1, 2, 3]);
 
 Implement the following collection conversion functions:
 
-1. `vec_to_hashset<T>(vec: Vec<T>) -> HashSet<T>` - Convert a Vec to a HashSet, removing duplicates. T must implement `Eq` and `Hash`.
+1. `vec_to_hashset<T>(vec: Vec<T>) -> HashSet<T>`
+   - Convert a Vec to a HashSet, removing
+     duplicates. T must implement `Eq` and `Hash`.
 
-2. `vec_to_btreeset<T>(vec: Vec<T>) -> BTreeSet<T>` - Convert a Vec to a BTreeSet, removing duplicates and sorting. T must implement `Ord`.
+2. `vec_to_btreeset<T>(vec: Vec<T>) -> BTreeSet<T>`
+   - Convert a Vec to a BTreeSet, removing
+     duplicates and sorting. T must implement
+     `Ord`.
 
-3. `hashset_to_sorted_vec<T>(set: HashSet<T>) -> Vec<T>` - Convert a HashSet to a sorted Vec. T must implement `Ord`.
+3. `hashset_to_sorted_vec<T>(
+    set: HashSet<T>
+) -> Vec<T>`
+   - Convert a HashSet to a sorted Vec. T must
+     implement `Ord`.
 
-4. `pairs_to_hashmap<K, V>(pairs: Vec<(K, V)>) -> HashMap<K, V>` - Convert a Vec of key-value tuples to a HashMap. K must implement `Eq` and `Hash`. If duplicate keys exist, later values overwrite earlier ones.
+4. `pairs_to_hashmap<K, V>(
+    pairs: Vec<(K, V)>
+) -> HashMap<K, V>`
+   - Convert a Vec of key-value tuples to a
+     HashMap. K must implement `Eq` and `Hash`.
+     If duplicate keys exist, later values
+     overwrite earlier ones.
 
-5. `pairs_to_btreemap<K, V>(pairs: Vec<(K, V)>) -> BTreeMap<K, V>` - Convert a Vec of key-value tuples to a BTreeMap (sorted by key). K must implement `Ord`. If duplicate keys exist, later values overwrite earlier ones.
+5. `pairs_to_btreemap<K, V>(
+    pairs: Vec<(K, V)>
+) -> BTreeMap<K, V>`
+   - Convert a Vec of key-value tuples to a
+     BTreeMap (sorted by key). K must implement
+     `Ord`. If duplicate keys exist, later values
+     overwrite earlier ones.
 
-6. `hashmap_to_pairs<K, V>(map: HashMap<K, V>) -> Vec<(K, V)>` - Convert a HashMap to a Vec of key-value tuples. Order is not guaranteed.
+6. `hashmap_to_pairs<K, V>(
+    map: HashMap<K, V>
+) -> Vec<(K, V)>`
+   - Convert a HashMap to a Vec of key-value
+     tuples. Order is not guaranteed.
 
 7. `merge_vecs<T>(vecs: Vec<Vec<T>>) -> Vec<T>` - Flatten multiple Vecs into a single Vec, preserving order.
 
@@ -108,12 +133,20 @@ assert_eq!(chained, vec![1, 2, 3, 4]);
 <details>
   <summary>Click here for hints</summary>
 
-- For all conversions, the pattern is usually `source.into_iter().collect()`
-- Use `.into_iter()` when you want to consume the source collection
-- Type inference usually works, but you can use turbofish `::<TargetType>` when needed
-- For `hashset_to_sorted_vec`, you'll need to sort after collecting to a Vec, or collect through a BTreeSet first
-- For `merge_vecs`, consider using `.into_iter().flatten().collect()`
+- For all conversions, the pattern is usually
+  `source.into_iter().collect()`
+- Use `.into_iter()` when you want to consume
+  the source collection
+- Type inference usually works, but you can use
+  turbofish `::<TargetType>` when needed
+- For `hashset_to_sorted_vec`, you'll need to
+  sort after collecting to a Vec, or collect
+  through a BTreeSet first
+- For `merge_vecs`, consider using
+  `.into_iter().flatten().collect()`
 - For `chain_and_collect`, look at the `.chain()` iterator adapter
-- Remember: `HashMap` and `HashSet` require `Hash + Eq` bounds, while `BTreeMap` and `BTreeSet` require `Ord`
+- Remember: `HashMap` and `HashSet` require
+  `Hash + Eq` bounds, while `BTreeMap` and
+  `BTreeSet` require `Ord`
 
 </details>

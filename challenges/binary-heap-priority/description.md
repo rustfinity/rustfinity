@@ -39,17 +39,33 @@ Implement the following functions that demonstrate various `BinaryHeap` operatio
 
 2. `create_min_heap(items: &[i32]) -> BinaryHeap<Reverse<i32>>` - Create a min-heap from a slice of integers using `Reverse`.
 
-3. `pop_max(heap: &mut BinaryHeap<i32>) -> Option<i32>` - Remove and return the maximum element.
+3. `pop_max(heap: &mut BinaryHeap<i32>) -> Option<i32>`
+   - Remove and return the maximum element.
 
-4. `peek_max(heap: &BinaryHeap<i32>) -> Option<&i32>` - Return a reference to the maximum element without removing it.
+4. `peek_max(heap: &BinaryHeap<i32>) -> Option<&i32>`
+   - Return a reference to the maximum element
+     without removing it.
 
-5. `top_k_largest(items: &[i32], k: usize) -> Vec<i32>` - Return the k largest elements in descending order. If k is greater than the number of items, return all items sorted in descending order.
+5. `top_k_largest(items: &[i32], k: usize) -> Vec<i32>`
+   - Return the k largest elements in descending
+     order. If k is greater than the number of
+     items, return all items sorted in descending
+     order.
 
-6. `top_k_smallest(items: &[i32], k: usize) -> Vec<i32>` - Return the k smallest elements in ascending order. If k is greater than the number of items, return all items sorted in ascending order.
+6. `top_k_smallest(items: &[i32], k: usize) -> Vec<i32>`
+   - Return the k smallest elements in ascending
+     order. If k is greater than the number of
+     items, return all items sorted in ascending
+     order.
 
-7. `merge_heaps(heap1: BinaryHeap<i32>, heap2: BinaryHeap<i32>) -> BinaryHeap<i32>` - Merge two heaps into one.
+7. `merge_heaps(
+    heap1: BinaryHeap<i32>,
+    heap2: BinaryHeap<i32>
+) -> BinaryHeap<i32>` - Merge two heaps into one.
 
-8. `heap_sort_descending(items: &[i32]) -> Vec<i32>` - Sort items in descending order using a BinaryHeap.
+8. `heap_sort_descending(items: &[i32]) -> Vec<i32>`
+   - Sort items in descending order using a
+     BinaryHeap.
 
 ## Examples
 
