@@ -19,8 +19,10 @@ assert_eq!(map.get("a"), Some(&1));
 
 // HashSet to sorted Vec (via BTreeSet)
 let set: HashSet<i32> = [3, 1, 2].into_iter().collect();
-let sorted: Vec<i32> = set.into_iter().collect::<BTreeSet<_>>()
-    .into_iter().collect();
+let sorted: Vec<i32> = set.into_iter()
+    .collect::<BTreeSet<_>>()
+    .into_iter()
+    .collect();
 assert_eq!(sorted, vec![1, 2, 3]);
 ```
 
@@ -71,7 +73,8 @@ assert_eq!(map.get("a"), Some(&1));
 // pairs_to_btreemap
 let map = pairs_to_btreemap(vec![("c", 3), ("a", 1), ("b", 2)]);
 let keys: Vec<_> = map.keys().collect();
-assert_eq!(keys, vec![&"a", &"b", &"c"]); // sorted!
+// sorted!
+assert_eq!(keys, vec![&"a", &"b", &"c"]);
 
 // hashmap_to_pairs
 let mut map = HashMap::new();

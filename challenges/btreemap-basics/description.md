@@ -78,10 +78,16 @@ assert_eq!(range, vec![
 ]);
 
 // get_first - smallest key
-assert_eq!(get_first(&map), Some(("apple".to_string(), 1)));
+assert_eq!(
+    get_first(&map),
+    Some(("apple".to_string(), 1))
+);
 
 // get_last - largest key
-assert_eq!(get_last(&map), Some(("cherry".to_string(), 3)));
+assert_eq!(
+    get_last(&map),
+    Some(("cherry".to_string(), 3))
+);
 ```
 
 ## Hints

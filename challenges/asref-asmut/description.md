@@ -159,7 +159,10 @@ assert_eq!(vec, vec![1, 2, 3]);
 
 // Path extension
 assert_eq!(get_extension("file.txt"), Some("txt".to_string()));
-assert_eq!(get_extension(std::path::PathBuf::from("image.png")), Some("png".to_string()));
+assert_eq!(
+    get_extension(std::path::PathBuf::from("image.png")),
+    Some("png".to_string())
+);
 ```
 
 ## Hints

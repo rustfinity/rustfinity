@@ -74,10 +74,16 @@ let heap = create_max_heap(&[10, 5, 20]);
 assert_eq!(peek_max(&heap), Some(&20));
 
 // top_k_largest
-assert_eq!(top_k_largest(&[3, 1, 4, 1, 5, 9, 2, 6], 3), vec![9, 6, 5]);
+assert_eq!(
+    top_k_largest(&[3, 1, 4, 1, 5, 9, 2, 6], 3),
+    vec![9, 6, 5]
+);
 
 // top_k_smallest
-assert_eq!(top_k_smallest(&[3, 1, 4, 1, 5, 9, 2, 6], 3), vec![1, 1, 2]);
+assert_eq!(
+    top_k_smallest(&[3, 1, 4, 1, 5, 9, 2, 6], 3),
+    vec![1, 1, 2]
+);
 
 // merge_heaps
 let heap1 = create_max_heap(&[1, 3, 5]);
@@ -87,7 +93,10 @@ assert_eq!(merged.len(), 6);
 assert_eq!(merged.peek(), Some(&6));
 
 // heap_sort_descending
-assert_eq!(heap_sort_descending(&[3, 1, 4, 1, 5]), vec![5, 4, 3, 1, 1]);
+assert_eq!(
+    heap_sort_descending(&[3, 1, 4, 1, 5]),
+    vec![5, 4, 3, 1, 1]
+);
 ```
 
 ## Hints

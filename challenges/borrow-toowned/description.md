@@ -122,7 +122,8 @@ use std::borrow::Cow;
 // Generic lookup with Borrow
 let mut map: HashMap<String, i32> = HashMap::new();
 map.insert("hello".to_string(), 42);
-assert_eq!(lookup(&map, "hello"), Some(&42));  // &str key for String map
+// &str key for String map
+assert_eq!(lookup(&map, "hello"), Some(&42));
 
 // To owned
 let owned = make_owned("hello");
@@ -146,12 +147,16 @@ assert_eq!(result, "hello_world");
 // Case insensitive string in HashMap
 let mut map: HashMap<CaseInsensitiveString, i32> = HashMap::new();
 map.insert(CaseInsensitiveString::new("Hello"), 1);
-assert_eq!(map.get(&CaseInsensitiveString::new("HELLO")), Some(&1));
+assert_eq!(
+    map.get(&CaseInsensitiveString::new("HELLO")),
+    Some(&1)
+);
 
 // Append if missing
 let items = [1, 2, 3];
 let result = append_if_missing(&items, 2);
-assert!(matches!(result, Cow::Borrowed(_)));  // Already exists
+// Already exists
+assert!(matches!(result, Cow::Borrowed(_)));
 
 let result = append_if_missing(&items, 4);
 assert_eq!(result.as_ref(), &[1, 2, 3, 4]);
