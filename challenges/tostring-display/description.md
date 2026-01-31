@@ -57,7 +57,11 @@ Create a `Temperature` enum with variants `Celsius(f64)` and `Fahrenheit(f64)`. 
 
 ### 4. Money
 
-Create a `Money` struct with `amount` (i64, representing cents) and `currency` (String) fields. Implement `Display` to format as "$X.XX" for USD, "€X.XX" for EUR, or "X.XX CURRENCY" for others. The amount should always show exactly 2 decimal places.
+Create a `Money` struct with `amount` (i64, representing
+cents) and `currency` (String) fields. Implement `Display`
+to format as "$X.XX" for USD, "€X.XX" for EUR, or
+"X.XX CURRENCY" for others. The amount should always show
+exactly 2 decimal places.
 
 ### 5. Person
 
@@ -65,11 +69,18 @@ Create a `Person` struct with `name` (String) and `age` (u32) fields. Implement 
 
 ### 6. list_to_string Function
 
-Write a generic function `list_to_string<T: Display>(items: &[T]) -> String` that formats a slice of displayable items as a comma-separated list in square brackets, e.g., "[1, 2, 3]".
+Write a generic function
+`list_to_string<T: Display>(items: &[T]) -> String`
+that formats a slice of displayable items as a
+comma-separated list in square brackets,
+e.g., "[1, 2, 3]".
 
 ### 7. format_table Function
 
-Write a function `format_table(headers: &[&str], rows: &[Vec<String>]) -> String` that formats data as a simple text table with headers and rows, each cell separated by " | ".
+Write a function
+`format_table(headers: &[&str], rows: &[Vec<String>])
+-> String` that formats data as a simple text table with
+headers and rows, each cell separated by " | ".
 
 ## Examples
 
@@ -92,15 +103,27 @@ let fahrenheit = Temperature::Fahrenheit(77.0);
 assert_eq!(fahrenheit.to_string(), "77°F");
 
 // Money
-let usd = Money { amount: 1234, currency: "USD".to_string() };
+let usd = Money {
+    amount: 1234,
+    currency: "USD".to_string()
+};
 assert_eq!(usd.to_string(), "$12.34");
-let eur = Money { amount: 5000, currency: "EUR".to_string() };
+let eur = Money {
+    amount: 5000,
+    currency: "EUR".to_string()
+};
 assert_eq!(eur.to_string(), "€50.00");
-let other = Money { amount: 999, currency: "GBP".to_string() };
+let other = Money {
+    amount: 999,
+    currency: "GBP".to_string()
+};
 assert_eq!(other.to_string(), "9.99 GBP");
 
 // Person
-let person = Person { name: "Alice".to_string(), age: 30 };
+let person = Person {
+    name: "Alice".to_string(),
+    age: 30
+};
 assert_eq!(person.to_string(), "Alice (age 30)");
 
 // list_to_string
@@ -125,13 +148,20 @@ assert!(table.contains("Alice | 30"));
 <details>
   <summary>Click here for hints</summary>
 
-- Use `write!(f, "...")` inside the `fmt` method to write formatted output
-- The `Formatter` passed to `fmt` implements `std::fmt::Write`, so `write!` works with it
-- For the degree symbol, you can use the Unicode character `°` (or `\u{00B0}`)
-- To format floats with specific precision, use `{:.1}` for 1 decimal place
-- Remember that `to_string()` is automatically available once you implement `Display`
-- For Money, convert cents to dollars by dividing: `amount / 100` for whole part, `amount % 100` for cents
+- Use `write!(f, "...")` inside the `fmt` method to write
+  formatted output
+- The `Formatter` passed to `fmt` implements
+  `std::fmt::Write`, so `write!` works with it
+- For the degree symbol, you can use the Unicode
+  character `°` (or `\u{00B0}`)
+- To format floats with specific precision, use `{:.1}`
+  for 1 decimal place
+- Remember that `to_string()` is automatically available
+  once you implement `Display`
+- For Money, convert cents to dollars by dividing:
+  `amount / 100` for whole part, `amount % 100` for cents
 - Use `format!` to build intermediate strings when needed
-- The `join` method on iterators is useful for creating comma-separated lists
+- The `join` method on iterators is useful for creating
+  comma-separated lists
 
 </details>

@@ -4,9 +4,16 @@ When working with strings in Rust, understanding the difference between bytes, c
 
 In Rust, a `String` is a sequence of UTF-8 encoded bytes. There are three ways to view string data:
 
-1. **Bytes** (`.bytes()`) - The raw UTF-8 bytes. ASCII characters are 1 byte, but many Unicode characters take 2-4 bytes.
-2. **Characters** (`.chars()`) - Unicode scalar values. Most characters are single `char`s, but some displayed characters (like emojis with modifiers) are multiple `char`s.
-3. **Grapheme Clusters** - What humans perceive as a single "character". A family emoji like "👨‍👩‍👧" is multiple Unicode code points combined.
+1. **Bytes** (`.bytes()`) - The raw UTF-8 bytes. ASCII
+   characters are 1 byte, but many Unicode characters
+   take 2-4 bytes.
+2. **Characters** (`.chars()`) - Unicode scalar values.
+   Most characters are single `char`s, but some displayed
+   characters (like emojis with modifiers) are multiple
+   `char`s.
+3. **Grapheme Clusters** - What humans perceive as a
+   single "character". A family emoji like "👨‍👩‍👧" is
+   multiple Unicode code points combined.
 
 ```rust
 let text = "Hello";
@@ -43,11 +50,19 @@ assert_eq!(first_two, "Зд");
 
 Implement the following functions to demonstrate Unicode-aware string handling:
 
-1. `char_count(s: &str) -> usize` - Count the number of Unicode characters (not bytes)
-2. `byte_count(s: &str) -> usize` - Count the number of bytes in the UTF-8 encoding
-3. `safe_substring(s: &str, start: usize, end: usize) -> Option<String>` - Extract a substring by character indices (not byte indices). Return `None` if indices are out of bounds.
-4. `char_at(s: &str, index: usize) -> Option<char>` - Get the character at a specific index (by character position, not byte position)
-5. `is_single_char(s: &str) -> bool` - Check if a string contains exactly one Unicode character
+1. `char_count(s: &str) -> usize` - Count the number of
+   Unicode characters (not bytes)
+2. `byte_count(s: &str) -> usize` - Count the number of
+   bytes in the UTF-8 encoding
+3. `safe_substring(s: &str, start: usize, end: usize)
+   -> Option<String>` - Extract a substring by character
+   indices (not byte indices). Return `None` if indices
+   are out of bounds.
+4. `char_at(s: &str, index: usize) -> Option<char>` -
+   Get the character at a specific index (by character
+   position, not byte position)
+5. `is_single_char(s: &str) -> bool` - Check if a string
+   contains exactly one Unicode character
 
 ## Examples
 
@@ -73,8 +88,14 @@ assert_eq!(
     safe_substring("Привет", 0, 2),
     Some("Пр".to_string())
 );
-assert_eq!(safe_substring("Hello", 0, 10), None);  // Out of bounds
-assert_eq!(safe_substring("Hello", 3, 2), None);   // Invalid range
+assert_eq!(
+    safe_substring("Hello", 0, 10),
+    None
+);  // Out of bounds
+assert_eq!(
+    safe_substring("Hello", 3, 2),
+    None
+);   // Invalid range
 
 // char_at
 assert_eq!(char_at("Hello", 0), Some('H'));
@@ -94,10 +115,15 @@ assert_eq!(is_single_char(""), false);
 <details>
   <summary>Click here for hints</summary>
 
-- Use `.chars().count()` to count Unicode characters, not `.len()` which counts bytes
+- Use `.chars().count()` to count Unicode characters,
+  not `.len()` which counts bytes
 - Use `.len()` or `.bytes().count()` for byte count
-- For `safe_substring`, collect characters into a `Vec<char>` first, then validate indices before extracting
-- Use `.chars().nth(index)` to get a character at a specific position
-- For `is_single_char`, check that the char count equals exactly 1
+- For `safe_substring`, collect characters into a
+  `Vec<char>` first, then validate indices before
+  extracting
+- Use `.chars().nth(index)` to get a character at a
+  specific position
+- For `is_single_char`, check that the char count equals
+  exactly 1
 
 </details>

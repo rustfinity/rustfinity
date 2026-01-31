@@ -59,11 +59,20 @@ writeln!(file, "New log entry")?;
 
 Implement the following functions for writing file contents:
 
-1. `write_string(path: &str, content: &str) -> Result<(), io::Error>` - Write a string to a file, creating or overwriting it
-2. `write_bytes(path: &str, data: &[u8]) -> Result<(), io::Error>` - Write raw bytes to a file
-3. `append_string(path: &str, content: &str) -> Result<(), io::Error>` - Append a string to a file (create if it doesn't exist)
-4. `write_lines(path: &str, lines: &[&str]) -> Result<(), io::Error>` - Write multiple lines to a file (each followed by a newline)
-5. `write_with_buffer(path: &str, chunks: &[&str]) -> Result<(), io::Error>` - Write multiple chunks using buffered writing for efficiency
+1. `write_string(path: &str, content: &str)
+   -> Result<(), io::Error>` - Write a string to a file,
+   creating or overwriting it
+2. `write_bytes(path: &str, data: &[u8])
+   -> Result<(), io::Error>` - Write raw bytes to a file
+3. `append_string(path: &str, content: &str)
+   -> Result<(), io::Error>` - Append a string to a file
+   (create if it doesn't exist)
+4. `write_lines(path: &str, lines: &[&str])
+   -> Result<(), io::Error>` - Write multiple lines to a
+   file (each followed by a newline)
+5. `write_with_buffer(path: &str, chunks: &[&str])
+   -> Result<(), io::Error>` - Write multiple chunks
+   using buffered writing for efficiency
 
 ## Examples
 
@@ -73,7 +82,10 @@ write_string("hello.txt", "Hello, World!")?;
 // File now contains: Hello, World!
 
 // Write raw bytes
-write_bytes("binary.dat", &[0x48, 0x65, 0x6c, 0x6c, 0x6f])?;
+write_bytes(
+    "binary.dat",
+    &[0x48, 0x65, 0x6c, 0x6c, 0x6f]
+)?;
 // File now contains: Hello (as bytes)
 
 // Append to a file
@@ -84,14 +96,20 @@ append_string("log.txt", "Second entry\n")?;
 // Second entry
 
 // Write multiple lines
-write_lines("list.txt", &["Apple", "Banana", "Cherry"])?;
+write_lines(
+    "list.txt",
+    &["Apple", "Banana", "Cherry"]
+)?;
 // File now contains:
 // Apple
 // Banana
 // Cherry
 
 // Efficient buffered writing
-write_with_buffer("output.txt", &["Hello, ", "World", "!"])?;
+write_with_buffer(
+    "output.txt",
+    &["Hello, ", "World", "!"]
+)?;
 // File now contains: Hello, World!
 ```
 
@@ -100,12 +118,19 @@ write_with_buffer("output.txt", &["Hello, ", "World", "!"])?;
 <details>
   <summary>Click here for hints</summary>
 
-- Use `std::fs::write` for the simplest way to write a string or bytes to a file
-- Use `OpenOptions::new().append(true).create(true).open(path)` to open a file for appending
-- Use `BufWriter::new(File::create(path)?)` to create a buffered writer
-- The `writeln!` macro writes a line followed by a newline character
-- Use `write!` or `write_all` for writing without a trailing newline
-- Remember to handle the `Result` type returned by all I/O operations
-- `BufWriter` automatically flushes when dropped, but you can call `.flush()` explicitly if needed
+- Use `std::fs::write` for the simplest way to write a
+  string or bytes to a file
+- Use `OpenOptions::new().append(true).create(true)
+  .open(path)` to open a file for appending
+- Use `BufWriter::new(File::create(path)?)` to create a
+  buffered writer
+- The `writeln!` macro writes a line followed by a
+  newline character
+- Use `write!` or `write_all` for writing without a
+  trailing newline
+- Remember to handle the `Result` type returned by all
+  I/O operations
+- `BufWriter` automatically flushes when dropped, but
+  you can call `.flush()` explicitly if needed
 
 </details>

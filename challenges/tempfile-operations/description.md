@@ -21,9 +21,13 @@ use std::io::Write;
 use std::env;
 use std::process;
 
-fn create_temp_file(prefix: &str, suffix: &str) -> std::io::Result<std::path::PathBuf> {
+fn create_temp_file(
+    prefix: &str,
+    suffix: &str
+) -> std::io::Result<std::path::PathBuf> {
     let mut path = env::temp_dir();
-    let filename = format!("{}_{}_{}", prefix, process::id(), suffix);
+    let pid = process::id();
+    let filename = format!("{}_{pid}_{}", prefix, suffix);
     path.push(filename);
     File::create(&path)?;
     Ok(path)
@@ -55,16 +59,22 @@ Implement the following functions and types for working with temporary files:
 
 1. `get_temp_dir() -> PathBuf` - Return the system's temporary directory
 2. `create_temp_file(prefix: &str, suffix: &str) -> io::Result<PathBuf>` - Create a uniquely named temp file and return its path
-3. `create_temp_file_with_content(prefix: &str, suffix: &str, content: &str) -> io::Result<PathBuf>` - Create a temp file with initial content
+3. `create_temp_file_with_content(prefix: &str, suffix: &str, content: &str) -> io::Result<PathBuf>` - Create a temp file with content
 4. `TempFile` struct that:
    - Has a `path` field of type `PathBuf`
-   - Implements `new(prefix: &str, suffix: &str) -> io::Result<Self>` to create a new temp file
+   - Implements `new(prefix: &str, suffix: &str)
+     -> io::Result<Self>` to create a new temp file
    - Implements `path(&self) -> &Path` to get the file path
-   - Implements `write(&self, content: &str) -> io::Result<()>` to write content
+   - Implements `write(&self, content: &str)
+     -> io::Result<()>` to write content
    - Implements `read(&self) -> io::Result<String>` to read content
-   - Implements `Drop` to automatically delete the file when the struct is dropped
+   - Implements `Drop` to automatically delete the file
+     when the struct is dropped
 5. `create_temp_dir(prefix: &str) -> io::Result<PathBuf>` - Create a uniquely named temp directory
-6. `cleanup_temp_files(dir: &Path, prefix: &str) -> io::Result<usize>` - Delete all files in a directory that start with the given prefix, returning the count of deleted files
+6. `cleanup_temp_files(dir: &Path, prefix: &str)
+   -> io::Result<usize>` - Delete all files in a directory
+   that start with the given prefix, returning the count
+   of deleted files
 
 ## Examples
 
@@ -105,12 +115,17 @@ std::fs::remove_dir(&temp_dir)?;
 
 // Cleanup files with prefix
 let dir = get_temp_dir();
-create_temp_file_with_content("cleanup_test", ".tmp", "test")?;
-create_temp_file_with_content("cleanup_test", ".tmp", "test")?;
-let deleted = cleanup_temp_files(
-    &dir,
-    "cleanup_test"
+create_temp_file_with_content(
+    "cleanup_test",
+    ".tmp",
+    "test"
 )?;
+create_temp_file_with_content(
+    "cleanup_test",
+    ".tmp",
+    "test"
+)?;
+let deleted = cleanup_temp_files(&dir, "cleanup_test")?;
 assert!(deleted >= 2);
 ```
 
@@ -121,10 +136,14 @@ assert!(deleted >= 2);
 
 - Use `std::env::temp_dir()` to get the system temp directory
 - Use `std::process::id()` to get the current process ID for unique filenames
-- Use `std::time::SystemTime::now()` for additional uniqueness in filenames
-- For the `TempFile` struct, store the path and implement `Drop` to call `std::fs::remove_file`
+- Use `std::time::SystemTime::now()` for additional
+  uniqueness in filenames
+- For the `TempFile` struct, store the path and implement
+  `Drop` to call `std::fs::remove_file`
 - Use `std::fs::create_dir()` to create directories
-- For `cleanup_temp_files`, use `std::fs::read_dir()` to iterate and `starts_with()` for prefix checks
-- Remember to handle errors gracefully - cleanup operations shouldn't panic if a file doesn't exist
+- For `cleanup_temp_files`, use `std::fs::read_dir()`
+  to iterate and `starts_with()` for prefix checks
+- Remember to handle errors gracefully - cleanup
+  operations shouldn't panic if a file doesn't exist
 
 </details>
