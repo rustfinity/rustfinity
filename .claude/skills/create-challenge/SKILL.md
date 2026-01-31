@@ -52,12 +52,10 @@ Every challenge must have the following files in `challenges/<slug>/`:
 ### Example Patterns
 
 - **Beginner challenges**: Focus on syntax and basic concepts
-
   - "You are given a function `name(params) -> return_type`..."
   - "Your job is to implement the function meeting the following requirements:"
 
 - **Intermediate challenges**: Introduce traits, generics, error handling
-
   - "Now that you know about X, let's explore Y..."
   - "Define a generic function that..."
 
@@ -340,7 +338,6 @@ edition = "2021"
 ## Challenge Creation Workflow
 
 1. **Plan the challenge**
-
    - Identify the Rust concept to teach
    - Determine appropriate difficulty level
    - Outline learning objectives
@@ -352,7 +349,6 @@ edition = "2021"
    ```
 
 3. **Write files in order**
-
    - Start with description.md (clarify requirements)
    - Write src/lib.rs (complete solution)
    - Write tests/tests.rs (validate solution works)
@@ -360,7 +356,6 @@ edition = "2021"
    - Write Cargo.toml (package config)
 
 4. **Add metadata**
-
    - Get next available ID: `challenges::get_max_id() + 1`
    - Add entry to challenges.json
 

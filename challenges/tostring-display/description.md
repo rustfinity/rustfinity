@@ -38,28 +38,37 @@ println!("{}", greeting);  // "Hello"
 Implement the `Display` trait and related formatting for the following types:
 
 ### 1. Point
+
 Create a `Point` struct with `x` and `y` fields (both `i32`). Implement `Display` to format it as `(x, y)`.
 
 ### 2. Color
+
 Create a `Color` enum with variants `Red`, `Green`, `Blue`, and `Custom(u8, u8, u8)`. Implement `Display` to show:
+
 - Named colors as their name (e.g., "Red", "Green", "Blue")
 - Custom colors as "RGB(r, g, b)"
 
 ### 3. Temperature
+
 Create a `Temperature` enum with variants `Celsius(f64)` and `Fahrenheit(f64)`. Implement `Display` to format as:
+
 - Celsius: "X°C" (e.g., "25.5°C")
 - Fahrenheit: "X°F" (e.g., "77.0°F")
 
 ### 4. Money
+
 Create a `Money` struct with `amount` (i64, representing cents) and `currency` (String) fields. Implement `Display` to format as "$X.XX" for USD, "€X.XX" for EUR, or "X.XX CURRENCY" for others. The amount should always show exactly 2 decimal places.
 
 ### 5. Person
+
 Create a `Person` struct with `name` (String) and `age` (u32) fields. Implement `Display` to format as "Name (age X)".
 
 ### 6. list_to_string Function
+
 Write a generic function `list_to_string<T: Display>(items: &[T]) -> String` that formats a slice of displayable items as a comma-separated list in square brackets, e.g., "[1, 2, 3]".
 
 ### 7. format_table Function
+
 Write a function `format_table(headers: &[&str], rows: &[Vec<String>]) -> String` that formats data as a simple text table with headers and rows, each cell separated by " | ".
 
 ## Examples

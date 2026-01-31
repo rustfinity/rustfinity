@@ -5,6 +5,7 @@ While `Rc<T>` provides shared ownership for single-threaded code, it cannot be s
 `Arc<T>` works similarly to `Rc<T>` but is thread-safe. The "atomic" part means that incrementing and decrementing the reference count is done using atomic CPU operations, which are guaranteed to complete without interference from other threads. This makes `Arc<T>` slightly slower than `Rc<T>` due to the synchronization overhead, so you should only use `Arc<T>` when you actually need to share data across threads.
 
 Common use cases for `Arc<T>` include:
+
 - Sharing read-only configuration across worker threads
 - Sharing immutable data structures in parallel computations
 - Combined with `Mutex<T>` or `RwLock<T>` for shared mutable state
@@ -12,12 +13,12 @@ Common use cases for `Arc<T>` include:
 
 ## Key Differences from Rc
 
-| Feature | `Rc<T>` | `Arc<T>` |
-|---------|---------|----------|
-| Thread-safe | No | Yes |
-| Performance | Faster | Slightly slower |
+| Feature       | `Rc<T>`          | `Arc<T>`                |
+| ------------- | ---------------- | ----------------------- |
+| Thread-safe   | No               | Yes                     |
+| Performance   | Faster           | Slightly slower         |
 | Marker traits | `!Send`, `!Sync` | `Send + Sync` (if T is) |
-| Use case | Single-threaded | Multi-threaded |
+| Use case      | Single-threaded  | Multi-threaded          |
 
 ## Key Operations
 

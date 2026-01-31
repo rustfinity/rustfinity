@@ -3,6 +3,7 @@ Standard I/O (stdio) operations are fundamental for any program that interacts w
 ## Understanding Standard Streams
 
 Every process has three standard streams:
+
 - **stdin** (standard input): For reading input, typically from the keyboard or piped data
 - **stdout** (standard output): For normal program output
 - **stderr** (standard error): For error messages and diagnostics (not buffered by default)

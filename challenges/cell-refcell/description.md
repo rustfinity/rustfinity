@@ -10,11 +10,13 @@ The standard library provides two key types for interior mutability:
 ## When to Use Each
 
 Use **`Cell<T>`** when:
+
 - Working with `Copy` types (integers, booleans, small structs)
 - You need simple get/set operations
 - You want zero runtime overhead
 
 Use **`RefCell<T>`** when:
+
 - Working with non-`Copy` types (String, Vec, etc.)
 - You need to borrow the inner value (get a reference)
 - You're okay with runtime borrow checking
@@ -22,6 +24,7 @@ Use **`RefCell<T>`** when:
 ## Key Operations
 
 **Cell<T>:**
+
 - `Cell::new(value)` - Create a new Cell
 - `cell.get()` - Get a copy of the value (requires `T: Copy`)
 - `cell.set(value)` - Set a new value
@@ -29,6 +32,7 @@ Use **`RefCell<T>`** when:
 - `cell.take()` - Take the value, leaving `Default::default()` (requires `T: Default`)
 
 **RefCell<T>:**
+
 - `RefCell::new(value)` - Create a new RefCell
 - `refcell.borrow()` - Get immutable reference (`Ref<T>`), panics if mutably borrowed
 - `refcell.borrow_mut()` - Get mutable reference (`RefMut<T>`), panics if any borrows exist

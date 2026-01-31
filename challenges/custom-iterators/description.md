@@ -52,36 +52,48 @@ assert_eq!(values, vec![0, 1, 2]);
 Implement the following custom iterators:
 
 ### 1. Fibonacci Iterator
+
 Create a `Fibonacci` struct that generates Fibonacci numbers indefinitely:
+
 - `Fibonacci::new() -> Fibonacci` - Create a new Fibonacci iterator starting with 0, 1
 - Yields: 0, 1, 1, 2, 3, 5, 8, 13, 21, ...
 
 ### 2. StepRange Iterator
+
 Create a `StepRange` struct that iterates from `start` to `end` (exclusive) with a custom step:
+
 - `StepRange::new(start: i32, end: i32, step: i32) -> StepRange`
 - Handles positive steps (ascending) and negative steps (descending)
 - Yields nothing if step would never reach end (e.g., start=0, end=10, step=-1)
 
 ### 3. Cycle Iterator
+
 Create a `CycleN<T>` struct that cycles through a slice a fixed number of times:
+
 - `CycleN::new(items: &[T], times: usize) -> CycleN<T>` where `T: Clone`
 - Yields each element in order, repeating the sequence `times` times total
 
 ### 4. Collatz Iterator
+
 Create a `Collatz` struct that generates the Collatz sequence starting from a given number:
+
 - `Collatz::new(start: u64) -> Collatz`
 - If n is even: next = n / 2
 - If n is odd: next = 3n + 1
 - Stops when it reaches 1 (yields 1 as the final element)
 
 ### 5. Windows Iterator
+
 Create a `Windows<T>` struct that yields overlapping windows of a fixed size:
+
 - `Windows::new(items: &[T], size: usize) -> Windows<T>` where `T: Clone`
 - Yields slices (as `Vec<T>`) of length `size` from the items
 - Each window overlaps with the previous by `size - 1` elements
 
 ### 6. Unfold Iterator
+
 Create an `Unfold<T, F>` struct that generates values from a state and function:
+
 - `Unfold::new(initial: T, f: F) -> Unfold<T, F>` where `F: FnMut(&T) -> Option<T>`
 - The function takes the current state and returns `Some(next_state)` or `None` to stop
 - Yields each state value (including the initial value)

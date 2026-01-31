@@ -1229,7 +1229,13 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["collections", "BTreeMap", "ordered-map", "range-queries", "sorting"],
+    "tags": [
+      "collections",
+      "BTreeMap",
+      "ordered-map",
+      "range-queries",
+      "sorting"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1253,7 +1259,13 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["collections", "iterators", "FromIterator", "IntoIterator", "collect"],
+    "tags": [
+      "collections",
+      "iterators",
+      "FromIterator",
+      "IntoIterator",
+      "collect"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1265,7 +1277,13 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["collections", "BTreeSet", "ordered-set", "range-queries", "Bound"],
+    "tags": [
+      "collections",
+      "BTreeSet",
+      "ordered-set",
+      "range-queries",
+      "Bound"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1313,7 +1331,13 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["collections", "HashMap", "performance", "capacity", "optimization"],
+    "tags": [
+      "collections",
+      "HashMap",
+      "performance",
+      "capacity",
+      "optimization"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1469,7 +1493,13 @@
     "language": "RUST",
     "difficulty": "HARD",
     "track": "RUST_STD",
-    "tags": ["iterators", "Iterator-trait", "next", "state-management", "custom-types"],
+    "tags": [
+      "iterators",
+      "Iterator-trait",
+      "next",
+      "state-management",
+      "custom-types"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1481,7 +1511,13 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["conversion-traits", "From", "Into", "type-conversion", "generics"],
+    "tags": [
+      "conversion-traits",
+      "From",
+      "Into",
+      "type-conversion",
+      "generics"
+    ],
     "created_at": "2025-01-26T00:00:00Z",
     "updated_at": "2025-01-26T00:00:00Z"
   },
@@ -1493,7 +1529,14 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["conversion-traits", "TryFrom", "TryInto", "fallible-conversion", "Result", "error-handling"],
+    "tags": [
+      "conversion-traits",
+      "TryFrom",
+      "TryInto",
+      "fallible-conversion",
+      "Result",
+      "error-handling"
+    ],
     "created_at": "2025-01-26T00:00:00Z",
     "updated_at": "2025-01-26T00:00:00Z"
   },
@@ -1505,7 +1548,14 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["conversion-traits", "AsRef", "AsMut", "borrowing", "generics", "references"],
+    "tags": [
+      "conversion-traits",
+      "AsRef",
+      "AsMut",
+      "borrowing",
+      "generics",
+      "references"
+    ],
     "created_at": "2025-01-26T00:00:00Z",
     "updated_at": "2025-01-26T00:00:00Z"
   },
@@ -1517,7 +1567,14 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["conversion-traits", "Borrow", "ToOwned", "Cow", "clone-on-write", "HashMap"],
+    "tags": [
+      "conversion-traits",
+      "Borrow",
+      "ToOwned",
+      "Cow",
+      "clone-on-write",
+      "HashMap"
+    ],
     "created_at": "2025-01-26T00:00:00Z",
     "updated_at": "2025-01-26T00:00:00Z"
   },
@@ -1529,7 +1586,13 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["conversion-traits", "Display", "ToString", "formatting", "traits"],
+    "tags": [
+      "conversion-traits",
+      "Display",
+      "ToString",
+      "formatting",
+      "traits"
+    ],
     "created_at": "2025-01-26T00:00:00Z",
     "updated_at": "2025-01-26T00:00:00Z"
   },
@@ -1541,7 +1604,14 @@
     "language": "RUST",
     "difficulty": "HARD",
     "track": "RUST_STD",
-    "tags": ["conversion-traits", "Deref", "DerefMut", "smart-pointers", "coercion", "traits"],
+    "tags": [
+      "conversion-traits",
+      "Deref",
+      "DerefMut",
+      "smart-pointers",
+      "coercion",
+      "traits"
+    ],
     "created_at": "2025-01-26T00:00:00Z",
     "updated_at": "2025-01-26T00:00:00Z"
   },
@@ -1601,7 +1671,16 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["numbers", "conversion", "TryFrom", "checked", "saturating", "wrapping", "overflow", "std"],
+    "tags": [
+      "numbers",
+      "conversion",
+      "TryFrom",
+      "checked",
+      "saturating",
+      "wrapping",
+      "overflow",
+      "std"
+    ],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
   },
@@ -1613,7 +1692,15 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["numbers", "floating-point", "NaN", "infinity", "rounding", "comparison", "std"],
+    "tags": [
+      "numbers",
+      "floating-point",
+      "NaN",
+      "infinity",
+      "rounding",
+      "comparison",
+      "std"
+    ],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
   },
@@ -1637,7 +1724,16 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["numbers", "formatting", "format", "binary", "hex", "octal", "precision", "std"],
+    "tags": [
+      "numbers",
+      "formatting",
+      "format",
+      "binary",
+      "hex",
+      "octal",
+      "precision",
+      "std"
+    ],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
   },
@@ -1661,7 +1757,14 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["derive-macros", "Debug", "Display", "formatting", "traits", "std"],
+    "tags": [
+      "derive-macros",
+      "Debug",
+      "Display",
+      "formatting",
+      "traits",
+      "std"
+    ],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
   },
@@ -1673,7 +1776,15 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["derive-macros", "PartialEq", "Eq", "equality", "traits", "comparison", "std"],
+    "tags": [
+      "derive-macros",
+      "PartialEq",
+      "Eq",
+      "equality",
+      "traits",
+      "comparison",
+      "std"
+    ],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
   },
@@ -1685,7 +1796,16 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["derive-macros", "PartialOrd", "Ord", "ordering", "traits", "comparison", "sorting", "std"],
+    "tags": [
+      "derive-macros",
+      "PartialOrd",
+      "Ord",
+      "ordering",
+      "traits",
+      "comparison",
+      "sorting",
+      "std"
+    ],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
   },
@@ -1697,7 +1817,16 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["derive-macros", "Hash", "Eq", "HashMap", "HashSet", "traits", "hashing", "std"],
+    "tags": [
+      "derive-macros",
+      "Hash",
+      "Eq",
+      "HashMap",
+      "HashSet",
+      "traits",
+      "hashing",
+      "std"
+    ],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
   },
@@ -1709,7 +1838,14 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["derive-macros", "Default", "traits", "initialization", "builder-pattern", "std"],
+    "tags": [
+      "derive-macros",
+      "Default",
+      "traits",
+      "initialization",
+      "builder-pattern",
+      "std"
+    ],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
   },
@@ -1721,7 +1857,14 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["smart-pointers", "Box", "heap", "allocation", "recursive-types", "std"],
+    "tags": [
+      "smart-pointers",
+      "Box",
+      "heap",
+      "allocation",
+      "recursive-types",
+      "std"
+    ],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
   },
@@ -1733,7 +1876,14 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["smart-pointers", "Rc", "Weak", "reference-counting", "shared-ownership", "std"],
+    "tags": [
+      "smart-pointers",
+      "Rc",
+      "Weak",
+      "reference-counting",
+      "shared-ownership",
+      "std"
+    ],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
   },
@@ -1745,7 +1895,16 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["smart-pointers", "Arc", "Weak", "thread-safety", "Mutex", "atomic", "concurrency", "std"],
+    "tags": [
+      "smart-pointers",
+      "Arc",
+      "Weak",
+      "thread-safety",
+      "Mutex",
+      "atomic",
+      "concurrency",
+      "std"
+    ],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
   },
@@ -1757,7 +1916,15 @@
     "language": "RUST",
     "difficulty": "HARD",
     "track": "RUST_STD",
-    "tags": ["smart-pointers", "Cell", "RefCell", "interior-mutability", "borrow-checking", "Rc", "std"],
+    "tags": [
+      "smart-pointers",
+      "Cell",
+      "RefCell",
+      "interior-mutability",
+      "borrow-checking",
+      "Rc",
+      "std"
+    ],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
   },
@@ -1769,7 +1936,15 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["smart-pointers", "Cow", "copy-on-write", "optimization", "borrowing", "ownership", "std"],
+    "tags": [
+      "smart-pointers",
+      "Cow",
+      "copy-on-write",
+      "optimization",
+      "borrowing",
+      "ownership",
+      "std"
+    ],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
   }

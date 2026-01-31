@@ -5,6 +5,7 @@ In Rust, ownership rules dictate that each value has a single owner, and when th
 `Rc<T>` is a smart pointer that enables **shared ownership** of a value. It keeps track of how many references (or "owners") exist to a value, and only deallocates the value when the last reference is dropped. This is called **reference counting**.
 
 `Rc<T>` is useful in scenarios like:
+
 - Graph data structures where nodes may have multiple incoming edges
 - Caching systems where multiple components need access to the same data
 - Event systems where multiple listeners observe the same source

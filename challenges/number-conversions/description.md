@@ -21,6 +21,7 @@ let overflow: Result<i16, _> = i16::try_from(too_big);  // Err(...)
 Rust integers provide methods for safe arithmetic that handle overflow explicitly:
 
 - **Checked operations** return `Option<T>`, giving `None` on overflow:
+
   ```rust
   let x: u8 = 250;
   assert_eq!(x.checked_add(10), None);  // Would overflow
@@ -28,6 +29,7 @@ Rust integers provide methods for safe arithmetic that handle overflow explicitl
   ```
 
 - **Saturating operations** clamp at the type's bounds:
+
   ```rust
   let x: u8 = 250;
   assert_eq!(x.saturating_add(10), 255);  // Clamped to max

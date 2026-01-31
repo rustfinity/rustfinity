@@ -5,6 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Overview
 
 Rustfinity is an interactive learning platform for Rust developers. The repository contains:
+
 - **challenges/**: Individual coding exercises with starter code, solutions, and tests
 - **crates/cli**: CLI tool for downloading and submitting challenges locally
 - **crates/rustfinity-runner**: Test runner that executes code in secure Docker containers
@@ -13,6 +14,7 @@ Rustfinity is an interactive learning platform for Rust developers. The reposito
 ## Build and Test Commands
 
 ### Workspace-level
+
 ```bash
 # Build entire workspace
 cargo build
@@ -28,6 +30,7 @@ cd challenges && cargo test
 ```
 
 ### Challenge-specific
+
 ```bash
 # Test a specific challenge
 cargo test -p <challenge-name>
@@ -40,6 +43,7 @@ cargo test --test tests -p fibonacci
 ```
 
 ### CLI crate
+
 ```bash
 # Build the CLI
 cargo build -p rustfinity
@@ -49,6 +53,7 @@ cargo run -p rustfinity -- get challenge <challenge-slug>
 ```
 
 ### Runner crate
+
 ```bash
 # The rustfinity-runner is designed to run in Docker
 # It accepts base64-encoded code, tests, and Cargo.toml
@@ -58,7 +63,9 @@ cargo run -p rustfinity-runner -- test --code <base64> --tests <base64> --cargo-
 ## Repository Structure
 
 ### Challenge Structure
+
 Each challenge in `challenges/<challenge-name>/` follows this strict structure:
+
 - **description.md**: Challenge instructions and examples
 - **Cargo.toml**: Package definition (package name must match directory name)
 - **src/lib.rs**: Complete solution implementation
@@ -68,12 +75,15 @@ Each challenge in `challenges/<challenge-name>/` follows this strict structure:
 The `challenges/tests.rs` file validates that all challenges follow this structure.
 
 ### Workspace Organization
+
 The workspace uses Cargo's resolver v2 and includes:
+
 - `challenges` - Parent crate that provides shared utilities
 - `challenges/*` - Individual challenge packages
 - `crates/*` - Supporting tools (CLI, runner, syntest)
 
 ### Key Files
+
 - **challenges/lib.rs**: Utilities for reading and validating challenges
   - `challenges_json()`: Parses challenges.json metadata
   - `challenges_dir_list()`: Lists all challenge directories
@@ -84,6 +94,7 @@ The workspace uses Cargo's resolver v2 and includes:
 ## Challenge Metadata System
 
 All challenges are registered in `challenges/challenges.json` with:
+
 - Unique `id` (numeric, validated for duplicates)
 - `slug` (must match directory name)
 - `difficulty`: BEGINNER, EASY, MEDIUM, HARD, ADVANCED
@@ -92,6 +103,7 @@ All challenges are registered in `challenges/challenges.json` with:
 - `created_at` and `updated_at`: ISO 8601 timestamps (validated)
 
 ### Adding a New Challenge
+
 1. Create directory under `challenges/<slug>/`
 2. Add required files: description.md, Cargo.toml, src/lib.rs, src/starter.rs, tests/tests.rs
 3. Ensure Cargo.toml package name matches directory slug
@@ -101,11 +113,13 @@ All challenges are registered in `challenges/challenges.json` with:
 ## Testing Architecture
 
 ### Test Types
+
 1. **Challenge tests** (`challenges/*/tests/tests.rs`): Validate challenge solutions
 2. **Structure tests** (`challenges/tests.rs`): Validate all challenges have required files and metadata
 3. **Syntest**: AST-based syntax validation for advanced testing scenarios
 
 ### Running Tests
+
 - Challenge structure validation catches common issues:
   - Missing required files
   - Mismatched package names
@@ -116,6 +130,7 @@ All challenges are registered in `challenges/challenges.json` with:
 ## CLI Usage
 
 The `rustfinity` CLI allows users to download challenges locally:
+
 ```bash
 # Download a specific challenge
 rustfinity get challenge <challenge-slug>
@@ -126,18 +141,21 @@ rustfinity get challenge <challenge-slug>
 ## Crate Dependencies
 
 ### cli
+
 - Uses `clap` for command-line parsing
 - `reqwest` for HTTP requests (with rustls-tls)
 - `tokio` async runtime
 - Downloads challenges from GitHub repository
 
 ### rustfinity-runner
+
 - Designed for secure, isolated test execution in Docker
 - Uses `duct` for process management
 - Base64 encoding for code/test transport
 - Supports both regular challenges and Rustlings exercises
 
 ### syntest
+
 - AST-based syntax testing using `syn` crate
 - Allows testing code structure without execution
 - Use `create_bin_and_run()` to compile and execute code snippets
@@ -145,6 +163,7 @@ rustfinity get challenge <challenge-slug>
 ## Development Workflow
 
 When modifying challenges:
+
 1. Edit solution in `src/lib.rs`
 2. Update starter template in `src/starter.rs` (should be incomplete)
 3. Verify tests in `tests/tests.rs` pass with solution

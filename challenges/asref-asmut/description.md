@@ -75,6 +75,7 @@ pub fn double_all<V: AsMut<[i32]>>(values: &mut V)
 ### 5. Custom Text Type with AsRef
 
 Create a `Text` struct that wraps a `String` and implements:
+
 - `AsRef<str>` - borrow as a string slice
 - `AsRef<[u8]>` - borrow as a byte slice
 - `AsMut<String>` - mutable access to the inner string

@@ -7,6 +7,7 @@ When you implement `Deref` for a type, you're telling Rust how to convert a refe
 ## Deref Coercion
 
 Deref coercion is a compile-time convenience that automatically converts references when types implement `Deref`. For example:
+
 - `&String` can be used where `&str` is expected
 - `&Box<T>` can be used where `&T` is expected
 - `&Vec<T>` can be used where `&[T]` is expected
@@ -85,12 +86,14 @@ assert_eq!(describe_length(&boxed), "Length: 5");
   <summary>Click here to reveal hints</summary>
 
 - The `Deref` trait requires implementing:
+
   ```rust
   type Target = T;
   fn deref(&self) -> &Self::Target { ... }
   ```
 
 - `DerefMut` requires `Deref` to be implemented first, and adds:
+
   ```rust
   fn deref_mut(&mut self) -> &mut Self::Target { ... }
   ```

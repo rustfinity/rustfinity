@@ -88,6 +88,7 @@ assert_eq!(find_first_match(&[10, 20, 30, 40], &30), Some(2));
 - Use `#[derive(PartialEq, Eq)]` when all fields should participate in equality and standard comparison is sufficient.
 
 - For `CaseInsensitiveString`, convert both strings to lowercase (or uppercase) before comparing in your `PartialEq` implementation:
+
   ```rust
   impl PartialEq for CaseInsensitiveString {
       fn eq(&self, other: &Self) -> bool {

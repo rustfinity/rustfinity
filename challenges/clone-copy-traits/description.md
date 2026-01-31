@@ -42,39 +42,52 @@ struct Person {
 Implement the following types demonstrating `Clone` and `Copy`:
 
 ### 1. Color (Copy type)
+
 Create a `Color` struct with `r`, `g`, `b` fields (all `u8`). This type should be `Copy` since it only contains primitive fields.
+
 - Derive both `Clone` and `Copy`
 - Derive `Debug` and `PartialEq` for testing
 
 ### 2. Dimensions (Copy type)
+
 Create a `Dimensions` struct with `width` and `height` fields (both `f64`). This should also be `Copy`.
+
 - Derive both `Clone` and `Copy`
 - Derive `Debug` and `PartialEq` for testing
 
 ### 3. Label (Clone-only type)
+
 Create a `Label` struct with a `text` field (`String`). Since `String` is not `Copy`, this type can only be `Clone`.
+
 - Derive `Clone` (but NOT `Copy`)
 - Derive `Debug` and `PartialEq` for testing
 
 ### 4. Document (Clone-only type)
+
 Create a `Document` struct with:
+
 - `title`: `String`
 - `pages`: `Vec<String>`
 
 This type contains heap-allocated data, so it should only be `Clone`.
+
 - Derive `Clone` (but NOT `Copy`)
 - Derive `Debug` and `PartialEq` for testing
 
 ### 5. TaggedValue<T> (Generic Clone)
+
 Create a generic `TaggedValue<T>` struct with:
+
 - `tag`: `String`
 - `value`: `T`
 
 Implement `Clone` for `TaggedValue<T>` where `T: Clone`. Since it contains a `String`, it cannot be `Copy`.
+
 - Derive `Clone` with appropriate bounds
 - Derive `Debug` and `PartialEq` with appropriate bounds
 
 ### 6. Utility Functions
+
 Implement these functions to demonstrate the difference between `Clone` and `Copy`:
 
 - `duplicate_copy<T: Copy>(value: T) -> (T, T)` - Returns a tuple with two copies of the value

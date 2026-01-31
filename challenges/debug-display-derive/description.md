@@ -39,12 +39,16 @@ println!("{}", p);     // Display: (3, 4)
 Implement the following types demonstrating `Debug` and `Display`:
 
 ### 1. Coordinate Struct
+
 Create a `Coordinate` struct with `x` and `y` fields (both `f64`).
+
 - Derive `Debug`
 - Implement `Display` to format as `"(x, y)"` (e.g., `"(3.5, -2.0)"`)
 
 ### 2. Color Enum
+
 Create a `Color` enum with variants:
+
 - `Red`, `Green`, `Blue` (unit variants)
 - `Rgb(u8, u8, u8)` (RGB values)
 - `Hex(String)` (hex string like "#FF5733")
@@ -56,6 +60,7 @@ Create a `Color` enum with variants:
   - `Hex` displays as the hex string (e.g., `"#FF5733"`)
 
 ### 3. Temperature Struct
+
 Create a `Temperature` struct that holds a value (`f64`) and a unit (`TemperatureUnit` enum).
 
 The `TemperatureUnit` enum should have variants: `Celsius`, `Fahrenheit`, `Kelvin`.
@@ -64,12 +69,16 @@ The `TemperatureUnit` enum should have variants: `Celsius`, `Fahrenheit`, `Kelvi
 - Implement `Display` for `Temperature` to format as `"value°C"`, `"value°F"`, or `"valueK"` (e.g., `"25.5°C"`, `"98.6°F"`, `"300K"`)
 
 ### 4. LogLevel Enum
+
 Create a `LogLevel` enum with variants: `Error`, `Warning`, `Info`, `Debug`.
+
 - Derive `Debug`
 - Implement `Display` to show as uppercase strings: `"ERROR"`, `"WARNING"`, `"INFO"`, `"DEBUG"`
 
 ### 5. LogMessage Struct
+
 Create a `LogMessage` struct with:
+
 - `level`: `LogLevel`
 - `message`: `String`
 
@@ -77,6 +86,7 @@ Create a `LogMessage` struct with:
 - Implement `Display` to format as `"[LEVEL] message"` (e.g., `"[ERROR] Connection failed"`)
 
 ### 6. Utility Functions
+
 Implement these functions to work with Debug and Display:
 
 - `debug_string<T: std::fmt::Debug>(value: &T) -> String` - Returns the debug representation of any `Debug` type

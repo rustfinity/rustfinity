@@ -3,6 +3,7 @@ The `Hash` trait in Rust enables types to be hashed, which is essential for usin
 The `Hash` trait works closely with `Eq`: if two values are equal (`a == b`), they must produce the same hash. This is a critical invariant! If equal values hash differently, collections like `HashMap` will behave incorrectly. The standard library provides a derive macro `#[derive(Hash)]` that automatically implements `Hash` for structs and enums whose fields all implement `Hash`.
 
 Sometimes you need manual implementations, especially when:
+
 - Only some fields should contribute to the hash (matching a custom `PartialEq`)
 - You want case-insensitive string hashing
 - You need to normalize values before hashing
@@ -66,6 +67,7 @@ assert_eq!(find_duplicates(&[1, 2, 2, 3, 3, 3]), vec![2, 3]);
   <summary>Click here to reveal hints</summary>
 
 - To implement `Hash` manually, use a `Hasher`:
+
   ```rust
   use std::hash::{Hash, Hasher};
 

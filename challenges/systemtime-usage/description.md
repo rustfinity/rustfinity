@@ -46,27 +46,35 @@ let err = earlier.duration_since(later); // Err(SystemTimeError)
 Implement the following functions to work with `SystemTime`:
 
 ### 1. `current_unix_timestamp() -> u64`
+
 Return the current Unix timestamp (seconds since January 1, 1970 UTC).
 
 ### 2. `from_unix_timestamp(timestamp: u64) -> SystemTime`
+
 Create a `SystemTime` from a Unix timestamp.
 
 ### 3. `to_unix_timestamp(time: SystemTime) -> Option<u64>`
+
 Convert a `SystemTime` to a Unix timestamp. Return `None` if the time is before the Unix epoch.
 
 ### 4. `seconds_between(earlier: SystemTime, later: SystemTime) -> Option<u64>`
+
 Calculate the number of seconds between two times. Return `None` if `earlier` is actually after `later`.
 
 ### 5. `is_in_past(time: SystemTime) -> bool`
+
 Check if the given time is in the past (before the current time).
 
 ### 6. `is_in_future(time: SystemTime) -> bool`
+
 Check if the given time is in the future (after the current time).
 
 ### 7. `add_seconds(time: SystemTime, seconds: u64) -> SystemTime`
+
 Add a number of seconds to a `SystemTime`.
 
 ### 8. `time_until(deadline: SystemTime) -> Option<Duration>`
+
 Return the duration until the deadline. Return `None` if the deadline has already passed.
 
 ## Examples

@@ -36,25 +36,35 @@ let big: i64 = 42i32.into();
 Implement the `From` trait for the following type conversions:
 
 ### 1. Celsius to Fahrenheit
+
 Create a `Celsius` struct and a `Fahrenheit` struct, both wrapping an `f64`. Implement conversions in both directions:
+
 - `Fahrenheit::from(Celsius)` - Formula: F = C × 9/5 + 32
 - `Celsius::from(Fahrenheit)` - Formula: C = (F - 32) × 5/9
 
 ### 2. RGB to Hex Color
+
 Create an `Rgb` struct with `r`, `g`, `b` fields (all `u8`) and a `HexColor` struct wrapping a `String`. Implement:
+
 - `HexColor::from(Rgb)` - Convert RGB to hex string like "#FF5733"
 
 ### 3. Email Address Validation
+
 Create an `Email` struct wrapping a `String`. Implement:
+
 - `Email::from(&str)` - Create an email from a string slice
 - `Email::from(String)` - Create an email from an owned string
 
 ### 4. Point2D to Point3D
+
 Create `Point2D` with `x` and `y` fields (`f64`) and `Point3D` with `x`, `y`, `z` fields (`f64`). Implement:
+
 - `Point3D::from(Point2D)` - Convert 2D point to 3D with z=0.0
 
 ### 5. Generic Wrapper
+
 Create a generic `Wrapper<T>` struct that wraps a value. Implement:
+
 - `Wrapper<T>::from(T)` - Wrap any value
 - Implement a method `into_inner(self) -> T` to unwrap the value
 

@@ -5,6 +5,7 @@ In Rust, most values are stored on the stack by default. The stack is fast and e
 `Box<T>` is Rust's simplest smart pointer for heap allocation. When you create a `Box<T>`, the value of type `T` is allocated on the heap, and the `Box` itself (which is just a pointer) lives on the stack. When the `Box` goes out of scope, both the pointer and the heap data are deallocated automatically thanks to Rust's ownership system.
 
 Common use cases for `Box<T>` include:
+
 - Storing large data without copying it when transferring ownership
 - Enabling recursive types (types that contain themselves)
 - Trait objects when you need dynamic dispatch (`Box<dyn Trait>`)
