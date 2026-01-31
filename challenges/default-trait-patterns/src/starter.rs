@@ -103,7 +103,7 @@ pub struct PartialConfig {
 /// assert_eq!(s, "");
 /// ```
 pub fn create_with_defaults<T: Default>() -> T {
-    // TODO: Return the default value for type T
+    // TODO
     todo!()
 }
 
@@ -112,8 +112,7 @@ pub fn create_with_defaults<T: Default>() -> T {
 /// Any `None` values in `partial` should be replaced with the corresponding
 /// default values from `AppConfig::default()`.
 pub fn merge_with_defaults(partial: PartialConfig) -> AppConfig {
-    // TODO: Create an AppConfig using values from partial,
-    // falling back to defaults for None values
+    // TODO
     todo!()
 }
 
@@ -126,7 +125,7 @@ pub fn merge_with_defaults(partial: PartialConfig) -> AppConfig {
 /// assert_eq!(zeros, vec![0, 0, 0, 0, 0]);
 /// ```
 pub fn default_vec<T: Default>(count: usize) -> Vec<T> {
-    // TODO: Create a Vec with `count` default-initialized elements
+    // TODO
     todo!()
 }
 

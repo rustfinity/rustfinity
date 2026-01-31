@@ -130,7 +130,7 @@ pub fn group_by_hash<T: Clone, K: Hash + Eq, F: Fn(&T) -> K>(
     items: &[T],
     key_fn: F,
 ) -> HashMap<K, Vec<T>> {
-    // TODO: Use the Entry API to group items by their key
+    // TODO
     todo!()
 }
 
