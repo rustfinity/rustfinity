@@ -95,7 +95,8 @@ if let Some(upgraded) = upgrade_weak(&weak) {
 }
 
 drop(strong);
-assert!(upgrade_weak(&weak).is_none()); // Value was deallocated
+// Value was deallocated
+assert!(upgrade_weak(&weak).is_none());
 ```
 
 ## Hints

@@ -35,7 +35,10 @@ If you're stuck, here are some hints to help you solve the challenge:
 - The `io::Error::new` function can create custom errors.
 - To create the error type we want for invalid numbers, you can do the following:
   ```rust
-  let error = io::Error::new(io::ErrorKind::InvalidData, "Invalid number");
+  let error = io::Error::new(
+      io::ErrorKind::InvalidData,
+      "Invalid number"
+  );
   ```
 - To propagate an error, use the `?` operator. e.g.
   ```rust
@@ -43,7 +46,14 @@ If you're stuck, here are some hints to help you solve the challenge:
   ```
 - You can transform an error type to another error type by using the `map_err` method. e.g.
   ```rust
-  let num = num_str.parse::<i32>().map_err(|_| io::Error::new(io::ErrorKind::InvalidData, "Invalid number"))?;
+  let num = num_str
+      .parse::<i32>()
+      .map_err(|_| {
+          io::Error::new(
+              io::ErrorKind::InvalidData,
+              "Invalid number"
+          )
+      })?;
   ```
 
 </details>

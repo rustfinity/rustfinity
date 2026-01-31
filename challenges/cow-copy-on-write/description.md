@@ -134,7 +134,8 @@ assert_eq!(result, "hi!!!");
 let mut processor = TextProcessor::new("  hello   world  ");
 assert!(processor.is_borrowed());
 processor.process();
-assert!(!processor.is_borrowed()); // Now owned after processing
+// Now owned after processing
+assert!(!processor.is_borrowed());
 assert_eq!(processor.into_string(), "hello world");
 ```
 

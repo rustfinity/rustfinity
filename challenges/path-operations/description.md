@@ -57,10 +57,10 @@ let result = join_paths(
     "/home/user",
     &["documents", "reports", "2024"]
 );
-assert_eq!(
-    result,
-    PathBuf::from("/home/user/documents/reports/2024")
+let expected = PathBuf::from(
+    "/home/user/documents/reports/2024"
 );
+assert_eq!(result, expected);
 
 // Extract extension
 assert_eq!(get_extension("report.pdf"), Some("pdf".to_string()));

@@ -75,7 +75,8 @@ Implement the following directory traversal functions:
 ```rust
 use std::path::Path;
 
-// List only files in a directory (not subdirectories or their contents)
+// List only files in a directory
+// (not subdirectories or their contents)
 let files = list_files(Path::new("./src"))?;
 // Returns: ["./src/main.rs", "./src/lib.rs"]
 
@@ -114,7 +115,8 @@ let count = count_files_recursive(Path::new("./src"))?;
 - Use `entry.path()` to get the full `PathBuf` for an entry
 - Use `entry.file_type()?.is_dir()` or `entry.path().is_dir()` to check if it's a directory
 - For recursive functions, call the function on subdirectories and combine results
-- Use `entry.metadata()?.len()` to get the file size in bytes
+- Use `entry.metadata()?.len()` to get the file size
+  in bytes
 - For extension matching, use `path.extension().map_or(false, |e| e == ext)`
 - For name matching, use `path.file_name().map_or(false, |n| n == name)`
 - Remember that `read_dir()` only lists immediate children, not nested contents

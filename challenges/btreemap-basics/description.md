@@ -90,14 +90,16 @@ assert_eq!(map.len(), 3);
 assert_eq!(get_value(&map, "apple"), Some(1));
 assert_eq!(get_value(&map, "grape"), None);
 
-// get_keys_in_order - returns keys sorted alphabetically
+// get_keys_in_order
+// Returns keys sorted alphabetically
 let keys = get_keys_in_order(&map);
 assert_eq!(
     keys,
     vec!["apple", "banana", "cherry"]
 );
 
-// get_values_in_key_order - returns values in order of sorted keys
+// get_values_in_key_order
+// Returns values in order of sorted keys
 let values = get_values_in_key_order(&map);
 assert_eq!(
     values,

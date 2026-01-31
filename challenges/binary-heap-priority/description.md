@@ -21,7 +21,8 @@ assert_eq!(max_heap.pop(), Some(4));
 assert_eq!(max_heap.pop(), Some(3));
 
 // Min-heap using Reverse: smallest element comes out first
-let mut min_heap: BinaryHeap<Reverse<i32>> = BinaryHeap::new();
+let mut min_heap: BinaryHeap<Reverse<i32>> =
+    BinaryHeap::new();
 min_heap.push(Reverse(3));
 min_heap.push(Reverse(1));
 min_heap.push(Reverse(4));

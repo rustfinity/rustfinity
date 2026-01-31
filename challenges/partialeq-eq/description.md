@@ -62,10 +62,21 @@ ids.insert(UserId(2));
 assert!(ids.contains(&UserId(1)));
 
 // Person - equality based only on id
-let alice1 = Person { name: String::from("Alice"), id: 1 };
-let alice2 = Person { name: String::from("Alice Smith"), id: 1 };  // Same id
-let bob = Person { name: String::from("Bob"), id: 2 };
-assert_eq!(alice1, alice2);  // Same id, so equal
+let alice1 = Person {
+    name: String::from("Alice"),
+    id: 1
+};
+// Same id
+let alice2 = Person {
+    name: String::from("Alice Smith"),
+    id: 1
+};
+let bob = Person {
+    name: String::from("Bob"),
+    id: 2
+};
+// Same id, so equal
+assert_eq!(alice1, alice2);
 assert_ne!(alice1, bob);
 
 // Status enum
@@ -97,7 +108,9 @@ assert_eq!(find_first_match(&[10, 20, 30, 40], &30), Some(2));
   }
   ```
 
-- For `ApproximateFloat`, use `(self.0 - other.0).abs() < EPSILON` for the comparison. Remember that `f64` cannot implement `Eq` because of `NaN`.
+- For `ApproximateFloat`, use
+  `(self.0 - other.0).abs() < EPSILON` for the comparison.
+  Remember that `f64` cannot implement `Eq` because of `NaN`.
 
 - When implementing `PartialEq` manually, you only need to implement `eq(&self, other: &Self) -> bool`. The `ne` method has a default implementation.
 

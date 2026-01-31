@@ -87,7 +87,8 @@ assert!(temp_dir.exists());
 let path = create_temp_file("myapp", ".tmp")?;
 assert!(path.exists());
 assert!(path.to_string_lossy().contains("myapp"));
-std::fs::remove_file(&path)?; // Manual cleanup
+// Manual cleanup
+std::fs::remove_file(&path)?;
 
 // Create temp file with content
 let path = create_temp_file_with_content(

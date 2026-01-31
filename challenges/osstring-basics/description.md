@@ -25,11 +25,14 @@ let file_name: Option<&OsStr> = path.file_name();
 
 // Converting OsStr to &str (may fail if not valid UTF-8)
 let os_str: &OsStr = OsStr::new("hello.txt");
-let s: Option<&str> = os_str.to_str();  // Returns Some if valid UTF-8
+// Returns Some if valid UTF-8
+let s: Option<&str> = os_str.to_str();
 
 // Converting OsStr to String (lossy conversion)
 // Replaces invalid UTF-8 with replacement character
-let s: String = os_str.to_string_lossy().into_owned();
+let s: String = os_str
+    .to_string_lossy()
+    .into_owned();
 ```
 
 ## Your Task

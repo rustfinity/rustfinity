@@ -18,7 +18,10 @@ Write a function `longest` that takes two string slices and returns the longest 
 
 - Use explicit lifetime annotations in the function signature, such as `'a`. e.g
   ```rust
-  fn longest<'a>(first: &'a str, second: &'a str) -> &'a str {
+  fn longest<'a>(
+      first: &'a str,
+      second: &'a str
+  ) -> &'a str {
       // implementation goes here
   }
   ```

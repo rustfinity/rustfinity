@@ -63,8 +63,13 @@ io::stdout().flush()?;  // Important! Without this, prompt might not appear
 
 Implement the following functions for working with standard I/O:
 
-1. `read_line_from_reader<R: BufRead>(reader: R) -> io::Result<String>` - Read a single line from any reader implementing `BufRead`, trimming the trailing newline
-2. `read_all_lines_from_reader<R: BufRead>(reader: R) -> io::Result<Vec<String>>` - Read all lines from a reader into a Vec
+1. `read_line_from_reader<R: BufRead>(reader: R)
+   -> io::Result<String>` - Read a single line from any
+   reader implementing `BufRead`, trimming the trailing
+   newline
+2. `read_all_lines_from_reader<R: BufRead>(reader: R)
+   -> io::Result<Vec<String>>` - Read all lines from a
+   reader into a Vec
 3. `write_to_writer<W: Write>(writer: &mut W, message: &str) -> io::Result<()>` - Write a message to any writer implementing `Write`
 4. `writeln_to_writer<W: Write>(writer: &mut W, message: &str) -> io::Result<()>` - Write a message with a newline to any writer
 5. `write_and_flush<W: Write>(writer: &mut W, message: &str) -> io::Result<()>` - Write a message and immediately flush the buffer
@@ -118,7 +123,9 @@ assert_eq!(
   <summary>Click here for hints</summary>
 
 - Use `reader.read_line(&mut buffer)` to read a single line
-- Use `buffer.trim_end_matches('\n').trim_end_matches('\r')` to strip line endings for both Unix and Windows
+- Use `buffer.trim_end_matches('\n')
+  .trim_end_matches('\r')` to strip line endings for both
+  Unix and Windows
 - The `lines()` iterator from `BufRead` automatically strips newlines
 - Use `write!(writer, "{}", message)` or `writer.write_all(message.as_bytes())` to write
 - Use `writeln!(writer, "{}", message)` to write with a newline

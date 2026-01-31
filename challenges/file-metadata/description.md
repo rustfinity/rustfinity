@@ -133,7 +133,9 @@ match ordering {
 - `Metadata::file_type()` returns a `FileType` with `is_file()`, `is_dir()`, `is_symlink()` methods
 - `Metadata::permissions()` returns a `Permissions` struct with `readonly()` method
 - `Metadata::modified()` returns `io::Result<SystemTime>` - the modification time
-- For `was_modified_within`, use `SystemTime::now().duration_since(modified)` to get elapsed time
+- For `was_modified_within`, use
+  `SystemTime::now().duration_since(modified)`
+  to get elapsed time
 - For Unix executable check, use `#[cfg(unix)]` and `std::os::unix::fs::PermissionsExt::mode()`
 - The execute bit can be checked with `mode & 0o111 != 0` (any of owner/group/other execute)
 - For Windows, you might check file extension (`.exe`, `.bat`, `.cmd`) as an alternative

@@ -85,8 +85,14 @@ assert_eq!(
     find_all_indices("abcabc", "abc"),
     vec![0, 3]
 );
-assert_eq!(find_all_indices("hello", "l"), vec![2, 3]);
-assert_eq!(find_all_indices("test", "xyz"), vec![]);
+assert_eq!(
+    find_all_indices("hello", "l"),
+    vec![2, 3]
+);
+assert_eq!(
+    find_all_indices("test", "xyz"),
+    vec![]
+);
 
 // extract_between
 assert_eq!(

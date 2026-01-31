@@ -52,7 +52,8 @@ Implement the following functions that use iterator inspection methods:
 2. `find_index<T: PartialEq>(items: &[T], target: &T) -> Option<usize>` - Find the index of the first occurrence of target
 3. `elements_with_next<T: Clone>(items: &[T]) -> Vec<(T, Option<T>)>` - Return each element paired with the next element (or None if last) using `peekable()`
 4. `group_consecutive_duplicates<T: Clone + PartialEq>(
-       items: &[T]) -> Vec<(T, usize)>`
+       items: &[T]
+   ) -> Vec<(T, usize)>`
    - Group consecutive identical elements and count them
      using `peekable()`
 5. `find_first_repeated<T: Clone + PartialEq>(items: &[T]) -> Option<T>` - Find the first element that equals its next neighbor using `peekable()`

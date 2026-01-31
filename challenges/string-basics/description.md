@@ -62,7 +62,8 @@ assert_eq!(count_chars("hello"), 5);
 // 5 Unicode characters (cafe + combining accent)
 assert_eq!(count_chars("cafe\u{0301}"), 5);
 assert_eq!(count_bytes("hello"), 5);
-// 5 bytes ('c', 'a', 'f' are 1 byte, 'e with accent' is 2 bytes)
+// 5 bytes: 'c', 'a', 'f' = 1 byte each
+// 'e with accent' = 2 bytes
 assert_eq!(count_bytes("caf\u{00E9}"), 5);
 assert_eq!(is_ascii_only("hello"), true);
 // accented 'e' is not ASCII
