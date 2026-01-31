@@ -79,7 +79,7 @@ pub fn create_weak<T>(rc: &Rc<T>) -> Weak<T> {
 ///
 /// Returns `Some(Rc<T>)` if the value still exists, `None` if it was deallocated.
 pub fn upgrade_weak<T>(weak: &Weak<T>) -> Option<Rc<T>> {
-    // TODO: Implement using weak.upgrade()
+    // TODO: Implement using Weak::upgrade
     unimplemented!()
 }
 
@@ -168,7 +168,6 @@ impl<T> Observable<T> {
     /// The observer is stored as a weak reference to avoid memory leaks.
     pub fn subscribe(&mut self, observer: Rc<dyn Observer<T>>) {
         // TODO: Create a weak reference from the observer and add to the vector
-        // Hint: Use Rc::downgrade
         unimplemented!()
     }
 
@@ -178,8 +177,7 @@ impl<T> Observable<T> {
     pub fn notify(&mut self) {
         // TODO: Iterate through observers, upgrade each weak reference
         // If upgrade succeeds, call on_update with the current value
-        // Remove observers that can't be upgraded (their Rc was dropped)
-        // Hint: Use Vec::retain with a closure that upgrades and notifies
+        // Remove observers that can't be upgraded
         unimplemented!()
     }
 

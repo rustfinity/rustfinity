@@ -18,31 +18,31 @@ impl Counter {
     /// Creates a new counter with initial value 0.
     pub fn new() -> Self {
         // TODO: Implement using Cell::new(0)
-        todo!()
+        unimplemented!()
     }
 
     /// Gets the current count.
     pub fn get(&self) -> i32 {
         // TODO: Use Cell::get() to return the value
-        todo!()
+        unimplemented!()
     }
 
     /// Sets the count to a specific value.
     pub fn set(&self, value: i32) {
         // TODO: Use Cell::set() to set the value
-        todo!()
+        unimplemented!()
     }
 
     /// Increments the count by 1.
     pub fn increment(&self) {
         // TODO: Get current value, add 1, and set it back
-        todo!()
+        unimplemented!()
     }
 
     /// Decrements the count by 1.
     pub fn decrement(&self) {
         // TODO: Get current value, subtract 1, and set it back
-        todo!()
+        unimplemented!()
     }
 }
 
@@ -60,25 +60,25 @@ impl<T: Copy + Default> CachedValue<T> {
     /// Creates a new cached value.
     pub fn new(value: T) -> Self {
         // TODO: Initialize both cells, access_count starts at 0
-        todo!()
+        unimplemented!()
     }
 
     /// Gets the cached value and increments the access count.
     pub fn get(&self) -> T {
         // TODO: Increment access_count, then return the value
-        todo!()
+        unimplemented!()
     }
 
     /// Sets a new value and resets the access count.
     pub fn set(&self, value: T) {
         // TODO: Set the new value and reset access_count to 0
-        todo!()
+        unimplemented!()
     }
 
     /// Returns the number of times the value was accessed.
     pub fn access_count(&self) -> u32 {
         // TODO: Return the access count
-        todo!()
+        unimplemented!()
     }
 }
 
@@ -104,37 +104,37 @@ impl SharedString {
     /// Creates a new shared string.
     pub fn new(s: &str) -> Self {
         // TODO: Initialize with RefCell::new(s.to_string())
-        todo!()
+        unimplemented!()
     }
 
     /// Gets a clone of the string.
     pub fn get(&self) -> String {
         // TODO: Use borrow() to get an immutable reference, then clone
-        todo!()
+        unimplemented!()
     }
 
     /// Sets a new string value.
     pub fn set(&self, s: &str) {
         // TODO: Use borrow_mut() to get a mutable reference, then assign
-        todo!()
+        unimplemented!()
     }
 
     /// Appends a string to the current value.
     pub fn append(&self, s: &str) {
         // TODO: Use borrow_mut() and push_str()
-        todo!()
+        unimplemented!()
     }
 
     /// Returns the length of the string.
     pub fn len(&self) -> usize {
         // TODO: Use borrow() and len()
-        todo!()
+        unimplemented!()
     }
 
     /// Returns true if the string is empty.
     pub fn is_empty(&self) -> bool {
         // TODO: Use borrow() and is_empty()
-        todo!()
+        unimplemented!()
     }
 }
 
@@ -151,31 +151,31 @@ impl<T> SharedVec<T> {
     /// Creates a new empty shared vector.
     pub fn new() -> Self {
         // TODO: Initialize with RefCell::new(Vec::new())
-        todo!()
+        unimplemented!()
     }
 
     /// Adds an element to the end of the vector.
     pub fn push(&self, value: T) {
         // TODO: Use borrow_mut() and push()
-        todo!()
+        unimplemented!()
     }
 
     /// Removes and returns the last element, or None if empty.
     pub fn pop(&self) -> Option<T> {
         // TODO: Use borrow_mut() and pop()
-        todo!()
+        unimplemented!()
     }
 
     /// Returns the current number of elements.
     pub fn len(&self) -> usize {
         // TODO: Use borrow() and len()
-        todo!()
+        unimplemented!()
     }
 
     /// Returns true if the vector is empty.
     pub fn is_empty(&self) -> bool {
         // TODO: Use borrow() and is_empty()
-        todo!()
+        unimplemented!()
     }
 }
 
@@ -183,7 +183,7 @@ impl<T: Clone> SharedVec<T> {
     /// Gets a clone of the element at the specified index.
     pub fn get(&self, index: usize) -> Option<T> {
         // TODO: Use borrow(), get(index), and cloned()
-        todo!()
+        unimplemented!()
     }
 }
 
@@ -204,7 +204,7 @@ impl<T> SafeCell<T> {
     /// Creates a new SafeCell.
     pub fn new(value: T) -> Self {
         // TODO: Initialize with RefCell::new(value)
-        todo!()
+        unimplemented!()
     }
 
     /// Tries to borrow the value immutably.
@@ -212,7 +212,7 @@ impl<T> SafeCell<T> {
     /// Returns `None` if the value is currently mutably borrowed.
     pub fn try_read(&self) -> Option<Ref<'_, T>> {
         // TODO: Use try_borrow() and convert Result to Option with .ok()
-        todo!()
+        unimplemented!()
     }
 
     /// Tries to borrow the value mutably.
@@ -220,7 +220,7 @@ impl<T> SafeCell<T> {
     /// Returns `None` if the value is currently borrowed.
     pub fn try_write(&self) -> Option<RefMut<'_, T>> {
         // TODO: Use try_borrow_mut() and convert Result to Option with .ok()
-        todo!()
+        unimplemented!()
     }
 
     /// Checks if the value is currently borrowed.
@@ -228,8 +228,7 @@ impl<T> SafeCell<T> {
     /// Returns `true` if there are any active borrows.
     pub fn is_borrowed(&self) -> bool {
         // TODO: Try to borrow mutably - if it fails, value is borrowed
-        // Hint: try_borrow_mut().is_err()
-        todo!()
+        unimplemented!()
     }
 
     /// Applies a function to the value if not currently borrowed.
@@ -240,8 +239,7 @@ impl<T> SafeCell<T> {
         F: FnOnce(&T) -> R,
     {
         // TODO: Use try_read() and map() to apply the function
-        // Hint: self.try_read().map(|val| f(&*val))
-        todo!()
+        unimplemented!()
     }
 
     /// Applies a mutating function to the value if not currently borrowed.
@@ -252,8 +250,7 @@ impl<T> SafeCell<T> {
         F: FnOnce(&mut T) -> R,
     {
         // TODO: Use try_write() and map() to apply the function
-        // Hint: self.try_write().map(|mut val| f(&mut *val))
-        todo!()
+        unimplemented!()
     }
 }
 
@@ -273,31 +270,31 @@ impl SharedCounter {
     /// Creates a new shared counter wrapped in Rc.
     pub fn new() -> Rc<Self> {
         // TODO: Create a new SharedCounter and wrap it in Rc
-        todo!()
+        unimplemented!()
     }
 
     /// Gets the current value.
     pub fn get(&self) -> i32 {
         // TODO: Use borrow() and dereference
-        todo!()
+        unimplemented!()
     }
 
     /// Increments the counter by 1.
     pub fn increment(&self) {
         // TODO: Use borrow_mut() and add 1
-        todo!()
+        unimplemented!()
     }
 
     /// Decrements the counter by 1.
     pub fn decrement(&self) {
         // TODO: Use borrow_mut() and subtract 1
-        todo!()
+        unimplemented!()
     }
 
     /// Adds n to the counter.
     pub fn add(&self, n: i32) {
         // TODO: Use borrow_mut() and add n
-        todo!()
+        unimplemented!()
     }
 }
 
@@ -315,31 +312,31 @@ impl<T> TreeNode<T> {
     /// Creates a new tree node wrapped in Rc.
     pub fn new(value: T) -> Rc<Self> {
         // TODO: Create a new TreeNode with the value and empty children, wrapped in Rc
-        todo!()
+        unimplemented!()
     }
 
     /// Gets a reference to the node's value.
     pub fn value(&self) -> Ref<'_, T> {
         // TODO: Use borrow() to return Ref<T>
-        todo!()
+        unimplemented!()
     }
 
     /// Sets a new value for the node.
     pub fn set_value(&self, value: T) {
         // TODO: Use borrow_mut() and assign new value
-        todo!()
+        unimplemented!()
     }
 
     /// Adds a child node.
     pub fn add_child(&self, child: Rc<TreeNode<T>>) {
         // TODO: Use borrow_mut() on children and push the child
-        todo!()
+        unimplemented!()
     }
 
     /// Returns the number of children.
     pub fn children_count(&self) -> usize {
         // TODO: Use borrow() on children and return len()
-        todo!()
+        unimplemented!()
     }
 }
 

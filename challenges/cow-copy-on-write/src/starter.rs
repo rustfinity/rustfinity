@@ -12,7 +12,7 @@ pub fn maybe_uppercase(s: &str) -> Cow<'_, str> {
     // TODO: Check if the string contains any lowercase letters
     // If yes, return Cow::Owned with the uppercase version
     // If no, return Cow::Borrowed with the original string
-    todo!()
+    unimplemented!()
 }
 
 /// Ensures a string ends with the given suffix.
@@ -23,7 +23,7 @@ pub fn ensure_suffix<'a>(s: &'a str, suffix: &str) -> Cow<'a, str> {
     // TODO: Check if string already ends with suffix
     // If yes, return Cow::Borrowed
     // If no, return Cow::Owned with suffix appended
-    todo!()
+    unimplemented!()
 }
 
 /// Trims whitespace and converts to lowercase.
@@ -34,7 +34,7 @@ pub fn trim_and_lowercase(s: &str) -> Cow<'_, str> {
     // TODO: Check if the string needs trimming or lowercasing
     // Only return Cow::Borrowed if absolutely no change is needed
     // Otherwise return Cow::Owned with trimmed and lowercased string
-    todo!()
+    unimplemented!()
 }
 
 // =============================================================================
@@ -49,7 +49,7 @@ pub fn remove_zeros(values: &[i32]) -> Cow<'_, [i32]> {
     // TODO: Check if the slice contains any zeros
     // If no zeros, return Cow::Borrowed
     // If has zeros, return Cow::Owned with zeros filtered out
-    todo!()
+    unimplemented!()
 }
 
 /// Removes consecutive duplicates from a sorted slice.
@@ -57,10 +57,10 @@ pub fn remove_zeros(values: &[i32]) -> Cow<'_, [i32]> {
 /// Returns `Cow::Borrowed` if no consecutive duplicates exist,
 /// `Cow::Owned` with duplicates removed.
 pub fn deduplicate_sorted<T: Clone + PartialEq>(values: &[T]) -> Cow<'_, [T]> {
-    // TODO: Check if there are any consecutive duplicates using windows(2)
+    // TODO: Check if there are any consecutive duplicates
     // If no duplicates, return Cow::Borrowed
     // If has duplicates, return Cow::Owned with duplicates removed
-    todo!()
+    unimplemented!()
 }
 
 /// Clamps all values to a range [min, max].
@@ -71,7 +71,7 @@ pub fn clamp_values(values: &[i32], min: i32, max: i32) -> Cow<'_, [i32]> {
     // TODO: Check if any values are outside the range
     // If all in range, return Cow::Borrowed
     // If some out of range, return Cow::Owned with clamped values
-    todo!()
+    unimplemented!()
 }
 
 // =============================================================================
@@ -83,10 +83,9 @@ pub fn clamp_values(values: &[i32], min: i32, max: i32) -> Cow<'_, [i32]> {
 /// Uses `to_mut()` to modify efficiently.
 pub fn ensure_capacity<'a>(mut s: Cow<'a, str>, min_len: usize, pad_char: char) -> Cow<'a, str> {
     // TODO: Check current character count
-    // If less than min_len, use s.to_mut() to get mutable access
-    // and push pad_char enough times
+    // If less than min_len, use s.to_mut() to get mutable access and push pad_char enough times
     // Return the (potentially modified) Cow
-    todo!()
+    unimplemented!()
 }
 
 /// Applies a transformation function only if the predicate returns true.
@@ -100,7 +99,7 @@ where
     // TODO: Check if predicate returns true for the string
     // If yes, transform all characters and use to_mut() to update
     // Return the (potentially modified) Cow
-    todo!()
+    unimplemented!()
 }
 
 // =============================================================================
@@ -117,13 +116,13 @@ impl<'a> TextProcessor<'a> {
     /// Creates a new TextProcessor with borrowed text.
     pub fn new(text: &'a str) -> Self {
         // TODO: Create TextProcessor with Cow::Borrowed
-        todo!()
+        unimplemented!()
     }
 
     /// Creates a new TextProcessor with owned text.
     pub fn from_owned(text: String) -> Self {
         // TODO: Create TextProcessor with Cow::Owned
-        todo!()
+        unimplemented!()
     }
 
     /// Processes the text by trimming and normalizing whitespace.
@@ -133,26 +132,26 @@ impl<'a> TextProcessor<'a> {
         // TODO: Trim the text and collapse multiple whitespace to single spaces
         // Only modify if needed
         // Update self.text to Cow::Owned if changes were made
-        todo!()
+        unimplemented!()
     }
 
     /// Returns a reference to the current text.
     pub fn as_str(&self) -> &str {
         // TODO: Return a reference to the inner text
-        todo!()
+        unimplemented!()
     }
 
     /// Converts the processor into a String.
     pub fn into_string(self) -> String {
         // TODO: Use into_owned() to convert to String
-        todo!()
+        unimplemented!()
     }
 
     /// Checks if the text is currently borrowed.
     pub fn is_borrowed(&self) -> bool {
         // TODO: Return true if self.text is Cow::Borrowed
         // Hint: use matches! macro
-        todo!()
+        unimplemented!()
     }
 
     /// Appends text to the processor.
@@ -160,26 +159,26 @@ impl<'a> TextProcessor<'a> {
     /// This will convert to owned if currently borrowed.
     pub fn append(&mut self, text: &str) {
         // TODO: Use to_mut() to get mutable access and append
-        todo!()
+        unimplemented!()
     }
 
     /// Gets the length of the text.
     pub fn len(&self) -> usize {
         // TODO: Return the byte length of the text
-        todo!()
+        unimplemented!()
     }
 
     /// Checks if the text is empty.
     pub fn is_empty(&self) -> bool {
         // TODO: Return true if text is empty
-        todo!()
+        unimplemented!()
     }
 }
 
 impl Default for TextProcessor<'_> {
     fn default() -> Self {
         // TODO: Return a TextProcessor with an empty owned String
-        todo!()
+        unimplemented!()
     }
 }
 

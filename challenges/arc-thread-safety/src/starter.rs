@@ -103,21 +103,18 @@ impl AtomicCounter {
     /// Gets the current value of the counter.
     pub fn get(&self) -> usize {
         // TODO: Load and return the current value
-        // Hint: use load with Ordering::SeqCst
         unimplemented!()
     }
 
     /// Increments the counter by 1 and returns the previous value.
     pub fn increment(&self) -> usize {
         // TODO: Atomically increment and return previous value
-        // Hint: use fetch_add with Ordering::SeqCst
         unimplemented!()
     }
 
     /// Decrements the counter by 1 and returns the previous value.
     pub fn decrement(&self) -> usize {
         // TODO: Atomically decrement and return previous value
-        // Hint: use fetch_sub with Ordering::SeqCst
         unimplemented!()
     }
 

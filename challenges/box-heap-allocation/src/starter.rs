@@ -11,7 +11,6 @@ pub fn boxed_value<T>(value: T) -> Box<T> {
 /// Takes ownership of a `Box<T>` and returns the inner value.
 pub fn unbox<T>(boxed: Box<T>) -> T {
     // TODO: Dereference the box to get the inner value
-    // Hint: Use the * operator
     unimplemented!()
 }
 
@@ -45,7 +44,6 @@ impl List {
     /// Returns the number of elements in the list.
     pub fn len(&self) -> usize {
         // TODO: Recursively count elements
-        // Nil has length 0, Cons has length 1 + tail.len()
         unimplemented!()
     }
 
@@ -58,14 +56,12 @@ impl List {
     /// Returns the sum of all elements in the list.
     pub fn sum(&self) -> i32 {
         // TODO: Recursively sum elements
-        // Nil has sum 0, Cons has sum value + tail.sum()
         unimplemented!()
     }
 
     /// Converts the list to a Vec, preserving order.
     pub fn to_vec(&self) -> Vec<i32> {
         // TODO: Convert the list to a vector
-        // Hint: Match on self, for Cons create a vec with the value and extend with tail.to_vec()
         unimplemented!()
     }
 }
@@ -120,7 +116,6 @@ where
     F: FnOnce(&mut T),
 {
     // TODO: Apply the closure to the inner value
-    // Hint: Use boxed.as_mut() to get a mutable reference to the inner value
     unimplemented!()
 }
 
