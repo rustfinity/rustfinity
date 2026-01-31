@@ -22,7 +22,7 @@ Just like `From` and `Into`, implementing `TryFrom` automatically gives you `Try
 
 Implement the following types and their `TryFrom` implementations:
 
-### 1. `PositiveNumber`
+**1. `PositiveNumber`**
 
 A wrapper around `i32` that only accepts positive numbers (greater than 0).
 
@@ -30,7 +30,7 @@ A wrapper around `i32` that only accepts positive numbers (greater than 0).
 - Return `Err("number must be positive")` if the value is 0 or negative
 - The inner value should be accessible via the `.0` field
 
-### 2. `Percentage`
+**2. `Percentage`**
 
 A wrapper around `u8` that only accepts values from 0 to 100 (inclusive).
 
@@ -38,7 +38,7 @@ A wrapper around `u8` that only accepts values from 0 to 100 (inclusive).
 - Return `Err("percentage must be between 0 and 100")` if out of range
 - The inner value should be accessible via the `.0` field
 
-### 3. `NonEmptyString`
+**3. `NonEmptyString`**
 
 A wrapper around `String` that ensures the string is not empty.
 
@@ -47,7 +47,7 @@ A wrapper around `String` that ensures the string is not empty.
 - Return `Err("string cannot be empty")` if the string is empty
 - The inner value should be accessible via the `.0` field
 
-### 4. `EvenNumber`
+**4. `EvenNumber`**
 
 A wrapper around `i32` that only accepts even numbers.
 
@@ -55,7 +55,7 @@ A wrapper around `i32` that only accepts even numbers.
 - Return `Err("number must be even")` if the number is odd
 - The inner value should be accessible via the `.0` field
 
-### 5. `AsciiChar`
+**5. `AsciiChar`**
 
 A wrapper around `char` that only accepts ASCII characters.
 

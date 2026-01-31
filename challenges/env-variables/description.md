@@ -50,35 +50,35 @@ let debug = env::var("DEBUG").unwrap_or_else(|_| String::from("false"));
 
 Implement the following functions to work with environment variables and process information:
 
-### 1. `get_env_var(key: &str) -> Option<String>`
+**1. `get_env_var(key: &str) -> Option<String>`**
 
 Get an environment variable by key. Return `None` if it doesn't exist or contains invalid Unicode.
 
-### 2. `get_env_var_or_default(key: &str, default: &str) -> String`
+**2. `get_env_var_or_default(key: &str, default: &str) -> String`**
 
 Get an environment variable, returning a default value if it doesn't exist.
 
-### 3. `get_multiple_env_vars(keys: &[&str]) -> Vec<(String, Option<String>)>`
+**3. `get_multiple_env_vars(keys: &[&str]) -> Vec<(String, Option<String>)>`**
 
 Get multiple environment variables at once. Return a vector of (key, value) pairs where value is `None` if the variable doesn't exist.
 
-### 4. `parse_env_var<T: std::str::FromStr>(key: &str) -> Option<T>`
+**4. `parse_env_var<T: std::str::FromStr>(key: &str) -> Option<T>`**
 
 Get an environment variable and parse it to type T. Return `None` if the variable doesn't exist or can't be parsed.
 
-### 5. `get_args() -> Vec<String>`
+**5. `get_args() -> Vec<String>`**
 
 Get all command-line arguments as a vector of strings.
 
-### 6. `get_current_dir() -> Option<String>`
+**6. `get_current_dir() -> Option<String>`**
 
 Get the current working directory as a string. Return `None` if it can't be determined or converted to UTF-8.
 
-### 7. `get_current_exe_name() -> Option<String>`
+**7. `get_current_exe_name() -> Option<String>`**
 
 Get the name of the current executable (just the file name, not the full path). Return `None` if it can't be determined.
 
-### 8. `env_var_is_set(key: &str) -> bool`
+**8. `env_var_is_set(key: &str) -> bool`**
 
 Check if an environment variable is set (even if it's an empty string).
 

@@ -70,35 +70,35 @@ let halved = d1 / 2;         // 2.5 seconds
 
 Implement the following functions to work with `Duration`:
 
-### 1. `from_minutes(minutes: u64) -> Duration`
+**1. `from_minutes(minutes: u64) -> Duration`**
 
 Create a Duration from a number of minutes.
 
-### 2. `from_hours(hours: u64) -> Duration`
+**2. `from_hours(hours: u64) -> Duration`**
 
 Create a Duration from a number of hours.
 
-### 3. `to_minutes(duration: Duration) -> u64`
+**3. `to_minutes(duration: Duration) -> u64`**
 
 Convert a Duration to total minutes (truncated).
 
-### 4. `to_hours(duration: Duration) -> u64`
+**4. `to_hours(duration: Duration) -> u64`**
 
 Convert a Duration to total hours (truncated).
 
-### 5. `format_duration(duration: Duration) -> String`
+**5. `format_duration(duration: Duration) -> String`**
 
 Format a duration as "Xh Ym Zs" (e.g., "2h 30m 45s"). Omit zero components at the start (e.g., "30m 45s" not "0h 30m 45s"), but always show seconds.
 
-### 6. `add_durations(durations: &[Duration]) -> Duration`
+**6. `add_durations(durations: &[Duration]) -> Duration`**
 
 Sum all durations in a slice. Return `Duration::ZERO` for an empty slice.
 
-### 7. `average_duration(durations: &[Duration]) -> Option<Duration>`
+**7. `average_duration(durations: &[Duration]) -> Option<Duration>`**
 
 Calculate the average duration. Return `None` for an empty slice.
 
-### 8. `is_longer_than(d1: Duration, d2: Duration) -> bool`
+**8. `is_longer_than(d1: Duration, d2: Duration) -> bool`**
 
 Check if the first duration is strictly longer than the second.
 
