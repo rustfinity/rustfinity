@@ -38,8 +38,7 @@ pub struct TaggedValue<T> {
 /// Since `T` implements `Copy`, the value is copied rather than moved,
 /// allowing us to return two independent copies.
 pub fn duplicate_copy<T: Copy>(value: T) -> (T, T) {
-    // TODO: Return a tuple with two copies of the value
-    // Hint: Since T is Copy, you can use the value multiple times
+    // TODO
     todo!()
 }
 
@@ -54,8 +53,7 @@ pub fn duplicate_clone<T: Clone>(value: &T) -> T {
 
 /// Clones all items in a slice into a new Vec.
 pub fn clone_vec<T: Clone>(items: &[T]) -> Vec<T> {
-    // TODO: Clone all items from the slice into a new Vec
-    // Hint: You can use .to_vec() or .iter().cloned().collect()
+    // TODO
     todo!()
 }
 

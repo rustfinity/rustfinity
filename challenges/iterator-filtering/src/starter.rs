@@ -2,8 +2,7 @@
 ///
 /// Use the `.filter()` method with a predicate that checks for evenness.
 pub fn filter_even(numbers: &[i32]) -> Vec<i32> {
-    // TODO: Use .iter().filter().cloned().collect() to keep only even numbers
-    // Hint: x % 2 == 0 checks if x is even
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -14,8 +13,7 @@ pub fn filter_by_predicate<F>(numbers: &[i32], predicate: F) -> Vec<i32>
 where
     F: Fn(&i32) -> bool,
 {
-    // TODO: Use .iter().filter() with the provided predicate
-    // Remember: filter expects a predicate that takes &&i32 or &i32
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -23,8 +21,7 @@ where
 ///
 /// Use filter_map to combine parsing and filtering in one step.
 pub fn parse_valid_numbers(strings: &[&str]) -> Vec<i32> {
-    // TODO: Use .iter().filter_map() with .parse::<i32>().ok()
-    // .ok() converts Result to Option (Some for Ok, None for Err)
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -36,7 +33,7 @@ where
     T: Clone,
     F: Fn(T) -> Option<U>,
 {
-    // TODO: Use .iter().cloned().filter_map(f).collect()
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -44,7 +41,7 @@ where
 ///
 /// Stops at the first non-positive element.
 pub fn take_while_positive(numbers: &[i32]) -> Vec<i32> {
-    // TODO: Use .iter().take_while() with a predicate checking x > 0
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -52,13 +49,13 @@ pub fn take_while_positive(numbers: &[i32]) -> Vec<i32> {
 ///
 /// After the first non-negative element, takes all remaining elements.
 pub fn skip_while_negative(numbers: &[i32]) -> Vec<i32> {
-    // TODO: Use .iter().skip_while() with a predicate checking x < 0
+    // TODO: Implement this function
     unimplemented!()
 }
 
 /// Filters numbers to keep only those within a range [min, max] inclusive.
 pub fn filter_in_range(numbers: &[i32], min: i32, max: i32) -> Vec<i32> {
-    // TODO: Use .filter() with a predicate checking min <= x && x <= max
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -69,7 +66,7 @@ pub fn first_matching<T: Clone, F>(items: &[T], predicate: F) -> Option<T>
 where
     F: Fn(&T) -> bool,
 {
-    // TODO: Use .iter().find() or .filter().next() with .cloned()
+    // TODO: Implement this function
     unimplemented!()
 }
 

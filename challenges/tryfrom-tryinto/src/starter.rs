@@ -3,50 +3,34 @@
 pub struct PositiveNumber(pub i32);
 
 // TODO: Implement TryFrom<i32> for PositiveNumber
-// - Return Ok(PositiveNumber(value)) if value > 0
-// - Return Err("number must be positive") otherwise
-// Hint: The Error type should be &'static str
 
 /// A wrapper around `u8` that only accepts values from 0 to 100 (inclusive).
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct Percentage(pub u8);
 
 // TODO: Implement TryFrom<i32> for Percentage
-// - Return Ok(Percentage(value as u8)) if 0 <= value <= 100
-// - Return Err("percentage must be between 0 and 100") otherwise
 
 /// A wrapper around `String` that ensures the string is not empty.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct NonEmptyString(pub String);
 
 // TODO: Implement TryFrom<String> for NonEmptyString
-// - Return Err("string cannot be empty") if the string is empty
-// - Return Ok(NonEmptyString(value)) otherwise
 
 // TODO: Implement TryFrom<&str> for NonEmptyString
-// - Same logic as above, but convert &str to String
 
 /// A wrapper around `i32` that only accepts even numbers.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct EvenNumber(pub i32);
 
 // TODO: Implement TryFrom<i32> for EvenNumber
-// - Return Ok(EvenNumber(value)) if value is even (value % 2 == 0)
-// - Return Err("number must be even") otherwise
-// Note: 0 is even, negative even numbers are also valid
 
 /// A wrapper around `char` that only accepts ASCII characters.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct AsciiChar(pub char);
 
 // TODO: Implement TryFrom<char> for AsciiChar
-// - Return Ok(AsciiChar(value)) if value.is_ascii() is true
-// - Return Err("character must be ASCII") otherwise
 
 // TODO: Implement TryFrom<u8> for AsciiChar
-// - Convert the byte to a char using char::from(value)
-// - Then check if it's ASCII
-// Note: u8 values 0-127 are valid ASCII, 128-255 are not
 
 // Example usage
 pub fn main() {

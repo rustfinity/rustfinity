@@ -2,13 +2,13 @@
 ///
 /// The sequence starts with 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
 pub struct Fibonacci {
-    // TODO: Add fields to track the current state of the sequence
+    // TODO: Add fields
 }
 
 impl Fibonacci {
     /// Creates a new Fibonacci iterator starting from 0.
     pub fn new() -> Self {
-        // TODO: Initialize the Fibonacci iterator
+        // TODO: Implement this function
         todo!()
     }
 }
@@ -17,7 +17,7 @@ impl Iterator for Fibonacci {
     type Item = u64;
 
     fn next(&mut self) -> Option<Self::Item> {
-        // TODO: Return the current Fibonacci number and advance the state
+        // TODO: Implement this function
         todo!()
     }
 }
@@ -26,7 +26,7 @@ impl Iterator for Fibonacci {
 ///
 /// Supports both positive and negative steps for ascending and descending ranges.
 pub struct StepRange {
-    // TODO: Add fields to track current position, end, and step
+    // TODO: Add fields
 }
 
 impl StepRange {
@@ -38,7 +38,7 @@ impl StepRange {
     /// * `end` - The ending value (exclusive)
     /// * `step` - The step size (positive or negative)
     pub fn new(start: i32, end: i32, step: i32) -> Self {
-        // TODO: Initialize the StepRange iterator
+        // TODO: Implement this function
         todo!()
     }
 }
@@ -47,15 +47,14 @@ impl Iterator for StepRange {
     type Item = i32;
 
     fn next(&mut self) -> Option<Self::Item> {
-        // TODO: Return the current value and step forward
-        // Handle both positive and negative steps correctly
+        // TODO: Implement this function
         todo!()
     }
 }
 
 /// An iterator that cycles through a slice a fixed number of times.
 pub struct CycleN<T> {
-    // TODO: Add fields to store items, track position, and count remaining cycles
+    // TODO: Add fields
     _marker: std::marker::PhantomData<T>,
 }
 
@@ -67,7 +66,7 @@ impl<T: Clone> CycleN<T> {
     /// * `items` - The slice of items to cycle through
     /// * `times` - How many complete cycles to perform
     pub fn new(_items: &[T], _times: usize) -> Self {
-        // TODO: Initialize the CycleN iterator
+        // TODO: Implement this function
         todo!()
     }
 }
@@ -76,8 +75,7 @@ impl<T: Clone> Iterator for CycleN<T> {
     type Item = T;
 
     fn next(&mut self) -> Option<Self::Item> {
-        // TODO: Return the next item in the cycle
-        // When reaching the end of items, wrap around and decrement remaining cycles
+        // TODO: Implement this function
         todo!()
     }
 }
@@ -90,14 +88,13 @@ impl<T: Clone> Iterator for CycleN<T> {
 ///
 /// The sequence stops when it reaches 1.
 pub struct Collatz {
-    // TODO: Add a field to track the current value
-    // Consider using Option<u64> to handle the "exhausted" state
+    // TODO: Add fields
 }
 
 impl Collatz {
     /// Creates a new Collatz iterator starting from the given number.
     pub fn new(start: u64) -> Self {
-        // TODO: Initialize the Collatz iterator
+        // TODO: Implement this function
         todo!()
     }
 }
@@ -106,15 +103,14 @@ impl Iterator for Collatz {
     type Item = u64;
 
     fn next(&mut self) -> Option<Self::Item> {
-        // TODO: Yield the current value, then compute the next value
-        // Stop after yielding 1
+        // TODO: Implement this function
         todo!()
     }
 }
 
 /// An iterator that yields overlapping windows of a fixed size.
 pub struct Windows<T> {
-    // TODO: Add fields to store items, window size, and current position
+    // TODO: Add fields
     _marker: std::marker::PhantomData<T>,
 }
 
@@ -126,7 +122,7 @@ impl<T: Clone> Windows<T> {
     /// * `items` - The slice to create windows from
     /// * `size` - The size of each window
     pub fn new(_items: &[T], _size: usize) -> Self {
-        // TODO: Initialize the Windows iterator
+        // TODO: Implement this function
         todo!()
     }
 }
@@ -135,8 +131,7 @@ impl<T: Clone> Iterator for Windows<T> {
     type Item = Vec<T>;
 
     fn next(&mut self) -> Option<Self::Item> {
-        // TODO: Return a window of `size` elements starting at current position
-        // Advance the position by 1 for overlapping windows
+        // TODO: Implement this function
         todo!()
     }
 }
@@ -146,7 +141,7 @@ impl<T: Clone> Iterator for Windows<T> {
 /// The function takes the current state and returns `Some(next_state)` to continue
 /// or `None` to stop. Each state value is yielded, including the initial value.
 pub struct Unfold<T, F> {
-    // TODO: Add fields for state, the function, and tracking first yield
+    // TODO: Add fields
     _marker: std::marker::PhantomData<(T, F)>,
 }
 
@@ -161,7 +156,7 @@ where
     /// * `initial` - The initial state value (will be yielded first)
     /// * `f` - A function that takes the current state and returns the next state
     pub fn new(_initial: T, _f: F) -> Self {
-        // TODO: Initialize the Unfold iterator
+        // TODO: Implement this function
         todo!()
     }
 }
@@ -173,9 +168,7 @@ where
     type Item = T;
 
     fn next(&mut self) -> Option<Self::Item> {
-        // TODO: On first call, yield the initial value
-        // On subsequent calls, apply the function to get the next state
-        // Return None when the function returns None
+        // TODO: Implement this function
         todo!()
     }
 }

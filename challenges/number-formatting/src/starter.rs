@@ -4,8 +4,7 @@
 /// If the number is wider than the specified width, it is not truncated.
 /// Negative numbers include the minus sign before the zeros.
 pub fn format_padded(num: i32, width: usize) -> String {
-    // TODO: Use the format! macro with zero-padding
-    // Hint: format!("{:0width$}", num, width = w)
+    // TODO
     todo!()
 }
 
@@ -14,8 +13,7 @@ pub fn format_padded(num: i32, width: usize) -> String {
 /// The number is right-aligned and padded with spaces on the left.
 /// If the number is wider than the specified width, it is not truncated.
 pub fn format_aligned(num: i32, width: usize) -> String {
-    // TODO: Use the format! macro with right alignment
-    // Hint: format!("{:>width$}", num, width = w)
+    // TODO
     todo!()
 }
 
@@ -23,8 +21,7 @@ pub fn format_aligned(num: i32, width: usize) -> String {
 ///
 /// Returns the binary representation as a string without the "0b" prefix.
 pub fn format_binary(num: u32) -> String {
-    // TODO: Use the format! macro with binary formatting
-    // Hint: {:b} formats as binary
+    // TODO
     todo!()
 }
 
@@ -32,8 +29,7 @@ pub fn format_binary(num: u32) -> String {
 ///
 /// Returns the binary representation as a string with the "0b" prefix.
 pub fn format_binary_prefixed(num: u32) -> String {
-    // TODO: Use the format! macro with binary formatting and alternate flag
-    // Hint: {:#b} adds the "0b" prefix
+    // TODO
     todo!()
 }
 
@@ -42,8 +38,7 @@ pub fn format_binary_prefixed(num: u32) -> String {
 /// Returns the hexadecimal representation as a string without the "0x" prefix.
 /// Letters a-f are lowercase.
 pub fn format_hex_lower(num: u32) -> String {
-    // TODO: Use the format! macro with lowercase hex formatting
-    // Hint: {:x} formats as lowercase hex
+    // TODO
     todo!()
 }
 
@@ -52,8 +47,7 @@ pub fn format_hex_lower(num: u32) -> String {
 /// Returns the hexadecimal representation as a string with the "0x" prefix.
 /// Letters A-F are uppercase.
 pub fn format_hex_upper_prefixed(num: u32) -> String {
-    // TODO: Use the format! macro with uppercase hex formatting and alternate flag
-    // Hint: {:#X} gives "0x" prefix with uppercase letters
+    // TODO
     todo!()
 }
 
@@ -61,8 +55,7 @@ pub fn format_hex_upper_prefixed(num: u32) -> String {
 ///
 /// Returns the octal representation as a string without the "0o" prefix.
 pub fn format_octal(num: u32) -> String {
-    // TODO: Use the format! macro with octal formatting
-    // Hint: {:o} formats as octal
+    // TODO
     todo!()
 }
 
@@ -71,8 +64,7 @@ pub fn format_octal(num: u32) -> String {
 /// Returns a string representation with exactly the specified precision.
 /// Rounds the number if necessary.
 pub fn format_float_precision(num: f64, precision: usize) -> String {
-    // TODO: Use the format! macro with precision specifier
-    // Hint: format!("{:.prec$}", num, prec = p)
+    // TODO
     todo!()
 }
 
@@ -80,8 +72,7 @@ pub fn format_float_precision(num: f64, precision: usize) -> String {
 ///
 /// Returns a string representation in lowercase scientific notation (e.g., "1.23e4").
 pub fn format_scientific(num: f64) -> String {
-    // TODO: Use the format! macro with scientific notation
-    // Hint: {:e} formats in scientific notation
+    // TODO
     todo!()
 }
 
@@ -90,9 +81,7 @@ pub fn format_scientific(num: f64) -> String {
 /// Returns a string in the format "$X.XX" with exactly 2 decimal places.
 /// Negative amounts are displayed as "-$X.XX".
 pub fn format_currency(amount: f64) -> String {
-    // TODO: Handle negative numbers specially
-    // Hint: Use abs() for the absolute value
-    // Hint: Check if amount < 0.0 and format differently
+    // TODO
     todo!()
 }
 

@@ -79,9 +79,7 @@ pub fn collect_with_trace<T: Clone + std::fmt::Debug>(
     items: &[T],
     trace: &mut Vec<String>,
 ) -> Vec<T> {
-    // TODO: Use .inspect() to push a formatted string to trace for each element
-    // Use format!("{:?}", x) to create the debug string
-    // Then collect the elements
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -96,9 +94,7 @@ pub fn collect_with_trace<T: Clone + std::fmt::Debug>(
 /// # Returns
 /// The final sum
 pub fn sum_with_running_total(numbers: &[i32], totals: &mut Vec<i32>) -> i32 {
-    // TODO: Use a mutable running_total variable
-    // Use inspect() to update the running total and push to totals
-    // Then sum the iterator
+    // TODO: Implement this function
     unimplemented!()
 }
 

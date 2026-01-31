@@ -4,37 +4,30 @@ use std::io::{self, BufWriter, Write};
 /// Write a string to a file, creating or overwriting it.
 pub fn write_string(path: &str, content: &str) -> Result<(), io::Error> {
     // TODO: Write the content string to the file at path
-    // Hint: Use std::fs::write for the simplest solution
     unimplemented!()
 }
 
 /// Write raw bytes to a file, creating or overwriting it.
 pub fn write_bytes(path: &str, data: &[u8]) -> Result<(), io::Error> {
     // TODO: Write the bytes to the file at path
-    // Hint: std::fs::write works with both strings and bytes
     unimplemented!()
 }
 
 /// Append a string to a file, creating it if it doesn't exist.
 pub fn append_string(path: &str, content: &str) -> Result<(), io::Error> {
     // TODO: Open the file in append mode and write the content
-    // Hint: Use OpenOptions::new().append(true).create(true).open(path)
-    // Then use write_all to write the bytes
     unimplemented!()
 }
 
 /// Write multiple lines to a file, each followed by a newline.
 pub fn write_lines(path: &str, lines: &[&str]) -> Result<(), io::Error> {
     // TODO: Create the file and write each line followed by a newline
-    // Hint: Use File::create and writeln! macro in a loop
     unimplemented!()
 }
 
 /// Write multiple chunks to a file using buffered writing for efficiency.
 pub fn write_with_buffer(path: &str, chunks: &[&str]) -> Result<(), io::Error> {
     // TODO: Create a BufWriter and write all chunks
-    // Hint: Use BufWriter::new(File::create(path)?)
-    // Write each chunk with write_all, then flush the buffer
     unimplemented!()
 }
 

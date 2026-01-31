@@ -20,7 +20,6 @@ pub fn get_env_var_or_default(key: &str, default: &str) -> String {
 /// Returns a vector of (key, value) pairs where value is `None` if the variable doesn't exist.
 pub fn get_multiple_env_vars(keys: &[&str]) -> Vec<(String, Option<String>)> {
     // TODO: Iterate over keys and collect (key, value) pairs
-    // Use get_env_var or env::var().ok() for each key
     unimplemented!()
 }
 
@@ -29,7 +28,6 @@ pub fn get_multiple_env_vars(keys: &[&str]) -> Vec<(String, Option<String>)> {
 /// Returns `None` if the variable doesn't exist or can't be parsed.
 pub fn parse_env_var<T: FromStr>(key: &str) -> Option<T> {
     // TODO: Get the env var, then parse it
-    // Chain .ok()?.parse().ok() to handle both missing and parse errors
     unimplemented!()
 }
 
@@ -44,7 +42,6 @@ pub fn get_args() -> Vec<String> {
 /// Returns `None` if the current directory can't be determined or converted to UTF-8.
 pub fn get_current_dir() -> Option<String> {
     // TODO: Use env::current_dir() and convert PathBuf to String
-    // Remember to handle the Result and Option conversions
     unimplemented!()
 }
 
@@ -53,8 +50,6 @@ pub fn get_current_dir() -> Option<String> {
 /// Returns `None` if the executable path can't be determined.
 pub fn get_current_exe_name() -> Option<String> {
     // TODO: Use env::current_exe() to get the path
-    // Then use .file_name() to extract just the name
-    // Convert OsStr to String
     unimplemented!()
 }
 
@@ -63,7 +58,6 @@ pub fn get_current_exe_name() -> Option<String> {
 /// Returns `true` if the variable is set, even if it's an empty string.
 pub fn env_var_is_set(key: &str) -> bool {
     // TODO: Use env::var_os() which returns Option<OsString>
-    // This can detect if a variable is set regardless of content
     unimplemented!()
 }
 

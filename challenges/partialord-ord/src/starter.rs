@@ -42,8 +42,7 @@ pub enum Temperature {
 impl Temperature {
     /// Converts the temperature to Celsius.
     pub fn to_celsius(&self) -> f64 {
-        // TODO: Implement conversion
-        // Fahrenheit to Celsius: (F - 32) * 5/9
+        // TODO
         unimplemented!()
     }
 }
@@ -92,7 +91,7 @@ impl Player {
 ///
 /// Returns `None` if the slice is empty.
 pub fn find_min<T: Ord>(items: &[T]) -> Option<&T> {
-    // TODO: Use iterator methods to find the minimum element
+    // TODO
     unimplemented!()
 }
 
@@ -100,7 +99,7 @@ pub fn find_min<T: Ord>(items: &[T]) -> Option<&T> {
 ///
 /// Returns `None` if the slice is empty.
 pub fn find_max<T: Ord>(items: &[T]) -> Option<&T> {
-    // TODO: Use iterator methods to find the maximum element
+    // TODO
     unimplemented!()
 }
 
@@ -109,7 +108,7 @@ pub fn find_max<T: Ord>(items: &[T]) -> Option<&T> {
 /// Returns `true` if the slice is sorted (each element <= the next).
 /// Empty slices and single-element slices are considered sorted.
 pub fn is_sorted<T: Ord>(items: &[T]) -> bool {
-    // TODO: Check if each element is <= the next
+    // TODO
     unimplemented!()
 }
 
@@ -119,7 +118,7 @@ pub fn is_sorted<T: Ord>(items: &[T]) -> bool {
 /// If the value is greater than max, returns max.
 /// Otherwise, returns the value itself.
 pub fn clamp<'a, T: Ord>(value: &'a T, min: &'a T, max: &'a T) -> &'a T {
-    // TODO: Return the appropriate reference based on comparison
+    // TODO
     unimplemented!()
 }
 

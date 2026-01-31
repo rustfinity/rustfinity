@@ -29,7 +29,6 @@ impl CaseInsensitiveString {
 }
 
 // TODO: Implement PartialEq for CaseInsensitiveString
-// Hint: Use to_lowercase() to compare strings case-insensitively
 
 // TODO: Implement Eq for CaseInsensitiveString
 
@@ -44,7 +43,6 @@ pub struct ApproximateFloat(pub f64);
 pub const EPSILON: f64 = 0.0001;
 
 // TODO: Implement PartialEq for ApproximateFloat
-// Hint: Use (self.0 - other.0).abs() < EPSILON
 
 /// A unique user identifier that can be used as a HashMap key.
 ///
@@ -82,27 +80,24 @@ pub enum Status {
 /// A single-element slice also returns `true`.
 ///
 /// TODO: Implement this function.
-/// Hint: Handle empty case, then compare all elements to the first.
 pub fn are_all_equal<T: Eq>(items: &[T]) -> bool {
-    // TODO: Implement
+    // TODO
     unimplemented!()
 }
 
 /// Counts how many elements in the slice equal the target value.
 ///
 /// TODO: Implement this function.
-/// Hint: Use iterator filter and count.
 pub fn count_matches<T: PartialEq>(items: &[T], target: &T) -> usize {
-    // TODO: Implement
+    // TODO
     unimplemented!()
 }
 
 /// Returns the index of the first element that equals the target, or `None`.
 ///
 /// TODO: Implement this function.
-/// Hint: Use iterator position method.
 pub fn find_first_match<T: PartialEq>(items: &[T], target: &T) -> Option<usize> {
-    // TODO: Implement
+    // TODO
     unimplemented!()
 }
 

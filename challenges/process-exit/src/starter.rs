@@ -62,7 +62,6 @@ pub fn is_failure_code(code: u8) -> bool {
 /// - Any other value: "unknown exit code: N"
 pub fn describe_exit_code(code: u8) -> String {
     // TODO: Use a match expression to return the appropriate description
-    // For unknown codes, use format!("unknown exit code: {}", code)
     unimplemented!()
 }
 
@@ -72,9 +71,6 @@ pub fn describe_exit_code(code: u8) -> String {
 /// Returns Err with an appropriate message otherwise.
 pub fn validate_exit_code(code: Option<u8>) -> Result<u8, String> {
     // TODO: Match on the Option
-    // - Some(0) -> Ok(0)
-    // - Some(n) -> Err("process failed with code N")
-    // - None -> Err("process did not return an exit code")
     unimplemented!()
 }
 

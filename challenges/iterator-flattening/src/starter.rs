@@ -8,7 +8,7 @@
 ///
 /// A single vector containing all elements from all inner vectors
 pub fn flatten_nested(nested: Vec<Vec<i32>>) -> Vec<i32> {
-    // TODO: Use .flatten() to combine all inner vectors into one
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -22,7 +22,7 @@ pub fn flatten_nested(nested: Vec<Vec<i32>>) -> Vec<i32> {
 ///
 /// A vector containing only the values that were Some
 pub fn flatten_options(options: Vec<Option<i32>>) -> Vec<i32> {
-    // TODO: Use .flatten() on Options - it extracts Some values and discards None
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -36,7 +36,7 @@ pub fn flatten_options(options: Vec<Option<i32>>) -> Vec<i32> {
 ///
 /// A vector containing only the values that were Ok
 pub fn flatten_results(results: Vec<Result<i32, &str>>) -> Vec<i32> {
-    // TODO: Use .flatten() on Results - it extracts Ok values and discards Err
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -50,7 +50,7 @@ pub fn flatten_results(results: Vec<Result<i32, &str>>) -> Vec<i32> {
 ///
 /// A vector of all characters from all words concatenated
 pub fn chars_from_words(words: &[&str]) -> Vec<char> {
-    // TODO: Use .flat_map() with .chars() to get all characters
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -64,7 +64,7 @@ pub fn chars_from_words(words: &[&str]) -> Vec<char> {
 ///
 /// A vector containing all integers from all ranges
 pub fn expand_ranges(ranges: &[(i32, i32)]) -> Vec<i32> {
-    // TODO: Use .flat_map() with the range syntax start..=end
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -78,7 +78,7 @@ pub fn expand_ranges(ranges: &[(i32, i32)]) -> Vec<i32> {
 ///
 /// A vector of vectors (one level less nested)
 pub fn flatten_to_depth_one(nested: Vec<Vec<Vec<i32>>>) -> Vec<Vec<i32>> {
-    // TODO: Call .flatten() only once to remove just the outer layer
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -92,7 +92,7 @@ pub fn flatten_to_depth_one(nested: Vec<Vec<Vec<i32>>>) -> Vec<Vec<i32>> {
 ///
 /// A vector of all words from all lines
 pub fn words_from_lines(lines: &[&str]) -> Vec<String> {
-    // TODO: Use .flat_map() with .split_whitespace() to get all words
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -111,7 +111,7 @@ where
     T: Clone,
     F: Fn(&T) -> bool,
 {
-    // TODO: First flatten, then filter with the predicate
+    // TODO: Implement this function
     unimplemented!()
 }
 

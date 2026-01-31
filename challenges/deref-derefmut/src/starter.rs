@@ -15,11 +15,8 @@ impl<T> MyBox<T> {
 }
 
 // TODO: Implement Deref for MyBox<T>
-// - Set Target = T
-// - Return a reference to self.value
 
 // TODO: Implement DerefMut for MyBox<T>
-// - Return a mutable reference to self.value
 
 /// A wrapper that tracks how many times the inner value has been accessed via Deref.
 #[derive(Debug)]
@@ -44,9 +41,6 @@ impl<T> CachedValue<T> {
 }
 
 // TODO: Implement Deref for CachedValue<T>
-// - Set Target = T
-// - Increment the access_count using Cell::set() before returning
-// - Return a reference to self.value
 
 /// A Vec wrapper that guarantees at least one element.
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -77,11 +71,8 @@ impl<T> NonEmptyVec<T> {
 }
 
 // TODO: Implement Deref for NonEmptyVec<T>
-// - Set Target = [T] (a slice)
-// - Return &self.inner (which coerces to &[T])
 
 // TODO: Implement DerefMut for NonEmptyVec<T>
-// - Return &mut self.inner (which coerces to &mut [T])
 
 /// A string wrapper that always stores content in uppercase.
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -104,14 +95,8 @@ impl UppercaseString {
 }
 
 // TODO: Implement Deref for UppercaseString
-// - Set Target = str
-// - Return &self.inner (which coerces to &str)
-// Note: Do NOT implement DerefMut - it would allow bypassing the uppercase invariant!
 
 /// Describes the length of any type that derefs to str.
-// TODO: Implement this function
-// - It should accept any type T that implements Deref<Target = str>
-// - Return a String like "Length: 5"
 pub fn describe_length<T: Deref<Target = str>>(s: &T) -> String {
     // TODO: Use s.len() (via deref coercion) and format the result
     unimplemented!()

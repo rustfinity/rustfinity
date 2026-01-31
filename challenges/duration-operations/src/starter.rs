@@ -3,28 +3,24 @@ use std::time::Duration;
 /// Creates a Duration from a number of minutes.
 pub fn from_minutes(minutes: u64) -> Duration {
     // TODO: Implement this function
-    // Hint: One minute is 60 seconds
     unimplemented!()
 }
 
 /// Creates a Duration from a number of hours.
 pub fn from_hours(hours: u64) -> Duration {
     // TODO: Implement this function
-    // Hint: One hour is 3600 seconds
     unimplemented!()
 }
 
 /// Converts a Duration to total minutes (truncated).
 pub fn to_minutes(duration: Duration) -> u64 {
     // TODO: Implement this function
-    // Hint: Use as_secs() and divide by 60
     unimplemented!()
 }
 
 /// Converts a Duration to total hours (truncated).
 pub fn to_hours(duration: Duration) -> u64 {
     // TODO: Implement this function
-    // Hint: Use as_secs() and divide by 3600
     unimplemented!()
 }
 
@@ -33,8 +29,6 @@ pub fn to_hours(duration: Duration) -> u64 {
 /// but always shows seconds.
 pub fn format_duration(duration: Duration) -> String {
     // TODO: Implement this function
-    // Hint: Calculate hours, minutes, seconds using division and modulo
-    // Use format!() to build the string
     unimplemented!()
 }
 
@@ -42,7 +36,6 @@ pub fn format_duration(duration: Duration) -> String {
 /// Returns Duration::ZERO for an empty slice.
 pub fn add_durations(durations: &[Duration]) -> Duration {
     // TODO: Implement this function
-    // Hint: Use iter().fold() with Duration::ZERO as the initial value
     unimplemented!()
 }
 
@@ -50,15 +43,12 @@ pub fn add_durations(durations: &[Duration]) -> Duration {
 /// Returns None for an empty slice.
 pub fn average_duration(durations: &[Duration]) -> Option<Duration> {
     // TODO: Implement this function
-    // Hint: Sum all durations, then divide by count
-    // Return None for empty slice
     unimplemented!()
 }
 
 /// Checks if the first duration is strictly longer than the second.
 pub fn is_longer_than(d1: Duration, d2: Duration) -> bool {
     // TODO: Implement this function
-    // Hint: Duration implements Ord, so you can use comparison operators
     unimplemented!()
 }
 

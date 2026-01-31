@@ -36,7 +36,7 @@ impl CaseInsensitiveString {
 
 impl PartialEq for CaseInsensitiveString {
     fn eq(&self, other: &Self) -> bool {
-        // TODO: Compare lowercase forms
+        // TODO
         todo!()
     }
 }
@@ -45,7 +45,7 @@ impl Eq for CaseInsensitiveString {}
 
 impl Hash for CaseInsensitiveString {
     fn hash<H: Hasher>(&self, state: &mut H) {
-        // TODO: Hash the lowercase form to ensure equal values hash the same
+        // TODO
         todo!()
     }
 }
@@ -75,7 +75,7 @@ impl Document {
 
 impl PartialEq for Document {
     fn eq(&self, other: &Self) -> bool {
-        // TODO: Compare only the id field
+        // TODO
         todo!()
     }
 }
@@ -84,7 +84,7 @@ impl Eq for Document {}
 
 impl Hash for Document {
     fn hash<H: Hasher>(&self, state: &mut H) {
-        // TODO: Hash only the id field to match equality semantics
+        // TODO
         todo!()
     }
 }
@@ -109,7 +109,7 @@ impl Rgb {
 ///
 /// Uses a `HashSet` internally to efficiently count distinct values.
 pub fn count_unique<T: Hash + Eq>(items: &[T]) -> usize {
-    // TODO: Collect items into a HashSet and return its length
+    // TODO
     todo!()
 }
 
@@ -118,7 +118,7 @@ pub fn count_unique<T: Hash + Eq>(items: &[T]) -> usize {
 /// Each duplicate element appears exactly once in the result, even if
 /// it appears multiple times in the input.
 pub fn find_duplicates<T: Hash + Eq + Clone>(items: &[T]) -> Vec<T> {
-    // TODO: Count occurrences with a HashMap, then filter for count > 1
+    // TODO
     todo!()
 }
 

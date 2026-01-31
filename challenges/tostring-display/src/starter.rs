@@ -85,7 +85,6 @@ impl fmt::Display for Person {
 /// - ["hello"] -> "[hello]"
 pub fn list_to_string<T: fmt::Display>(items: &[T]) -> String {
     // TODO: Iterate over items, convert each to string, and join with ", "
-    // Return the result wrapped in square brackets
     todo!()
 }
 
@@ -102,11 +101,7 @@ pub fn list_to_string<T: fmt::Display>(items: &[T]) -> String {
 /// Bob | 25
 /// ```
 pub fn format_table(headers: &[&str], rows: &[Vec<String>]) -> String {
-    // TODO:
-    // 1. Join headers with " | " and add to result
-    // 2. Create a separator line with dashes (matching header lengths) joined by "-+-"
-    // 3. Join each row with " | " and add to result
-    // 4. Remove trailing newline and return
+    // TODO: Format as a text table with headers and rows
     todo!()
 }
 

@@ -87,7 +87,7 @@ pub struct LogMessage {
 ///
 /// Use format!("{:?}", value) to get the debug string.
 pub fn debug_string<T: fmt::Debug>(value: &T) -> String {
-    // TODO: Implement using format! macro with {:?}
+    // TODO
     todo!()
 }
 
@@ -95,7 +95,7 @@ pub fn debug_string<T: fmt::Debug>(value: &T) -> String {
 ///
 /// Use format!("{}", value) to get the display string.
 pub fn display_string<T: fmt::Display>(value: &T) -> String {
-    // TODO: Implement using format! macro with {}
+    // TODO
     todo!()
 }
 
@@ -103,7 +103,7 @@ pub fn display_string<T: fmt::Display>(value: &T) -> String {
 ///
 /// Use format!("{:#?}", value) to get the pretty-printed debug string.
 pub fn pretty_debug<T: fmt::Debug>(value: &T) -> String {
-    // TODO: Implement using format! macro with {:#?}
+    // TODO
     todo!()
 }
 

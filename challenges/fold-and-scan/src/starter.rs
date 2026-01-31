@@ -57,8 +57,7 @@ pub fn running_sum(numbers: &[i32]) -> Vec<i32> {
 /// # Returns
 /// A Vec where each element is the maximum of all elements up to that position
 pub fn running_max(numbers: &[i32]) -> Vec<i32> {
-    // TODO: Use scan() to track the running maximum
-    // Hint: You can use Option<i32> as state to handle the first element
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -73,8 +72,7 @@ pub fn running_max(numbers: &[i32]) -> Vec<i32> {
 /// # Returns
 /// A Vec of numbers taken while sum stays under limit
 pub fn take_while_sum_under(numbers: &[i32], limit: i32) -> Vec<i32> {
-    // TODO: Use scan() and return None to stop iteration early
-    // Check if adding the current number would exceed the limit
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -87,7 +85,7 @@ pub fn take_while_sum_under(numbers: &[i32], limit: i32) -> Vec<i32> {
 /// # Returns
 /// The number of times target appears in items
 pub fn count_occurrences<T: PartialEq>(items: &[T], target: &T) -> usize {
-    // TODO: Use fold() to count how many times target appears
+    // TODO: Implement this function
     unimplemented!()
 }
 
@@ -99,8 +97,7 @@ pub fn count_occurrences<T: PartialEq>(items: &[T], target: &T) -> usize {
 /// # Returns
 /// A Vec where each element is the average of all elements up to that position
 pub fn running_average(numbers: &[f64]) -> Vec<f64> {
-    // TODO: Use scan() with a tuple state (sum, count) to track running average
-    // Divide sum by count at each step
+    // TODO: Implement this function
     unimplemented!()
 }
 
