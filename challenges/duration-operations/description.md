@@ -88,19 +88,24 @@ Convert a Duration to total hours (truncated).
 
 **5. `format_duration(duration: Duration) -> String`**
 
-Format a duration as "Xh Ym Zs" (e.g., "2h 30m 45s"). Omit zero components at the start (e.g., "30m 45s" not "0h 30m 45s"), but always show seconds.
+Format a duration as "Xh Ym Zs" (e.g., "2h 30m 45s").
+Omit zero components at the start (e.g., "30m 45s" not
+"0h 30m 45s"), but always show seconds.
 
 **6. `add_durations(durations: &[Duration]) -> Duration`**
 
-Sum all durations in a slice. Return `Duration::ZERO` for an empty slice.
+Sum all durations in a slice. Return `Duration::ZERO` for
+an empty slice.
 
 **7. `average_duration(durations: &[Duration]) -> Option<Duration>`**
 
-Calculate the average duration. Return `None` for an empty slice.
+Calculate the average duration. Return `None` for an
+empty slice.
 
 **8. `is_longer_than(d1: Duration, d2: Duration) -> bool`**
 
-Check if the first duration is strictly longer than the second.
+Check if the first duration is strictly longer than the
+second.
 
 ## Examples
 
@@ -143,7 +148,10 @@ let durations = vec![
     Duration::from_secs(20),
     Duration::from_secs(30),
 ];
-assert_eq!(average_duration(&durations), Some(Duration::from_secs(20)));
+assert_eq!(
+    average_duration(&durations),
+    Some(Duration::from_secs(20))
+);
 assert_eq!(average_duration(&[]), None);
 
 // Comparison

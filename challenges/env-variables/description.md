@@ -52,19 +52,25 @@ Implement the following functions to work with environment variables and process
 
 **1. `get_env_var(key: &str) -> Option<String>`**
 
-Get an environment variable by key. Return `None` if it doesn't exist or contains invalid Unicode.
+Get an environment variable by key. Return `None` if it
+doesn't exist or contains invalid Unicode.
 
 **2. `get_env_var_or_default(key: &str, default: &str) -> String`**
 
-Get an environment variable, returning a default value if it doesn't exist.
+Get an environment variable, returning a default value
+if it doesn't exist.
 
 **3. `get_multiple_env_vars(keys: &[&str]) -> Vec<(String, Option<String>)>`**
 
-Get multiple environment variables at once. Return a vector of (key, value) pairs where value is `None` if the variable doesn't exist.
+Get multiple environment variables at once. Return a
+vector of (key, value) pairs where value is `None` if
+the variable doesn't exist.
 
 **4. `parse_env_var<T: std::str::FromStr>(key: &str) -> Option<T>`**
 
-Get an environment variable and parse it to type T. Return `None` if the variable doesn't exist or can't be parsed.
+Get an environment variable and parse it to type T.
+Return `None` if the variable doesn't exist or can't
+be parsed.
 
 **5. `get_args() -> Vec<String>`**
 
@@ -72,15 +78,19 @@ Get all command-line arguments as a vector of strings.
 
 **6. `get_current_dir() -> Option<String>`**
 
-Get the current working directory as a string. Return `None` if it can't be determined or converted to UTF-8.
+Get the current working directory as a string. Return
+`None` if it can't be determined or converted to UTF-8.
 
 **7. `get_current_exe_name() -> Option<String>`**
 
-Get the name of the current executable (just the file name, not the full path). Return `None` if it can't be determined.
+Get the name of the current executable (just the file
+name, not the full path). Return `None` if it can't
+be determined.
 
 **8. `env_var_is_set(key: &str) -> bool`**
 
-Check if an environment variable is set (even if it's an empty string).
+Check if an environment variable is set (even if it's
+an empty string).
 
 ## Examples
 
@@ -159,6 +169,7 @@ env::remove_var("MY_APP_NAME");
 - `std::env::current_dir()` returns `Result<PathBuf, Error>`
 - Use `.to_str()` or `.to_string_lossy()` to convert `PathBuf` to string
 - `std::env::current_exe()` gives the full path; use `.file_name()` to get just the name
-- `std::env::var_os()` returns `Option<OsString>` and can detect if a variable is set regardless of content
+- `std::env::var_os()` returns `Option<OsString>` and can
+  detect if a variable is set regardless of content
 
 </details>

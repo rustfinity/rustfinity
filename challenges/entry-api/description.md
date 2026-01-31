@@ -8,7 +8,9 @@ The Entry API is particularly useful for building frequency counters, caches wit
 use std::collections::HashMap;
 
 let mut word_counts: HashMap<&str, u32> = HashMap::new();
-let words = ["apple", "banana", "apple", "cherry", "banana", "apple"];
+let words = [
+    "apple", "banana", "apple", "cherry", "banana", "apple"
+];
 
 // Without Entry API (inefficient - two lookups per word):
 for word in &words {

@@ -89,9 +89,13 @@ Create a `LogMessage` struct with:
 
 Implement these functions to work with Debug and Display:
 
-- `debug_string<T: std::fmt::Debug>(value: &T) -> String` - Returns the debug representation of any `Debug` type
-- `display_string<T: std::fmt::Display>(value: &T) -> String` - Returns the display representation of any `Display` type
-- `pretty_debug<T: std::fmt::Debug>(value: &T) -> String` - Returns the pretty-printed debug representation (with `{:#?}`)
+- `debug_string<T: std::fmt::Debug>(value: &T) -> String`
+  - Returns the debug representation of any `Debug` type
+- `display_string<T: std::fmt::Display>(value: &T) -> String`
+  - Returns the display representation of any `Display` type
+- `pretty_debug<T: std::fmt::Debug>(value: &T) -> String`
+  - Returns the pretty-printed debug representation
+    (with `{:#?}`)
 
 ## Examples
 
@@ -99,7 +103,10 @@ Implement these functions to work with Debug and Display:
 // Coordinate
 let coord = Coordinate { x: 3.5, y: -2.0 };
 assert_eq!(format!("{}", coord), "(3.5, -2.0)");
-assert_eq!(format!("{:?}", coord), "Coordinate { x: 3.5, y: -2.0 }");
+assert_eq!(
+    format!("{:?}", coord),
+    "Coordinate { x: 3.5, y: -2.0 }"
+);
 
 // Color
 let red = Color::Red;
@@ -110,7 +117,10 @@ assert_eq!(format!("{}", custom), "rgb(255, 128, 0)");
 assert_eq!(format!("{}", hex), "#FF5733");
 
 // Temperature
-let temp = Temperature { value: 25.5, unit: TemperatureUnit::Celsius };
+let temp = Temperature {
+    value: 25.5,
+    unit: TemperatureUnit::Celsius
+};
 assert_eq!(format!("{}", temp), "25.5°C");
 
 // LogMessage
@@ -121,7 +131,10 @@ let log = LogMessage {
 assert_eq!(format!("{}", log), "[ERROR] Connection failed");
 
 // Utility functions
-assert_eq!(debug_string(&coord), "Coordinate { x: 3.5, y: -2.0 }");
+assert_eq!(
+    debug_string(&coord),
+    "Coordinate { x: 3.5, y: -2.0 }"
+);
 assert_eq!(display_string(&coord), "(3.5, -2.0)");
 ```
 

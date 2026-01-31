@@ -9,11 +9,13 @@ Your task is to implement a function that reads integers from a file, computes t
 Implement the function `sum_integers_from_file`:
 
 - Takes the file path as a parameter.
-- Reads the file line by line, assuming each line contains a single integer or invalid data.
+- Reads the file line by line, assuming each line contains
+  a single integer or invalid data.
 - Computes and returns the sum of all integers as a `Result<i32, io::Error>`.
 - Handles the following:
   - If the file cannot be opened, propagate the `io::Error`.
-  - If a line cannot be parsed as an integer, propagate a custom `io::Error` with a meaningful message.
+  - If a line cannot be parsed as an integer, propagate
+    a custom `io::Error` with a meaningful message.
 
 ### Requirements
 

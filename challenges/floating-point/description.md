@@ -69,17 +69,28 @@ assert!((a - b).abs() < 1e-10);  // But they're very close
 
 Implement the following functions to handle floating-point edge cases:
 
-1. **`is_valid_number(x: f64) -> bool`** - Returns `true` if `x` is a finite, non-NaN number (i.e., a "normal" number you can do math with).
+1. **`is_valid_number(x: f64) -> bool`**
+   - Returns `true` if `x` is a finite, non-NaN number
+     (i.e., a "normal" number you can do math with).
 
-2. **`classify_float(x: f64) -> &'static str`** - Returns a string describing the float: `"nan"`, `"infinite"`, `"zero"`, `"normal"`, or `"subnormal"`.
+2. **`classify_float(x: f64) -> &'static str`**
+   - Returns a string describing the float: `"nan"`,
+     `"infinite"`, `"zero"`, `"normal"`, or `"subnormal"`.
 
-3. **`safe_divide(a: f64, b: f64) -> Option<f64>`** - Divides `a` by `b`, returning `None` if `b` is zero or if either input is NaN/infinite.
+3. **`safe_divide(a: f64, b: f64) -> Option<f64>`**
+   - Divides `a` by `b`, returning `None` if `b` is zero
+     or if either input is NaN/infinite.
 
-4. **`round_to_places(x: f64, places: u32) -> f64`** - Rounds `x` to the specified number of decimal places.
+4. **`round_to_places(x: f64, places: u32) -> f64`**
+   - Rounds `x` to the specified number of decimal places.
 
-5. **`approx_equal(a: f64, b: f64, epsilon: f64) -> bool`** - Returns `true` if `a` and `b` are within `epsilon` of each other. Returns `false` if either is NaN.
+5. **`approx_equal(a: f64, b: f64, epsilon: f64) -> bool`**
+   - Returns `true` if `a` and `b` are within `epsilon`
+     of each other. Returns `false` if either is NaN.
 
-6. **`clamp_to_range(x: f64, min: f64, max: f64) -> Option<f64>`** - Clamps `x` to the range `[min, max]`. Returns `None` if any input is NaN or if `min > max`.
+6. **`clamp_to_range(x: f64, min: f64, max: f64) -> Option<f64>`**
+   - Clamps `x` to the range `[min, max]`. Returns `None`
+     if any input is NaN or if `min > max`.
 
 7. **`safe_sqrt(x: f64) -> Option<f64>`** - Returns the square root of `x`, or `None` if `x` is negative or NaN.
 

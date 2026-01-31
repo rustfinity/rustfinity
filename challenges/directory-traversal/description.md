@@ -52,12 +52,21 @@ for entry in fs::read_dir(".")? {
 
 Implement the following directory traversal functions:
 
-1. `list_files(dir: &Path) -> io::Result<Vec<PathBuf>>` - List all files (not directories) in a directory (non-recursive)
-2. `list_directories(dir: &Path) -> io::Result<Vec<PathBuf>>` - List all subdirectories in a directory (non-recursive)
-3. `list_all_recursive(dir: &Path) -> io::Result<Vec<PathBuf>>` - Recursively list all files and directories
-4. `find_by_extension(dir: &Path, ext: &str) -> io::Result<Vec<PathBuf>>` - Find all files with a given extension (recursive)
-5. `find_by_name(dir: &Path, name: &str) -> io::Result<Vec<PathBuf>>` - Find all files/directories matching a name exactly (recursive)
-6. `calculate_dir_size(dir: &Path) -> io::Result<u64>` - Calculate total size of all files in a directory (recursive)
+1. `list_files(dir: &Path) -> io::Result<Vec<PathBuf>>`
+   - List all files (not directories) in a directory
+     (non-recursive)
+2. `list_directories(dir: &Path) -> io::Result<Vec<PathBuf>>`
+   - List all subdirectories in a directory (non-recursive)
+3. `list_all_recursive(dir: &Path) -> io::Result<Vec<PathBuf>>`
+   - Recursively list all files and directories
+4. `find_by_extension(dir: &Path, ext: &str) -> io::Result<Vec<PathBuf>>`
+   - Find all files with a given extension (recursive)
+5. `find_by_name(dir: &Path, name: &str) -> io::Result<Vec<PathBuf>>`
+   - Find all files/directories matching a name exactly
+     (recursive)
+6. `calculate_dir_size(dir: &Path) -> io::Result<u64>`
+   - Calculate total size of all files in a directory
+     (recursive)
 7. `count_files_recursive(dir: &Path) -> io::Result<usize>` - Count all files in a directory tree
 
 ## Examples

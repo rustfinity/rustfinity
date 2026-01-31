@@ -36,11 +36,16 @@ Implement wrapper types that demonstrate `Deref` and `DerefMut` patterns:
    - Implement `Deref<Target = str>` for string operations
    - Do NOT implement `DerefMut` (to prevent bypassing the uppercase invariant)
 
-5. **Function `describe_length`**: A generic function demonstrating deref coercion:
+5. **Function `describe_length`**: A generic function
+   demonstrating deref coercion:
    ```rust
-   pub fn describe_length<T: Deref<Target = str>>(s: &T) -> String
+   pub fn describe_length<T: Deref<Target = str>>(
+       s: &T
+   ) -> String
    ```
-   This should work with `&String`, `&Box<str>`, `&UppercaseString`, etc., returning a description like `"Length: 5"`.
+   This should work with `&String`, `&Box<str>`,
+   `&UppercaseString`, etc., returning a description
+   like `"Length: 5"`.
 
 ## Examples
 

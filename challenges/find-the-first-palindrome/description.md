@@ -2,15 +2,29 @@ In this challenge, you will demonstrate your understanding of **control flow** i
 
 ### What's a decimal palindrome?
 
-**A decimal palindrome is a number whose decimal (base 10, "normal") digits read the same backward as forward**. This exercise will require you to find the numerically least non-negative palindrome in a given range. The easiest way to do this is to iterate through the range, check each number to see if it is a palindrome, and return the first palindrome found. You can use any **control flow** construct to solve this problem. (There are much more efficient ways to solve this problem, but the calculations get complex quickly.)
+**A decimal palindrome is a number whose decimal (base 10,
+"normal") digits read the same backward as forward**.
+This exercise will require you to find the numerically
+least non-negative palindrome in a given range. The easiest
+way to do this is to iterate through the range, check each
+number to see if it is a palindrome, and return the first
+palindrome found. You can use any **control flow** construct
+to solve this problem. (There are much more efficient ways
+to solve this problem, but the calculations get complex
+quickly.)
 
 Palindromes are fascinating numbers, and finding them within a range will require clear control flow logic to ensure you identify the first one accurately.
 
 ## Your task
 
-You need to write a function, `find_first_palindrome(start: i32, end: i32) -> Option<i32>`, that takes two **integer** arguments `start` and `end`. The function should return the numerically least non-negative palindrome number within the range.
+You need to write a function,
+`find_first_palindrome(start: i32, end: i32) -> Option<i32>`,
+that takes two **integer** arguments `start` and `end`.
+The function should return the numerically least
+non-negative palindrome number within the range.
 
-- The range is inclusive: for example, if `start == 1` and `end == 1` the palindrome `1` is in range.
+- The range is inclusive: for example, if `start == 1`
+  and `end == 1` the palindrome `1` is in range.
 
 - The range may have `start > end`, in which case it is still a valid range: for example, `start == 3` and `end == 1` contains the values `1, 2, 3`.
 
