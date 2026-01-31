@@ -97,13 +97,26 @@ assert_eq!(get_env_var("MY_APP_NAME"), Some("test-app".to_string()));
 assert_eq!(get_env_var("NONEXISTENT"), None);
 
 // With default
-assert_eq!(get_env_var_or_default("MY_APP_NAME", "default"), "test-app".to_string());
-assert_eq!(get_env_var_or_default("NONEXISTENT", "default"), "default".to_string());
+assert_eq!(
+    get_env_var_or_default("MY_APP_NAME", "default"),
+    "test-app".to_string()
+);
+assert_eq!(
+    get_env_var_or_default("NONEXISTENT", "default"),
+    "default".to_string()
+);
 
 // Multiple variables
-let vars = get_multiple_env_vars(&["MY_APP_PORT", "MY_APP_DEBUG", "NONEXISTENT"]);
+let vars = get_multiple_env_vars(&[
+    "MY_APP_PORT",
+    "MY_APP_DEBUG",
+    "NONEXISTENT",
+]);
 assert_eq!(vars.len(), 3);
-assert_eq!(vars[0], ("MY_APP_PORT".to_string(), Some("8080".to_string())));
+assert_eq!(
+    vars[0],
+    ("MY_APP_PORT".to_string(), Some("8080".to_string()))
+);
 assert_eq!(vars[2], ("NONEXISTENT".to_string(), None));
 
 // Parsing

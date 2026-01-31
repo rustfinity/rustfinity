@@ -79,8 +79,14 @@ assert_eq!(describe_exit_code(42), "unknown exit code: 42");
 
 // Validate exit codes
 assert_eq!(validate_exit_code(Some(0)), Ok(0));
-assert_eq!(validate_exit_code(Some(1)), Err("process failed with code 1".to_string()));
-assert_eq!(validate_exit_code(None), Err("process did not return an exit code".to_string()));
+assert_eq!(
+    validate_exit_code(Some(1)),
+    Err("process failed with code 1".to_string())
+);
+assert_eq!(
+    validate_exit_code(None),
+    Err("process did not return an exit code".to_string())
+);
 ```
 
 ## Hints

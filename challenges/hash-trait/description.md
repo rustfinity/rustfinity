@@ -28,7 +28,12 @@ Implement the following utility functions:
 
 2. **`find_duplicates<T: Hash + Eq + Clone>(items: &[T]) -> Vec<T>`**: Returns a vector of elements that appear more than once.
 
-3. **`group_by_hash<T: Hash + Eq + Clone, K: Hash + Eq, F: Fn(&T) -> K>(items: &[T], key_fn: F) -> HashMap<K, Vec<T>>`**: Groups items by a key function, returning a `HashMap` where each key maps to a vector of items with that key.
+3. **`group_by_hash<T, K, F>(items: &[T], key_fn: F) -> HashMap<K, Vec<T>>`** where:
+   - `T: Hash + Eq + Clone`
+   - `K: Hash + Eq`
+   - `F: Fn(&T) -> K`
+
+   Groups items by a key function, returning a `HashMap` where each key maps to a vector of items with that key.
 
 ## Examples
 

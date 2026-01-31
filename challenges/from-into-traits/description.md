@@ -105,7 +105,7 @@ assert_eq!(wrapped.into_inner(), 42);
   <summary>Click here for hints</summary>
 
 - Implement `From` rather than `Into` - you get `Into` automatically
-- Use `format!("{:02X}{:02X}{:02X}", r, g, b)` for hex conversion
+- Use `format!("{:02X}{:02X}{:02X}", r, g, b)` for hex conversion (formats RGB values as 2-digit uppercase hex)
 - For the generic `Wrapper<T>`, the `From` implementation should be generic over `T`
 - Remember that `From` takes ownership of the input value
 - The `.into()` method can require type annotations if Rust can't infer the target type
