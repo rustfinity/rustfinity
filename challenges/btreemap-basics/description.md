@@ -64,18 +64,27 @@ assert_eq!(get_value(&map, "grape"), None);
 
 // get_keys_in_order - returns keys sorted alphabetically
 let keys = get_keys_in_order(&map);
-assert_eq!(keys, vec!["apple", "banana", "cherry"]);
+assert_eq!(
+    keys,
+    vec!["apple", "banana", "cherry"]
+);
 
 // get_values_in_key_order - returns values in order of sorted keys
 let values = get_values_in_key_order(&map);
-assert_eq!(values, vec![1, 2, 3]);
+assert_eq!(
+    values,
+    vec![1, 2, 3]
+);
 
 // get_range - half-open range [start, end)
 let range = get_range(&map, "apple", "cherry");
-assert_eq!(range, vec![
-    ("apple".to_string(), 1),
-    ("banana".to_string(), 2),
-]);
+assert_eq!(
+    range,
+    vec![
+        ("apple".to_string(), 1),
+        ("banana".to_string(), 2),
+    ]
+);
 
 // get_first - smallest key
 assert_eq!(

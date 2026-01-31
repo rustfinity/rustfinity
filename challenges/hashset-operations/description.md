@@ -15,7 +15,9 @@ assert_eq!(set.len(), 2);
 assert!(set.contains(&1));
 
 // Creating from an iterator
-let set: HashSet<_> = vec![1, 2, 3, 2, 1].into_iter().collect();
+let set: HashSet<_> = vec![1, 2, 3, 2, 1]
+    .into_iter()
+    .collect();
 assert_eq!(set.len(), 3);  // Only unique values
 ```
 
@@ -56,19 +58,31 @@ assert_eq!(count_unique(&[1, 2, 2, 3, 3, 3]), 3);
 let set1: HashSet<i32> = [1, 2, 3].into_iter().collect();
 let set2: HashSet<i32> = [2, 3, 4].into_iter().collect();
 let common = find_common(&set1, &set2);
-assert_eq!(common, [2, 3].into_iter().collect());
+assert_eq!(
+    common,
+    [2, 3].into_iter().collect()
+);
 
 // find_all (union)
 let all = find_all(&set1, &set2);
-assert_eq!(all, [1, 2, 3, 4].into_iter().collect());
+assert_eq!(
+    all,
+    [1, 2, 3, 4].into_iter().collect()
+);
 
 // find_difference
 let diff = find_difference(&set1, &set2);  // In set1 but not set2
-assert_eq!(diff, [1].into_iter().collect());
+assert_eq!(
+    diff,
+    [1].into_iter().collect()
+);
 
 // find_symmetric_difference
 let sym_diff = find_symmetric_difference(&set1, &set2);  // In exactly one set
-assert_eq!(sym_diff, [1, 4].into_iter().collect());
+assert_eq!(
+    sym_diff,
+    [1, 4].into_iter().collect()
+);
 
 // is_subset
 let small: HashSet<i32> = [2, 3].into_iter().collect();

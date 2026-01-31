@@ -28,7 +28,8 @@ let os_str: &OsStr = OsStr::new("hello.txt");
 let s: Option<&str> = os_str.to_str();  // Returns Some if valid UTF-8
 
 // Converting OsStr to String (lossy conversion)
-let s: String = os_str.to_string_lossy().into_owned();  // Replaces invalid UTF-8 with replacement character
+// Replaces invalid UTF-8 with replacement character
+let s: String = os_str.to_string_lossy().into_owned();
 ```
 
 ## Your Task
@@ -62,7 +63,10 @@ assert_eq!(os_string_to_string_lossy(os_str), "valid utf8");
 
 // get_file_extension
 let path = Path::new("document.pdf");
-assert_eq!(get_file_extension(path), Some("pdf".to_string()));
+assert_eq!(
+    get_file_extension(path),
+    Some("pdf".to_string())
+);
 
 let path = Path::new("no_extension");
 assert_eq!(get_file_extension(path), None);

@@ -65,8 +65,14 @@ assert_eq!(byte_count("你好"), 6);      // Chinese: 3 bytes each
 assert_eq!(byte_count("🎉"), 4);        // Emoji: 4 bytes
 
 // safe_substring
-assert_eq!(safe_substring("Hello", 0, 3), Some("Hel".to_string()));
-assert_eq!(safe_substring("Привет", 0, 2), Some("Пр".to_string()));
+assert_eq!(
+    safe_substring("Hello", 0, 3),
+    Some("Hel".to_string())
+);
+assert_eq!(
+    safe_substring("Привет", 0, 2),
+    Some("Пр".to_string())
+);
 assert_eq!(safe_substring("Hello", 0, 10), None);  // Out of bounds
 assert_eq!(safe_substring("Hello", 3, 2), None);   // Invalid range
 

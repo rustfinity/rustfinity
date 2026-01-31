@@ -9,7 +9,11 @@ The `format!` macro is the most straightforward way to build formatted strings. 
 ```rust
 let name = "Alice";
 let age = 30;
-let greeting = format!("Hello, {}! You are {} years old.", name, age);
+let greeting = format!(
+    "Hello, {}! You are {} years old.",
+    name,
+    age
+);
 assert_eq!(greeting, "Hello, Alice! You are 30 years old.");
 ```
 
@@ -87,7 +91,10 @@ assert_eq!(
 );
 
 // Person Display
-let person = Person { name: "Bob".to_string(), age: 25 };
+let person = Person {
+    name: "Bob".to_string(),
+    age: 25
+};
 assert_eq!(format!("{}", person), "Bob (25 years old)");
 
 // build_table

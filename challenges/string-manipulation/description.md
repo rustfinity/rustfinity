@@ -66,14 +66,26 @@ Implement the following functions:
 
 ```rust
 // clean_string: trim and lowercase
-assert_eq!(clean_string("  Hello World  "), "hello world");
+assert_eq!(
+    clean_string("  Hello World  "),
+    "hello world"
+);
 
 // contains_word: case-insensitive search
-assert_eq!(contains_word("Rust is awesome", "AWESOME"), true);
-assert_eq!(contains_word("Rust is awesome", "boring"), false);
+assert_eq!(
+    contains_word("Rust is awesome", "AWESOME"),
+    true
+);
+assert_eq!(
+    contains_word("Rust is awesome", "boring"),
+    false
+);
 
 // replace_word: simple replacement
-assert_eq!(replace_word("hello world", "world", "Rust"), "hello Rust");
+assert_eq!(
+    replace_word("hello world", "world", "Rust"),
+    "hello Rust"
+);
 
 // split_and_trim: split and clean each part
 assert_eq!(
@@ -82,7 +94,10 @@ assert_eq!(
 );
 
 // normalize_whitespace: clean up messy whitespace
-assert_eq!(normalize_whitespace("  hello    world  "), "hello world");
+assert_eq!(
+    normalize_whitespace("  hello    world  "),
+    "hello world"
+);
 ```
 
 ## Hints

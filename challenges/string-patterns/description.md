@@ -57,7 +57,8 @@ Implement the following functions for string pattern matching:
 // has_prefix
 assert!(has_prefix("hello world", "hello"));
 assert!(!has_prefix("hello world", "world"));
-assert!(has_prefix("", ""));  // empty prefix matches empty string
+// empty prefix matches empty string
+assert!(has_prefix("", ""));
 
 // has_suffix
 assert!(has_suffix("hello world", "world"));
@@ -80,14 +81,26 @@ assert_eq!(count_occurrences("hello world", "o"), 2);
 assert_eq!(count_occurrences("test", "xyz"), 0);
 
 // find_all_indices
-assert_eq!(find_all_indices("abcabc", "abc"), vec![0, 3]);
+assert_eq!(
+    find_all_indices("abcabc", "abc"),
+    vec![0, 3]
+);
 assert_eq!(find_all_indices("hello", "l"), vec![2, 3]);
 assert_eq!(find_all_indices("test", "xyz"), vec![]);
 
 // extract_between
-assert_eq!(extract_between("<tag>content</tag>", "<tag>", "</tag>"), Some("content".to_string()));
-assert_eq!(extract_between("hello [world] test", "[", "]"), Some("world".to_string()));
-assert_eq!(extract_between("no markers here", "[", "]"), None);
+assert_eq!(
+    extract_between("<tag>content</tag>", "<tag>", "</tag>"),
+    Some("content".to_string())
+);
+assert_eq!(
+    extract_between("hello [world] test", "[", "]"),
+    Some("world".to_string())
+);
+assert_eq!(
+    extract_between("no markers here", "[", "]"),
+    None
+);
 ```
 
 ## Hints

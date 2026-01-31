@@ -33,8 +33,14 @@ impl FromStr for Point {
         if parts.len() != 2 {
             return Err("Expected format: x,y".to_string());
         }
-        let x = parts[0].trim().parse().map_err(|_| "Invalid x")?;
-        let y = parts[1].trim().parse().map_err(|_| "Invalid y")?;
+        let x = parts[0]
+            .trim()
+            .parse()
+            .map_err(|_| "Invalid x")?;
+        let y = parts[1]
+            .trim()
+            .parse()
+            .map_err(|_| "Invalid y")?;
         Ok(Point { x, y })
     }
 }
@@ -82,8 +88,14 @@ assert_eq!(color.g, 128);
 assert_eq!(color.b, 0);
 
 // parse_list: generic list parsing
-assert_eq!(parse_list::<i32>("1,2,3", ','), Ok(vec![1, 2, 3]));
-assert_eq!(parse_list::<f64>("1.5;2.5;3.5", ';'), Ok(vec![1.5, 2.5, 3.5]));
+assert_eq!(
+    parse_list::<i32>("1,2,3", ','),
+    Ok(vec![1, 2, 3])
+);
+assert_eq!(
+    parse_list::<f64>("1.5;2.5;3.5", ';'),
+    Ok(vec![1.5, 2.5, 3.5])
+);
 ```
 
 ## Hints

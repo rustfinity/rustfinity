@@ -63,11 +63,20 @@ assert_eq!(chars_to_vec("hi"), vec!['h', 'i']);
 assert_eq!(chars_to_vec(""), Vec::<char>::new());
 
 // words_to_vec
-assert_eq!(words_to_vec("hello world"), vec!["hello", "world"]);
-assert_eq!(words_to_vec("  spaces  everywhere  "), vec!["spaces", "everywhere"]);
+assert_eq!(
+    words_to_vec("hello world"),
+    vec!["hello", "world"]
+);
+assert_eq!(
+    words_to_vec("  spaces  everywhere  "),
+    vec!["spaces", "everywhere"]
+);
 
 // lines_to_vec
-assert_eq!(lines_to_vec("line1\nline2\nline3"), vec!["line1", "line2", "line3"]);
+assert_eq!(
+    lines_to_vec("line1\nline2\nline3"),
+    vec!["line1", "line2", "line3"]
+);
 assert_eq!(lines_to_vec("single"), vec!["single"]);
 
 // count_words
@@ -76,12 +85,24 @@ assert_eq!(count_words(""), 0);
 assert_eq!(count_words("   "), 0);
 
 // reverse_words
-assert_eq!(reverse_words("hello world"), "world hello");
-assert_eq!(reverse_words("one two three"), "three two one");
+assert_eq!(
+    reverse_words("hello world"),
+    "world hello"
+);
+assert_eq!(
+    reverse_words("one two three"),
+    "three two one"
+);
 
 // capitalize_words
-assert_eq!(capitalize_words("hello world"), "Hello World");
-assert_eq!(capitalize_words("rust is great"), "Rust Is Great");
+assert_eq!(
+    capitalize_words("hello world"),
+    "Hello World"
+);
+assert_eq!(
+    capitalize_words("rust is great"),
+    "Rust Is Great"
+);
 ```
 
 ## Hints
