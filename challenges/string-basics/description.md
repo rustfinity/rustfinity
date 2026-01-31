@@ -54,7 +54,10 @@ Implement the following functions:
 ## Examples
 
 ```rust
-assert_eq!(to_owned_string("hello"), String::from("hello"));
+assert_eq!(
+    to_owned_string("hello"),
+    String::from("hello")
+);
 assert_eq!(count_chars("hello"), 5);
 // 5 Unicode characters (cafe + combining accent)
 assert_eq!(count_chars("cafe\u{0301}"), 5);
