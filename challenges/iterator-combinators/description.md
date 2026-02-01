@@ -63,7 +63,7 @@ Implement the following functions that use iterator combinators:
 1. `chain_sequences<T: Clone>(first: &[T], second: &[T]) -> Vec<T>`
    - Combine two slices into a single Vec using `chain()`
 2. `zip_pairs<T: Clone, U: Clone>(first: &[T],
-                                second: &[U]) -> Vec<(T, U)>`
+                          second: &[U]) -> Vec<(T, U)>`
    - Pair elements from two slices using `zip()`
 3. `take_first<T: Clone>(items: &[T], n: usize) -> Vec<T>` - Return the first `n` elements using `take()`
 4. `skip_first<T: Clone>(items: &[T], n: usize) -> Vec<T>` - Skip the first `n` elements using `skip()`

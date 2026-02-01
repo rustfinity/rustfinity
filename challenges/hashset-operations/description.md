@@ -41,7 +41,7 @@ Implement the following functions for working with `HashSet`:
 6. `find_symmetric_difference(set1: &HashSet<i32>, set2: &HashSet<i32>) -> HashSet<i32>` - Return elements that are in exactly one of the sets (symmetric difference)
 
 7. `is_subset(potential_subset: &HashSet<i32>,
-           potential_superset: &HashSet<i32>) -> bool`
+     potential_superset: &HashSet<i32>) -> bool`
    - Check if all elements of `potential_subset` are
      contained in `potential_superset`
 
