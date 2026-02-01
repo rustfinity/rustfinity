@@ -61,7 +61,7 @@ Implement the following functions for working with `BTreeMap`:
     end: &str
 ) -> Vec<(String, i32)>`
    - Return all key-value pairs where the key is
-     >= start and < end (half-open range)
+     > = start and < end (half-open range)
 
 6. `get_first(
     map: &BTreeMap<String, i32>

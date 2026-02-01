@@ -67,16 +67,16 @@ Implement the following functions and types for working with temporary files:
 4. `TempFile` struct that:
    - Has a `path` field of type `PathBuf`
    - Implements `new(prefix: &str, suffix: &str)
-     -> io::Result<Self>` to create a new temp file
+-> io::Result<Self>` to create a new temp file
    - Implements `path(&self) -> &Path` to get the file path
    - Implements `write(&self, content: &str)
-     -> io::Result<()>` to write content
+-> io::Result<()>` to write content
    - Implements `read(&self) -> io::Result<String>` to read content
    - Implements `Drop` to automatically delete the file
      when the struct is dropped
 5. `create_temp_dir(prefix: &str) -> io::Result<PathBuf>` - Create a uniquely named temp directory
 6. `cleanup_temp_files(dir: &Path, prefix: &str)
-   -> io::Result<usize>` - Delete all files in a directory
+-> io::Result<usize>` - Delete all files in a directory
    that start with the given prefix, returning the count
    of deleted files
 

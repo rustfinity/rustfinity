@@ -65,11 +65,11 @@ io::stdout().flush()?;
 Implement the following functions for working with standard I/O:
 
 1. `read_line_from_reader<R: BufRead>(reader: R)
-   -> io::Result<String>` - Read a single line from
+-> io::Result<String>` - Read a single line from
    any reader implementing `BufRead`, trimming the
    trailing newline
 2. `read_all_lines_from_reader<R: BufRead>(reader: R)
-   -> io::Result<Vec<String>>` - Read all lines from
+-> io::Result<Vec<String>>` - Read all lines from
    a reader into a Vec
 3. `write_to_writer<W: Write>(writer: &mut W, message: &str) -> io::Result<()>` - Write a message to any writer implementing `Write`
 4. `writeln_to_writer<W: Write>(writer: &mut W, message: &str) -> io::Result<()>` - Write a message with a newline to any writer
@@ -125,7 +125,7 @@ assert_eq!(
 
 - Use `reader.read_line(&mut buffer)` to read a single line
 - Use `buffer.trim_end_matches('\n')
-  .trim_end_matches('\r')` to strip line endings
+.trim_end_matches('\r')` to strip line endings
   for both Unix and Windows
 - The `lines()` iterator from `BufRead` automatically strips newlines
 - Use `write!(writer, "{}", message)` or `writer.write_all(message.as_bytes())` to write

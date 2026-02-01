@@ -99,17 +99,17 @@ Create a `LogMessage` struct with:
 Implement these functions to work with Debug and Display:
 
 - `debug_string<T: std::fmt::Debug>(
-      value: &T
-  ) -> String`
+    value: &T
+) -> String`
   - Returns the debug representation of any `Debug` type
 - `display_string<T: std::fmt::Display>(
-      value: &T
-  ) -> String`
+    value: &T
+) -> String`
   - Returns the display representation of any
     `Display` type
 - `pretty_debug<T: std::fmt::Debug>(
-      value: &T
-  ) -> String`
+    value: &T
+) -> String`
   - Returns the pretty-printed debug
     representation (with `{:#?}`)
 
@@ -166,8 +166,8 @@ assert_eq!(display_string(&coord), "(3.5, -2.0)");
   automatic Debug implementation
 - Implement `Display` using
   `impl std::fmt::Display for TypeName {
-      fn fmt(...)
-  }`
+    fn fmt(...)
+}`
 - Use `write!(f, "format string", args)` inside
   the `fmt` method
 - For enums, use `match self { ... }` to handle

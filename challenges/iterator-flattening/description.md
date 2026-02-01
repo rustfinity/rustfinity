@@ -66,7 +66,7 @@ Implement the following functions that demonstrate iterator flattening patterns:
 6. `flatten_to_depth_one(nested: Vec<Vec<Vec<i32>>>) -> Vec<Vec<i32>>` - Flatten only the outer layer, keeping inner vectors intact
 7. `words_from_lines(lines: &[&str]) -> Vec<String>` - Split each line into words, collecting all words
 8. `flatten_and_filter<T, F>(nested: Vec<Vec<T>>,
-                              predicate: F) -> Vec<T>`
+                           predicate: F) -> Vec<T>`
    - Flatten then filter with a predicate
      (where `T: Clone`, `F: Fn(&T) -> bool`)
 

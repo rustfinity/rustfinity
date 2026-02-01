@@ -76,30 +76,30 @@ Implement the following functions to work with file metadata:
 1. `get_file_size(path: &Path) -> io::Result<u64>`
    - Returns the file size in bytes
 2. `get_file_type(
-       path: &Path
-   ) -> io::Result<String>`
+    path: &Path
+) -> io::Result<String>`
    - Returns "file", "directory", or "symlink"
 3. `is_readonly(path: &Path) -> io::Result<bool>`
    - Checks if the file is read-only
 4. `get_modified_time(
-       path: &Path
-   ) -> io::Result<SystemTime>`
+    path: &Path
+) -> io::Result<SystemTime>`
    - Returns when the file was last modified
 5. `was_modified_within(
-       path: &Path,
-       duration: Duration
-   ) -> io::Result<bool>`
+    path: &Path,
+    duration: Duration
+) -> io::Result<bool>`
    - Checks if file was modified within the given
      duration
 6. `is_executable(
-       path: &Path
-   ) -> io::Result<bool>`
+    path: &Path
+) -> io::Result<bool>`
    - Checks if file has execute permissions (Unix)
      or has executable extension (Windows)
 7. `compare_modified_times(
-       path1: &Path,
-       path2: &Path
-   ) -> io::Result<Ordering>`
+    path1: &Path,
+    path2: &Path
+) -> io::Result<Ordering>`
    - Compares which file was modified more recently
 
 ## Examples

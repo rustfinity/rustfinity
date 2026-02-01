@@ -60,18 +60,18 @@ writeln!(file, "New log entry")?;
 Implement the following functions for writing file contents:
 
 1. `write_string(path: &str, content: &str)
-   -> Result<(), io::Error>` - Write a string to a file,
+-> Result<(), io::Error>` - Write a string to a file,
    creating or overwriting it
 2. `write_bytes(path: &str, data: &[u8])
-   -> Result<(), io::Error>` - Write raw bytes to a file
+-> Result<(), io::Error>` - Write raw bytes to a file
 3. `append_string(path: &str, content: &str)
-   -> Result<(), io::Error>` - Append a string to a file
+-> Result<(), io::Error>` - Append a string to a file
    (create if it doesn't exist)
 4. `write_lines(path: &str, lines: &[&str])
-   -> Result<(), io::Error>` - Write multiple lines to a
+-> Result<(), io::Error>` - Write multiple lines to a
    file (each followed by a newline)
 5. `write_with_buffer(path: &str, chunks: &[&str])
-   -> Result<(), io::Error>` - Write multiple chunks
+-> Result<(), io::Error>` - Write multiple chunks
    using buffered writing for efficiency
 
 ## Examples
@@ -121,7 +121,7 @@ write_with_buffer(
 - Use `std::fs::write` for the simplest way to write a
   string or bytes to a file
 - Use `OpenOptions::new().append(true).create(true)
-  .open(path)` to open a file for appending
+.open(path)` to open a file for appending
 - Use `BufWriter::new(File::create(path)?)` to create a
   buffered writer
 - The `writeln!` macro writes a line followed by a

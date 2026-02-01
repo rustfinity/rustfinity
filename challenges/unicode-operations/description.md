@@ -61,7 +61,7 @@ Implement the following functions to demonstrate Unicode-aware string handling:
 2. `byte_count(s: &str) -> usize` - Count the number of
    bytes in the UTF-8 encoding
 3. `safe_substring(s: &str, start: usize, end: usize)
-   -> Option<String>` - Extract a substring by character
+-> Option<String>` - Extract a substring by character
    indices (not byte indices). Return `None` if indices
    are out of bounds.
 4. `char_at(s: &str, index: usize) -> Option<char>` -
