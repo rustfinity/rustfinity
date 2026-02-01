@@ -156,9 +156,8 @@ assert_eq!(
   using `.range(..value)` and getting the last
   element
 - For `find_closest_greater_than`, think about
-  using `.range((Bound::Excluded(value),
-Bound::Unbounded))` and getting the first
-  element
+  using `.range((Bound::Excluded(value), Bound::Unbounded))`
+  and getting the first element
 - Remember that `BTreeSet::range` requires the
   bounds to be valid (start <= end for proper
   ranges)

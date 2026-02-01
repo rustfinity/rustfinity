@@ -23,7 +23,7 @@ Use **`RefCell<T>`** when:
 
 ## Key Operations
 
-**Cell<T>:**
+**`Cell<T>`:**
 
 - `Cell::new(value)` - Create a new Cell
 - `cell.get()` - Get a copy of the value (requires `T: Copy`)
@@ -31,7 +31,7 @@ Use **`RefCell<T>`** when:
 - `cell.replace(value)` - Set value and return old value
 - `cell.take()` - Take the value, leaving `Default::default()` (requires `T: Default`)
 
-**RefCell<T>:**
+**`RefCell<T>`:**
 
 - `RefCell::new(value)` - Create a new RefCell
 - `refcell.borrow()` - Get immutable reference (`Ref<T>`), panics if mutably borrowed
