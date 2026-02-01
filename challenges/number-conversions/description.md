@@ -70,9 +70,14 @@ Implement the following functions to demonstrate safe numeric conversions and ar
    - Sum all numbers using saturating arithmetic
      (clamp at `i32::MIN` or `i32::MAX`).
 
-7. **`wrapping_factorial(n: u32) -> u32`** - Calculate `n!` using wrapping arithmetic (allows overflow to wrap around).
+7. **`wrapping_factorial(n: u32) -> u32`**
+   - Calculate `n!` using wrapping arithmetic
+     (allows overflow to wrap around).
 
-8. **`safe_average(numbers: &[i64]) -> Option<i64>`** - Calculate the average of numbers, returning `None` if the sum would overflow or the slice is empty.
+8. **`safe_average(numbers: &[i64]) -> Option<i64>`**
+   - Calculate the average of numbers, returning
+     `None` if the sum would overflow or the slice
+     is empty.
 
 ## Examples
 
@@ -83,7 +88,8 @@ assert_eq!(safe_i32_to_i16(100_000), None);
 
 // Checked arithmetic
 assert_eq!(checked_multiply(1000, 1000), Some(1_000_000));
-assert_eq!(checked_multiply(100_000, 100_000), None);  // Overflow
+// Overflow
+assert_eq!(checked_multiply(100_000, 100_000), None);
 
 // Saturating arithmetic
 assert_eq!(saturating_sum(&[i32::MAX, 1]), i32::MAX);

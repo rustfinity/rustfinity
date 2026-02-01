@@ -58,17 +58,29 @@ Implement the following directory traversal functions:
      (non-recursive)
 2. `list_directories(dir: &Path) -> io::Result<Vec<PathBuf>>`
    - List all subdirectories in a directory (non-recursive)
-3. `list_all_recursive(dir: &Path) -> io::Result<Vec<PathBuf>>`
+3. `list_all_recursive(
+       dir: &Path
+   ) -> io::Result<Vec<PathBuf>>`
    - Recursively list all files and directories
-4. `find_by_extension(dir: &Path, ext: &str) -> io::Result<Vec<PathBuf>>`
-   - Find all files with a given extension (recursive)
-5. `find_by_name(dir: &Path, name: &str) -> io::Result<Vec<PathBuf>>`
-   - Find all files/directories matching a name exactly
+4. `find_by_extension(
+       dir: &Path,
+       ext: &str
+   ) -> io::Result<Vec<PathBuf>>`
+   - Find all files with a given extension
      (recursive)
+5. `find_by_name(
+       dir: &Path,
+       name: &str
+   ) -> io::Result<Vec<PathBuf>>`
+   - Find all files/directories matching a name
+     exactly (recursive)
 6. `calculate_dir_size(dir: &Path) -> io::Result<u64>`
    - Calculate total size of all files in a directory
      (recursive)
-7. `count_files_recursive(dir: &Path) -> io::Result<usize>` - Count all files in a directory tree
+7. `count_files_recursive(
+       dir: &Path
+   ) -> io::Result<usize>`
+   - Count all files in a directory tree
 
 ## Examples
 
@@ -93,7 +105,10 @@ let rust_files = find_by_extension(Path::new("./"), "rs")?;
 // Returns all .rs files recursively
 
 // Find files or directories named "Cargo.toml"
-let cargo_files = find_by_name(Path::new("./"), "Cargo.toml")?;
+let cargo_files = find_by_name(
+    Path::new("./"),
+    "Cargo.toml"
+)?;
 // Returns all paths ending in "Cargo.toml"
 
 // Calculate total size of a directory
@@ -110,15 +125,31 @@ let count = count_files_recursive(Path::new("./src"))?;
 <details>
   <summary>Click here for hints</summary>
 
-- Use `std::fs::read_dir(path)` to get an iterator over directory entries
-- Each entry from `read_dir()` is a `Result<DirEntry, io::Error>` - handle errors with `?`
-- Use `entry.path()` to get the full `PathBuf` for an entry
-- Use `entry.file_type()?.is_dir()` or `entry.path().is_dir()` to check if it's a directory
-- For recursive functions, call the function on subdirectories and combine results
-- Use `entry.metadata()?.len()` to get the file size
-  in bytes
-- For extension matching, use `path.extension().map_or(false, |e| e == ext)`
-- For name matching, use `path.file_name().map_or(false, |n| n == name)`
-- Remember that `read_dir()` only lists immediate children, not nested contents
+- Use `std::fs::read_dir(path)` to get an
+  iterator over directory entries
+- Each entry from `read_dir()` is a
+  `Result<DirEntry, io::Error>` - handle errors
+  with `?`
+- Use `entry.path()` to get the full `PathBuf`
+  for an entry
+- Use `entry.file_type()?.is_dir()` or
+  `entry.path().is_dir()` to check if it's a
+  directory
+- For recursive functions, call the function on
+  subdirectories and combine results
+- Use `entry.metadata()?.len()` to get the file
+  size in bytes
+- For extension matching, use
+  `path.extension().map_or(
+      false,
+      |e| e == ext
+  )`
+- For name matching, use
+  `path.file_name().map_or(
+      false,
+      |n| n == name
+  )`
+- Remember that `read_dir()` only lists
+  immediate children, not nested contents
 
 </details>

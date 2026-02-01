@@ -88,7 +88,10 @@ assert!(are_all_equal(&[1, 1, 1, 1]));
 assert!(!are_all_equal(&[1, 2, 1, 1]));
 
 assert_eq!(count_matches(&[1, 2, 1, 3, 1], &1), 3);
-assert_eq!(find_first_match(&[10, 20, 30, 40], &30), Some(2));
+assert_eq!(
+    find_first_match(&[10, 20, 30, 40], &30),
+    Some(2)
+);
 ```
 
 ## Hints
@@ -109,8 +112,9 @@ assert_eq!(find_first_match(&[10, 20, 30, 40], &30), Some(2));
   ```
 
 - For `ApproximateFloat`, use
-  `(self.0 - other.0).abs() < EPSILON` for the comparison.
-  Remember that `f64` cannot implement `Eq` because of `NaN`.
+  `(self.0 - other.0).abs() < EPSILON`
+  for the comparison. Remember that `f64` cannot
+  implement `Eq` because of `NaN`.
 
 - When implementing `PartialEq` manually, you only need to implement `eq(&self, other: &Self) -> bool`. The `ne` method has a default implementation.
 

@@ -36,7 +36,11 @@ The `.find()` and `.rfind()` methods return byte indices, not character indices.
 
 ```rust
 let text = "café";
-assert_eq!(text.find('é'), Some(3));  // byte index, not char index
+// byte index, not char index
+assert_eq!(
+    text.find('é'),
+    Some(3)
+);
 ```
 
 ## Your Task
@@ -96,7 +100,11 @@ assert_eq!(
 
 // extract_between
 assert_eq!(
-    extract_between("<tag>content</tag>", "<tag>", "</tag>"),
+    extract_between(
+        "<tag>content</tag>",
+        "<tag>",
+        "</tag>"
+    ),
     Some("content".to_string())
 );
 assert_eq!(
@@ -117,7 +125,8 @@ assert_eq!(
 - For `has_prefix` and `has_suffix`, use `.starts_with()` and `.ends_with()` directly
 - For `find_first` and `find_last`, use `.find()` and `.rfind()`
 - For `count_occurrences`, use `.matches(pattern).count()`
-- For `find_all_indices`, use `.match_indices(pattern)` and collect the indices
+- For `find_all_indices`, use `.match_indices(pattern)`
+  and collect the indices
 - For `extract_between`:
   1. Use `.find()` to locate the start marker
   2. Calculate where the content begins (after the start marker)

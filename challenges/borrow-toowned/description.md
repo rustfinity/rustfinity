@@ -156,9 +156,14 @@ assert_eq!(result, "hello_world");
 // Case insensitive string in HashMap
 let mut map: HashMap<CaseInsensitiveString, i32> =
     HashMap::new();
-map.insert(CaseInsensitiveString::new("Hello"), 1);
+map.insert(
+    CaseInsensitiveString::new("Hello"),
+    1
+);
 assert_eq!(
-    map.get(&CaseInsensitiveString::new("HELLO")),
+    map.get(&CaseInsensitiveString::new(
+        "HELLO"
+    )),
     Some(&1)
 );
 

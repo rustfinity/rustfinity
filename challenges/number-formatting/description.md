@@ -64,7 +64,8 @@ use number_formatting::*;
 // Padding with zeros
 assert_eq!(format_padded(42, 5), "00042");
 assert_eq!(format_padded(-7, 4), "-007");
-assert_eq!(format_padded(123, 2), "123");  // Wider than width
+// Wider than width
+assert_eq!(format_padded(123, 2), "123");
 
 // Right alignment
 assert_eq!(format_aligned(42, 5), "   42");
@@ -102,9 +103,10 @@ assert_eq!(format_currency(1000.0), "$1000.00");
 <details>
   <summary>Click here to reveal hints</summary>
 
-- Use `format!("{:0width$}", num, width = w)` for
-  zero-padded formatting
-- Use `format!("{:>width$}", num, width = w)` for right-aligned formatting
+- Use `format!("{:0width$}", num, width = w)`
+  for zero-padded formatting
+- Use `format!("{:>width$}", num, width = w)`
+  for right-aligned formatting
 - Use `format!("{:b}", num)` for binary, `format!("{:x}", num)` for hex, `format!("{:o}", num)` for octal
 - The `#` flag adds prefixes: `{:#b}` gives "0b...", `{:#x}` gives "0x..."
 - Use `{:X}` for uppercase hex

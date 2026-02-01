@@ -28,11 +28,9 @@ let os_str: &OsStr = OsStr::new("hello.txt");
 // Returns Some if valid UTF-8
 let s: Option<&str> = os_str.to_str();
 
-// Converting OsStr to String (lossy conversion)
-// Replaces invalid UTF-8 with replacement character
-let s: String = os_str
-    .to_string_lossy()
-    .into_owned();
+// Converting OsStr to String (lossy)
+// Replaces invalid UTF-8 with replacement char
+let s: String = os_str.to_string_lossy().into_owned();
 ```
 
 ## Your Task
@@ -75,7 +73,9 @@ let path = Path::new("no_extension");
 assert_eq!(get_file_extension(path), None);
 
 // join_path_components
-let path = join_path_components(&["home", "user", "documents"]);
+let path = join_path_components(
+    &["home", "user", "documents"]
+);
 // On Unix: "home/user/documents"
 // On Windows: "home\\user\\documents"
 

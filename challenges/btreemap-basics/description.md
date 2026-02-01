@@ -16,7 +16,8 @@ scores.insert("Charlie", 92);
 for (name, score) in &scores {
     println!("{}: {}", name, score);
 }
-// Prints: Alice: 95, Bob: 87, Charlie: 92 (alphabetical order)
+// Prints in alphabetical order:
+// Alice: 95, Bob: 87, Charlie: 92
 
 // Range queries
 use std::ops::Bound::{Included, Excluded};

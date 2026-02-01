@@ -63,7 +63,10 @@ let expected = PathBuf::from(
 assert_eq!(result, expected);
 
 // Extract extension
-assert_eq!(get_extension("report.pdf"), Some("pdf".to_string()));
+assert_eq!(
+    get_extension("report.pdf"),
+    Some("pdf".to_string())
+);
 assert_eq!(get_extension("Makefile"), None);
 
 // Get file name
@@ -116,7 +119,8 @@ let normalized = normalize_path("home/user/file.txt");
 - `.extension()` returns an `Option<&OsStr>` - convert with `.to_str()` and `.to_string()`
 - `.file_name()` and `.file_stem()` also return `Option<&OsStr>`
 - `.parent()` returns `Option<&Path>` - convert to `PathBuf` with `.to_path_buf()`
-- Use `.set_extension()` on a `PathBuf` to change the extension
+- Use `.set_extension()` on a `PathBuf` to change
+  the extension
 - `.is_absolute()` checks if a path starts from a root
 - `PathBuf::from()` with a string already normalizes separators for the current platform
 

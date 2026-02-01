@@ -64,7 +64,8 @@ let perms = meta.permissions();
 #[cfg(unix)]
 {
     let mode = perms.mode();
-    let is_executable = mode & 0o111 != 0;  // Check execute bits
+    // Check execute bits
+    let is_executable = mode & 0o111 != 0;
 }
 ```
 
@@ -72,13 +73,33 @@ let perms = meta.permissions();
 
 Implement the following functions to work with file metadata:
 
-1. `get_file_size(path: &Path) -> io::Result<u64>` - Returns the file size in bytes
-2. `get_file_type(path: &Path) -> io::Result<String>` - Returns "file", "directory", or "symlink"
-3. `is_readonly(path: &Path) -> io::Result<bool>` - Checks if the file is read-only
-4. `get_modified_time(path: &Path) -> io::Result<SystemTime>` - Returns when the file was last modified
-5. `was_modified_within(path: &Path, duration: Duration) -> io::Result<bool>` - Checks if file was modified within the given duration
-6. `is_executable(path: &Path) -> io::Result<bool>` - Checks if file has execute permissions (Unix) or has executable extension (Windows)
-7. `compare_modified_times(path1: &Path, path2: &Path) -> io::Result<Ordering>`
+1. `get_file_size(path: &Path) -> io::Result<u64>`
+   - Returns the file size in bytes
+2. `get_file_type(
+       path: &Path
+   ) -> io::Result<String>`
+   - Returns "file", "directory", or "symlink"
+3. `is_readonly(path: &Path) -> io::Result<bool>`
+   - Checks if the file is read-only
+4. `get_modified_time(
+       path: &Path
+   ) -> io::Result<SystemTime>`
+   - Returns when the file was last modified
+5. `was_modified_within(
+       path: &Path,
+       duration: Duration
+   ) -> io::Result<bool>`
+   - Checks if file was modified within the given
+     duration
+6. `is_executable(
+       path: &Path
+   ) -> io::Result<bool>`
+   - Checks if file has execute permissions (Unix)
+     or has executable extension (Windows)
+7. `compare_modified_times(
+       path1: &Path,
+       path2: &Path
+   ) -> io::Result<Ordering>`
    - Compares which file was modified more recently
 
 ## Examples
@@ -128,17 +149,29 @@ match ordering {
 <details>
   <summary>Click here for hints</summary>
 
-- Use `std::fs::metadata(path)` to get the `Metadata` struct
+- Use `std::fs::metadata(path)` to get the
+  `Metadata` struct
 - `Metadata::len()` returns file size in bytes
-- `Metadata::file_type()` returns a `FileType` with `is_file()`, `is_dir()`, `is_symlink()` methods
-- `Metadata::permissions()` returns a `Permissions` struct with `readonly()` method
-- `Metadata::modified()` returns `io::Result<SystemTime>` - the modification time
+- `Metadata::file_type()` returns a `FileType`
+  with `is_file()`, `is_dir()`, `is_symlink()`
+  methods
+- `Metadata::permissions()` returns a
+  `Permissions` struct with `readonly()` method
+- `Metadata::modified()` returns
+  `io::Result<SystemTime>` - the modification
+  time
 - For `was_modified_within`, use
   `SystemTime::now().duration_since(modified)`
   to get elapsed time
-- For Unix executable check, use `#[cfg(unix)]` and `std::os::unix::fs::PermissionsExt::mode()`
-- The execute bit can be checked with `mode & 0o111 != 0` (any of owner/group/other execute)
-- For Windows, you might check file extension (`.exe`, `.bat`, `.cmd`) as an alternative
-- For comparing times, `SystemTime` implements `PartialOrd` so you can compare directly
+- For Unix executable check, use `#[cfg(unix)]`
+  and
+  `std::os::unix::fs::PermissionsExt::mode()`
+- The execute bit can be checked with
+  `mode & 0o111 != 0` (any of owner/group/
+  other execute)
+- For Windows, you might check file extension (
+  `.exe`, `.bat`, `.cmd`) as an alternative
+- For comparing times, `SystemTime` implements
+  `PartialOrd` so you can compare directly
 
 </details>

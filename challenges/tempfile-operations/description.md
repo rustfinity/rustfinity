@@ -27,7 +27,11 @@ fn create_temp_file(
 ) -> std::io::Result<std::path::PathBuf> {
     let mut path = env::temp_dir();
     let pid = process::id();
-    let filename = format!("{}_{pid}_{}", prefix, suffix);
+    let filename = format!(
+        "{}_{pid}_{}",
+        prefix,
+        suffix
+    );
     path.push(filename);
     File::create(&path)?;
     Ok(path)
@@ -106,7 +110,8 @@ std::fs::remove_file(&path)?;
     temp.write("Some data")?;
     let content = temp.read()?;
     assert_eq!(content, "Some data");
-    // File is automatically deleted when temp goes out of scope
+    // File is automatically deleted when
+    // temp goes out of scope
 }
 
 // Create a temp directory

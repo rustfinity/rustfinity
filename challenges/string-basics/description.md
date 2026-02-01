@@ -8,8 +8,10 @@ In Rust, there are two main string types: `String` and `&str`. Understanding the
 You can create a `String` from a `&str` in several ways:
 
 ```rust
-let s1 = "hello".to_string();  // Using .to_string()
-let s2 = String::from("hello"); // Using String::from()
+// Using .to_string()
+let s1 = "hello".to_string();
+// Using String::from()
+let s2 = String::from("hello");
 ```
 
 ## Iterating Over Strings
@@ -38,7 +40,8 @@ let ascii_str = "Hello";
 let unicode_str = "Hello, world!";
 
 assert!(ascii_str.is_ascii());     // true
-assert!(unicode_str.is_ascii());   // true - common punctuation is ASCII
+// true - common punctuation is ASCII
+assert!(unicode_str.is_ascii());
 ```
 
 ## Your Task

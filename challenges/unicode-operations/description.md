@@ -20,10 +20,14 @@ let text = "Hello";
 assert_eq!(text.len(), 5);        // 5 bytes
 assert_eq!(text.chars().count(), 5); // 5 characters
 
-let emoji = "👨‍👩‍👧";  // Family emoji (ZWJ sequence)
-assert_eq!(emoji.len(), 18);       // 18 bytes!
-assert_eq!(emoji.chars().count(), 5); // 5 Unicode scalars
-// But visually it's 1 "character" (grapheme cluster)
+// Family emoji (ZWJ sequence)
+let emoji = "👨‍👩‍👧";
+// 18 bytes!
+assert_eq!(emoji.len(), 18);
+// 5 Unicode scalars
+assert_eq!(emoji.chars().count(), 5);
+// But visually it's 1 "character"
+// (grapheme cluster)
 ```
 
 ## Safe String Slicing
@@ -31,9 +35,11 @@ assert_eq!(emoji.chars().count(), 5); // 5 Unicode scalars
 String slicing in Rust must occur at valid UTF-8 boundaries. Slicing in the middle of a multi-byte character causes a panic:
 
 ```rust
-let text = "Здравствуйте"; // Russian "Hello"
+// Russian "Hello"
+let text = "Здравствуйте";
 // text[0..1] would panic! 'З' is 2 bytes
-let slice = &text[0..2]; // OK - takes full first character
+// OK - takes full first character
+let slice = &text[0..2];
 assert_eq!(slice, "З");
 ```
 
@@ -74,10 +80,14 @@ assert_eq!(char_count("你好"), 2);     // Chinese "Hello"
 assert_eq!(char_count("🎉"), 1);       // Single emoji
 
 // byte_count
-assert_eq!(byte_count("Hello"), 5);    // ASCII: 1 byte each
-assert_eq!(byte_count("Привет"), 12);  // Cyrillic: 2 bytes each
-assert_eq!(byte_count("你好"), 6);      // Chinese: 3 bytes each
-assert_eq!(byte_count("🎉"), 4);        // Emoji: 4 bytes
+// ASCII: 1 byte each
+assert_eq!(byte_count("Hello"), 5);
+// Cyrillic: 2 bytes each
+assert_eq!(byte_count("Привет"), 12);
+// Chinese: 3 bytes each
+assert_eq!(byte_count("你好"), 6);
+// Emoji: 4 bytes
+assert_eq!(byte_count("🎉"), 4);
 
 // safe_substring
 assert_eq!(

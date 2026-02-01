@@ -8,7 +8,10 @@ The `ToString` trait provides a single method `to_string()` that converts a valu
 use std::fmt;
 
 pub trait Display {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result;
+    fn fmt(
+        &self,
+        f: &mut fmt::Formatter<'_>
+    ) -> fmt::Result;
 }
 
 pub trait ToString {
@@ -107,17 +110,26 @@ let usd = Money {
     amount: 1234,
     currency: "USD".to_string()
 };
-assert_eq!(usd.to_string(), "$12.34");
+assert_eq!(
+    usd.to_string(),
+    "$12.34"
+);
 let eur = Money {
     amount: 5000,
     currency: "EUR".to_string()
 };
-assert_eq!(eur.to_string(), "€50.00");
+assert_eq!(
+    eur.to_string(),
+    "€50.00"
+);
 let other = Money {
     amount: 999,
     currency: "GBP".to_string()
 };
-assert_eq!(other.to_string(), "9.99 GBP");
+assert_eq!(
+    other.to_string(),
+    "9.99 GBP"
+);
 
 // Person
 let person = Person {

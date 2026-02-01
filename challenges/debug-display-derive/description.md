@@ -18,7 +18,10 @@ struct Point {
 
 // Display - must be implemented manually
 impl fmt::Display for Point {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+    fn fmt(
+        &self,
+        f: &mut fmt::Formatter<'_>
+    ) -> fmt::Result {
         write!(f, "({}, {})", self.x, self.y)
     }
 }
@@ -56,7 +59,8 @@ Create a `Color` enum with variants:
 - Derive `Debug`
 - Implement `Display`:
   - Unit variants display as their name: `"Red"`, `"Green"`, `"Blue"`
-  - `Rgb` displays as `"rgb(r, g, b)"` (e.g., `"rgb(255, 128, 0)"`)
+  - `Rgb` displays as `"rgb(r, g, b)"`
+    (e.g., `"rgb(255, 128, 0)"`)
   - `Hex` displays as the hex string (e.g., `"#FF5733"`)
 
 ### 3. Temperature Struct
@@ -66,14 +70,17 @@ Create a `Temperature` struct that holds a value (`f64`) and a unit (`Temperatur
 The `TemperatureUnit` enum should have variants: `Celsius`, `Fahrenheit`, `Kelvin`.
 
 - Derive `Debug` for both
-- Implement `Display` for `Temperature` to format as `"value°C"`, `"value°F"`, or `"valueK"` (e.g., `"25.5°C"`, `"98.6°F"`, `"300K"`)
+- Implement `Display` for `Temperature` to format
+  as `"value°C"`, `"value°F"`, or `"valueK"`
+  (e.g., `"25.5°C"`, `"98.6°F"`, `"300K"`)
 
 ### 4. LogLevel Enum
 
 Create a `LogLevel` enum with variants: `Error`, `Warning`, `Info`, `Debug`.
 
 - Derive `Debug`
-- Implement `Display` to show as uppercase strings: `"ERROR"`, `"WARNING"`, `"INFO"`, `"DEBUG"`
+- Implement `Display` to show as uppercase strings:
+  `"ERROR"`, `"WARNING"`, `"INFO"`, `"DEBUG"`
 
 ### 5. LogMessage Struct
 
@@ -83,19 +90,28 @@ Create a `LogMessage` struct with:
 - `message`: `String`
 
 - Derive `Debug`
-- Implement `Display` to format as `"[LEVEL] message"` (e.g., `"[ERROR] Connection failed"`)
+- Implement `Display` to format as
+  `"[LEVEL] message"` (e.g.,
+  `"[ERROR] Connection failed"`)
 
 ### 6. Utility Functions
 
 Implement these functions to work with Debug and Display:
 
-- `debug_string<T: std::fmt::Debug>(value: &T) -> String`
+- `debug_string<T: std::fmt::Debug>(
+      value: &T
+  ) -> String`
   - Returns the debug representation of any `Debug` type
-- `display_string<T: std::fmt::Display>(value: &T) -> String`
-  - Returns the display representation of any `Display` type
-- `pretty_debug<T: std::fmt::Debug>(value: &T) -> String`
-  - Returns the pretty-printed debug representation
-    (with `{:#?}`)
+- `display_string<T: std::fmt::Display>(
+      value: &T
+  ) -> String`
+  - Returns the display representation of any
+    `Display` type
+- `pretty_debug<T: std::fmt::Debug>(
+      value: &T
+  ) -> String`
+  - Returns the pretty-printed debug
+    representation (with `{:#?}`)
 
 ## Examples
 
@@ -128,7 +144,10 @@ let log = LogMessage {
     level: LogLevel::Error,
     message: String::from("Connection failed"),
 };
-assert_eq!(format!("{}", log), "[ERROR] Connection failed");
+assert_eq!(
+    format!("{}", log),
+    "[ERROR] Connection failed"
+);
 
 // Utility functions
 assert_eq!(
@@ -143,14 +162,25 @@ assert_eq!(display_string(&coord), "(3.5, -2.0)");
 <details>
   <summary>Click here for hints</summary>
 
-- Use `#[derive(Debug)]` on structs and enums for automatic Debug implementation
-- Implement `Display` using `impl std::fmt::Display for TypeName { fn fmt(...) }`
-- Use `write!(f, "format string", args)` inside the `fmt` method
-- For enums, use `match self { ... }` to handle each variant
-- The degree symbol `°` is a valid UTF-8 character you can include directly in strings
-- `format!("{:?}", value)` returns the Debug string
-- `format!("{:#?}", value)` returns the pretty-printed Debug string
-- `format!("{}", value)` returns the Display string
-- You can also use `value.to_string()` for Display types
+- Use `#[derive(Debug)]` on structs and enums for
+  automatic Debug implementation
+- Implement `Display` using
+  `impl std::fmt::Display for TypeName {
+      fn fmt(...)
+  }`
+- Use `write!(f, "format string", args)` inside
+  the `fmt` method
+- For enums, use `match self { ... }` to handle
+  each variant
+- The degree symbol `°` is a valid UTF-8
+  character you can include directly in strings
+- `format!("{:?}", value)` returns the Debug
+  string
+- `format!("{:#?}", value)` returns the pretty-
+  printed Debug string
+- `format!("{}", value)` returns the Display
+  string
+- You can also use `value.to_string()` for
+  Display types
 
 </details>
