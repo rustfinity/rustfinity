@@ -21,7 +21,7 @@ The key insight is that `Cow` allows you to work with data that might be borrowe
 - `Cow::Owned(data)` - Wrap owned data
 - `cow.to_mut()` - Get a mutable reference, cloning if borrowed
 - `cow.into_owned()` - Convert to owned, cloning if borrowed
-- `Cow::from(data)` - Create from &str, String, &[T], Vec<T>, etc.
+- `Cow::from(data)` - Create from &str, String, &[`T`], Vec`<T>`, etc.
 
 ## When to Use Cow
 

@@ -63,24 +63,16 @@ Implement the following functions that use iterator inspection methods:
 ) -> Option<usize>`
    - Find the index of the first occurrence of
      target
-3. `elements_with_next<T: Clone>(
-    items: &[T]
-) -> Vec<(T, Option<T>)>`
+3. `elements_with_next<T: Clone>(items: &[T]) -> Vec<(T, Option<T>)>`
    - Return each element paired with the next
      element (or None if last) using `peekable()`
-4. `group_consecutive_duplicates<
-   T: Clone + PartialEq
-   > (items: &[T]) -> Vec<(T, usize)>`
+4. `group_consecutive_duplicates<T: Clone + PartialEq>(items: &[T]) -> Vec<(T, usize)>`
    - Group consecutive identical elements and
      count them using `peekable()`
-5. `find_first_repeated<T: Clone + PartialEq>(
-    items: &[T]
-) -> Option<T>`
+5. `find_first_repeated<T: Clone + PartialEq>(items: &[T]) -> Option<T>`
    - Find the first element that equals its next
      neighbor using `peekable()`
-6. `collect_with_trace<
-   T: Clone + std::fmt::Debug
-   > (items: &[T], trace: &mut Vec<String>) -> Vec<T>`
+6. `collect_with_trace<T: Clone + std::fmt::Debug>(items: &[T], trace: &mut Vec<String>) -> Vec<T>`
    - Collect elements while recording a trace of
      each element using `inspect()`
 7. `sum_with_running_total(
