@@ -9,11 +9,13 @@ Your task is to implement a function that reads integers from a file, computes t
 Implement the function `sum_integers_from_file`:
 
 - Takes the file path as a parameter.
-- Reads the file line by line, assuming each line contains a single integer or invalid data.
+- Reads the file line by line, assuming each line contains
+  a single integer or invalid data.
 - Computes and returns the sum of all integers as a `Result<i32, io::Error>`.
 - Handles the following:
   - If the file cannot be opened, propagate the `io::Error`.
-  - If a line cannot be parsed as an integer, propagate a custom `io::Error` with a meaningful message.
+  - If a line cannot be parsed as an integer, propagate
+    a custom `io::Error` with a meaningful message.
 
 ### Requirements
 
@@ -33,7 +35,10 @@ If you're stuck, here are some hints to help you solve the challenge:
 - The `io::Error::new` function can create custom errors.
 - To create the error type we want for invalid numbers, you can do the following:
   ```rust
-  let error = io::Error::new(io::ErrorKind::InvalidData, "Invalid number");
+  let error = io::Error::new(
+      io::ErrorKind::InvalidData,
+      "Invalid number"
+  );
   ```
 - To propagate an error, use the `?` operator. e.g.
   ```rust
@@ -41,7 +46,14 @@ If you're stuck, here are some hints to help you solve the challenge:
   ```
 - You can transform an error type to another error type by using the `map_err` method. e.g.
   ```rust
-  let num = num_str.parse::<i32>().map_err(|_| io::Error::new(io::ErrorKind::InvalidData, "Invalid number"))?;
+  let num = num_str
+      .parse::<i32>()
+      .map_err(|_| {
+          io::Error::new(
+              io::ErrorKind::InvalidData,
+              "Invalid number"
+          )
+      })?;
   ```
 
 </details>

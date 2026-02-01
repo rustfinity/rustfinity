@@ -19,9 +19,12 @@ If you're stuck, here are some hints to help you solve the challenge:
 <details>
 <summary>Click here to reveal hints</summary>
 
-- You can use the `.ok_or()` method and propagate the error cleanly. e.g.
+- You can use the `.ok_or()` method and propagate the
+  error cleanly. e.g.
   ```rust
-  let first_element = numbers.first().ok_or("Vector is empty".to_string())?;
+  let first_element = numbers
+      .first()
+      .ok_or("Vector is empty".to_string())?;
   ```
 
 </details>

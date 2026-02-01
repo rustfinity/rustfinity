@@ -109,6 +109,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4c95c10ba0b00a02636238b814946408b1322d5ac4760326e6fb8ec956d85775"
 
 [[package]]
+name = "arc-thread-safety"
+version = "0.1.0"
+
+[[package]]
+name = "asref-asmut"
+version = "0.1.0"
+
+[[package]]
 name = "associated-types"
 version = "0.1.0"
 
@@ -146,6 +154,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "72b3254f16251a8381aa12e40e3c4d2f0199f8c6508fbecb9d91f575e0fbb8c6"
 
 [[package]]
+name = "binary-heap-priority"
+version = "0.1.0"
+
+[[package]]
 name = "bitflags"
 version = "1.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -167,7 +179,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "borrow-toowned"
+version = "0.1.0"
+
+[[package]]
+name = "box-heap-allocation"
+version = "0.1.0"
+
+[[package]]
 name = "box-t"
+version = "0.1.0"
+
+[[package]]
+name = "btreemap-basics"
+version = "0.1.0"
+
+[[package]]
+name = "btreeset-ranges"
 version = "0.1.0"
 
 [[package]]
@@ -193,6 +221,10 @@ name = "cc"
 version = "1.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "504bdec147f2cc13c8b57ed9401fd8a147cc66b67ad5cb241394244f2c947549"
+
+[[package]]
+name = "cell-refcell"
+version = "0.1.0"
 
 [[package]]
 name = "cesu8"
@@ -279,6 +311,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1462739cb27611015575c0c11df5df7601141071f07518d56fcc1be504cbec97"
 
 [[package]]
+name = "clone-copy-traits"
+version = "0.1.0"
+
+[[package]]
 name = "closure-types"
 version = "0.1.0"
 dependencies = [
@@ -287,6 +323,10 @@ dependencies = [
 
 [[package]]
 name = "closures"
+version = "0.1.0"
+
+[[package]]
+name = "collection-conversions"
 version = "0.1.0"
 
 [[package]]
@@ -360,11 +400,31 @@ name = "countdown"
 version = "0.1.0"
 
 [[package]]
+name = "cow-copy-on-write"
+version = "0.1.0"
+
+[[package]]
+name = "custom-iterators"
+version = "0.1.0"
+
+[[package]]
+name = "debug-display-derive"
+version = "0.1.0"
+
+[[package]]
 name = "declaring-variables"
 version = "0.1.0"
 dependencies = [
  "syntest",
 ]
+
+[[package]]
+name = "default-trait-patterns"
+version = "0.1.0"
+
+[[package]]
+name = "deref-derefmut"
+version = "0.1.0"
 
 [[package]]
 name = "derive-debug-for-structs"
@@ -376,6 +436,10 @@ version = "0.1.0"
 
 [[package]]
 name = "determine-number-characteristics"
+version = "0.1.0"
+
+[[package]]
+name = "directory-traversal"
 version = "0.1.0"
 
 [[package]]
@@ -407,6 +471,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "duration-operations"
+version = "0.1.0"
+
+[[package]]
 name = "encoding_rs"
 version = "0.8.34"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -416,7 +484,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "entry-api"
+version = "0.1.0"
+
+[[package]]
 name = "enums"
+version = "0.1.0"
+
+[[package]]
+name = "env-variables"
 version = "0.1.0"
 
 [[package]]
@@ -454,6 +530,10 @@ name = "fibonacci"
 version = "0.1.0"
 
 [[package]]
+name = "file-metadata"
+version = "0.1.0"
+
+[[package]]
 name = "find-the-first-palindrome"
 version = "0.1.0"
 
@@ -466,10 +546,18 @@ name = "fizz-buzz"
 version = "0.1.0"
 
 [[package]]
+name = "floating-point"
+version = "0.1.0"
+
+[[package]]
 name = "fnv"
 version = "1.0.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3f9eec918d3f24069decb9af1554cad7c880e2da24a9afd88aca000531ab82c1"
+
+[[package]]
+name = "fold-and-scan"
+version = "0.1.0"
 
 [[package]]
 name = "foreign-types"
@@ -494,6 +582,10 @@ checksum = "e13624c2627564efccf4934284bdd98cbaa14e79b0b5a141218e507b3a823456"
 dependencies = [
  "percent-encoding",
 ]
+
+[[package]]
+name = "from-into-traits"
+version = "0.1.0"
 
 [[package]]
 name = "functions"
@@ -649,13 +741,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "hash-trait"
+version = "0.1.0"
+
+[[package]]
 name = "hashbrown"
 version = "0.14.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e5274423e17b7c9fc20b6e7e208532f9b19825d82dfd615708b70edd83df41f1"
 
 [[package]]
+name = "hashmap-advanced"
+version = "0.1.0"
+
+[[package]]
 name = "hashmaps"
+version = "0.1.0"
+
+[[package]]
+name = "hashset-operations"
 version = "0.1.0"
 
 [[package]]
@@ -845,6 +949,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "integer-parsing"
+version = "0.1.0"
+
+[[package]]
 name = "interior-mutability"
 version = "0.1.0"
 dependencies = [
@@ -866,6 +974,22 @@ name = "is_terminal_polyfill"
 version = "1.70.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7943c866cc5cd64cbc25b2e01621d07fa8eb2a1a23160ee81ce38704e97b8ecf"
+
+[[package]]
+name = "iterator-combinators"
+version = "0.1.0"
+
+[[package]]
+name = "iterator-filtering"
+version = "0.1.0"
+
+[[package]]
+name = "iterator-flattening"
+version = "0.1.0"
+
+[[package]]
+name = "iterator-inspection"
+version = "0.1.0"
 
 [[package]]
 name = "iterators"
@@ -916,6 +1040,10 @@ checksum = "2874a2af47a2325c2001a6e6fad9b16a53b802102b528163885171cf92b15976"
 
 [[package]]
 name = "lifetimes"
+version = "0.1.0"
+
+[[package]]
+name = "linkedlist-basics"
 version = "0.1.0"
 
 [[package]]
@@ -1050,6 +1178,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "number-conversions"
+version = "0.1.0"
+
+[[package]]
+name = "number-formatting"
+version = "0.1.0"
+
+[[package]]
 name = "objc-sys"
 version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1165,6 +1301,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "osstring-basics"
+version = "0.1.0"
+
+[[package]]
 name = "ownership"
 version = "0.1.0"
 
@@ -1201,6 +1341,18 @@ dependencies = [
  "smallvec",
  "windows-targets 0.52.6",
 ]
+
+[[package]]
+name = "partialeq-eq"
+version = "0.1.0"
+
+[[package]]
+name = "partialord-ord"
+version = "0.1.0"
+
+[[package]]
+name = "path-operations"
+version = "0.1.0"
 
 [[package]]
 name = "percent-encoding"
@@ -1290,6 +1442,10 @@ dependencies = [
  "quote",
  "syn",
 ]
+
+[[package]]
+name = "process-exit"
+version = "0.1.0"
 
 [[package]]
 name = "quinn"
@@ -1390,6 +1546,14 @@ version = "0.1.0"
 dependencies = [
  "syntest",
 ]
+
+[[package]]
+name = "rc-reference-counting"
+version = "0.1.0"
+
+[[package]]
+name = "reading-files"
+version = "0.1.0"
 
 [[package]]
 name = "redox_syscall"
@@ -1782,6 +1946,34 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6980e8d7511241f8acf4aebddbb1ff938df5eebe98691418c4468d0b72a96a67"
 
 [[package]]
+name = "stdio-operations"
+version = "0.1.0"
+
+[[package]]
+name = "string-basics"
+version = "0.1.0"
+
+[[package]]
+name = "string-building"
+version = "0.1.0"
+
+[[package]]
+name = "string-iterators"
+version = "0.1.0"
+
+[[package]]
+name = "string-manipulation"
+version = "0.1.0"
+
+[[package]]
+name = "string-parsing"
+version = "0.1.0"
+
+[[package]]
+name = "string-patterns"
+version = "0.1.0"
+
+[[package]]
 name = "strsim"
 version = "0.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1873,6 +2065,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "systemtime-usage"
+version = "0.1.0"
+
+[[package]]
 name = "temperature-converter"
 version = "0.1.0"
 
@@ -1888,6 +2084,10 @@ dependencies = [
  "rustix",
  "windows-sys 0.59.0",
 ]
+
+[[package]]
+name = "tempfile-operations"
+version = "0.1.0"
 
 [[package]]
 name = "the-as-ref-trait"
@@ -2042,6 +2242,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "tostring-display"
+version = "0.1.0"
+
+[[package]]
 name = "tower"
 version = "0.4.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2106,6 +2310,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e421abadd41a4225275504ea4d6566923418b7f05506fbc9c0fe86ba7396114b"
 
 [[package]]
+name = "tryfrom-tryinto"
+version = "0.1.0"
+
+[[package]]
 name = "tuple-structs"
 version = "0.1.0"
 
@@ -2133,6 +2341,10 @@ checksum = "a56d1686db2308d901306f92a263857ef59ea39678a5458e7cb17f01415101f5"
 dependencies = [
  "tinyvec",
 ]
+
+[[package]]
+name = "unicode-operations"
+version = "0.1.0"
 
 [[package]]
 name = "unique-items"
@@ -2184,6 +2396,10 @@ name = "vcpkg"
 version = "0.2.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "accd4ea62f7bb7a82fe23066fb0957d48ef677f6eeb8215f372f52e48bb32426"
+
+[[package]]
+name = "vecdeque-queue"
+version = "0.1.0"
 
 [[package]]
 name = "vectors"
@@ -2599,6 +2815,10 @@ name = "wit-bindgen"
 version = "0.46.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f17a85883d4e6d00e8a97c586de764dabcc06133f7f1d55dce5cdc070ad7fe59"
+
+[[package]]
+name = "writing-files"
+version = "0.1.0"
 
 [[package]]
 name = "zerocopy"
