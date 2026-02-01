@@ -74,7 +74,7 @@ This type contains heap-allocated data, so it should only be `Clone`.
 - Derive `Clone` (but NOT `Copy`)
 - Derive `Debug` and `PartialEq` for testing
 
-### 5. TaggedValue<T> (Generic Clone)
+### 5. `TaggedValue<T>` (Generic Clone)
 
 Create a generic `TaggedValue<T>` struct with:
 

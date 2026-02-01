@@ -74,8 +74,7 @@ Note that `take_while` and `skip_while` only check the condition at the beginnin
 Implement the following functions that demonstrate iterator filtering patterns:
 
 1. `filter_even(numbers: &[i32]) -> Vec<i32>` - Return only even numbers
-2. `filter_by_predicate<F>(numbers: &[i32],
-                   predicate: F) -> Vec<i32>`
+2. `filter_by_predicate<F>(numbers: &[i32], predicate: F) -> Vec<i32>`
    - Return numbers matching a custom predicate
      (where `F: Fn(&i32) -> bool`)
 3. `parse_valid_numbers(strings: &[&str]) -> Vec<i32>`
@@ -88,8 +87,7 @@ Implement the following functions that demonstrate iterator filtering patterns:
 6. `skip_while_negative(numbers: &[i32]) -> Vec<i32>`
    - Skip numbers while they're negative (< 0)
 7. `filter_in_range(numbers: &[i32], min: i32, max: i32) -> Vec<i32>` - Keep numbers within range [min, max] inclusive
-8. `first_matching<T: Clone, F>(items: &[T],
-                        predicate: F) -> Option<T>`
+8. `first_matching<T: Clone, F>(items: &[T], predicate: F) -> Option<T>`
    - Find first element matching predicate
      (where `F: Fn(&T) -> bool`)
 

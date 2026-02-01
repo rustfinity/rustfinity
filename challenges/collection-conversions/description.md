@@ -40,10 +40,8 @@ Implement the following collection conversion functions:
      duplicates and sorting. T must implement
      `Ord`.
 
-3. `hashset_to_sorted_vec<T>(
-    set: HashSet<T>
-) -> Vec<T>`
-   - Convert a HashSet to a sorted Vec. T must
+3. `hashset_to_sorted_vec<T>(set: HashSet<T>) -> Vec<T>`
+   - Convert a HashSet to a sorted Vec. `T` must
      implement `Ord`.
 
 4. `pairs_to_hashmap<K, V>(
