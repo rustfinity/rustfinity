@@ -178,7 +178,10 @@ assert_eq!(result.as_ref(), &[1, 2, 3, 4]);
 
 // Normalize path
 assert_eq!(normalize_path("./foo/./bar"), "foo/bar");
-assert!(matches!(normalize_path("foo/bar"), Cow::Borrowed(_)));
+assert!(matches!(
+    normalize_path("foo/bar"),
+    Cow::Borrowed(_)
+));
 
 // To owned vec
 let slice = &[1, 2, 3];
