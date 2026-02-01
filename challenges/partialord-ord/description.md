@@ -24,9 +24,9 @@ Implement the following types and functions demonstrating ordering traits:
 
 7. **`find_max<T: Ord>`** - Returns a reference to the maximum element in a non-empty slice, or `None` if empty.
 
-8. **`is_sorted<T: Ord>`** - Returns `true` if the slice is sorted in ascending order (each element <= the next).
+8. **`is_sorted<T: Ord>`** - Returns `true` if the slice is sorted in ascending order (each element `<=` the next).
 
-9. **`clamp<T: Ord>`** - Returns a value clamped between min and max bounds (inclusive). If value < min, returns min. If value > max, returns max. Otherwise returns the value itself.
+9. **`clamp<T: Ord>`** - Returns a value clamped between min and max bounds (inclusive). If value `<` min, returns min. If value `>` max, returns max. Otherwise returns the value itself.
 
 ## Examples
 
