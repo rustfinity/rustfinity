@@ -1,4 +1,4 @@
-use crate::{commands::submit::submit_challenge, config::Config, device_flow, download::get_challenge};
+use crate::{commands::{deploy, submit::submit_challenge}, config::Config, device_flow, download::get_challenge};
 use clap::{Parser, Subcommand};
 
 pub async fn run(cli: Cli) -> anyhow::Result<()> {
@@ -7,6 +7,7 @@ pub async fn run(cli: Cli) -> anyhow::Result<()> {
             Get::Challenge { challenge } => get_challenge(&challenge).await,
         },
         Commands::Submit => submit_challenge().await,
+        Commands::Deploy => deploy::deploy().await,
         Commands::Login => {
             let api_key = device_flow::device_login().await?;
             Config::save(&api_key)?;
@@ -56,6 +57,9 @@ enum Commands {
     },
 
     Submit,
+
+    /// Deploy the current project to Rustfinity Cloud
+    Deploy,
 
     /// Authenticate with Rustfinity Cloud
     Login,
