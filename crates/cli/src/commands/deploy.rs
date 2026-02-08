@@ -161,6 +161,12 @@ pub async fn deploy() -> Result<()> {
     if !response.status().is_success() {
         let status = response.status();
         let body = response.text().await.unwrap_or_default();
+        if status.as_u16() == 401 {
+            bail!(
+                "Deploy failed: Authentication failed. Your API key may be invalid or expired.\n\
+                 Run `rustfinity whoami` to check your key, or `rustfinity login` to re-authenticate."
+            );
+        }
         bail!("Deploy failed (HTTP {}): {}", status, body);
     }
 
