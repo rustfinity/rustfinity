@@ -2,8 +2,9 @@ use anyhow::{bail, Context, Result};
 use reqwest::multipart;
 use serde::{Deserialize, Serialize};
 use std::fs;
+use std::io::{self, Write};
 use std::path::Path;
-use std::process::Command;
+use std::process::{Command, Stdio};
 
 use crate::config::Config;
 use crate::constants::api_base_url;
@@ -12,10 +13,11 @@ use crate::constants::api_base_url;
 struct DeployResponse {
     project_id: String,
     deployment_id: String,
-    image: String,
     status: String,
     is_new_project: bool,
-    url: Option<String>,
+    #[allow(dead_code)]
+    subdomain: String,
+    url: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -32,6 +34,77 @@ struct CargoTomlPackage {
 #[derive(Deserialize)]
 struct CargoToml {
     package: CargoTomlPackage,
+}
+
+fn build_for_target() -> Result<()> {
+    let target = "x86_64-unknown-linux-gnu";
+
+    if std::env::consts::OS == "linux" {
+        // On Linux, plain cargo build works — no cross toolchain needed
+        let status = Command::new("cargo")
+            .args(["build", "--release", "--target", target])
+            .status()
+            .context("Failed to run cargo build")?;
+        if !status.success() {
+            bail!("cargo build failed with exit code: {}", status);
+        }
+    } else {
+        // Non-Linux: need zig + cargo-zigbuild for cross-compilation
+        // Check zig first — we can't install it for the user
+        if !Command::new("zig")
+            .arg("version")
+            .stdout(Stdio::null())
+            .stderr(Stdio::null())
+            .status()
+            .map(|s| s.success())
+            .unwrap_or(false)
+        {
+            bail!(
+                "\x1b[33mYou're on {}, cross-compiling to Linux requires zig.\n\
+                 Please install zig first: https://ziglang.org/download/\x1b[0m",
+                std::env::consts::OS
+            );
+        }
+
+        // Check cargo-zigbuild — offer to install if missing
+        if !Command::new("cargo")
+            .args(["zigbuild", "--version"])
+            .stdout(Stdio::null())
+            .stderr(Stdio::null())
+            .status()
+            .map(|s| s.success())
+            .unwrap_or(false)
+        {
+            print!(
+                "\x1b[33mcargo-zigbuild is not installed. Install it now? [Y/n]\x1b[0m "
+            );
+            io::stdout().flush()?;
+            let mut input = String::new();
+            io::stdin().read_line(&mut input)?;
+            let input = input.trim().to_lowercase();
+            if input == "n" || input == "no" {
+                bail!("cargo-zigbuild is required. Install it with: cargo install cargo-zigbuild");
+            }
+            println!("Installing cargo-zigbuild...");
+            let install = Command::new("cargo")
+                .args(["install", "cargo-zigbuild"])
+                .status()
+                .context("Failed to run cargo install cargo-zigbuild")?;
+            if !install.success() {
+                bail!("Failed to install cargo-zigbuild");
+            }
+        }
+
+        let status = Command::new("cargo")
+            .args(["zigbuild", "--release", "--target", target])
+            .status()
+            .context("Failed to run cargo zigbuild")?;
+        if !status.success() {
+            bail!("cargo zigbuild failed with exit code: {}", status);
+        }
+    }
+
+    Ok(())
 }
 
 pub async fn deploy() -> Result<()> {
@@ -70,14 +143,7 @@ pub async fn deploy() -> Result<()> {
 
     // 5. Build release binary for x86_64-unknown-linux-gnu
     println!("Building release binary...");
-    let build_status = Command::new("cargo")
-        .args(["build", "--release", "--target", "x86_64-unknown-linux-gnu"])
-        .status()
-        .context("Failed to run cargo build")?;
-
-    if !build_status.success() {
-        bail!("cargo build failed with exit code: {}", build_status);
-    }
+    build_for_target()?;
 
     // 6. Locate binary
     let binary_path = format!(
@@ -92,10 +158,13 @@ pub async fn deploy() -> Result<()> {
         );
     }
 
-    // 7. Copy binary with unique name
-    let short_uuid = &uuid::Uuid::new_v4().to_string()[..8];
-    let unique_binary_name = format!("rustfinity-app-{}", short_uuid);
-    let temp_binary_path = format!("target/release/{}", unique_binary_name);
+    // 7. Copy binary with deterministic name
+    let binary_suffix = match &existing_project_id {
+        Some(project_id) => project_id.clone(),
+        None => slug.clone(),
+    };
+    let binary_name = format!("rustfinity-app-{}", binary_suffix);
+    let temp_binary_path = format!("target/release/{}", binary_name);
     fs::copy(binary_path, &temp_binary_path)
         .context("Failed to copy binary to temp location")?;
 
@@ -125,7 +194,7 @@ pub async fn deploy() -> Result<()> {
         .context("Failed to read binary file")?;
 
     let binary_part = multipart::Part::bytes(binary_bytes)
-        .file_name(unique_binary_name.clone())
+        .file_name(binary_name.clone())
         .mime_str("application/octet-stream")?;
 
     let mut form = multipart::Form::new()
@@ -194,11 +263,8 @@ pub async fn deploy() -> Result<()> {
         println!("Redeployed project: {}", slug);
     }
     println!("Deployment ID: {}", deploy_response.deployment_id);
-    println!("Image: {}", deploy_response.image);
     println!("Status: {}", deploy_response.status);
-    if let Some(ref url) = deploy_response.url {
-        println!("URL: {}", url);
-    }
+    println!("URL: {}", deploy_response.url);
 
     // 13. Cleanup temp files
     let _ = fs::remove_file(&temp_binary_path);
