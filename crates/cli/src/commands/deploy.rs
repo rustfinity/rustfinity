@@ -36,8 +36,10 @@ struct CargoToml {
     package: CargoTomlPackage,
 }
 
+const TARGET: &str = "x86_64-unknown-linux-gnu";
+
 fn build_for_target() -> Result<()> {
-    let target = "x86_64-unknown-linux-gnu";
+    let target = TARGET;
 
     if std::env::consts::OS == "linux" {
         // On Linux, plain cargo build works — no cross toolchain needed
@@ -158,15 +160,12 @@ pub async fn deploy() -> Result<()> {
         );
     }
 
-    // 7. Copy binary with deterministic name
+    // 7. Determine upload filename
     let binary_suffix = match &existing_project_id {
         Some(project_id) => project_id.clone(),
         None => slug.clone(),
     };
     let binary_name = format!("rustfinity-app-{}", binary_suffix);
-    let temp_binary_path = format!("target/release/{}", binary_name);
-    fs::copy(binary_path, &temp_binary_path)
-        .context("Failed to copy binary to temp location")?;
 
     // 8. Create source zip via git archive
     println!("Creating source archive...");
@@ -190,7 +189,7 @@ pub async fn deploy() -> Result<()> {
 
     // 9. Create multipart form and send request
     println!("Uploading to Rustfinity Cloud...");
-    let binary_bytes = fs::read(&temp_binary_path)
+    let binary_bytes = fs::read(binary_path)
         .context("Failed to read binary file")?;
 
     let binary_part = multipart::Part::bytes(binary_bytes)
@@ -205,6 +204,8 @@ pub async fn deploy() -> Result<()> {
     if let Some(ref project_id) = existing_project_id {
         form = form.text("project_id", project_id.clone());
     }
+
+    form = form.text("target", TARGET.to_string());
 
     if has_source_zip {
         let source_bytes = fs::read(source_zip_path)
@@ -265,12 +266,6 @@ pub async fn deploy() -> Result<()> {
     println!("Deployment ID: {}", deploy_response.deployment_id);
     println!("Status: {}", deploy_response.status);
     println!("URL: {}", deploy_response.url);
-
-    // 13. Cleanup temp files
-    let _ = fs::remove_file(&temp_binary_path);
-    if has_source_zip {
-        let _ = fs::remove_file(source_zip_path);
-    }
 
     println!("Deploy successful!");
     Ok(())
