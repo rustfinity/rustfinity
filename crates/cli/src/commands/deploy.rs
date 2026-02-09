@@ -2,11 +2,11 @@ use anyhow::{bail, Context, Result};
 use reqwest::multipart;
 use serde::{Deserialize, Serialize};
 use std::fs;
-use std::io::{self, Write};
 use std::path::Path;
 use std::process::{Command, Stdio};
 
 use crate::config::Config;
+use crate::confirm::confirm;
 use crate::constants::api_base_url;
 
 #[derive(Deserialize)]
@@ -37,6 +37,89 @@ struct CargoToml {
 }
 
 const TARGET: &str = "x86_64-unknown-linux-gnu";
+
+/// Check if the current directory is inside a git repository.
+/// If not, offer to initialize one for the user.
+fn ensure_git_repo() -> Result<()> {
+    // Check if git is installed
+    let git_installed = Command::new("git")
+        .args(["--version"])
+        .stdout(Stdio::null())
+        .stderr(Stdio::null())
+        .status()
+        .map(|s| s.success())
+        .unwrap_or(false);
+
+    if !git_installed {
+        bail!(
+            "Git is not installed. Rustfinity deploy requires git to create source archives.\n\
+             Please install git: https://git-scm.com/downloads"
+        );
+    }
+
+    // Check if we're inside a git repo
+    let in_git_repo = Command::new("git")
+        .args(["rev-parse", "--is-inside-work-tree"])
+        .stdout(Stdio::null())
+        .stderr(Stdio::null())
+        .status()
+        .map(|s| s.success())
+        .unwrap_or(false);
+
+    if in_git_repo {
+        return Ok(());
+    }
+
+    println!(
+        "\x1b[33mThis directory is not a git repository.\x1b[0m"
+    );
+    println!(
+        "Rustfinity deploy uses git to create source archives of your project."
+    );
+
+    let yes = confirm(
+        "Would you like to initialize a git repository here?",
+        true,
+    )
+    .context("Failed to read input")?;
+
+    if !yes {
+        bail!(
+            "A git repository is required for deployment.\n\
+             You can initialize one manually with: git init && git add -A && git commit -m \"Initial commit\""
+        );
+    }
+
+    // git init
+    let status = Command::new("git")
+        .args(["init"])
+        .status()
+        .context("Failed to run git init")?;
+    if !status.success() {
+        bail!("git init failed");
+    }
+
+    // git add -A
+    let status = Command::new("git")
+        .args(["add", "-A"])
+        .status()
+        .context("Failed to run git add")?;
+    if !status.success() {
+        bail!("git add failed");
+    }
+
+    // git commit
+    let status = Command::new("git")
+        .args(["commit", "-m", "Initial commit"])
+        .status()
+        .context("Failed to run git commit")?;
+    if !status.success() {
+        bail!("git commit failed");
+    }
+
+    println!("\x1b[32mGit repository initialized successfully.\x1b[0m");
+    Ok(())
+}
 
 fn build_for_target() -> Result<()> {
     let target = TARGET;
@@ -77,14 +160,12 @@ fn build_for_target() -> Result<()> {
             .map(|s| s.success())
             .unwrap_or(false)
         {
-            print!(
-                "\x1b[33mcargo-zigbuild is not installed. Install it now? [Y/n]\x1b[0m "
-            );
-            io::stdout().flush()?;
-            let mut input = String::new();
-            io::stdin().read_line(&mut input)?;
-            let input = input.trim().to_lowercase();
-            if input == "n" || input == "no" {
+            let yes = confirm(
+                "\x1b[33mcargo-zigbuild is not installed. Install it now?\x1b[0m",
+                true,
+            )
+            .context("Failed to read input")?;
+            if !yes {
                 bail!("cargo-zigbuild is required. Install it with: cargo install cargo-zigbuild");
             }
             println!("Installing cargo-zigbuild...");
@@ -121,7 +202,10 @@ pub async fn deploy() -> Result<()> {
         bail!("No Cargo.toml found in the current directory. Please run this command from a Rust project root.");
     }
 
-    // 3. Parse Cargo.toml to get package name and derive slug
+    // 3. Ensure we're in a git repo (offer to initialize if not)
+    ensure_git_repo()?;
+
+    // 4. Parse Cargo.toml to get package name and derive slug
     let cargo_toml_contents = fs::read_to_string(cargo_toml_path)
         .context("Failed to read Cargo.toml")?;
     let cargo_toml: CargoToml = toml::from_str(&cargo_toml_contents)
@@ -131,7 +215,7 @@ pub async fn deploy() -> Result<()> {
 
     println!("Deploying project: {} (slug: {})", package_name, slug);
 
-    // 4. Load .rustfinity.json if it exists (get project_id)
+    // 5. Load rustfinity.json if it exists (get project_id)
     let project_config_path = Path::new("rustfinity.json");
     let existing_project_id = if project_config_path.exists() {
         let contents = fs::read_to_string(project_config_path)
@@ -143,11 +227,11 @@ pub async fn deploy() -> Result<()> {
         None
     };
 
-    // 5. Build release binary for x86_64-unknown-linux-gnu
+    // 6. Build release binary for x86_64-unknown-linux-gnu
     println!("Building release binary...");
     build_for_target()?;
 
-    // 6. Locate binary
+    // 7. Locate binary
     let binary_path = format!(
         "target/x86_64-unknown-linux-gnu/release/{}",
         package_name
@@ -160,14 +244,14 @@ pub async fn deploy() -> Result<()> {
         );
     }
 
-    // 7. Determine upload filename
+    // 8. Determine upload filename
     let binary_suffix = match &existing_project_id {
         Some(project_id) => project_id.clone(),
         None => slug.clone(),
     };
     let binary_name = format!("rustfinity-app-{}", binary_suffix);
 
-    // 8. Create source zip via git archive
+    // 9. Create source zip via git archive
     println!("Creating source archive...");
     let source_zip_path = "target/release/rustfinity-source.zip";
     let archive_status = Command::new("git")
@@ -177,17 +261,14 @@ pub async fn deploy() -> Result<()> {
             &format!("--output={}", source_zip_path),
             "HEAD",
         ])
-        .status();
+        .status()
+        .context("Failed to run git archive")?;
 
-    let has_source_zip = match archive_status {
-        Ok(status) if status.success() => true,
-        _ => {
-            println!("Warning: Could not create source archive (not a git repo?). Continuing without source zip.");
-            false
-        }
-    };
+    if !archive_status.success() {
+        bail!("Failed to create source archive via git archive. Make sure you have at least one commit.");
+    }
 
-    // 9. Create multipart form and send request
+    // 10. Create multipart form and send request
     println!("Uploading to Rustfinity Cloud...");
     let binary_bytes = fs::read(binary_path)
         .context("Failed to read binary file")?;
@@ -207,16 +288,14 @@ pub async fn deploy() -> Result<()> {
 
     form = form.text("target", TARGET.to_string());
 
-    if has_source_zip {
-        let source_bytes = fs::read(source_zip_path)
-            .context("Failed to read source zip")?;
-        let source_part = multipart::Part::bytes(source_bytes)
-            .file_name("rustfinity-source.zip")
-            .mime_str("application/zip")?;
-        form = form.part("source_zip", source_part);
-    }
+    let source_bytes = fs::read(source_zip_path)
+        .context("Failed to read source zip")?;
+    let source_part = multipart::Part::bytes(source_bytes)
+        .file_name("rustfinity-source.zip")
+        .mime_str("application/zip")?;
+    form = form.part("source_zip", source_part);
 
-    // 10. POST to deploy endpoint
+    // 11. POST to deploy endpoint
     let base_url = api_base_url();
     let url = format!("{}/deploy", base_url);
 
@@ -246,7 +325,7 @@ pub async fn deploy() -> Result<()> {
         .await
         .context("Failed to parse deploy response")?;
 
-    // 11. Save project config to .rustfinity.json
+    // 12. Save project config to .rustfinity.json
     let project_config = ProjectConfig {
         project_id: deploy_response.project_id.clone(),
         name: slug.clone(),
@@ -255,7 +334,7 @@ pub async fn deploy() -> Result<()> {
     fs::write(project_config_path, config_json)
         .context("Failed to write .rustfinity.json")?;
 
-    // 12. Print deployment result
+    // 13. Print deployment result
     if deploy_response.is_new_project {
         println!("Created new project: {}", slug);
         println!();

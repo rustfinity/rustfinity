@@ -1754,6 +1754,7 @@ dependencies = [
  "dirs",
  "dload",
  "futures",
+ "libc",
  "reqwest",
  "semver",
  "serde",
