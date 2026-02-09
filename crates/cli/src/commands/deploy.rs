@@ -20,7 +20,7 @@ struct DeployResponse {
 #[derive(Serialize, Deserialize)]
 struct ProjectConfig {
     project_id: String,
-    project_slug: String,
+    name: String,
 }
 
 #[derive(Deserialize)]
@@ -56,7 +56,7 @@ pub async fn deploy() -> Result<()> {
     println!("Deploying project: {} (slug: {})", package_name, slug);
 
     // 4. Load .rustfinity.json if it exists (get project_id)
-    let project_config_path = Path::new(".rustfinity.json");
+    let project_config_path = Path::new("rustfinity.json");
     let existing_project_id = if project_config_path.exists() {
         let contents = fs::read_to_string(project_config_path)
             .context("Failed to read .rustfinity.json")?;
@@ -130,7 +130,7 @@ pub async fn deploy() -> Result<()> {
     let mut form = multipart::Form::new()
         .part("binary", binary_part)
         .text("project_name", package_name.clone())
-        .text("project_slug", slug.clone());
+        .text("name", slug.clone());
 
     if let Some(ref project_id) = existing_project_id {
         form = form.text("project_id", project_id.clone());
@@ -178,7 +178,7 @@ pub async fn deploy() -> Result<()> {
     // 11. Save project config to .rustfinity.json
     let project_config = ProjectConfig {
         project_id: deploy_response.project_id.clone(),
-        project_slug: slug.clone(),
+        name: slug.clone(),
     };
     let config_json = serde_json::to_string_pretty(&project_config)?;
     fs::write(project_config_path, config_json)
