@@ -15,6 +15,7 @@ struct DeployResponse {
     image: String,
     status: String,
     is_new_project: bool,
+    url: Option<String>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -187,12 +188,17 @@ pub async fn deploy() -> Result<()> {
     // 12. Print deployment result
     if deploy_response.is_new_project {
         println!("Created new project: {}", slug);
+        println!();
+        println!("Tip: Make sure your application listens on the PORT environment variable (defaults to 3000).");
     } else {
         println!("Redeployed project: {}", slug);
     }
     println!("Deployment ID: {}", deploy_response.deployment_id);
     println!("Image: {}", deploy_response.image);
     println!("Status: {}", deploy_response.status);
+    if let Some(ref url) = deploy_response.url {
+        println!("URL: {}", url);
+    }
 
     // 13. Cleanup temp files
     let _ = fs::remove_file(&temp_binary_path);
