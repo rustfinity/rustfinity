@@ -1,13 +1,38 @@
 use anyhow::{bail, Context, Result};
-use reqwest::multipart;
+use reqwest::{multipart, StatusCode};
 use serde::{Deserialize, Serialize};
 use std::fs;
 use std::path::Path;
 use std::process::{Command, Stdio};
 
-use crate::config::Config;
+use crate::auth;
 use crate::confirm::confirm;
 use crate::constants::api_base_url;
+
+#[derive(Debug)]
+enum DeployError {
+    HttpError { status: StatusCode, body: String },
+    Other(anyhow::Error),
+}
+
+impl std::fmt::Display for DeployError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            DeployError::HttpError { status, body } => {
+                write!(f, "Deploy failed (HTTP {}): {}", status, body)
+            }
+            DeployError::Other(e) => write!(f, "{}", e),
+        }
+    }
+}
+
+impl std::error::Error for DeployError {}
+
+impl From<anyhow::Error> for DeployError {
+    fn from(e: anyhow::Error) -> Self {
+        DeployError::Other(e)
+    }
+}
 
 #[derive(Deserialize)]
 struct DeployResponse {
@@ -190,26 +215,85 @@ fn build_for_target() -> Result<()> {
     Ok(())
 }
 
+fn is_auth_error(e: &DeployError) -> bool {
+    matches!(
+        e,
+        DeployError::HttpError { status, .. } if status.as_u16() == 401
+    )
+}
+
+fn is_project_not_found_error(e: &DeployError) -> bool {
+    match e {
+        DeployError::HttpError { status, body } => {
+            status.as_u16() == 400 && body.contains("Project not found")
+        }
+        _ => false,
+    }
+}
+
+fn delete_rustfinity_json() -> Result<()> {
+    let path = Path::new("rustfinity.json");
+    if path.exists() {
+        fs::remove_file(path).context("Failed to remove rustfinity.json")?;
+    }
+    Ok(())
+}
+
 pub async fn deploy() -> Result<()> {
+    deploy_with_retry().await
+}
+
+async fn deploy_with_retry() -> Result<()> {
+    // First attempt
+    match deploy_internal().await {
+        Ok(()) => Ok(()),
+        Err(e) => {
+            // Check if it's a 401 auth error
+            if is_auth_error(&e) {
+                println!("Authentication failed. Logging in...");
+                auth::ensure_authenticated().await?;
+                println!("Retrying deploy...");
+                return deploy_internal().await.map_err(|e| e.into());
+            }
+
+            // Check if it's a deleted project error (400 + "Project not found")
+            if is_project_not_found_error(&e) {
+                println!("Project not found (may have been deleted). Creating new project...");
+                delete_rustfinity_json()?;
+                return deploy_internal().await.map_err(|e| e.into());
+            }
+
+            // Other errors - propagate
+            Err(e.into())
+        }
+    }
+}
+
+async fn deploy_internal() -> Result<(), DeployError> {
+    // Helper to convert anyhow errors to DeployError
+    let to_deploy_error = |e: anyhow::Error| DeployError::Other(e);
+
     // 1. Load config (check auth)
-    let config = Config::load().context(
-        "Not logged in. Run `rustfinity login` to authenticate before deploying.",
-    )?;
+    let config = auth::ensure_authenticated().await.map_err(to_deploy_error)?;
 
     // 2. Verify Cargo.toml exists
     let cargo_toml_path = Path::new("Cargo.toml");
     if !cargo_toml_path.exists() {
-        bail!("No Cargo.toml found in the current directory. Please run this command from a Rust project root.");
+        return Err(DeployError::Other(anyhow::anyhow!(
+            "No Cargo.toml found in the current directory. Please run this command from a Rust project root."
+        )));
     }
 
     // 3. Ensure we're in a git repo (offer to initialize if not)
-    ensure_git_repo()?;
+    ensure_git_repo().map_err(to_deploy_error)?;
 
     // 4. Parse Cargo.toml to get package name and derive slug
     let cargo_toml_contents = fs::read_to_string(cargo_toml_path)
-        .context("Failed to read Cargo.toml")?;
+        .context("Failed to read Cargo.toml")
+        .map_err(to_deploy_error)?;
     let cargo_toml: CargoToml = toml::from_str(&cargo_toml_contents)
-        .context("Failed to parse Cargo.toml")?;
+        .context("Failed to parse Cargo.toml")
+        .map_err(to_deploy_error)?;
     let package_name = &cargo_toml.package.name;
     let slug = package_name.replace('_', "-");
 
@@ -219,9 +303,11 @@ pub async fn deploy() -> Result<()> {
     let project_config_path = Path::new("rustfinity.json");
     let existing_project_id = if project_config_path.exists() {
         let contents = fs::read_to_string(project_config_path)
-            .context("Failed to read .rustfinity.json")?;
+            .context("Failed to read .rustfinity.json")
+            .map_err(to_deploy_error)?;
         let project_config: ProjectConfig = serde_json::from_str(&contents)
-            .context("Failed to parse .rustfinity.json")?;
+            .context("Failed to parse .rustfinity.json")
+            .map_err(to_deploy_error)?;
         Some(project_config.project_id)
     } else {
         None
@@ -229,7 +315,7 @@ pub async fn deploy() -> Result<()> {
 
     // 6. Build release binary for x86_64-unknown-linux-gnu
     println!("Building release binary...");
-    build_for_target()?;
+    build_for_target().map_err(to_deploy_error)?;
 
     // 7. Locate binary
     let binary_path = format!(
@@ -238,10 +324,10 @@ pub async fn deploy() -> Result<()> {
     );
     let binary_path = Path::new(&binary_path);
     if !binary_path.exists() {
-        bail!(
+        return Err(DeployError::Other(anyhow::anyhow!(
             "Expected binary not found at {}. Make sure the package produces a binary target.",
             binary_path.display()
-        );
+        )));
     }
 
     // 8. Determine upload filename
@@ -262,20 +348,25 @@ pub async fn deploy() -> Result<()> {
             "HEAD",
         ])
         .status()
-        .context("Failed to run git archive")?;
+        .context("Failed to run git archive")
+        .map_err(to_deploy_error)?;
 
     if !archive_status.success() {
-        bail!("Failed to create source archive via git archive. Make sure you have at least one commit.");
+        return Err(DeployError::Other(anyhow::anyhow!(
+            "Failed to create source archive via git archive. Make sure you have at least one commit."
+        )));
     }
 
     // 10. Create multipart form and send request
     println!("Uploading to Rustfinity Cloud...");
     let binary_bytes = fs::read(binary_path)
-        .context("Failed to read binary file")?;
+        .context("Failed to read binary file")
+        .map_err(to_deploy_error)?;
 
     let binary_part = multipart::Part::bytes(binary_bytes)
         .file_name(binary_name.clone())
-        .mime_str("application/octet-stream")?;
+        .mime_str("application/octet-stream")
+        .map_err(|e| DeployError::Other(anyhow::anyhow!("Failed to set mime type: {}", e)))?;
 
     let mut form = multipart::Form::new()
         .part("binary", binary_part)
@@ -289,10 +380,12 @@ pub async fn deploy() -> Result<()> {
     form = form.text("target", TARGET.to_string());
 
     let source_bytes = fs::read(source_zip_path)
-        .context("Failed to read source zip")?;
+        .context("Failed to read source zip")
+        .map_err(to_deploy_error)?;
     let source_part = multipart::Part::bytes(source_bytes)
         .file_name("rustfinity-source.zip")
-        .mime_str("application/zip")?;
+        .mime_str("application/zip")
+        .map_err(|e| DeployError::Other(anyhow::anyhow!("Failed to set mime type: {}", e)))?;
     form = form.part("source_zip", source_part);
 
     // 11. POST to deploy endpoint
@@ -306,33 +399,32 @@ pub async fn deploy() -> Result<()> {
         .multipart(form)
         .send()
         .await
-        .context("Failed to send deploy request")?;
+        .context("Failed to send deploy request")
+        .map_err(to_deploy_error)?;
 
     if !response.status().is_success() {
         let status = response.status();
         let body = response.text().await.unwrap_or_default();
-        if status.as_u16() == 401 {
-            bail!(
-                "Deploy failed: Authentication failed. Your API key may be invalid or expired.\n\
-                 Run `rustfinity whoami` to check your key, or `rustfinity login` to re-authenticate."
-            );
-        }
-        bail!("Deploy failed (HTTP {}): {}", status, body);
+        return Err(DeployError::HttpError { status, body });
     }
 
     let deploy_response: DeployResponse = response
         .json()
         .await
-        .context("Failed to parse deploy response")?;
+        .context("Failed to parse deploy response")
+        .map_err(to_deploy_error)?;
 
     // 12. Save project config to .rustfinity.json
     let project_config = ProjectConfig {
         project_id: deploy_response.project_id.clone(),
         name: slug.clone(),
     };
-    let config_json = serde_json::to_string_pretty(&project_config)?;
+    let config_json = serde_json::to_string_pretty(&project_config)
+        .context("Failed to serialize project config")
+        .map_err(to_deploy_error)?;
     fs::write(project_config_path, config_json)
-        .context("Failed to write .rustfinity.json")?;
+        .context("Failed to write .rustfinity.json")
+        .map_err(to_deploy_error)?;
 
     // 13. Print deployment result
     if deploy_response.is_new_project {

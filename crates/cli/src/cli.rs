@@ -1,4 +1,4 @@
-use crate::{commands::{deploy, submit::submit_challenge}, config::Config, constants::api_base_url, device_flow, download::get_challenge};
+use crate::{auth, commands::{deploy, submit::submit_challenge}, config::Config, constants::api_base_url, download::get_challenge};
 use clap::{Parser, Subcommand};
 use serde::Deserialize;
 
@@ -10,10 +10,7 @@ pub async fn run(cli: Cli) -> anyhow::Result<()> {
         Commands::Submit => submit_challenge().await,
         Commands::Deploy => deploy::deploy().await,
         Commands::Login => {
-            let api_key = device_flow::device_login().await?;
-            Config::save(&api_key)?;
-            println!();
-            println!("Login successful! API key saved.");
+            auth::perform_login().await?;
             Ok(())
         }
         Commands::Logout => {

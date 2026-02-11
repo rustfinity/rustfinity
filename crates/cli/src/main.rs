@@ -1,3 +1,4 @@
+mod auth;
 mod cargo_toml;
 mod challenge;
 mod cli;
