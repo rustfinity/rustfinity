@@ -37,7 +37,8 @@ If you're stuck, here are some hints to help you solve the challenge:
       type Value;
 
       fn set(&mut self, key: Self::Key, value: Self::Value);
-      fn get(&self, key: &Self::Key) -> Option<&Self::Value>;
+      fn get(&self, key: &Self::Key)
+          -> Option<&Self::Value>;
   }
   ```
 

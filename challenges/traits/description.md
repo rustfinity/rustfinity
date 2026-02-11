@@ -14,8 +14,10 @@ In this challenge, you'll implement a trait `Describable` and use it to define a
 
 - The `Person` struct should have fields `name: String` and `age: u8`.
 - The `Book` struct should have fields `title: String` and `author: String`.
-- The `describe` method for `Person` should return a string like `"Person: Alice, Age: 30"`.
-- The `describe` method for `Book` should return a string like `"Book: Rust Programming, Author: Jane Doe"`.
+- The `describe` method for `Person` should return a string
+  like `"Person: Alice, Age: 30"`.
+- The `describe` method for `Book` should return a string
+  like `"Book: Rust Programming, Author: Jane Doe"`.
 
 ## Hints
 
@@ -24,14 +26,20 @@ If you're stuck, here are some hints to help you solve the challenge:
 <details>
   <summary>Click here to reveal hints</summary>
 
-- Implement a trait for a struct using `impl TraitName for StructName`. e.g.
+- Implement a trait for a struct using
+  `impl TraitName for StructName`. e.g.
   ```rust
   impl Describable for Person {
       fn describe(&self) -> String {
-          format!("Person: {}, Age: {}", self.name, self.age)
+          format!(
+              "Person: {}, Age: {}",
+              self.name,
+              self.age
+          )
       }
   }
   ```
-- Don't forget to use the `&self` as the parameter for the `describe` method in the trait.
+- Don't forget to use the `&self` as the parameter for
+  the `describe` method in the trait.
 
 </details>

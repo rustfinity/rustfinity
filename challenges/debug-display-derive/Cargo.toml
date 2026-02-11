@@ -1,0 +1,6 @@
+[package]
+name = "debug-display-derive"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]

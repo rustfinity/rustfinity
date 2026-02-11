@@ -16,6 +16,7 @@ pub enum Track {
     RUST_BASICS,
     CONTROL_FLOW,
     DSA,
+    RUST_STD,
 }
 
 #[derive(Deserialize)]

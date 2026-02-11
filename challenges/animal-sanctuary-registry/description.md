@@ -22,7 +22,10 @@ Your task is to implement the following functions:
 let mut registry = Collection::new();
 
 add_animal_to_section("Eagle", "Birds", &mut registry);
-assert_eq!(get_animals_in_section("Birds", &registry), vec!["Eagle"]);
+assert_eq!(
+    get_animals_in_section("Birds", &registry),
+    vec!["Eagle"]
+);
 ```
 
 ## Hints
