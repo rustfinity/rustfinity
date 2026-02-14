@@ -244,27 +244,35 @@ pub async fn deploy() -> Result<()> {
 }
 
 async fn deploy_with_retry() -> Result<()> {
-    // First attempt
-    match deploy_internal().await {
-        Ok(()) => Ok(()),
-        Err(e) => {
-            // Check if it's a 401 auth error
-            if is_auth_error(&e) {
-                println!("Authentication failed. Logging in...");
-                auth::ensure_authenticated().await?;
-                println!("Retrying deploy...");
-                return deploy_internal().await.map_err(|e| e.into());
-            }
+    // Track if we've already retried for each error type to avoid infinite loops
+    let mut auth_retried = false;
+    let mut project_not_found_retried = false;
 
-            // Check if it's a deleted project error (400 + "Project not found")
-            if is_project_not_found_error(&e) {
-                println!("Project not found (may have been deleted). Creating new project...");
-                delete_rustfinity_json()?;
-                return deploy_internal().await.map_err(|e| e.into());
-            }
+    loop {
+        match deploy_internal().await {
+            Ok(()) => return Ok(()),
+            Err(e) => {
+                // Check if it's a 401 auth error
+                if is_auth_error(&e) && !auth_retried {
+                    println!("Authentication failed. Logging in...");
+                    auth::perform_login().await?;
+                    println!("Retrying deploy...");
+                    auth_retried = true;
+                    continue;
+                }
 
-            // Other errors - propagate
-            Err(e.into())
+                // Check if it's a deleted project error (400 + "Project not found")
+                if is_project_not_found_error(&e) && !project_not_found_retried {
+                    println!("Project not found (may have been deleted). Creating new project...");
+                    delete_rustfinity_json()?;
+                    println!("Retrying deploy...");
+                    project_not_found_retried = true;
+                    continue;
+                }
+
+                // Other errors or already retried - propagate
+                return Err(e.into());
+            }
         }
     }
 }
