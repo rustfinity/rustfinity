@@ -1,5 +1,6 @@
-use crate::{commands::submit::submit_challenge, download::get_challenge};
+use crate::{auth, commands::{deploy, submit::submit_challenge}, config::Config, constants::api_base_url, download::get_challenge};
 use clap::{Parser, Subcommand};
+use serde::Deserialize;
 
 pub async fn run(cli: Cli) -> anyhow::Result<()> {
     match cli.command {
@@ -7,23 +8,69 @@ pub async fn run(cli: Cli) -> anyhow::Result<()> {
             Get::Challenge { challenge } => get_challenge(&challenge).await,
         },
         Commands::Submit => submit_challenge().await,
+        Commands::Deploy => deploy::deploy().await,
+        Commands::Login => {
+            auth::perform_login().await?;
+            Ok(())
+        }
+        Commands::Logout => {
+            if Config::delete()? {
+                println!("Logged out. Config file removed.");
+            } else {
+                println!("Not logged in (no config file found).");
+            }
+            Ok(())
+        }
+        Commands::Whoami => {
+            match Config::load() {
+                Ok(config) => {
+                    let masked = if config.api_key.len() > 7 {
+                        format!("{}...", &config.api_key[..7])
+                    } else {
+                        config.api_key.clone()
+                    };
+                    println!("Logged in with key: {}", masked);
+
+                    // Verify key against the server
+                    let base_url = api_base_url();
+                    let url = format!("{}/auth/whoami", base_url);
+                    let client = reqwest::Client::new();
+
+                    match client
+                        .get(&url)
+                        .header("Authorization", format!("Bearer {}", config.api_key))
+                        .send()
+                        .await
+                    {
+                        Ok(res) if res.status().is_success() => {
+                            #[derive(Deserialize)]
+                            struct WhoamiResponse {
+                                username: String,
+                            }
+                            if let Ok(body) = res.json::<WhoamiResponse>().await {
+                                println!("Authenticated as: {}", body.username);
+                            }
+                        }
+                        Ok(res) if res.status().as_u16() == 401 => {
+                            println!("Warning: API key is not valid on the server. Try `rustfinity login` again.");
+                        }
+                        Ok(_) | Err(_) => {
+                            println!("Warning: Could not reach server to verify key.");
+                        }
+                    }
+                }
+                Err(_) => {
+                    println!("Not logged in. Run `rustfinity login` to authenticate.");
+                }
+            }
+            Ok(())
+        }
     }
 }
 
 #[derive(Parser)]
 #[clap(version, about, long_about = None)]
 pub struct Cli {
-    /// Optional name to operate on
-    // name: Option<String>,
-
-    /// Sets a custom config file
-    // #[arg(short, long, value_name = "FILE")]
-    // config: Option<PathBuf>,
-
-    /// Turn debugging information on
-    // #[arg(short, long, action = clap::ArgAction::Count)]
-    // debug: u8,
-
     #[command(subcommand)]
     command: Commands,
 }
@@ -36,6 +83,18 @@ enum Commands {
     },
 
     Submit,
+
+    /// Deploy the current project to Rustfinity Cloud
+    Deploy,
+
+    /// Authenticate with Rustfinity Cloud
+    Login,
+
+    /// Remove saved credentials
+    Logout,
+
+    /// Show current authentication status
+    Whoami,
 }
 
 #[derive(Subcommand)]

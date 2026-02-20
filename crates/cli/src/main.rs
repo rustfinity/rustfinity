@@ -1,9 +1,13 @@
+mod auth;
 mod cargo_toml;
 mod challenge;
 mod cli;
 mod commands;
+mod config;
+mod confirm;
 mod constants;
 mod crates_io;
+mod device_flow;
 mod dir;
 mod download;
 
