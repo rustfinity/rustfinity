@@ -177,8 +177,8 @@ fn build_for_target() -> Result<()> {
         }
 
         // Check cargo-zigbuild — offer to install if missing
-        if !Command::new("cargo")
-            .args(["zigbuild", "--version"])
+        if !Command::new("cargo-zigbuild")
+            .arg("--version")
             .stdout(Stdio::null())
             .stderr(Stdio::null())
             .status()
