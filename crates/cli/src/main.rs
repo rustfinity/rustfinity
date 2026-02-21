@@ -11,6 +11,7 @@ mod device_flow;
 mod dir;
 mod download;
 
+use anyhow::Context;
 use clap::Parser;
 use cli::{run, Cli};
 use semver;
@@ -24,11 +25,28 @@ async fn main() -> anyhow::Result<()> {
     let current_version = semver::Version::parse(current_version)?;
 
     if latest_version > current_version {
-        println!(
-            "A new version of rustfinity ({}) is available, please run the following command and try again:",
-            latest_version
-        );
-        println!("$ cargo install rustfinity");
+        let yes = confirm::confirm(
+            &format!(
+                "A new version of rustfinity ({}) is available. Would you like to update now?",
+                latest_version
+            ),
+            true,
+        )
+        .context("Failed to read input")?;
+
+        if yes {
+            let status = std::process::Command::new("cargo")
+                .args(["install", "rustfinity"])
+                .status()
+                .context("Failed to run cargo install")?;
+
+            if !status.success() {
+                anyhow::bail!("cargo install rustfinity failed");
+            }
+
+            println!("Updated successfully! Please re-run your command.");
+        }
+
         return Ok(());
     }
 
