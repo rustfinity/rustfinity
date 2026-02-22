@@ -1,6 +1,7 @@
 use anyhow::{bail, Context, Result};
 use reqwest::{multipart, StatusCode};
 use serde::{Deserialize, Serialize};
+use serde_json::Value;
 use std::fs;
 use std::path::Path;
 use std::process::{Command, Stdio};
@@ -19,7 +20,18 @@ impl std::fmt::Display for DeployError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             DeployError::HttpError { status, body } => {
-                write!(f, "Deploy failed (HTTP {}): {}", status, body)
+                // Try to extract a human-readable message from JSON error responses
+                let message = serde_json::from_str::<Value>(body)
+                    .ok()
+                    .and_then(|v| v.get("error")?.as_str().map(String::from));
+
+                if let Some(msg) = message {
+                    write!(f, "{}", msg)
+                } else if body.is_empty() {
+                    write!(f, "Deploy failed (HTTP {})", status)
+                } else {
+                    write!(f, "Deploy failed (HTTP {}): {}", status, body)
+                }
             }
             DeployError::Other(e) => write!(f, "{}", e),
         }
