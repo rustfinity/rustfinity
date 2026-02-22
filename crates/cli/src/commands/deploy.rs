@@ -378,8 +378,7 @@ async fn deploy_internal() -> Result<(), DeployError> {
 
     let mut form = multipart::Form::new()
         .part("binary", binary_part)
-        .text("project_name", package_name.clone())
-        .text("name", slug.clone());
+        .text("project_name", package_name.clone());
 
     if let Some(ref project_id) = existing_project_id {
         form = form.text("project_id", project_id.clone());
