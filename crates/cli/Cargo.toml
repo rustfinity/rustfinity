@@ -1,6 +1,6 @@
 [package]
 name = "rustfinity"
-version = "0.4.4"
+version = "0.4.5"
 edition = "2021"
 license = "MIT"
 description = "Rustfinity.com CLI"
@@ -11,6 +11,7 @@ anyhow = "1.0.82"
 base64 = "0.22.1"
 clap = { version = "4.5.4", features = ["derive"] }
 dload = "0.1"
+include_dir = "0.7"
 futures = "0.3.30"
 reqwest = { version = "0.13", features = ["json", "multipart"] }
 toml = "1"
