@@ -5,7 +5,7 @@ use std::io::{self, Write};
 use std::path::Path;
 use std::process::Command;
 
-static AXUM_API: Dir<'_> = include_dir!("$CARGO_MANIFEST_DIR/../../cloud-examples/axum-api");
+static AXUM_API: Dir<'_> = include_dir!("$CARGO_MANIFEST_DIR/templates/axum-api");
 
 pub async fn init() -> Result<()> {
     let project_name = loop {
@@ -101,7 +101,13 @@ fn is_valid_package_name(name: &str) -> bool {
 
 fn write_template(dir: &Dir<'_>, dest: &Path, project_name: &str) -> Result<()> {
     for file in dir.files() {
-        let file_path = dest.join(file.path());
+        // Rename .template files back to their original names (e.g., Cargo.toml.template -> Cargo.toml)
+        let file_path = if file.path().extension().map(|e| e == "template").unwrap_or(false) {
+            dest.join(file.path().with_extension(""))
+        } else {
+            dest.join(file.path())
+        };
+
         if let Some(parent) = file_path.parent() {
             fs::create_dir_all(parent)?;
         }
@@ -109,7 +115,7 @@ fn write_template(dir: &Dir<'_>, dest: &Path, project_name: &str) -> Result<()> 
         let contents = file.contents();
 
         // Replace package name in Cargo.toml
-        if file.path().file_name().map(|f| f == "Cargo.toml").unwrap_or(false) {
+        if file_path.file_name().map(|f| f == "Cargo.toml").unwrap_or(false) {
             let text = std::str::from_utf8(contents)?;
             let replaced = text.replace("name = \"my-app\"", &format!("name = \"{}\"", project_name));
             fs::write(&file_path, replaced)?;
