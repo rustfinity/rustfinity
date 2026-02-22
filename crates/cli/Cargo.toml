@@ -1,10 +1,11 @@
 [package]
 name = "rustfinity"
-version = "0.4.5"
+version = "0.4.6"
 edition = "2021"
 license = "MIT"
 description = "Rustfinity.com CLI"
 repository = "https://github.com/dcodesdev/rustfinity.com/tree/main/crates/cli"
+include = ["src/**", "templates/**", "Cargo.toml", "LICENSE", "README.md"]
 
 [dependencies]
 anyhow = "1.0.82"
