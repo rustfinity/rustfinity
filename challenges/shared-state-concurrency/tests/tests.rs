@@ -118,14 +118,18 @@ fn test_modify_with_delay() {
     let data = Arc::new(Mutex::new(0));
 
     let handle = modify_shared_data(Arc::clone(&data), |n| {
-        thread::sleep(Duration::from_millis(50));
+        thread::sleep(Duration::from_millis(100));
         *n += 1;
     });
 
-    assert_eq!(
-        *data.lock().unwrap(),
-        0,
-        "Value should be 0 before modification completes"
+    // Give the spawned thread time to start but not finish
+    thread::sleep(Duration::from_millis(10));
+
+    // The spawned thread is sleeping while holding the lock,
+    // so try_lock should fail (lock is held)
+    assert!(
+        data.try_lock().is_err(),
+        "Lock should be held by the spawned thread"
     );
 
     handle.join().unwrap();
