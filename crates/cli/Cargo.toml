@@ -1,6 +1,6 @@
 [package]
 name = "rustfinity"
-version = "0.4.6"
+version = "0.4.7"
 edition = "2021"
 license = "MIT"
 description = "Rustfinity.com CLI"
