@@ -161,10 +161,16 @@ fn ensure_git_repo() -> Result<()> {
 fn build_for_target() -> Result<()> {
     let target = TARGET;
 
+    // Force baseline x86-64 instructions to ensure compatibility with gVisor (runsc).
+    // This overrides any user-local RUSTFLAGS or .cargo/config.toml settings that
+    // might enable AVX2/AVX-512, which would cause SIGILL (exit code 132) at runtime.
+    let rustflags = "-C target-cpu=x86-64";
+
     if std::env::consts::OS == "linux" {
         // On Linux, plain cargo build works — no cross toolchain needed
         let status = Command::new("cargo")
             .args(["build", "--release", "--target", target])
+            .env("RUSTFLAGS", rustflags)
             .status()
             .context("Failed to run cargo build")?;
         if !status.success() {
@@ -217,6 +223,7 @@ fn build_for_target() -> Result<()> {
 
         let status = Command::new("cargo")
             .args(["zigbuild", "--release", "--target", target])
+            .env("RUSTFLAGS", rustflags)
             .status()
             .context("Failed to run cargo zigbuild")?;
         if !status.success() {
