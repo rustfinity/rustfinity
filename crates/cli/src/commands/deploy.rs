@@ -448,7 +448,7 @@ async fn deploy_internal() -> Result<(), DeployError> {
     let config_json = serde_json::to_string_pretty(&project_config)
         .context("Failed to serialize project config")
         .map_err(to_deploy_error)?;
-    fs::write(project_config_path, config_json)
+    fs::write(project_config_path, format!("{config_json}\n"))
         .context("Failed to write .rustfinity.json")
         .map_err(to_deploy_error)?;
 
