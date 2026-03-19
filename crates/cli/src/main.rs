@@ -18,6 +18,8 @@ use semver;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
+    let args: Vec<String> = std::env::args().collect();
+
     let latest_version = crates_io::get_latest_version().await?;
     let latest_version = semver::Version::parse(&latest_version)?;
 
@@ -44,7 +46,15 @@ async fn main() -> anyhow::Result<()> {
                 anyhow::bail!("cargo install rustfinity failed");
             }
 
-            println!("Updated successfully! Please re-run your command.");
+            println!("Updated successfully! Re-running your command...\n");
+
+            // Re-run the user's original command with the newly installed binary
+            let status = std::process::Command::new("rustfinity")
+                .args(&args[1..])
+                .status()
+                .context("Failed to re-run command after update")?;
+
+            std::process::exit(status.code().unwrap_or(1));
         }
 
         return Ok(());
