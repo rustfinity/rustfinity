@@ -1,4 +1,4 @@
-use crate::{auth, commands::{deploy, init, submit::submit_challenge}, config::Config, constants::api_base_url, download::get_challenge};
+use crate::{auth, commands::{deploy, init, link, submit::submit_challenge}, config::Config, constants::api_base_url, download::get_challenge};
 use clap::{Parser, Subcommand};
 use serde::Deserialize;
 
@@ -10,6 +10,7 @@ pub async fn run(cli: Cli) -> anyhow::Result<()> {
         Commands::Submit => submit_challenge().await,
         Commands::Deploy => deploy::deploy().await,
         Commands::Init => init::init().await,
+        Commands::Link { project_id } => link::link(&project_id).await,
         Commands::Login => {
             auth::perform_login().await?;
             Ok(())
@@ -90,6 +91,12 @@ enum Commands {
 
     /// Initialize a new project from a template
     Init,
+
+    /// Link the current directory to an existing Rustfinity Cloud project
+    Link {
+        /// The project ID to link to
+        project_id: String,
+    },
 
     /// Authenticate with Rustfinity Cloud
     Login,
