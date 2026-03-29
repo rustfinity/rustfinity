@@ -1,6 +1,6 @@
 ## Hashmaps
 
-Hashmaps are a powerful data structure that allow you to store **key-value pairs**. Internally the `HashMap` type uses a **hashing algorithm** to store the keys and values in a specific, organized way, which allows fast lookups. By default, Rust uses **SipHash**, an algorithm that protects against hash collision attacks and potentially malicious inputs, making lookups not only fast but also secure. Conceptually, you can think of a `HashMap` like a dictionary in Python or an object in JavaScript.
+Hash maps are a powerful data structure that allow you to store **key-value pairs**. Internally the `HashMap` type uses a **hashing algorithm** to store the keys and values in a specific, organized way, which allows fast lookups. By default, Rust uses **SipHash**, an algorithm that protects against hash collision attacks and potentially malicious inputs, making lookups not only fast but also secure. Conceptually, you can think of a `HashMap` like a dictionary in Python or an object in JavaScript.
 
 In this challenge, we want to build a sanctuary registry that allows us to manage animals in different sections of the sanctuary. We'll use a `HashMap` to store the sections as keys and a `Vec` to store the animals in each section. Each key is a section name `String` and each value is a list of animals in that section `Vec<String>`.
 
