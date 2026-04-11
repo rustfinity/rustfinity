@@ -20,7 +20,8 @@ In this challenge, you'll define a simple enum and use `#[derive(PartialEq)]` to
 ### Requirements
 
 1. Use the `#[derive(PartialEq)]` macro for the `OrderStatus` enum.
-2. Write tests to verify the equality and inequality of the enum variants.
+2. Use `#[derive(Debug)]` so that the OrderStatus enum can be printed in a developer-friendly way
+3. Write tests to verify the equality and inequality of the enum variants.
 
 ## Hints
 
@@ -29,5 +30,14 @@ In this challenge, you'll define a simple enum and use `#[derive(PartialEq)]` to
 
 - Use the `derive` macro on the enum to automatically implement `PartialEq`.
 - String types in Rust already implement `PartialEq`, so `Cancelled(String)` can be compared automatically.
+
+</details>
+
+## Tips
+
+<details>
+   <summary>Click here to reveal tips</summary>
+
+- Instead of adding the `#[derive(PartialEq)]` and `#[derive(Debug)]` macros on two separate lines, they can be added together like this `#[derive(Debug, PartialEq)]`
 
 </details>
