@@ -4,7 +4,11 @@ In Rust, we can do this using the `println!` macro. The `!` indicates that this 
 
 ## What is a macro?
 
-**A macro is a way to write code that writes other code.** **Macros** are a powerful feature of Rust that allow you to write code that writes code. This is useful for **metaprogramming**, which is the process of writing code that writes code.
+In Rust, a **macro** is something that generates Rust code for you. Macros run **at compile time**, which lets them do things functions can't, like accept a variable number of arguments or adjust how they expand based on their arguments.
+
+You can recognize macros because they end with `!`, for example: `println!`, `vec!`, or `format!`.
+
+> **Note:** Don't worry about how macros work internally yet — just know they exist and how to recognize them.
 
 ## println!
 
