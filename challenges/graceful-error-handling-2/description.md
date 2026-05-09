@@ -22,5 +22,6 @@ The logic of the function remains the same as the previous challenge, but the re
 
 - The `std::error::Error` trait requires implementing the `Display` and `Debug` traits. You can derive `Debug` by `#[derive(Debug)]` and implement `Display` manually.
 - Use the `std::fmt` module to implement `Display` for the error enum, which is required for the `Error` trait.
+- For tests, don't forget to derive `PartialEq`. It's used for comparing values.
 
 </details>
