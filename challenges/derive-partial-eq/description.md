@@ -15,12 +15,9 @@ In this challenge, you'll define a simple enum and use `#[derive(PartialEq)]` to
 
 2. Use the `#[derive(PartialEq)]` attribute to derive the `PartialEq` trait for the enum.
 
-3. Write tests to ensure that the derived implementation works as expected.
-
 ### Requirements
 
 1. Use the `#[derive(PartialEq)]` macro for the `OrderStatus` enum.
-2. Write tests to verify the equality and inequality of the enum variants.
 
 ## Hints
 

@@ -1,5 +1,5 @@
 # --- Stage 1 ---
-FROM rust:slim-bookworm AS builder
+FROM rust:1.96.0-slim-bookworm AS builder
 WORKDIR /app
 
 COPY crates/rustfinity-runner .
@@ -7,7 +7,7 @@ RUN cargo build --release
 
 # --- Stage 2 ---
 
-FROM rust:slim-bookworm AS runner
+FROM rust:1.96.0-slim-bookworm AS runner
 LABEL rustfinity-runner="true"
 
 # Install OpenSSL development packages and pkg-config

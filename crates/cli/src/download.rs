@@ -87,6 +87,7 @@ async fn download_file(url: &str, challenge: &str) -> anyhow::Result<Downloader>
 #[cfg(test)]
 mod tests {
     use super::*;
+    use serial_test::serial;
     use tempfile::tempdir;
 
     mod download {
@@ -104,6 +105,7 @@ mod tests {
         use std::{env, fs, path::Path};
 
         #[tokio::test]
+        #[serial]
         async fn test_downloads_challenge() {
             // rm temp dir if exists
             let temp_dir = tempdir().expect("Failed to create temp dir");
@@ -146,6 +148,7 @@ mod tests {
         use std::{env, fs, path::Path};
 
         #[tokio::test]
+        #[serial]
         async fn test_downloads_file() {
             let temp_dir = tempdir().expect("Failed to create temp dir");
             let temp_path = temp_dir.path();
@@ -172,6 +175,7 @@ mod tests {
         }
 
         #[tokio::test]
+        #[serial]
         async fn test_renames_starter() {
             let temp_dir = tempdir().expect("Failed to create temp dir");
             let temp_path = temp_dir.path();
