@@ -59,18 +59,18 @@ Implement the following directory traversal functions:
 2. `list_directories(dir: &Path) -> io::Result<Vec<PathBuf>>`
    - List all subdirectories in a directory (non-recursive)
 3. `list_all_recursive(
-    dir: &Path
+ dir: &Path
 ) -> io::Result<Vec<PathBuf>>`
    - Recursively list all files and directories
 4. `find_by_extension(
-    dir: &Path,
-    ext: &str
+ dir: &Path,
+ ext: &str
 ) -> io::Result<Vec<PathBuf>>`
    - Find all files with a given extension
      (recursive)
 5. `find_by_name(
-    dir: &Path,
-    name: &str
+ dir: &Path,
+ name: &str
 ) -> io::Result<Vec<PathBuf>>`
    - Find all files/directories matching a name
      exactly (recursive)
@@ -78,7 +78,7 @@ Implement the following directory traversal functions:
    - Calculate total size of all files in a directory
      (recursive)
 7. `count_files_recursive(
-    dir: &Path
+ dir: &Path
 ) -> io::Result<usize>`
    - Count all files in a directory tree
 
@@ -141,13 +141,13 @@ let count = count_files_recursive(Path::new("./src"))?;
   size in bytes
 - For extension matching, use
   `path.extension().map_or(
-    false,
-    |e| e == ext
+  false,
+  |e| e == ext
 )`
 - For name matching, use
   `path.file_name().map_or(
-    false,
-    |n| n == name
+  false,
+  |n| n == name
 )`
 - Remember that `read_dir()` only lists
   immediate children, not nested contents

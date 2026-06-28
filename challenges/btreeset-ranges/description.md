@@ -40,54 +40,54 @@ Implement the following functions for working with `BTreeSet` ranges:
    - Create a BTreeSet from a slice of numbers.
 
 2. `get_range(
-    set: &BTreeSet<i32>,
-    start: i32,
-    end: i32
+ set: &BTreeSet<i32>,
+ start: i32,
+ end: i32
 ) -> Vec<i32>`
    - Return all elements in the range [start, end)
      (inclusive start, exclusive end).
 
 3. `get_range_inclusive(
-    set: &BTreeSet<i32>,
-    start: i32,
-    end: i32
+ set: &BTreeSet<i32>,
+ start: i32,
+ end: i32
 ) -> Vec<i32>`
    - Return all elements in the range [start, end]
      (both inclusive).
 
 4. `get_elements_before(
-    set: &BTreeSet<i32>,
-    threshold: i32
+ set: &BTreeSet<i32>,
+ threshold: i32
 ) -> Vec<i32>`
    - Return all elements strictly less than the
      threshold.
 
 5. `get_elements_from(
-    set: &BTreeSet<i32>,
-    threshold: i32
+ set: &BTreeSet<i32>,
+ threshold: i32
 ) -> Vec<i32>`
    - Return all elements greater than or equal to
      the threshold.
 
 6. `count_in_range(
-    set: &BTreeSet<i32>,
-    start: i32,
-    end: i32
+ set: &BTreeSet<i32>,
+ start: i32,
+ end: i32
 ) -> usize`
    - Count how many elements fall within the
      range [start, end].
 
 7. `find_closest_less_than(
-    set: &BTreeSet<i32>,
-    value: i32
+ set: &BTreeSet<i32>,
+ value: i32
 ) -> Option<i32>`
    - Find the largest element in the set that is
      strictly less than the given value. Return
      `None` if no such element exists.
 
 8. `find_closest_greater_than(
-    set: &BTreeSet<i32>,
-    value: i32
+ set: &BTreeSet<i32>,
+ value: i32
 ) -> Option<i32>`
    - Find the smallest element in the set that is
      strictly greater than the given value. Return

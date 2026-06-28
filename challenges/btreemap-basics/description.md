@@ -32,44 +32,44 @@ for (name, score) in scores.range("B".."D") {
 Implement the following functions for working with `BTreeMap`:
 
 1. `create_sorted_map(
-    pairs: &[(String, i32)]
+ pairs: &[(String, i32)]
 ) -> BTreeMap<String, i32>`
    - Create a BTreeMap from a slice of key-value
      pairs
 
 2. `get_value(
-    map: &BTreeMap<String, i32>,
-    key: &str
+ map: &BTreeMap<String, i32>,
+ key: &str
 ) -> Option<i32>`
    - Get a value by key, returning `None` if the
      key doesn't exist
 
 3. `get_keys_in_order(
-    map: &BTreeMap<String, i32>
+ map: &BTreeMap<String, i32>
 ) -> Vec<String>`
    - Return all keys in sorted order
 
 4. `get_values_in_key_order(
-    map: &BTreeMap<String, i32>
+ map: &BTreeMap<String, i32>
 ) -> Vec<i32>`
    - Return all values in the order of their
      sorted keys
 
 5. `get_range(
-    map: &BTreeMap<String, i32>,
-    start: &str,
-    end: &str
+ map: &BTreeMap<String, i32>,
+ start: &str,
+ end: &str
 ) -> Vec<(String, i32)>`
    - Return all key-value pairs where the key is
      > = start and < end (half-open range)
 
 6. `get_first(
-    map: &BTreeMap<String, i32>
+ map: &BTreeMap<String, i32>
 ) -> Option<(String, i32)>`
    - Return the first (smallest key) entry
 
 7. `get_last(
-    map: &BTreeMap<String, i32>
+ map: &BTreeMap<String, i32>
 ) -> Option<(String, i32)>`
    - Return the last (largest key) entry
 

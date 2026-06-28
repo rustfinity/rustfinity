@@ -19,4 +19,5 @@ You are required to implement the following functions:
 - Use `Vec::remove` to remove an element by index.
 - To safely access an element by index, use the `get` method on vectors.
 - Keep in mind that `Vec::remove` will panic if the index is out of bounds, so handle it carefully in `remove_element`.
+
 </details>

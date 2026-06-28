@@ -53,13 +53,13 @@ let sum: i32 = vec![1, 2, 3, 4, 5]
 Implement the following functions that use iterator inspection methods:
 
 1. `indexed_elements<T: Clone>(
-    items: &[T]
+ items: &[T]
 ) -> Vec<(usize, T)>`
    - Return elements with their indices using
      `enumerate()`
 2. `find_index<T: PartialEq>(
-    items: &[T],
-    target: &T
+ items: &[T],
+ target: &T
 ) -> Option<usize>`
    - Find the index of the first occurrence of
      target
@@ -76,8 +76,8 @@ Implement the following functions that use iterator inspection methods:
    - Collect elements while recording a trace of
      each element using `inspect()`
 7. `sum_with_running_total(
-    numbers: &[i32],
-    totals: &mut Vec<i32>
+ numbers: &[i32],
+ totals: &mut Vec<i32>
 ) -> i32`
    - Sum numbers while recording running totals at
      each step using `inspect()`
