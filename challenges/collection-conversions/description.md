@@ -45,7 +45,7 @@ Implement the following collection conversion functions:
      implement `Ord`.
 
 4. `pairs_to_hashmap<K, V>(
-    pairs: Vec<(K, V)>
+ pairs: Vec<(K, V)>
 ) -> HashMap<K, V>`
    - Convert a Vec of key-value tuples to a
      HashMap. K must implement `Eq` and `Hash`.
@@ -53,7 +53,7 @@ Implement the following collection conversion functions:
      overwrite earlier ones.
 
 5. `pairs_to_btreemap<K, V>(
-    pairs: Vec<(K, V)>
+ pairs: Vec<(K, V)>
 ) -> BTreeMap<K, V>`
    - Convert a Vec of key-value tuples to a
      BTreeMap (sorted by key). K must implement
@@ -61,7 +61,7 @@ Implement the following collection conversion functions:
      overwrite earlier ones.
 
 6. `hashmap_to_pairs<K, V>(
-    map: HashMap<K, V>
+ map: HashMap<K, V>
 ) -> Vec<(K, V)>`
    - Convert a HashMap to a Vec of key-value
      tuples. Order is not guaranteed.

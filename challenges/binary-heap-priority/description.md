@@ -60,8 +60,8 @@ Implement the following functions that demonstrate various `BinaryHeap` operatio
      order.
 
 7. `merge_heaps(
-    heap1: BinaryHeap<i32>,
-    heap2: BinaryHeap<i32>
+ heap1: BinaryHeap<i32>,
+ heap2: BinaryHeap<i32>
 ) -> BinaryHeap<i32>` - Merge two heaps into one.
 
 8. `heap_sort_descending(items: &[i32]) -> Vec<i32>`

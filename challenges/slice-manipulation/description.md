@@ -37,4 +37,5 @@ If you're having trouble, consider these hints:
 
 - Use the `.get_mut(index)` method to safely access a mutable reference to an element at a given index. This avoids panics for out-of-bound accesses.
 - A `for` loop is useful for iterating through the `indices` slice.
+
 </details>
