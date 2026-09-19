@@ -54,7 +54,7 @@ crates.io while a submission is running. **Every crate a challenge depends on
 must already be baked into this image**, at the exact version the image
 vendors.
 
-The allowlist is the single `cargo add` in the [Dockerfile](./Dockerfile):
+The allowlist is the `cargo add` lines in the [Dockerfile](./Dockerfile):
 
 - `syn`
 - `quote`
@@ -69,7 +69,7 @@ real user with an offline resolution error.
 
 Adding a crate is a deploy, not a code change:
 
-1. Add it to the `cargo add` line in the Dockerfile, with an exact version.
+1. Add it to a `cargo add` line in the Dockerfile, with an exact version.
 2. Rebuild and smoke test a challenge that uses it:
 
    ```sh
