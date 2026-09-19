@@ -77,16 +77,27 @@ pub fn main() {
     println!("Even numbers: {:?}", filter_even(&numbers));
 
     // filter_by_predicate
-    println!("Numbers > 3: {:?}", filter_by_predicate(&numbers, |&x| x > 3));
+    println!(
+        "Numbers > 3: {:?}",
+        filter_by_predicate(&numbers, |&x| x > 3)
+    );
 
     // parse_valid_numbers
     let strings = vec!["1", "hello", "3", "world"];
     println!("Valid numbers: {:?}", parse_valid_numbers(&strings));
 
     // filter_map_with
-    let doubled: Vec<i32> = filter_map_with(&[1, 2, 3, 4], |x| {
-        if x % 2 == 0 { Some(x * 2) } else { None }
-    });
+    let doubled: Vec<i32> =
+        filter_map_with(
+            &[1, 2, 3, 4],
+            |x| {
+                if x % 2 == 0 {
+                    Some(x * 2)
+                } else {
+                    None
+                }
+            },
+        );
     println!("Doubled evens: {:?}", doubled);
 
     // take_while_positive
@@ -95,11 +106,17 @@ pub fn main() {
 
     // skip_while_negative
     let negative_start = vec![-3, -1, 2, -4, 5];
-    println!("Skip while negative: {:?}", skip_while_negative(&negative_start));
+    println!(
+        "Skip while negative: {:?}",
+        skip_while_negative(&negative_start)
+    );
 
     // filter_in_range
     let range_nums = vec![1, 5, 10, 15, 20];
-    println!("In range [5, 15]: {:?}", filter_in_range(&range_nums, 5, 15));
+    println!(
+        "In range [5, 15]: {:?}",
+        filter_in_range(&range_nums, 5, 15)
+    );
 
     // first_matching
     println!("First > 3: {:?}", first_matching(&numbers, |&x| x > 3));

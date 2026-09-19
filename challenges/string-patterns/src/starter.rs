@@ -54,8 +54,14 @@ pub fn main() {
     println!("has_suffix('universe'): {}", has_suffix(text, "universe"));
     println!("find_first('hello'): {:?}", find_first(text, "hello"));
     println!("find_last('hello'): {:?}", find_last(text, "hello"));
-    println!("count_occurrences('hello'): {}", count_occurrences(text, "hello"));
-    println!("find_all_indices('hello'): {:?}", find_all_indices(text, "hello"));
+    println!(
+        "count_occurrences('hello'): {}",
+        count_occurrences(text, "hello")
+    );
+    println!(
+        "find_all_indices('hello'): {:?}",
+        find_all_indices(text, "hello")
+    );
 
     let html = "<title>My Page</title>";
     println!();

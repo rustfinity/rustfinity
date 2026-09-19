@@ -243,7 +243,7 @@ fn format_octal_63() {
 
 #[test]
 fn format_octal_permissions() {
-    assert_eq!(format_octal(493), "755");  // Unix permissions
+    assert_eq!(format_octal(493), "755"); // Unix permissions
     assert_eq!(format_octal(420), "644");
 }
 
@@ -261,8 +261,8 @@ fn format_float_precision_two_places() {
 
 #[test]
 fn format_float_precision_zero_places() {
-    assert_eq!(format_float_precision(3.7, 0), "4");  // Rounds up
-    assert_eq!(format_float_precision(3.2, 0), "3");  // Rounds down
+    assert_eq!(format_float_precision(3.7, 0), "4"); // Rounds up
+    assert_eq!(format_float_precision(3.2, 0), "3"); // Rounds down
 }
 
 #[test]

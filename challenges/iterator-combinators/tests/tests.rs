@@ -126,10 +126,7 @@ fn test_take_first_one() {
 
 #[test]
 fn test_take_first_strings() {
-    assert_eq!(
-        take_first(&["a", "b", "c", "d"], 2),
-        vec!["a", "b"]
-    );
+    assert_eq!(take_first(&["a", "b", "c", "d"], 2), vec!["a", "b"]);
 }
 
 // ==================== skip_first tests ====================
@@ -167,10 +164,7 @@ fn test_skip_first_one() {
 
 #[test]
 fn test_skip_first_strings() {
-    assert_eq!(
-        skip_first(&["a", "b", "c", "d"], 2),
-        vec!["c", "d"]
-    );
+    assert_eq!(skip_first(&["a", "b", "c", "d"], 2), vec!["c", "d"]);
 }
 
 // ==================== reverse_sequence tests ====================
@@ -198,10 +192,7 @@ fn test_reverse_sequence_two_elements() {
 
 #[test]
 fn test_reverse_sequence_strings() {
-    assert_eq!(
-        reverse_sequence(&["a", "b", "c"]),
-        vec!["c", "b", "a"]
-    );
+    assert_eq!(reverse_sequence(&["a", "b", "c"]), vec!["c", "b", "a"]);
 }
 
 #[test]
@@ -264,10 +255,7 @@ fn test_interleave_strings() {
 
 #[test]
 fn test_sliding_pairs_basic() {
-    assert_eq!(
-        sliding_pairs(&[1, 2, 3, 4]),
-        vec![(1, 2), (2, 3), (3, 4)]
-    );
+    assert_eq!(sliding_pairs(&[1, 2, 3, 4]), vec![(1, 2), (2, 3), (3, 4)]);
 }
 
 #[test]
@@ -304,10 +292,7 @@ fn test_sliding_pairs_strings() {
 
 #[test]
 fn test_sliding_pairs_duplicates() {
-    assert_eq!(
-        sliding_pairs(&[1, 1, 2, 2]),
-        vec![(1, 1), (1, 2), (2, 2)]
-    );
+    assert_eq!(sliding_pairs(&[1, 1, 2, 2]), vec![(1, 1), (1, 2), (2, 2)]);
 }
 
 // ==================== Integration tests ====================

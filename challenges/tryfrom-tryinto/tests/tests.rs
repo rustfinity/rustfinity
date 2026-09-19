@@ -456,10 +456,8 @@ fn integration_result_combinators() {
 #[test]
 fn integration_collecting_results() {
     let values = vec![10, 20, 30, 40];
-    let percentages: Result<Vec<Percentage>, _> = values
-        .into_iter()
-        .map(Percentage::try_from)
-        .collect();
+    let percentages: Result<Vec<Percentage>, _> =
+        values.into_iter().map(Percentage::try_from).collect();
 
     assert!(percentages.is_ok());
     let pcts = percentages.unwrap();
@@ -471,10 +469,8 @@ fn integration_collecting_results() {
 #[test]
 fn integration_collecting_results_with_error() {
     let values = vec![10, 20, 150, 40]; // 150 is invalid
-    let percentages: Result<Vec<Percentage>, _> = values
-        .into_iter()
-        .map(Percentage::try_from)
-        .collect();
+    let percentages: Result<Vec<Percentage>, _> =
+        values.into_iter().map(Percentage::try_from).collect();
 
     assert!(percentages.is_err());
 }

@@ -350,7 +350,11 @@ pub fn main() {
 
     // CachedValue with access tracking
     let cached = CachedValue::new(42);
-    println!("Value: {} (accessed {} times)", cached.get(), cached.access_count());
+    println!(
+        "Value: {} (accessed {} times)",
+        cached.get(),
+        cached.access_count()
+    );
 
     // RefCell-based SharedString
     let shared = SharedString::new("Hello");

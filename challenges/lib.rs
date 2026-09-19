@@ -17,6 +17,7 @@ pub enum Track {
     CONTROL_FLOW,
     DSA,
     RUST_STD,
+    CONCURRENCY,
 }
 
 #[derive(Deserialize)]

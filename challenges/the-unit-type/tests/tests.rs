@@ -1,4 +1,3 @@
-
 use the_unit_type::*;
 
 #[test]

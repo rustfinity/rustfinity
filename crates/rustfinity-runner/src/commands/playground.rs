@@ -18,12 +18,8 @@ impl PlaygroundParams {
 pub async fn run_code_in_playground(params: &PlaygroundParams) -> anyhow::Result<String> {
     let PlaygroundParams { code_base64 } = params;
 
-    let mut output = String::new();
-
-    let tests_output = execute_code(&code_base64).await?;
-    output.push_str(&tests_output);
-
-    Ok(output)
+    // Already streamed to stdout line by line as cargo produced it.
+    execute_code(&code_base64).await
 }
 
 async fn execute_code(code_base64: &str) -> anyhow::Result<String> {
@@ -34,7 +30,7 @@ async fn execute_code(code_base64: &str) -> anyhow::Result<String> {
 
     // Write src/main.rs
     write_file(&main_path, &code)?;
-    let output = run_command_and_merge_output("cargo", &["run"], Some(&cwd)).await?;
+    let result = run_command_and_merge_output("cargo", &["run"], Some(&cwd))?;
 
-    Ok(output)
+    Ok(result.output)
 }

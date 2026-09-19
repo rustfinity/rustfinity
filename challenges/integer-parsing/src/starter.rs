@@ -91,16 +91,28 @@ pub fn main() {
     println!("parse_octal(\"77\") = {:?}", parse_octal("77"));
 
     // Custom radix
-    println!("parse_with_radix(\"Z\", 36) = {:?}", parse_with_radix("Z", 36));
+    println!(
+        "parse_with_radix(\"Z\", 36) = {:?}",
+        parse_with_radix("Z", 36)
+    );
 
     // Multiple values
-    println!("parse_multiple(\"1, 2, 3\") = {:?}", parse_multiple("1, 2, 3"));
+    println!(
+        "parse_multiple(\"1, 2, 3\") = {:?}",
+        parse_multiple("1, 2, 3")
+    );
 
     // Safe u8 parsing
     println!("try_parse_u8(\"100\") = {:?}", try_parse_u8("100"));
     println!("try_parse_u8(\"256\") = {:?}", try_parse_u8("256"));
 
     // Auto-detect
-    println!("detect_and_parse(\"0xFF\") = {:?}", detect_and_parse("0xFF"));
-    println!("detect_and_parse(\"0b1010\") = {:?}", detect_and_parse("0b1010"));
+    println!(
+        "detect_and_parse(\"0xFF\") = {:?}",
+        detect_and_parse("0xFF")
+    );
+    println!(
+        "detect_and_parse(\"0b1010\") = {:?}",
+        detect_and_parse("0b1010")
+    );
 }

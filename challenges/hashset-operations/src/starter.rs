@@ -60,11 +60,22 @@ pub fn main() {
     println!("Set 2: {:?}", set2);
     println!("Intersection: {:?}", find_common(&set1, &set2));
     println!("Union: {:?}", find_all(&set1, &set2));
-    println!("Difference (set1 - set2): {:?}", find_difference(&set1, &set2));
-    println!("Symmetric difference: {:?}", find_symmetric_difference(&set1, &set2));
+    println!(
+        "Difference (set1 - set2): {:?}",
+        find_difference(&set1, &set2)
+    );
+    println!(
+        "Symmetric difference: {:?}",
+        find_symmetric_difference(&set1, &set2)
+    );
 
     // Example: is_subset
     let small: HashSet<i32> = [2, 3].into_iter().collect();
     let large: HashSet<i32> = [1, 2, 3, 4].into_iter().collect();
-    println!("Is {:?} subset of {:?}? {}", small, large, is_subset(&small, &large));
+    println!(
+        "Is {:?} subset of {:?}? {}",
+        small,
+        large,
+        is_subset(&small, &large)
+    );
 }

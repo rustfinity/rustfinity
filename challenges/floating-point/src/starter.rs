@@ -82,13 +82,19 @@ pub fn main() {
     println!("10 / 0 = {:?}", safe_divide(10.0, 0.0));
 
     // Test round_to_places
-    println!("3.14159 rounded to 2 places: {}", round_to_places(3.14159, 2));
+    println!(
+        "3.14159 rounded to 2 places: {}",
+        round_to_places(3.14159, 2)
+    );
 
     // Test approx_equal
     println!("0.1 + 0.2 ≈ 0.3: {}", approx_equal(0.1 + 0.2, 0.3, 1e-10));
 
     // Test clamp_to_range
-    println!("15.0 clamped to [0, 10]: {:?}", clamp_to_range(15.0, 0.0, 10.0));
+    println!(
+        "15.0 clamped to [0, 10]: {:?}",
+        clamp_to_range(15.0, 0.0, 10.0)
+    );
 
     // Test safe_sqrt
     println!("sqrt(4) = {:?}", safe_sqrt(4.0));

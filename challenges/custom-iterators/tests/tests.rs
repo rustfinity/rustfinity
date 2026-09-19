@@ -253,7 +253,10 @@ mod collatz_tests {
     fn collatz_from_7() {
         let collatz = Collatz::new(7);
         let result: Vec<u64> = collatz.collect();
-        assert_eq!(result, vec![7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1]);
+        assert_eq!(
+            result,
+            vec![7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1]
+        );
     }
 
     #[test]
@@ -311,10 +314,7 @@ mod windows_tests {
     fn windows_size_two() {
         let windows = Windows::new(&[1, 2, 3, 4], 2);
         let result: Vec<Vec<i32>> = windows.collect();
-        assert_eq!(
-            result,
-            vec![vec![1, 2], vec![2, 3], vec![3, 4]]
-        );
+        assert_eq!(result, vec![vec![1, 2], vec![2, 3], vec![3, 4]]);
     }
 
     #[test]
@@ -525,10 +525,7 @@ mod integration_tests {
     fn fibonacci_zip_with_indices() {
         let fib = Fibonacci::new();
         let indexed: Vec<(usize, u64)> = fib.take(5).enumerate().collect();
-        assert_eq!(
-            indexed,
-            vec![(0, 0), (1, 1), (2, 1), (3, 2), (4, 3)]
-        );
+        assert_eq!(indexed, vec![(0, 0), (1, 1), (2, 1), (3, 2), (4, 3)]);
     }
 
     #[test]

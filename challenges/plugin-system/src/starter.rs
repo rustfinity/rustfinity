@@ -10,7 +10,6 @@ pub struct PluginManager {
 // 3. Implement the PluginManager
 impl PluginManager {}
 
-
 // Example usage
 pub struct MyPlugin;
 

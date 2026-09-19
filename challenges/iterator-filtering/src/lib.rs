@@ -114,11 +114,7 @@ where
 /// assert_eq!(take_while_positive(&[-1, 2, 3]), vec![]);
 /// ```
 pub fn take_while_positive(numbers: &[i32]) -> Vec<i32> {
-    numbers
-        .iter()
-        .take_while(|&&x| x > 0)
-        .cloned()
-        .collect()
+    numbers.iter().take_while(|&&x| x > 0).cloned().collect()
 }
 
 /// Skips elements from the beginning while they are negative (< 0).
@@ -141,11 +137,7 @@ pub fn take_while_positive(numbers: &[i32]) -> Vec<i32> {
 /// assert_eq!(skip_while_negative(&[1, -2, -3]), vec![1, -2, -3]);
 /// ```
 pub fn skip_while_negative(numbers: &[i32]) -> Vec<i32> {
-    numbers
-        .iter()
-        .skip_while(|&&x| x < 0)
-        .cloned()
-        .collect()
+    numbers.iter().skip_while(|&&x| x < 0).cloned().collect()
 }
 
 /// Filters numbers to keep only those within a range [min, max] inclusive.

@@ -52,10 +52,7 @@ pub fn count_words(text: &str) -> HashMap<String, u32> {
 pub fn group_by_length(words: &[&str]) -> HashMap<usize, Vec<String>> {
     let mut groups: HashMap<usize, Vec<String>> = HashMap::new();
     for word in words {
-        groups
-            .entry(word.len())
-            .or_default()
-            .push(word.to_string());
+        groups.entry(word.len()).or_default().push(word.to_string());
     }
     groups
 }
@@ -139,10 +136,7 @@ pub fn increment_or_init(map: &mut HashMap<String, i32>, key: &str, init: i32) {
 /// let merged = merge_maps(map1, map2);
 /// assert_eq!(merged["a"], 3);
 /// ```
-pub fn merge_maps(
-    map1: HashMap<String, i32>,
-    map2: HashMap<String, i32>,
-) -> HashMap<String, i32> {
+pub fn merge_maps(map1: HashMap<String, i32>, map2: HashMap<String, i32>) -> HashMap<String, i32> {
     let mut result = map1;
     for (key, value) in map2 {
         *result.entry(key).or_insert(0) += value;

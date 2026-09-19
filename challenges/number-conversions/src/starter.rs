@@ -67,8 +67,14 @@ pub fn safe_average(numbers: &[i64]) -> Option<i64> {
 // Example usage
 pub fn main() {
     // Safe type conversions
-    println!("Converting 1000 from i32 to i16: {:?}", safe_i32_to_i16(1000));
-    println!("Converting 100000 from i32 to i16: {:?}", safe_i32_to_i16(100_000));
+    println!(
+        "Converting 1000 from i32 to i16: {:?}",
+        safe_i32_to_i16(1000)
+    );
+    println!(
+        "Converting 100000 from i32 to i16: {:?}",
+        safe_i32_to_i16(100_000)
+    );
 
     // Checked arithmetic
     println!("100 * 200 = {:?}", checked_multiply(100, 200));

@@ -18,7 +18,11 @@ fn color_is_copy() {
 
 #[test]
 fn color_is_clone() {
-    let color1 = Color { r: 10, g: 20, b: 30 };
+    let color1 = Color {
+        r: 10,
+        g: 20,
+        b: 30,
+    };
     let color2 = color1.clone();
     assert_eq!(color1, color2);
 }

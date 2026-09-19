@@ -126,12 +126,18 @@ pub fn main() {
     println!();
 
     // Counting
-    println!("count_occurrences('hello'): {}", count_occurrences(text, "hello"));
+    println!(
+        "count_occurrences('hello'): {}",
+        count_occurrences(text, "hello")
+    );
     println!("count_occurrences('o'): {}", count_occurrences(text, "o"));
     println!();
 
     // All indices
-    println!("find_all_indices('hello'): {:?}", find_all_indices(text, "hello"));
+    println!(
+        "find_all_indices('hello'): {:?}",
+        find_all_indices(text, "hello")
+    );
     println!("find_all_indices('o'): {:?}", find_all_indices(text, "o"));
     println!();
 

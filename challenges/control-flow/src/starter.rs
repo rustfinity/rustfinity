@@ -11,4 +11,5 @@ pub fn check_number_sign(number: i32) -> String {
 
     // Step 3:
     // Handle the case where it's neither positive nor negative.
+    unimplemented!()
 }

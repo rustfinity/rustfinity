@@ -107,18 +107,11 @@ fn ensure_git_repo() -> Result<()> {
         return Ok(());
     }
 
-    println!(
-        "\x1b[33mThis directory is not a git repository.\x1b[0m"
-    );
-    println!(
-        "Rustfinity deploy uses git to create source archives of your project."
-    );
+    println!("\x1b[33mThis directory is not a git repository.\x1b[0m");
+    println!("Rustfinity deploy uses git to create source archives of your project.");
 
-    let yes = confirm(
-        "Would you like to initialize a git repository here?",
-        true,
-    )
-    .context("Failed to read input")?;
+    let yes = confirm("Would you like to initialize a git repository here?", true)
+        .context("Failed to read input")?;
 
     if !yes {
         bail!(
@@ -301,7 +294,9 @@ async fn deploy_internal() -> Result<(), DeployError> {
     let to_deploy_error = |e: anyhow::Error| DeployError::Other(e);
 
     // 1. Load config (check auth)
-    let config = auth::ensure_authenticated().await.map_err(to_deploy_error)?;
+    let config = auth::ensure_authenticated()
+        .await
+        .map_err(to_deploy_error)?;
 
     // 2. Verify Cargo.toml exists
     let cargo_toml_path = Path::new("Cargo.toml");
@@ -345,10 +340,7 @@ async fn deploy_internal() -> Result<(), DeployError> {
     build_for_target().map_err(to_deploy_error)?;
 
     // 7. Locate binary
-    let binary_path = format!(
-        "target/x86_64-unknown-linux-gnu/release/{}",
-        package_name
-    );
+    let binary_path = format!("target/x86_64-unknown-linux-gnu/release/{}", package_name);
     let binary_path = Path::new(&binary_path);
     if !binary_path.exists() {
         return Err(DeployError::Other(anyhow::anyhow!(

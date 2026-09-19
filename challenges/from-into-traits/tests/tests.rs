@@ -112,7 +112,11 @@ mod rgb_to_hex {
 
     #[test]
     fn white() {
-        let rgb = Rgb { r: 255, g: 255, b: 255 };
+        let rgb = Rgb {
+            r: 255,
+            g: 255,
+            b: 255,
+        };
         let hex: HexColor = rgb.into();
         assert_eq!(hex.0, "#FFFFFF");
     }
@@ -147,7 +151,11 @@ mod rgb_to_hex {
 
     #[test]
     fn coral() {
-        let rgb = Rgb { r: 255, g: 87, b: 51 };
+        let rgb = Rgb {
+            r: 255,
+            g: 87,
+            b: 51,
+        };
         let hex: HexColor = rgb.into();
         assert_eq!(hex.0, "#FF5733");
     }
@@ -161,7 +169,11 @@ mod rgb_to_hex {
 
     #[test]
     fn using_from_syntax() {
-        let rgb = Rgb { r: 128, g: 128, b: 128 };
+        let rgb = Rgb {
+            r: 128,
+            g: 128,
+            b: 128,
+        };
         let hex = HexColor::from(rgb);
         assert_eq!(hex.0, "#808080");
     }

@@ -262,8 +262,14 @@ fn test_integration_read_and_count() {
     assert_eq!(read_entire_file(&file.path).unwrap(), content);
     assert_eq!(count_lines(&file.path).unwrap(), 2);
     assert_eq!(count_words(&file.path).unwrap(), 9);
-    assert_eq!(read_lines(&file.path).unwrap(), vec!["The quick brown fox", "jumps over the lazy dog"]);
-    assert_eq!(first_n_lines(&file.path, 1).unwrap(), vec!["The quick brown fox"]);
+    assert_eq!(
+        read_lines(&file.path).unwrap(),
+        vec!["The quick brown fox", "jumps over the lazy dog"]
+    );
+    assert_eq!(
+        first_n_lines(&file.path, 1).unwrap(),
+        vec!["The quick brown fox"]
+    );
 }
 
 #[test]

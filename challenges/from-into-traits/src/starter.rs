@@ -74,7 +74,11 @@ pub fn main() {
     println!("32°F = {}°C", celsius.0);
 
     // RGB to Hex example
-    let rgb = Rgb { r: 255, g: 87, b: 51 };
+    let rgb = Rgb {
+        r: 255,
+        g: 87,
+        b: 51,
+    };
     let hex: HexColor = rgb.into();
     println!("RGB({}, {}, {}) = {}", rgb.r, rgb.g, rgb.b, hex.0);
 
@@ -85,7 +89,10 @@ pub fn main() {
     // Point conversion example
     let p2d = Point2D { x: 3.0, y: 4.0 };
     let p3d: Point3D = p2d.into();
-    println!("2D({}, {}) -> 3D({}, {}, {})", p2d.x, p2d.y, p3d.x, p3d.y, p3d.z);
+    println!(
+        "2D({}, {}) -> 3D({}, {}, {})",
+        p2d.x, p2d.y, p3d.x, p3d.y, p3d.z
+    );
 
     // Wrapper example
     let wrapped: Wrapper<i32> = 42.into();

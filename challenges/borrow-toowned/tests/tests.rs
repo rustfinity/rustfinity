@@ -48,8 +48,8 @@ fn test_lookup_with_empty_string() {
 #[test]
 fn test_lookup_unicode_keys() {
     let mut map: HashMap<String, i32> = HashMap::new();
-    map.insert("\u{1F44B}".to_string(), 1);  // 👋 waving hand
-    map.insert("\u{1F600}".to_string(), 2);  // 😀 grinning face
+    map.insert("\u{1F44B}".to_string(), 1); // 👋 waving hand
+    map.insert("\u{1F600}".to_string(), 2); // 😀 grinning face
 
     assert_eq!(lookup(&map, "\u{1F44B}"), Some(&1));
     assert_eq!(lookup(&map, "\u{1F600}"), Some(&2));
@@ -529,8 +529,8 @@ fn test_integration_to_owned_and_modify() {
 
 #[test]
 fn test_borrow_trait_semantics() {
-    use std::hash::{Hash, Hasher};
     use std::collections::hash_map::DefaultHasher;
+    use std::hash::{Hash, Hasher};
 
     // Verify that CaseInsensitiveString properly implements Borrow
     let cis = CaseInsensitiveString::new("Hello");

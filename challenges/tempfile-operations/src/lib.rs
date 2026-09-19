@@ -62,7 +62,11 @@ pub fn create_temp_file(prefix: &str, suffix: &str) -> io::Result<PathBuf> {
 /// assert_eq!(content, "Hello, World!");
 /// std::fs::remove_file(&path).unwrap();
 /// ```
-pub fn create_temp_file_with_content(prefix: &str, suffix: &str, content: &str) -> io::Result<PathBuf> {
+pub fn create_temp_file_with_content(
+    prefix: &str,
+    suffix: &str,
+    content: &str,
+) -> io::Result<PathBuf> {
     let mut path = get_temp_dir();
     let filename = generate_unique_name(prefix, suffix);
     path.push(filename);

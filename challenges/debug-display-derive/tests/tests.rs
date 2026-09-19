@@ -70,7 +70,10 @@ mod coordinate_tests {
 
     #[test]
     fn large_values() {
-        let coord = Coordinate { x: 1000000.5, y: -999999.9 };
+        let coord = Coordinate {
+            x: 1000000.5,
+            y: -999999.9,
+        };
         assert_eq!(format!("{}", coord), "(1000000.5, -999999.9)");
     }
 }
@@ -177,55 +180,82 @@ mod temperature_tests {
 
     #[test]
     fn display_celsius_positive() {
-        let temp = Temperature { value: 25.5, unit: TemperatureUnit::Celsius };
+        let temp = Temperature {
+            value: 25.5,
+            unit: TemperatureUnit::Celsius,
+        };
         assert_eq!(format!("{}", temp), "25.5°C");
     }
 
     #[test]
     fn display_celsius_negative() {
-        let temp = Temperature { value: -10.0, unit: TemperatureUnit::Celsius };
+        let temp = Temperature {
+            value: -10.0,
+            unit: TemperatureUnit::Celsius,
+        };
         assert_eq!(format!("{}", temp), "-10°C");
     }
 
     #[test]
     fn display_celsius_zero() {
-        let temp = Temperature { value: 0.0, unit: TemperatureUnit::Celsius };
+        let temp = Temperature {
+            value: 0.0,
+            unit: TemperatureUnit::Celsius,
+        };
         assert_eq!(format!("{}", temp), "0°C");
     }
 
     #[test]
     fn display_fahrenheit_positive() {
-        let temp = Temperature { value: 98.6, unit: TemperatureUnit::Fahrenheit };
+        let temp = Temperature {
+            value: 98.6,
+            unit: TemperatureUnit::Fahrenheit,
+        };
         assert_eq!(format!("{}", temp), "98.6°F");
     }
 
     #[test]
     fn display_fahrenheit_freezing() {
-        let temp = Temperature { value: 32.0, unit: TemperatureUnit::Fahrenheit };
+        let temp = Temperature {
+            value: 32.0,
+            unit: TemperatureUnit::Fahrenheit,
+        };
         assert_eq!(format!("{}", temp), "32°F");
     }
 
     #[test]
     fn display_kelvin() {
-        let temp = Temperature { value: 300.0, unit: TemperatureUnit::Kelvin };
+        let temp = Temperature {
+            value: 300.0,
+            unit: TemperatureUnit::Kelvin,
+        };
         assert_eq!(format!("{}", temp), "300K");
     }
 
     #[test]
     fn display_kelvin_absolute_zero() {
-        let temp = Temperature { value: 0.0, unit: TemperatureUnit::Kelvin };
+        let temp = Temperature {
+            value: 0.0,
+            unit: TemperatureUnit::Kelvin,
+        };
         assert_eq!(format!("{}", temp), "0K");
     }
 
     #[test]
     fn display_kelvin_decimal() {
-        let temp = Temperature { value: 273.15, unit: TemperatureUnit::Kelvin };
+        let temp = Temperature {
+            value: 273.15,
+            unit: TemperatureUnit::Kelvin,
+        };
         assert_eq!(format!("{}", temp), "273.15K");
     }
 
     #[test]
     fn debug_celsius() {
-        let temp = Temperature { value: 25.0, unit: TemperatureUnit::Celsius };
+        let temp = Temperature {
+            value: 25.0,
+            unit: TemperatureUnit::Celsius,
+        };
         let debug_str = format!("{:?}", temp);
         assert!(debug_str.contains("Temperature"));
         assert!(debug_str.contains("Celsius"));
@@ -233,21 +263,30 @@ mod temperature_tests {
 
     #[test]
     fn debug_fahrenheit() {
-        let temp = Temperature { value: 100.0, unit: TemperatureUnit::Fahrenheit };
+        let temp = Temperature {
+            value: 100.0,
+            unit: TemperatureUnit::Fahrenheit,
+        };
         let debug_str = format!("{:?}", temp);
         assert!(debug_str.contains("Fahrenheit"));
     }
 
     #[test]
     fn debug_kelvin() {
-        let temp = Temperature { value: 300.0, unit: TemperatureUnit::Kelvin };
+        let temp = Temperature {
+            value: 300.0,
+            unit: TemperatureUnit::Kelvin,
+        };
         let debug_str = format!("{:?}", temp);
         assert!(debug_str.contains("Kelvin"));
     }
 
     #[test]
     fn to_string_uses_display() {
-        let temp = Temperature { value: 20.0, unit: TemperatureUnit::Celsius };
+        let temp = Temperature {
+            value: 20.0,
+            unit: TemperatureUnit::Celsius,
+        };
         assert_eq!(temp.to_string(), "20°C");
     }
 
@@ -315,7 +354,12 @@ mod log_level_tests {
     #[test]
     fn display_is_uppercase() {
         // Verify all display outputs are uppercase
-        for level in [LogLevel::Error, LogLevel::Warning, LogLevel::Info, LogLevel::Debug] {
+        for level in [
+            LogLevel::Error,
+            LogLevel::Warning,
+            LogLevel::Info,
+            LogLevel::Debug,
+        ] {
             let display = format!("{}", level);
             assert_eq!(display, display.to_uppercase());
         }
@@ -422,7 +466,10 @@ mod log_message_tests {
             level: LogLevel::Error,
             message: String::from("Error: file 'test.txt' not found!"),
         };
-        assert_eq!(format!("{}", log), "[ERROR] Error: file 'test.txt' not found!");
+        assert_eq!(
+            format!("{}", log),
+            "[ERROR] Error: file 'test.txt' not found!"
+        );
     }
 }
 
@@ -453,7 +500,10 @@ mod debug_string_tests {
 
     #[test]
     fn debug_string_temperature() {
-        let temp = Temperature { value: 25.0, unit: TemperatureUnit::Celsius };
+        let temp = Temperature {
+            value: 25.0,
+            unit: TemperatureUnit::Celsius,
+        };
         let result = debug_string(&temp);
         assert!(result.contains("Temperature"));
         assert!(result.contains("Celsius"));
@@ -509,7 +559,10 @@ mod display_string_tests {
 
     #[test]
     fn display_string_temperature() {
-        let temp = Temperature { value: 25.0, unit: TemperatureUnit::Celsius };
+        let temp = Temperature {
+            value: 25.0,
+            unit: TemperatureUnit::Celsius,
+        };
         assert_eq!(display_string(&temp), "25°C");
     }
 
@@ -561,7 +614,10 @@ mod pretty_debug_tests {
 
     #[test]
     fn pretty_debug_temperature() {
-        let temp = Temperature { value: 25.0, unit: TemperatureUnit::Celsius };
+        let temp = Temperature {
+            value: 25.0,
+            unit: TemperatureUnit::Celsius,
+        };
         let result = pretty_debug(&temp);
         assert!(result.contains("Temperature"));
     }
@@ -589,8 +645,14 @@ mod pretty_debug_tests {
     #[test]
     fn pretty_debug_nested_structure() {
         let logs = vec![
-            LogMessage { level: LogLevel::Info, message: String::from("Start") },
-            LogMessage { level: LogLevel::Error, message: String::from("Failed") },
+            LogMessage {
+                level: LogLevel::Info,
+                message: String::from("Start"),
+            },
+            LogMessage {
+                level: LogLevel::Error,
+                message: String::from("Failed"),
+            },
         ];
         let result = pretty_debug(&logs);
         assert!(result.contains("LogMessage"));
@@ -646,9 +708,18 @@ mod integration_tests {
     #[test]
     fn log_system_workflow() {
         let logs = vec![
-            LogMessage { level: LogLevel::Info, message: String::from("Application started") },
-            LogMessage { level: LogLevel::Warning, message: String::from("Memory usage high") },
-            LogMessage { level: LogLevel::Error, message: String::from("Database connection lost") },
+            LogMessage {
+                level: LogLevel::Info,
+                message: String::from("Application started"),
+            },
+            LogMessage {
+                level: LogLevel::Warning,
+                message: String::from("Memory usage high"),
+            },
+            LogMessage {
+                level: LogLevel::Error,
+                message: String::from("Database connection lost"),
+            },
         ];
 
         let output: Vec<String> = logs.iter().map(|log| log.to_string()).collect();
@@ -661,9 +732,18 @@ mod integration_tests {
     #[test]
     fn temperature_formatting_consistency() {
         let temps = vec![
-            Temperature { value: 0.0, unit: TemperatureUnit::Celsius },
-            Temperature { value: 32.0, unit: TemperatureUnit::Fahrenheit },
-            Temperature { value: 273.15, unit: TemperatureUnit::Kelvin },
+            Temperature {
+                value: 0.0,
+                unit: TemperatureUnit::Celsius,
+            },
+            Temperature {
+                value: 32.0,
+                unit: TemperatureUnit::Fahrenheit,
+            },
+            Temperature {
+                value: 273.15,
+                unit: TemperatureUnit::Kelvin,
+            },
         ];
 
         // All represent roughly the same temperature (freezing point)
@@ -678,19 +758,25 @@ mod integration_tests {
             Color::Red,
             Color::Green,
             Color::Blue,
-            Color::Rgb(255, 165, 0),  // Orange
-            Color::Hex(String::from("#800080")),  // Purple
+            Color::Rgb(255, 165, 0),             // Orange
+            Color::Hex(String::from("#800080")), // Purple
         ];
 
         let names: Vec<String> = palette.iter().map(|c| c.to_string()).collect();
 
-        assert_eq!(names, vec!["Red", "Green", "Blue", "rgb(255, 165, 0)", "#800080"]);
+        assert_eq!(
+            names,
+            vec!["Red", "Green", "Blue", "rgb(255, 165, 0)", "#800080"]
+        );
     }
 
     #[test]
     fn debug_for_troubleshooting() {
         // Simulate debugging a problematic coordinate
-        let coord = Coordinate { x: f64::NAN, y: f64::INFINITY };
+        let coord = Coordinate {
+            x: f64::NAN,
+            y: f64::INFINITY,
+        };
         let debug_out = format!("{:?}", coord);
 
         assert!(debug_out.contains("NaN"));
@@ -700,11 +786,17 @@ mod integration_tests {
     #[test]
     fn combined_display_output() {
         let coord = Coordinate { x: 10.5, y: 20.5 };
-        let temp = Temperature { value: 25.5, unit: TemperatureUnit::Celsius };
+        let temp = Temperature {
+            value: 25.5,
+            unit: TemperatureUnit::Celsius,
+        };
         let color = Color::Rgb(255, 128, 64);
 
         let combined = format!("Point {} at {} with color {}", coord, temp, color);
-        assert_eq!(combined, "Point (10.5, 20.5) at 25.5°C with color rgb(255, 128, 64)");
+        assert_eq!(
+            combined,
+            "Point (10.5, 20.5) at 25.5°C with color rgb(255, 128, 64)"
+        );
     }
 
     #[test]

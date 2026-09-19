@@ -7,7 +7,10 @@
     "language": "RUST",
     "difficulty": "BEGINNER",
     "track": "RUST_BASICS",
-    "tags": ["print", "macro"],
+    "tags": [
+      "print",
+      "macro"
+    ],
     "created_at": "2024-06-09T00:00:00Z",
     "updated_at": "2024-06-09T00:00:00Z"
   },
@@ -19,7 +22,10 @@
     "language": "RUST",
     "difficulty": "BEGINNER",
     "track": "RUST_BASICS",
-    "tags": ["variables", "immutability"],
+    "tags": [
+      "variables",
+      "immutability"
+    ],
     "created_at": "2024-06-07T00:00:00Z",
     "updated_at": "2024-06-07T00:00:00Z"
   },
@@ -31,7 +37,10 @@
     "language": "RUST",
     "difficulty": "BEGINNER",
     "track": "RUST_BASICS",
-    "tags": ["variables", "mutability"],
+    "tags": [
+      "variables",
+      "mutability"
+    ],
     "created_at": "2024-06-08T00:00:00Z",
     "updated_at": "2024-06-08T00:00:00Z"
   },
@@ -43,7 +52,10 @@
     "language": "RUST",
     "difficulty": "BEGINNER",
     "track": "RUST_BASICS",
-    "tags": ["constants", "definition"],
+    "tags": [
+      "constants",
+      "definition"
+    ],
     "created_at": "2024-06-09T00:00:00Z",
     "updated_at": "2024-06-09T00:00:00Z"
   },
@@ -55,7 +67,10 @@
     "language": "RUST",
     "difficulty": "BEGINNER",
     "track": "RUST_BASICS",
-    "tags": ["data types", "basics"],
+    "tags": [
+      "data types",
+      "basics"
+    ],
     "created_at": "2024-06-09T00:00:00Z",
     "updated_at": "2024-06-09T00:00:00Z"
   },
@@ -67,7 +82,10 @@
     "language": "RUST",
     "difficulty": "BEGINNER",
     "track": "RUST_BASICS",
-    "tags": ["conversion", "numerical types"],
+    "tags": [
+      "conversion",
+      "numerical types"
+    ],
     "created_at": "2024-06-10T00:00:00Z",
     "updated_at": "2024-06-10T00:00:00Z"
   },
@@ -91,7 +109,10 @@
     "language": "RUST",
     "difficulty": "BEGINNER",
     "track": "RUST_BASICS",
-    "tags": ["arrays", "basic operations"],
+    "tags": [
+      "arrays",
+      "basic operations"
+    ],
     "created_at": "2024-06-12T00:00:00Z",
     "updated_at": "2024-06-12T00:00:00Z"
   },
@@ -103,7 +124,10 @@
     "language": "RUST",
     "difficulty": "BEGINNER",
     "track": "RUST_BASICS",
-    "tags": ["tuples", "basic operations"],
+    "tags": [
+      "tuples",
+      "basic operations"
+    ],
     "created_at": "2024-06-12T00:00:00Z",
     "updated_at": "2024-06-12T00:00:00Z"
   },
@@ -115,7 +139,10 @@
     "language": "RUST",
     "difficulty": "BEGINNER",
     "track": "RUST_BASICS",
-    "tags": ["unit type", "basic operations"],
+    "tags": [
+      "unit type",
+      "basic operations"
+    ],
     "created_at": "2024-06-12T00:00:00Z",
     "updated_at": "2024-06-12T00:00:00Z"
   },
@@ -127,7 +154,10 @@
     "language": "RUST",
     "difficulty": "BEGINNER",
     "track": "RUST_BASICS",
-    "tags": ["functions", "basics"],
+    "tags": [
+      "functions",
+      "basics"
+    ],
     "created_at": "2024-06-12T00:00:00Z",
     "updated_at": "2024-06-12T00:00:00Z"
   },
@@ -139,7 +169,10 @@
     "language": "RUST",
     "difficulty": "BEGINNER",
     "track": "RUST_BASICS",
-    "tags": ["control flow", "if-else"],
+    "tags": [
+      "control flow",
+      "if-else"
+    ],
     "created_at": "2024-06-12T00:00:00Z",
     "updated_at": "2024-06-12T00:00:00Z"
   },
@@ -151,7 +184,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["ownership", "borrowing", "lifetimes"],
+    "tags": [
+      "ownership",
+      "borrowing",
+      "lifetimes"
+    ],
     "created_at": "2024-06-13T00:00:00Z",
     "updated_at": "2024-06-13T00:00:00Z"
   },
@@ -163,7 +200,11 @@
     "language": "RUST",
     "difficulty": "BEGINNER",
     "track": "RUST_BASICS",
-    "tags": ["ownership", "borrowing", "mutable references"],
+    "tags": [
+      "ownership",
+      "borrowing",
+      "mutable references"
+    ],
     "created_at": "2024-06-13T00:00:00Z",
     "updated_at": "2024-06-13T00:00:00Z"
   },
@@ -175,7 +216,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["ownership", "borrowing", "fixing errors"],
+    "tags": [
+      "ownership",
+      "borrowing",
+      "fixing errors"
+    ],
     "created_at": "2024-06-14T00:00:00Z",
     "updated_at": "2024-06-14T00:00:00Z"
   },
@@ -199,7 +244,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["slices", "iterators", "collections"],
+    "tags": [
+      "slices",
+      "iterators",
+      "collections"
+    ],
     "created_at": "2024-12-28T00:00:00Z",
     "updated_at": "2024-12-28T00:00:00Z"
   },
@@ -211,7 +260,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["slices", "mutability", "iteration"],
+    "tags": [
+      "slices",
+      "mutability",
+      "iteration"
+    ],
     "created_at": "2024-12-28T00:00:00Z",
     "updated_at": "2024-12-28T00:00:00Z"
   },
@@ -223,7 +276,12 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["slices", "mutability", "arrays", "collections"],
+    "tags": [
+      "slices",
+      "mutability",
+      "arrays",
+      "collections"
+    ],
     "created_at": "2024-12-29T00:00:00Z",
     "updated_at": "2024-12-29T00:00:00Z"
   },
@@ -235,7 +293,10 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["structs", "basics"],
+    "tags": [
+      "structs",
+      "basics"
+    ],
     "created_at": "2024-12-29T00:00:00Z",
     "updated_at": "2024-12-29T00:00:00Z"
   },
@@ -247,7 +308,10 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["tuple structs", "basics"],
+    "tags": [
+      "tuple structs",
+      "basics"
+    ],
     "created_at": "2024-12-29T00:00:00Z",
     "updated_at": "2024-12-29T00:00:00Z"
   },
@@ -259,7 +323,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["structs", "methods", "constructors"],
+    "tags": [
+      "structs",
+      "methods",
+      "constructors"
+    ],
     "created_at": "2024-12-29T00:00:00Z",
     "updated_at": "2024-12-29T00:00:00Z"
   },
@@ -271,7 +339,10 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["structs", "unit struct"],
+    "tags": [
+      "structs",
+      "unit struct"
+    ],
     "created_at": "2024-12-29T00:00:00Z",
     "updated_at": "2024-12-29T00:00:00Z"
   },
@@ -283,7 +354,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["structs", "methods", "associated functions"],
+    "tags": [
+      "structs",
+      "methods",
+      "associated functions"
+    ],
     "created_at": "2024-12-29T00:00:00Z",
     "updated_at": "2024-12-29T00:00:00Z"
   },
@@ -295,7 +370,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["debug", "traits", "derive"],
+    "tags": [
+      "debug",
+      "traits",
+      "derive"
+    ],
     "created_at": "2024-12-30T00:00:00Z",
     "updated_at": "2024-12-30T00:00:00Z"
   },
@@ -307,7 +386,10 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["enums", "basic concepts"],
+    "tags": [
+      "enums",
+      "basic concepts"
+    ],
     "created_at": "2024-12-30T00:00:00Z",
     "updated_at": "2024-12-30T00:00:00Z"
   },
@@ -319,7 +401,10 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["enums", "basic concepts"],
+    "tags": [
+      "enums",
+      "basic concepts"
+    ],
     "created_at": "2024-12-30T00:00:00Z",
     "updated_at": "2024-12-30T00:00:00Z"
   },
@@ -331,7 +416,10 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["enums", "advanced concepts"],
+    "tags": [
+      "enums",
+      "advanced concepts"
+    ],
     "created_at": "2024-12-30T00:00:00Z",
     "updated_at": "2024-12-30T00:00:00Z"
   },
@@ -343,7 +431,10 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["enums", "methods"],
+    "tags": [
+      "enums",
+      "methods"
+    ],
     "created_at": "2024-12-30T00:00:00Z",
     "updated_at": "2024-12-30T00:00:00Z"
   },
@@ -355,7 +446,12 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["enums", "traits", "PartialEq", "derive"],
+    "tags": [
+      "enums",
+      "traits",
+      "PartialEq",
+      "derive"
+    ],
     "created_at": "2024-12-30T00:00:00Z",
     "updated_at": "2026-05-05T00:00:00Z"
   },
@@ -367,7 +463,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["enums", "if let", "pattern matching"],
+    "tags": [
+      "enums",
+      "if let",
+      "pattern matching"
+    ],
     "created_at": "2024-12-30T00:00:00Z",
     "updated_at": "2024-12-30T00:00:00Z"
   },
@@ -379,7 +479,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["vectors", "collections", "Rust"],
+    "tags": [
+      "vectors",
+      "collections",
+      "Rust"
+    ],
     "created_at": "2024-12-30T00:00:00Z",
     "updated_at": "2024-12-30T00:00:00Z"
   },
@@ -391,7 +495,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["hashmaps", "collections", "rust"],
+    "tags": [
+      "hashmaps",
+      "collections",
+      "rust"
+    ],
     "created_at": "2024-12-30T00:00:00Z",
     "updated_at": "2024-12-30T00:00:00Z"
   },
@@ -403,7 +511,12 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["hashmaps", "collections", "vectors", "iterators"],
+    "tags": [
+      "hashmaps",
+      "collections",
+      "vectors",
+      "iterators"
+    ],
     "created_at": "2024-04-30T00:00:00Z",
     "updated_at": "2024-04-30T00:00:00Z"
   },
@@ -451,7 +564,10 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["option", "enums"],
+    "tags": [
+      "option",
+      "enums"
+    ],
     "created_at": "2024-12-31T00:00:00Z",
     "updated_at": "2024-12-31T00:00:00Z"
   },
@@ -475,7 +591,11 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["error handling", "enums", "traits"],
+    "tags": [
+      "error handling",
+      "enums",
+      "traits"
+    ],
     "created_at": "2024-12-31T00:00:00Z",
     "updated_at": "2024-12-31T00:00:00Z"
   },
@@ -487,7 +607,12 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["error handling", "file I/O", "Result type", "error propagation"],
+    "tags": [
+      "error handling",
+      "file I/O",
+      "Result type",
+      "error propagation"
+    ],
     "created_at": "2025-01-01T00:00:00Z",
     "updated_at": "2025-01-01T00:00:00Z"
   },
@@ -499,7 +624,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["error handling", "Option type", "propagation"],
+    "tags": [
+      "error handling",
+      "Option type",
+      "propagation"
+    ],
     "created_at": "2025-01-01T00:00:00Z",
     "updated_at": "2025-01-01T00:00:00Z"
   },
@@ -511,7 +640,12 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["error handling", "Result type", "Option type", "I/O"],
+    "tags": [
+      "error handling",
+      "Result type",
+      "Option type",
+      "I/O"
+    ],
     "created_at": "2025-01-01T00:00:00Z",
     "updated_at": "2025-01-01T00:00:00Z"
   },
@@ -523,7 +657,12 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["error handling", "Option type", "Result type", "conversion"],
+    "tags": [
+      "error handling",
+      "Option type",
+      "Result type",
+      "conversion"
+    ],
     "created_at": "2025-01-01T00:00:00Z",
     "updated_at": "2025-01-01T00:00:00Z"
   },
@@ -535,7 +674,11 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["error handling", "panic", "environment variables"],
+    "tags": [
+      "error handling",
+      "panic",
+      "environment variables"
+    ],
     "created_at": "2025-01-01T00:00:00Z",
     "updated_at": "2025-01-01T00:00:00Z"
   },
@@ -547,7 +690,12 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["error handling", "unwrap", "expect", "file io"],
+    "tags": [
+      "error handling",
+      "unwrap",
+      "expect",
+      "file io"
+    ],
     "created_at": "2025-01-01T00:00:00Z",
     "updated_at": "2025-01-01T00:00:00Z"
   },
@@ -559,7 +707,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["traits", "polymorphism", "basics"],
+    "tags": [
+      "traits",
+      "polymorphism",
+      "basics"
+    ],
     "created_at": "2025-01-02T00:00:00Z",
     "updated_at": "2025-01-02T00:00:00Z"
   },
@@ -571,7 +723,12 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["generics", "traits", "reusability", "polymorphism"],
+    "tags": [
+      "generics",
+      "traits",
+      "reusability",
+      "polymorphism"
+    ],
     "created_at": "2025-01-02T00:00:00Z",
     "updated_at": "2025-01-02T00:00:00Z"
   },
@@ -583,7 +740,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["traits", "generics", "trait bounds"],
+    "tags": [
+      "traits",
+      "generics",
+      "trait bounds"
+    ],
     "created_at": "2025-01-02T00:00:00Z",
     "updated_at": "2025-01-02T00:00:00Z"
   },
@@ -595,7 +756,11 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["traits", "Into", "generics"],
+    "tags": [
+      "traits",
+      "Into",
+      "generics"
+    ],
     "created_at": "2025-01-02T00:00:00Z",
     "updated_at": "2025-01-02T00:00:00Z"
   },
@@ -607,7 +772,11 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["traits", "generics", "From"],
+    "tags": [
+      "traits",
+      "generics",
+      "From"
+    ],
     "created_at": "2024-04-30T00:00:00Z",
     "updated_at": "2024-04-30T00:00:00Z"
   },
@@ -619,7 +788,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["iterators", "impl Trait", "rust"],
+    "tags": [
+      "iterators",
+      "impl Trait",
+      "rust"
+    ],
     "created_at": "2025-01-02T00:00:00Z",
     "updated_at": "2025-01-02T00:00:00Z"
   },
@@ -631,7 +804,11 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["traits", "polymorphism", "trait objects"],
+    "tags": [
+      "traits",
+      "polymorphism",
+      "trait objects"
+    ],
     "created_at": "2025-01-02T00:00:00Z",
     "updated_at": "2025-01-02T00:00:00Z"
   },
@@ -643,7 +820,12 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["traits", "polymorphism", "structs", "dynamic behavior"],
+    "tags": [
+      "traits",
+      "polymorphism",
+      "structs",
+      "dynamic behavior"
+    ],
     "created_at": "2025-01-02T00:00:00Z",
     "updated_at": "2025-01-02T00:00:00Z"
   },
@@ -655,7 +837,10 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["traits", "associated types"],
+    "tags": [
+      "traits",
+      "associated types"
+    ],
     "created_at": "2025-01-03T00:00:00Z",
     "updated_at": "2025-01-03T00:00:00Z"
   },
@@ -667,7 +852,10 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["traits", "supertraits"],
+    "tags": [
+      "traits",
+      "supertraits"
+    ],
     "created_at": "2025-01-03T00:00:00Z",
     "updated_at": "2025-01-03T00:00:00Z"
   },
@@ -696,7 +884,11 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["lifetimes", "ownership", "references"],
+    "tags": [
+      "lifetimes",
+      "ownership",
+      "references"
+    ],
     "created_at": "2025-01-02T00:00:00Z",
     "updated_at": "2025-01-02T00:00:00Z"
   },
@@ -708,7 +900,11 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["lifetimes", "structs", "references"],
+    "tags": [
+      "lifetimes",
+      "structs",
+      "references"
+    ],
     "created_at": "2025-01-03T00:00:00Z",
     "updated_at": "2025-01-03T00:00:00Z"
   },
@@ -720,7 +916,11 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["lifetimes", "structs", "mutable references"],
+    "tags": [
+      "lifetimes",
+      "structs",
+      "mutable references"
+    ],
     "created_at": "2025-01-03T00:00:00Z",
     "updated_at": "2025-01-03T00:00:00Z"
   },
@@ -732,7 +932,10 @@
     "language": "RUST",
     "difficulty": "BEGINNER",
     "track": "RUST_BASICS",
-    "tags": ["closures", "basics"],
+    "tags": [
+      "closures",
+      "basics"
+    ],
     "created_at": "2024-06-12T00:00:00Z",
     "updated_at": "2024-06-12T00:00:00Z"
   },
@@ -744,7 +947,11 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["closures", "types", "functions"],
+    "tags": [
+      "closures",
+      "types",
+      "functions"
+    ],
     "created_at": "2025-01-04T00:00:00Z",
     "updated_at": "2025-01-04T00:00:00Z"
   },
@@ -756,7 +963,11 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["iterators", "functional programming", "collections"],
+    "tags": [
+      "iterators",
+      "functional programming",
+      "collections"
+    ],
     "created_at": "2025-01-04T00:00:00Z",
     "updated_at": "2025-01-04T00:00:00Z"
   },
@@ -768,7 +979,11 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["iterators", "collections", "filtering"],
+    "tags": [
+      "iterators",
+      "collections",
+      "filtering"
+    ],
     "created_at": "2025-01-04T00:00:00Z",
     "updated_at": "2025-01-04T00:00:00Z"
   },
@@ -780,7 +995,13 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["box", "heap allocation", "smart pointers", "deref", "structs"],
+    "tags": [
+      "box",
+      "heap allocation",
+      "smart pointers",
+      "deref",
+      "structs"
+    ],
     "created_at": "2025-01-08T00:00:00Z",
     "updated_at": "2025-01-08T00:00:00Z"
   },
@@ -792,7 +1013,11 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["drop", "traits", "RAII"],
+    "tags": [
+      "drop",
+      "traits",
+      "RAII"
+    ],
     "created_at": "2025-01-08T00:00:00Z",
     "updated_at": "2025-01-08T00:00:00Z"
   },
@@ -804,7 +1029,11 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["smart pointers", "Rc", "shared ownership"],
+    "tags": [
+      "smart pointers",
+      "Rc",
+      "shared ownership"
+    ],
     "created_at": "2025-01-10T00:00:00Z",
     "updated_at": "2025-01-10T00:00:00Z"
   },
@@ -816,7 +1045,12 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["Rc", "RefCell", "Interior Mutability", "Smart Pointers"],
+    "tags": [
+      "Rc",
+      "RefCell",
+      "Interior Mutability",
+      "Smart Pointers"
+    ],
     "created_at": "2025-01-10T00:00:00Z",
     "updated_at": "2025-01-10T00:00:00Z"
   },
@@ -828,7 +1062,11 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["threads", "concurrency", "synchronization"],
+    "tags": [
+      "threads",
+      "concurrency",
+      "synchronization"
+    ],
     "created_at": "2025-01-10T00:00:00Z",
     "updated_at": "2025-01-10T00:00:00Z"
   },
@@ -840,7 +1078,12 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["threads", "channels", "mpsc", "concurrency"],
+    "tags": [
+      "threads",
+      "channels",
+      "mpsc",
+      "concurrency"
+    ],
     "created_at": "2025-01-11T00:00:00Z",
     "updated_at": "2025-01-11T00:00:00Z"
   },
@@ -852,7 +1095,12 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["concurrency", "mutex", "threads", "shared state"],
+    "tags": [
+      "concurrency",
+      "mutex",
+      "threads",
+      "shared state"
+    ],
     "created_at": "2025-01-11T00:00:00Z",
     "updated_at": "2025-01-11T00:00:00Z"
   },
@@ -864,7 +1112,11 @@
     "language": "RUST",
     "difficulty": "HARD",
     "track": "RUST_BASICS",
-    "tags": ["match", "pattern matching", "advanced"],
+    "tags": [
+      "match",
+      "pattern matching",
+      "advanced"
+    ],
     "created_at": "2025-01-11T00:00:00Z",
     "updated_at": "2025-01-11T00:00:00Z"
   },
@@ -876,7 +1128,11 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["traits", "type system", "operator overloading"],
+    "tags": [
+      "traits",
+      "type system",
+      "operator overloading"
+    ],
     "created_at": "2025-01-12T00:00:00Z",
     "updated_at": "2025-01-12T00:00:00Z"
   },
@@ -888,7 +1144,10 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["macros", "meta-programming"],
+    "tags": [
+      "macros",
+      "meta-programming"
+    ],
     "created_at": "2025-01-12T00:00:00Z",
     "updated_at": "2025-01-12T00:00:00Z"
   },
@@ -900,7 +1159,11 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_BASICS",
-    "tags": ["macros", "traits", "type system"],
+    "tags": [
+      "macros",
+      "traits",
+      "type system"
+    ],
     "created_at": "2025-01-12T00:00:00Z",
     "updated_at": "2025-01-12T00:00:00Z"
   },
@@ -912,7 +1175,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_BASICS",
-    "tags": ["traits", "default", "structs"],
+    "tags": [
+      "traits",
+      "default",
+      "structs"
+    ],
     "created_at": "2025-01-12T00:00:00Z",
     "updated_at": "2025-01-12T00:00:00Z"
   },
@@ -924,7 +1191,11 @@
     "language": "RUST",
     "difficulty": "HARD",
     "track": "RUST_BASICS",
-    "tags": ["procedural macros", "traits", "derive"],
+    "tags": [
+      "procedural macros",
+      "traits",
+      "derive"
+    ],
     "created_at": "2025-01-12T00:00:00Z",
     "updated_at": "2025-01-12T00:00:00Z"
   },
@@ -936,7 +1207,10 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "CONTROL_FLOW",
-    "tags": ["control flow", "if-else"],
+    "tags": [
+      "control flow",
+      "if-else"
+    ],
     "created_at": "2024-06-01T00:00:00Z",
     "updated_at": "2024-06-01T00:00:00Z"
   },
@@ -948,7 +1222,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "CONTROL_FLOW",
-    "tags": ["for-loop", "iteration", "range"],
+    "tags": [
+      "for-loop",
+      "iteration",
+      "range"
+    ],
     "created_at": "2024-06-02T00:00:00Z",
     "updated_at": "2024-06-02T00:00:00Z"
   },
@@ -960,7 +1238,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "CONTROL_FLOW",
-    "tags": ["while", "loop", "control flow"],
+    "tags": [
+      "while",
+      "loop",
+      "control flow"
+    ],
     "created_at": "2024-06-02T00:00:00Z",
     "updated_at": "2024-06-02T00:00:00Z"
   },
@@ -972,7 +1254,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "CONTROL_FLOW",
-    "tags": ["pattern matching", "match", "control flow"],
+    "tags": [
+      "pattern matching",
+      "match",
+      "control flow"
+    ],
     "created_at": "2024-06-02T00:00:00Z",
     "updated_at": "2024-06-02T00:00:00Z"
   },
@@ -1025,7 +1311,11 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "CONTROL_FLOW",
-    "tags": ["conditions", "logical operators", "control flow"],
+    "tags": [
+      "conditions",
+      "logical operators",
+      "control flow"
+    ],
     "created_at": "2024-06-02T00:00:00Z",
     "updated_at": "2024-06-02T00:00:00Z"
   },
@@ -1049,7 +1339,11 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "CONTROL_FLOW",
-    "tags": ["conversion", "error handling", "conditionals"],
+    "tags": [
+      "conversion",
+      "error handling",
+      "conditionals"
+    ],
     "created_at": "2024-06-03T00:00:00Z",
     "updated_at": "2024-06-03T00:00:00Z"
   },
@@ -1085,7 +1379,10 @@
     "language": "RUST",
     "difficulty": "HARD",
     "track": "CONTROL_FLOW",
-    "tags": ["control flow", "palindrome"],
+    "tags": [
+      "control flow",
+      "palindrome"
+    ],
     "created_at": "2024-06-05T00:00:00Z",
     "updated_at": "2024-06-05T00:00:00Z"
   },
@@ -1097,7 +1394,11 @@
     "language": "RUST",
     "difficulty": "HARD",
     "track": "CONTROL_FLOW",
-    "tags": ["pattern recognition", "automata theory", "control flow"],
+    "tags": [
+      "pattern recognition",
+      "automata theory",
+      "control flow"
+    ],
     "created_at": "2024-06-07T00:00:00Z",
     "updated_at": "2024-06-07T00:00:00Z"
   },
@@ -1109,7 +1410,11 @@
     "language": "RUST",
     "difficulty": "ADVANCED",
     "track": "CONTROL_FLOW",
-    "tags": ["control flow", "algorithms", "path-finding"],
+    "tags": [
+      "control flow",
+      "algorithms",
+      "path-finding"
+    ],
     "created_at": "2024-06-07T00:00:00Z",
     "updated_at": "2024-06-07T00:00:00Z"
   },
@@ -1121,7 +1426,12 @@
     "language": "RUST",
     "difficulty": "BEGINNER",
     "track": "RUST_STD",
-    "tags": ["strings", "string-slice", "utf-8", "ascii"],
+    "tags": [
+      "strings",
+      "string-slice",
+      "utf-8",
+      "ascii"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1133,7 +1443,13 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["strings", "trim", "split", "replace", "search"],
+    "tags": [
+      "strings",
+      "trim",
+      "split",
+      "replace",
+      "search"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1145,7 +1461,13 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["strings", "parsing", "FromStr", "Result", "error-handling"],
+    "tags": [
+      "strings",
+      "parsing",
+      "FromStr",
+      "Result",
+      "error-handling"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1157,7 +1479,13 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["strings", "format", "write", "Display", "formatting"],
+    "tags": [
+      "strings",
+      "format",
+      "write",
+      "Display",
+      "formatting"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1169,7 +1497,13 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["strings", "unicode", "utf-8", "chars", "bytes"],
+    "tags": [
+      "strings",
+      "unicode",
+      "utf-8",
+      "chars",
+      "bytes"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1181,7 +1515,13 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["strings", "iterators", "chars", "lines", "split"],
+    "tags": [
+      "strings",
+      "iterators",
+      "chars",
+      "lines",
+      "split"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1193,7 +1533,13 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["strings", "patterns", "search", "find", "match"],
+    "tags": [
+      "strings",
+      "patterns",
+      "search",
+      "find",
+      "match"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1205,7 +1551,14 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["strings", "ffi", "OsString", "OsStr", "paths", "platform"],
+    "tags": [
+      "strings",
+      "ffi",
+      "OsString",
+      "OsStr",
+      "paths",
+      "platform"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1217,7 +1570,12 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["collections", "HashSet", "set-operations", "deduplication"],
+    "tags": [
+      "collections",
+      "HashSet",
+      "set-operations",
+      "deduplication"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1247,7 +1605,13 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["collections", "VecDeque", "queue", "deque", "FIFO"],
+    "tags": [
+      "collections",
+      "VecDeque",
+      "queue",
+      "deque",
+      "FIFO"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1295,7 +1659,13 @@
     "language": "RUST",
     "difficulty": "HARD",
     "track": "RUST_STD",
-    "tags": ["collections", "HashMap", "Entry", "patterns", "caching"],
+    "tags": [
+      "collections",
+      "HashMap",
+      "Entry",
+      "patterns",
+      "caching"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1307,7 +1677,13 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["collections", "BinaryHeap", "priority-queue", "heap", "sorting"],
+    "tags": [
+      "collections",
+      "BinaryHeap",
+      "priority-queue",
+      "heap",
+      "sorting"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1319,7 +1695,13 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["collections", "LinkedList", "doubly-linked-list", "LRU", "queue"],
+    "tags": [
+      "collections",
+      "LinkedList",
+      "doubly-linked-list",
+      "LRU",
+      "queue"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1349,7 +1731,13 @@
     "language": "RUST",
     "difficulty": "BEGINNER",
     "track": "RUST_STD",
-    "tags": ["io", "files", "BufReader", "reading", "std::fs"],
+    "tags": [
+      "io",
+      "files",
+      "BufReader",
+      "reading",
+      "std::fs"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1361,7 +1749,13 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["io", "files", "BufWriter", "writing", "std::fs"],
+    "tags": [
+      "io",
+      "files",
+      "BufWriter",
+      "writing",
+      "std::fs"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1373,7 +1767,13 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["io", "paths", "Path", "PathBuf", "std::path"],
+    "tags": [
+      "io",
+      "paths",
+      "Path",
+      "PathBuf",
+      "std::path"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1385,7 +1785,13 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["io", "files", "directories", "recursion", "std::fs"],
+    "tags": [
+      "io",
+      "files",
+      "directories",
+      "recursion",
+      "std::fs"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1397,7 +1803,13 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["io", "files", "metadata", "permissions", "std::fs"],
+    "tags": [
+      "io",
+      "files",
+      "metadata",
+      "permissions",
+      "std::fs"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1409,7 +1821,14 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["io", "stdin", "stdout", "stderr", "BufRead", "Write"],
+    "tags": [
+      "io",
+      "stdin",
+      "stdout",
+      "stderr",
+      "BufRead",
+      "Write"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1421,7 +1840,13 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["io", "tempfile", "filesystem", "RAII", "Drop"],
+    "tags": [
+      "io",
+      "tempfile",
+      "filesystem",
+      "RAII",
+      "Drop"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1433,7 +1858,15 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["iterators", "combinators", "chain", "zip", "take", "skip", "rev"],
+    "tags": [
+      "iterators",
+      "combinators",
+      "chain",
+      "zip",
+      "take",
+      "skip",
+      "rev"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1445,7 +1878,13 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["iterators", "enumerate", "peekable", "inspect", "debugging"],
+    "tags": [
+      "iterators",
+      "enumerate",
+      "peekable",
+      "inspect",
+      "debugging"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1457,7 +1896,13 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["iterators", "fold", "scan", "aggregation", "running-totals"],
+    "tags": [
+      "iterators",
+      "fold",
+      "scan",
+      "aggregation",
+      "running-totals"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1469,7 +1914,13 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["iterators", "filter", "filter_map", "take_while", "skip_while"],
+    "tags": [
+      "iterators",
+      "filter",
+      "filter_map",
+      "take_while",
+      "skip_while"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1481,7 +1932,13 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["iterators", "flatten", "flat_map", "nested", "collections"],
+    "tags": [
+      "iterators",
+      "flatten",
+      "flat_map",
+      "nested",
+      "collections"
+    ],
     "created_at": "2025-01-25T00:00:00Z",
     "updated_at": "2025-01-25T00:00:00Z"
   },
@@ -1623,7 +2080,13 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["time", "Duration", "formatting", "arithmetic", "std"],
+    "tags": [
+      "time",
+      "Duration",
+      "formatting",
+      "arithmetic",
+      "std"
+    ],
     "created_at": "2025-01-26T00:00:00Z",
     "updated_at": "2025-01-26T00:00:00Z"
   },
@@ -1635,7 +2098,13 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["time", "SystemTime", "UNIX_EPOCH", "timestamps", "std"],
+    "tags": [
+      "time",
+      "SystemTime",
+      "UNIX_EPOCH",
+      "timestamps",
+      "std"
+    ],
     "created_at": "2025-01-26T00:00:00Z",
     "updated_at": "2025-01-26T00:00:00Z"
   },
@@ -1647,7 +2116,14 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["environment", "env", "configuration", "args", "process", "std"],
+    "tags": [
+      "environment",
+      "env",
+      "configuration",
+      "args",
+      "process",
+      "std"
+    ],
     "created_at": "2025-01-26T00:00:00Z",
     "updated_at": "2025-01-26T00:00:00Z"
   },
@@ -1659,7 +2135,13 @@
     "language": "RUST",
     "difficulty": "MEDIUM",
     "track": "RUST_STD",
-    "tags": ["process", "exit-codes", "ExitCode", "process-id", "std"],
+    "tags": [
+      "process",
+      "exit-codes",
+      "ExitCode",
+      "process-id",
+      "std"
+    ],
     "created_at": "2025-01-26T00:00:00Z",
     "updated_at": "2025-01-26T00:00:00Z"
   },
@@ -1712,7 +2194,14 @@
     "language": "RUST",
     "difficulty": "EASY",
     "track": "RUST_STD",
-    "tags": ["numbers", "parsing", "radix", "FromStr", "from_str_radix", "std"],
+    "tags": [
+      "numbers",
+      "parsing",
+      "radix",
+      "FromStr",
+      "from_str_radix",
+      "std"
+    ],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
   },
@@ -1745,7 +2234,14 @@
     "language": "RUST",
     "difficulty": "BEGINNER",
     "track": "RUST_STD",
-    "tags": ["derive-macros", "Clone", "Copy", "traits", "ownership", "std"],
+    "tags": [
+      "derive-macros",
+      "Clone",
+      "Copy",
+      "traits",
+      "ownership",
+      "std"
+    ],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
   },
@@ -1947,5 +2443,453 @@
     ],
     "created_at": "2025-01-27T00:00:00Z",
     "updated_at": "2025-01-27T00:00:00Z"
+  },
+  {
+    "id": 148,
+    "title": "Spawning Threads",
+    "slug": "spawning-threads",
+    "short_description": "Start threads with thread::spawn, hold on to the JoinHandle, and get a value back out of join().",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "CONCURRENCY",
+    "tags": [
+      "threads",
+      "concurrency",
+      "thread::spawn",
+      "JoinHandle",
+      "std"
+    ],
+    "created_at": "2026-09-05T00:00:00Z",
+    "updated_at": "2026-09-05T00:00:00Z"
+  },
+  {
+    "id": 149,
+    "title": "Move Closures and Threads",
+    "slug": "move-closures-threads",
+    "short_description": "Understand why thread::spawn needs move closures, what gets captured, and how ownership crosses the spawn boundary.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "CONCURRENCY",
+    "tags": [
+      "threads",
+      "concurrency",
+      "closures",
+      "move",
+      "ownership"
+    ],
+    "created_at": "2026-09-05T00:00:00Z",
+    "updated_at": "2026-09-05T00:00:00Z"
+  },
+  {
+    "id": 150,
+    "title": "Collecting Thread Results",
+    "slug": "collecting-thread-results",
+    "short_description": "Spawn a set of workers, collect their JoinHandles, and join them so results come back in a deterministic order.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "CONCURRENCY",
+    "tags": [
+      "threads",
+      "concurrency",
+      "JoinHandle",
+      "parallelism",
+      "std"
+    ],
+    "created_at": "2026-09-05T00:00:00Z",
+    "updated_at": "2026-09-05T00:00:00Z"
+  },
+  {
+    "id": 151,
+    "title": "Scoped Threads",
+    "slug": "scoped-threads",
+    "short_description": "Use thread::scope to borrow local data from threads without 'static bounds, cloning, or Arc.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "CONCURRENCY",
+    "tags": [
+      "threads",
+      "concurrency",
+      "thread::scope",
+      "borrowing",
+      "lifetimes"
+    ],
+    "created_at": "2026-09-05T00:00:00Z",
+    "updated_at": "2026-09-05T00:00:00Z"
+  },
+  {
+    "id": 152,
+    "title": "Handling Thread Panics",
+    "slug": "handling-thread-panics",
+    "short_description": "Recover from a panicking worker: join() returns a Result, and the panic payload can be downcast to a message.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "CONCURRENCY",
+    "tags": [
+      "threads",
+      "concurrency",
+      "panic",
+      "error-handling",
+      "downcast"
+    ],
+    "created_at": "2026-09-05T00:00:00Z",
+    "updated_at": "2026-09-05T00:00:00Z"
+  },
+  {
+    "id": 153,
+    "title": "Mutex Poisoning",
+    "slug": "mutex-poisoning",
+    "short_description": "Learn what poisons a Mutex, why lock() returns a Result, and how to recover the guard with into_inner().",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "CONCURRENCY",
+    "tags": [
+      "threads",
+      "concurrency",
+      "Mutex",
+      "poisoning",
+      "error-handling"
+    ],
+    "created_at": "2026-09-05T00:00:00Z",
+    "updated_at": "2026-09-05T00:00:00Z"
+  },
+  {
+    "id": 154,
+    "title": "RwLock Readers and Writers",
+    "slug": "rwlock-readers-writers",
+    "short_description": "Use RwLock to let many readers share data at once while writers stay exclusive, and know when it beats a Mutex.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "CONCURRENCY",
+    "tags": [
+      "threads",
+      "concurrency",
+      "RwLock",
+      "shared-state",
+      "std"
+    ],
+    "created_at": "2026-09-05T00:00:00Z",
+    "updated_at": "2026-09-05T00:00:00Z"
+  },
+  {
+    "id": 155,
+    "title": "Atomic Counters",
+    "slug": "atomic-counters",
+    "short_description": "Count without locking: AtomicUsize, fetch_add, swap, and how to choose a memory Ordering.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "CONCURRENCY",
+    "tags": [
+      "threads",
+      "concurrency",
+      "atomics",
+      "AtomicUsize",
+      "Ordering"
+    ],
+    "created_at": "2026-09-05T00:00:00Z",
+    "updated_at": "2026-09-05T00:00:00Z"
+  },
+  {
+    "id": 156,
+    "title": "OnceLock and Lazy Initialization",
+    "slug": "oncelock-lazy-init",
+    "short_description": "Build a shared value exactly once with OnceLock and LazyLock, even when many threads race for it.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "CONCURRENCY",
+    "tags": [
+      "threads",
+      "concurrency",
+      "OnceLock",
+      "LazyLock",
+      "initialization"
+    ],
+    "created_at": "2026-09-05T00:00:00Z",
+    "updated_at": "2026-09-05T00:00:00Z"
+  },
+  {
+    "id": 157,
+    "title": "Barrier Synchronization",
+    "slug": "barrier-synchronization",
+    "short_description": "Align workers at a phase boundary with std::sync::Barrier, and see why one round needs two waits.",
+    "language": "RUST",
+    "difficulty": "HARD",
+    "track": "CONCURRENCY",
+    "tags": [
+      "threads",
+      "concurrency",
+      "Barrier",
+      "synchronization"
+    ],
+    "created_at": "2026-09-06T00:00:00Z",
+    "updated_at": "2026-09-06T00:00:00Z"
+  },
+  {
+    "id": 158,
+    "title": "Condvar Signaling",
+    "slug": "condvar-signaling",
+    "short_description": "Build a blocking queue with Condvar: wait, notify, the predicate loop, and why lost wakeups happen.",
+    "language": "RUST",
+    "difficulty": "HARD",
+    "track": "CONCURRENCY",
+    "tags": [
+      "threads",
+      "concurrency",
+      "Condvar",
+      "Mutex",
+      "signaling"
+    ],
+    "created_at": "2026-09-06T00:00:00Z",
+    "updated_at": "2026-09-06T00:00:00Z"
+  },
+  {
+    "id": 159,
+    "title": "MPSC Fan-In",
+    "slug": "mpsc-fan-in",
+    "short_description": "Funnel many producers into one consumer, and drop the last sender so the receiver actually stops.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "CONCURRENCY",
+    "tags": [
+      "threads",
+      "concurrency",
+      "channels",
+      "mpsc",
+      "fan-in"
+    ],
+    "created_at": "2026-09-06T00:00:00Z",
+    "updated_at": "2026-09-06T00:00:00Z"
+  },
+  {
+    "id": 160,
+    "title": "Send and Sync Bounds",
+    "slug": "send-and-sync-bounds",
+    "short_description": "Write the trait bounds yourself: Send, Sync and 'static on generic helpers that spawn threads.",
+    "language": "RUST",
+    "difficulty": "HARD",
+    "track": "CONCURRENCY",
+    "tags": [
+      "threads",
+      "concurrency",
+      "Send",
+      "Sync",
+      "trait-bounds"
+    ],
+    "created_at": "2026-09-06T00:00:00Z",
+    "updated_at": "2026-09-06T00:00:00Z"
+  },
+  {
+    "id": 161,
+    "title": "Sync Channel Backpressure",
+    "slug": "sync-channel-backpressure",
+    "short_description": "Bound an mpsc channel so a slow consumer throttles the producer instead of letting the queue grow.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "CONCURRENCY",
+    "tags": [
+      "threads",
+      "concurrency",
+      "channels",
+      "mpsc",
+      "backpressure"
+    ],
+    "created_at": "2026-09-06T00:00:00Z",
+    "updated_at": "2026-09-06T00:00:00Z"
+  },
+  {
+    "id": 162,
+    "title": "Thread Local State",
+    "slug": "thread-local-state",
+    "short_description": "Give every thread its own private copy of a static with thread_local!, and skip the lock entirely.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "CONCURRENCY",
+    "tags": [
+      "threads",
+      "concurrency",
+      "thread_local",
+      "Cell",
+      "RefCell"
+    ],
+    "created_at": "2026-09-06T00:00:00Z",
+    "updated_at": "2026-09-06T00:00:00Z"
+  },
+  {
+    "id": 163,
+    "title": "Building a Thread Pool",
+    "slug": "building-a-thread-pool",
+    "short_description": "Build a fixed-size pool: workers pulling boxed jobs off a shared queue, joined cleanly on drop.",
+    "language": "RUST",
+    "difficulty": "HARD",
+    "track": "CONCURRENCY",
+    "tags": [
+      "threads",
+      "concurrency",
+      "thread-pool",
+      "mpsc",
+      "Drop"
+    ],
+    "created_at": "2026-09-06T00:00:00Z",
+    "updated_at": "2026-09-06T00:00:00Z"
+  },
+  {
+    "id": 164,
+    "title": "First Async Function",
+    "slug": "first-async-function",
+    "short_description": "Write your first async fn, await it, and see why a Rust future does nothing until it is polled.",
+    "language": "RUST",
+    "difficulty": "EASY",
+    "track": "CONCURRENCY",
+    "tags": [
+      "async",
+      "await",
+      "futures",
+      "tokio"
+    ],
+    "created_at": "2026-09-06T00:00:00Z",
+    "updated_at": "2026-09-06T00:00:00Z"
+  },
+  {
+    "id": 165,
+    "title": "Spawning Async Tasks",
+    "slug": "spawning-async-tasks",
+    "short_description": "Use tokio::spawn to run tasks concurrently, then read results and panics off their JoinHandles.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "CONCURRENCY",
+    "tags": [
+      "async",
+      "tokio",
+      "spawn",
+      "tasks",
+      "JoinHandle"
+    ],
+    "created_at": "2026-09-06T00:00:00Z",
+    "updated_at": "2026-09-06T00:00:00Z"
+  },
+  {
+    "id": 166,
+    "title": "Joining Futures",
+    "slug": "joining-futures",
+    "short_description": "Replace sequential awaits with tokio::join! and try_join! so independent lookups overlap.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "CONCURRENCY",
+    "tags": [
+      "async",
+      "tokio",
+      "join",
+      "concurrency",
+      "futures"
+    ],
+    "created_at": "2026-09-06T00:00:00Z",
+    "updated_at": "2026-09-06T00:00:00Z"
+  },
+  {
+    "id": 167,
+    "title": "Async Channels",
+    "slug": "async-channels",
+    "short_description": "Pass values between tasks with tokio::sync::mpsc, and learn why recv() only returns None once every sender is gone.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "CONCURRENCY",
+    "tags": [
+      "async",
+      "tokio",
+      "channels",
+      "mpsc",
+      "backpressure"
+    ],
+    "created_at": "2026-09-06T00:00:00Z",
+    "updated_at": "2026-09-06T00:00:00Z"
+  },
+  {
+    "id": 168,
+    "title": "Timeouts and Sleep",
+    "slug": "timeouts-and-sleep",
+    "short_description": "Wait without blocking using tokio::time::sleep, and put a deadline on any future with timeout.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "CONCURRENCY",
+    "tags": [
+      "async",
+      "tokio",
+      "time",
+      "timeout",
+      "sleep"
+    ],
+    "created_at": "2026-09-06T00:00:00Z",
+    "updated_at": "2026-09-06T00:00:00Z"
+  },
+  {
+    "id": 169,
+    "title": "Racing With Select",
+    "slug": "racing-with-select",
+    "short_description": "Use tokio::select! to take whichever future finishes first, and learn what cancellation does to the losers.",
+    "language": "RUST",
+    "difficulty": "HARD",
+    "track": "CONCURRENCY",
+    "tags": [
+      "async",
+      "tokio",
+      "select",
+      "cancellation",
+      "futures"
+    ],
+    "created_at": "2026-09-06T00:00:00Z",
+    "updated_at": "2026-09-06T00:00:00Z"
+  },
+  {
+    "id": 170,
+    "title": "Async Mutex",
+    "slug": "async-mutex",
+    "short_description": "Share state across tasks with tokio::sync::Mutex, and see why a std guard must never be held across an await.",
+    "language": "RUST",
+    "difficulty": "HARD",
+    "track": "CONCURRENCY",
+    "tags": [
+      "async",
+      "tokio",
+      "mutex",
+      "shared-state",
+      "Send"
+    ],
+    "created_at": "2026-09-06T00:00:00Z",
+    "updated_at": "2026-09-06T00:00:00Z"
+  },
+  {
+    "id": 171,
+    "title": "Spawn Blocking",
+    "slug": "spawn-blocking",
+    "short_description": "Move CPU-bound and blocking work off the async runtime's worker threads with tokio::task::spawn_blocking.",
+    "language": "RUST",
+    "difficulty": "MEDIUM",
+    "track": "CONCURRENCY",
+    "tags": [
+      "async",
+      "tokio",
+      "spawn-blocking",
+      "threads",
+      "runtime"
+    ],
+    "created_at": "2026-09-06T00:00:00Z",
+    "updated_at": "2026-09-06T00:00:00Z"
+  },
+  {
+    "id": 172,
+    "title": "JoinSet Concurrent Tasks",
+    "slug": "joinset-concurrent-tasks",
+    "short_description": "Run a dynamic set of tasks with tokio::task::JoinSet and consume their results as they complete.",
+    "language": "RUST",
+    "difficulty": "HARD",
+    "track": "CONCURRENCY",
+    "tags": [
+      "async",
+      "tokio",
+      "joinset",
+      "tasks",
+      "concurrency"
+    ],
+    "created_at": "2026-09-06T00:00:00Z",
+    "updated_at": "2026-09-06T00:00:00Z"
   }
 ]

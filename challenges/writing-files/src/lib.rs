@@ -37,10 +37,7 @@ pub fn write_bytes(path: &str, data: &[u8]) -> Result<(), io::Error> {
 /// append_string("log.txt", "New log entry\n").unwrap();
 /// ```
 pub fn append_string(path: &str, content: &str) -> Result<(), io::Error> {
-    let mut file = OpenOptions::new()
-        .append(true)
-        .create(true)
-        .open(path)?;
+    let mut file = OpenOptions::new().append(true).create(true).open(path)?;
     file.write_all(content.as_bytes())
 }
 

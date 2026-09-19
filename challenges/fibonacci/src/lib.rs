@@ -1,7 +1,7 @@
 /// Dynamic Programming implementation of the Fibonacci sequence.
 ///
 /// # Arguments
-/// 
+///
 /// * `n`:  u32, the nth number in the fibonacci sequence
 ///
 /// returns: u32  the result of the nth number in the fibonacci sequence

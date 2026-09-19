@@ -254,7 +254,7 @@ fn test_rotate_left_full_rotation() {
 fn test_rotate_left_more_than_len() {
     let mut queue = create_queue(&[1, 2, 3, 4]);
     rotate_left(&mut queue, 6); // 6 % 4 = 2
-    // [1, 2, 3, 4] -> [3, 4, 1, 2]
+                                // [1, 2, 3, 4] -> [3, 4, 1, 2]
     let expected: VecDeque<i32> = VecDeque::from([3, 4, 1, 2]);
     assert_eq!(queue, expected);
 }
@@ -314,7 +314,7 @@ fn test_rotate_right_full_rotation() {
 fn test_rotate_right_more_than_len() {
     let mut queue = create_queue(&[1, 2, 3, 4]);
     rotate_right(&mut queue, 6); // 6 % 4 = 2
-    // [1, 2, 3, 4] -> [3, 4, 1, 2]
+                                 // [1, 2, 3, 4] -> [3, 4, 1, 2]
     let expected: VecDeque<i32> = VecDeque::from([3, 4, 1, 2]);
     assert_eq!(queue, expected);
 }
@@ -421,12 +421,24 @@ fn test_with_complex_type() {
     }
 
     let tasks = vec![
-        Task { id: 1, name: "first".to_string() },
-        Task { id: 2, name: "second".to_string() },
+        Task {
+            id: 1,
+            name: "first".to_string(),
+        },
+        Task {
+            id: 2,
+            name: "second".to_string(),
+        },
     ];
     let mut queue = create_queue(&tasks);
 
-    enqueue(&mut queue, Task { id: 3, name: "third".to_string() });
+    enqueue(
+        &mut queue,
+        Task {
+            id: 3,
+            name: "third".to_string(),
+        },
+    );
 
     assert_eq!(peek_front(&queue).unwrap().id, 1);
     assert_eq!(peek_back(&queue).unwrap().id, 3);

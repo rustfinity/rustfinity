@@ -5,6 +5,7 @@ pub struct Days(pub i32);
 impl From<Minutes> for Hours {
     fn from(minutes: Minutes) -> Hours {
         // Implement the minute to hour conversion here
+        unimplemented!()
     }
 }
 

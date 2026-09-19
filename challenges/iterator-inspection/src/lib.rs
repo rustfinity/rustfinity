@@ -12,7 +12,11 @@
 /// assert_eq!(indexed_elements(&["a", "b", "c"]), vec![(0, "a"), (1, "b"), (2, "c")]);
 /// ```
 pub fn indexed_elements<T: Clone>(items: &[T]) -> Vec<(usize, T)> {
-    items.iter().enumerate().map(|(i, x)| (i, x.clone())).collect()
+    items
+        .iter()
+        .enumerate()
+        .map(|(i, x)| (i, x.clone()))
+        .collect()
 }
 
 /// Finds the index of the first occurrence of target.

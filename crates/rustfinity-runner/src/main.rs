@@ -29,11 +29,9 @@ async fn main() -> ExitCode {
         } => {
             let params = RunTestsParams::new(code_base64, tests_base64, cargo_toml_base64, n_tests);
 
+            // The output was already streamed to stdout while the tests ran.
             match run_tests(&params).await {
-                Ok(output) => {
-                    println!("{}", output);
-                    ExitCode::SUCCESS
-                }
+                Ok(_) => ExitCode::SUCCESS,
                 Err(e) => {
                     eprintln!("{}", e);
                     ExitCode::FAILURE
@@ -45,10 +43,7 @@ async fn main() -> ExitCode {
             let params = PlaygroundParams::new(code_base64);
 
             match run_code_in_playground(&params).await {
-                Ok(output) => {
-                    println!("{}", output);
-                    ExitCode::SUCCESS
-                }
+                Ok(_) => ExitCode::SUCCESS,
                 Err(e) => {
                     eprintln!("{}", e);
                     ExitCode::FAILURE
@@ -60,14 +55,8 @@ async fn main() -> ExitCode {
             let params = RustlingsParams::new(code_base64);
 
             match run_rustlings_test(&params).await {
-                Ok(result) => {
-                    println!("{}", result.output);
-                    if result.success {
-                        ExitCode::SUCCESS
-                    } else {
-                        ExitCode::FAILURE
-                    }
-                }
+                Ok(true) => ExitCode::SUCCESS,
+                Ok(false) => ExitCode::FAILURE,
                 Err(e) => {
                     eprintln!("{}", e);
                     ExitCode::FAILURE
@@ -79,14 +68,8 @@ async fn main() -> ExitCode {
             let params = RustlingsParams::new(code_base64);
 
             match run_rustlings_check(&params).await {
-                Ok(result) => {
-                    println!("{}", result.output);
-                    if result.success {
-                        ExitCode::SUCCESS
-                    } else {
-                        ExitCode::FAILURE
-                    }
-                }
+                Ok(true) => ExitCode::SUCCESS,
+                Ok(false) => ExitCode::FAILURE,
                 Err(e) => {
                     eprintln!("{}", e);
                     ExitCode::FAILURE

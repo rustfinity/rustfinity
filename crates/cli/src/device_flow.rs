@@ -41,7 +41,10 @@ pub async fn device_login() -> Result<String> {
     println!("  │                                         │");
     println!("  │   Your verification code is:            │");
     println!("  │                                         │");
-    println!("  │           {:^8}                     │", device.user_code);
+    println!(
+        "  │           {:^8}                     │",
+        device.user_code
+    );
     println!("  │                                         │");
     println!("  │   Opening browser to complete login...  │");
     println!("  │                                         │");

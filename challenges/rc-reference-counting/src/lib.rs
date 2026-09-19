@@ -460,7 +460,10 @@ impl<T> Observable<T> {
 
     /// Returns the number of live observers.
     pub fn observer_count(&self) -> usize {
-        self.observers.iter().filter(|w| w.upgrade().is_some()).count()
+        self.observers
+            .iter()
+            .filter(|w| w.upgrade().is_some())
+            .count()
     }
 }
 

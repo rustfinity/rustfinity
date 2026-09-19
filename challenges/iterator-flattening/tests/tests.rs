@@ -284,15 +284,15 @@ mod flatten_to_depth_one_tests {
     #[test]
     fn basic_case() {
         let deep = vec![vec![vec![1, 2], vec![3]], vec![vec![4]]];
-        assert_eq!(flatten_to_depth_one(deep), vec![vec![1, 2], vec![3], vec![4]]);
+        assert_eq!(
+            flatten_to_depth_one(deep),
+            vec![vec![1, 2], vec![3], vec![4]]
+        );
     }
 
     #[test]
     fn multiple_inner_vectors() {
-        let deep = vec![
-            vec![vec![1], vec![2], vec![3]],
-            vec![vec![4], vec![5]],
-        ];
+        let deep = vec![vec![vec![1], vec![2], vec![3]], vec![vec![4], vec![5]]];
         assert_eq!(
             flatten_to_depth_one(deep),
             vec![vec![1], vec![2], vec![3], vec![4], vec![5]]
@@ -333,10 +333,7 @@ mod words_from_lines_tests {
 
     #[test]
     fn single_line_multiple_words() {
-        assert_eq!(
-            words_from_lines(&["hello world"]),
-            vec!["hello", "world"]
-        );
+        assert_eq!(words_from_lines(&["hello world"]), vec!["hello", "world"]);
     }
 
     #[test]
@@ -459,11 +456,7 @@ mod integration_tests {
     #[test]
     fn process_nested_data_pipeline() {
         // Simulate processing nested data
-        let data = vec![
-            vec![1, 2, 3],
-            vec![4, 5, 6],
-            vec![7, 8, 9],
-        ];
+        let data = vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]];
 
         // Flatten and filter for values divisible by 3
         let divisible_by_3 = flatten_and_filter(data, |&x| x % 3 == 0);
@@ -497,10 +490,7 @@ mod integration_tests {
     fn option_and_result_processing() {
         // Simulate parsing numbers where some fail
         let strings = vec!["1", "bad", "3", "worse", "5"];
-        let parsed: Vec<Option<i32>> = strings
-            .iter()
-            .map(|s| s.parse().ok())
-            .collect();
+        let parsed: Vec<Option<i32>> = strings.iter().map(|s| s.parse().ok()).collect();
 
         let values = flatten_options(parsed);
         assert_eq!(values, vec![1, 3, 5]);
@@ -510,8 +500,8 @@ mod integration_tests {
     fn deeply_nested_partial_flatten() {
         // Flatten only one level, keeping inner structure
         let matrix_of_rows = vec![
-            vec![vec![1, 2], vec![3, 4]],  // First matrix
-            vec![vec![5, 6], vec![7, 8]],  // Second matrix
+            vec![vec![1, 2], vec![3, 4]], // First matrix
+            vec![vec![5, 6], vec![7, 8]], // Second matrix
         ];
 
         let all_rows = flatten_to_depth_one(matrix_of_rows);
@@ -523,10 +513,8 @@ mod integration_tests {
     #[test]
     fn combined_flatten_operations() {
         // First flatten nested, then flatten options in another operation
-        let nested_optional: Vec<Vec<Option<i32>>> = vec![
-            vec![Some(1), None, Some(2)],
-            vec![None, Some(3)],
-        ];
+        let nested_optional: Vec<Vec<Option<i32>>> =
+            vec![vec![Some(1), None, Some(2)], vec![None, Some(3)]];
 
         // Flatten the outer structure
         let flat_options: Vec<Option<i32>> = nested_optional.into_iter().flatten().collect();
@@ -540,22 +528,14 @@ mod integration_tests {
     #[test]
     fn complex_filter_after_flatten() {
         // Nested data with various conditions
-        let data = vec![
-            vec![-5, -3, 0, 2, 4],
-            vec![1, -1, 3, -2],
-            vec![10, -10, 5],
-        ];
+        let data = vec![vec![-5, -3, 0, 2, 4], vec![1, -1, 3, -2], vec![10, -10, 5]];
 
         // Flatten and keep only positive numbers
         let positive = flatten_and_filter(data.clone(), |&x| x > 0);
         assert_eq!(positive, vec![2, 4, 1, 3, 10, 5]);
 
         // Flatten and keep only even numbers
-        let data2 = vec![
-            vec![-5, -3, 0, 2, 4],
-            vec![1, -1, 3, -2],
-            vec![10, -10, 5],
-        ];
+        let data2 = vec![vec![-5, -3, 0, 2, 4], vec![1, -1, 3, -2], vec![10, -10, 5]];
         let even = flatten_and_filter(data2, |&x| x % 2 == 0);
         assert_eq!(even, vec![0, 2, 4, -2, 10, -10]);
     }

@@ -68,7 +68,10 @@ fn test_replace_word_single() {
 
 #[test]
 fn test_replace_word_multiple() {
-    assert_eq!(replace_word("world world world", "world", "Rust"), "Rust Rust Rust");
+    assert_eq!(
+        replace_word("world world world", "world", "Rust"),
+        "Rust Rust Rust"
+    );
 }
 
 #[test]
@@ -149,7 +152,10 @@ fn test_normalize_whitespace_mixed() {
 
 #[test]
 fn test_normalize_whitespace_tabs_newlines() {
-    assert_eq!(normalize_whitespace("hello\t\tworld\n\nfoo"), "hello world foo");
+    assert_eq!(
+        normalize_whitespace("hello\t\tworld\n\nfoo"),
+        "hello world foo"
+    );
 }
 
 #[test]

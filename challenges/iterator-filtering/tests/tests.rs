@@ -41,17 +41,26 @@ fn test_filter_even_single_odd() {
 
 #[test]
 fn test_filter_by_predicate_greater_than() {
-    assert_eq!(filter_by_predicate(&[1, 2, 3, 4, 5], |&x| x > 3), vec![4, 5]);
+    assert_eq!(
+        filter_by_predicate(&[1, 2, 3, 4, 5], |&x| x > 3),
+        vec![4, 5]
+    );
 }
 
 #[test]
 fn test_filter_by_predicate_less_than() {
-    assert_eq!(filter_by_predicate(&[1, 2, 3, 4, 5], |&x| x < 3), vec![1, 2]);
+    assert_eq!(
+        filter_by_predicate(&[1, 2, 3, 4, 5], |&x| x < 3),
+        vec![1, 2]
+    );
 }
 
 #[test]
 fn test_filter_by_predicate_odd() {
-    assert_eq!(filter_by_predicate(&[1, 2, 3, 4, 5], |&x| x % 2 == 1), vec![1, 3, 5]);
+    assert_eq!(
+        filter_by_predicate(&[1, 2, 3, 4, 5], |&x| x % 2 == 1),
+        vec![1, 3, 5]
+    );
 }
 
 #[test]
@@ -71,19 +80,28 @@ fn test_filter_by_predicate_empty() {
 
 #[test]
 fn test_filter_by_predicate_divisible_by_3() {
-    assert_eq!(filter_by_predicate(&[1, 3, 5, 6, 9, 10], |&x| x % 3 == 0), vec![3, 6, 9]);
+    assert_eq!(
+        filter_by_predicate(&[1, 3, 5, 6, 9, 10], |&x| x % 3 == 0),
+        vec![3, 6, 9]
+    );
 }
 
 // ==================== parse_valid_numbers tests ====================
 
 #[test]
 fn test_parse_valid_numbers_mixed() {
-    assert_eq!(parse_valid_numbers(&["1", "hello", "3", "world"]), vec![1, 3]);
+    assert_eq!(
+        parse_valid_numbers(&["1", "hello", "3", "world"]),
+        vec![1, 3]
+    );
 }
 
 #[test]
 fn test_parse_valid_numbers_all_valid() {
-    assert_eq!(parse_valid_numbers(&["42", "-5", "0", "100"]), vec![42, -5, 0, 100]);
+    assert_eq!(
+        parse_valid_numbers(&["42", "-5", "0", "100"]),
+        vec![42, -5, 0, 100]
+    );
 }
 
 #[test]
@@ -114,20 +132,31 @@ fn test_parse_valid_numbers_negative() {
 
 #[test]
 fn test_parse_valid_numbers_large_numbers() {
-    assert_eq!(parse_valid_numbers(&["2147483647", "-2147483648"]), vec![2147483647, -2147483648]);
+    assert_eq!(
+        parse_valid_numbers(&["2147483647", "-2147483648"]),
+        vec![2147483647, -2147483648]
+    );
 }
 
 // ==================== filter_map_with tests ====================
 
 #[test]
 fn test_filter_map_with_double_even() {
-    let result: Vec<i32> = filter_map_with(&[1, 2, 3, 4], |x| if x % 2 == 0 { Some(x * 2) } else { None });
+    let result: Vec<i32> =
+        filter_map_with(
+            &[1, 2, 3, 4],
+            |x| if x % 2 == 0 { Some(x * 2) } else { None },
+        );
     assert_eq!(result, vec![4, 8]);
 }
 
 #[test]
 fn test_filter_map_with_square_positive() {
-    let result: Vec<i32> = filter_map_with(&[-2, -1, 0, 1, 2], |x| if x > 0 { Some(x * x) } else { None });
+    let result: Vec<i32> =
+        filter_map_with(
+            &[-2, -1, 0, 1, 2],
+            |x| if x > 0 { Some(x * x) } else { None },
+        );
     assert_eq!(result, vec![1, 4]);
 }
 
@@ -152,7 +181,11 @@ fn test_filter_map_with_all_some() {
 #[test]
 fn test_filter_map_with_string_lengths() {
     let result: Vec<usize> = filter_map_with(&["a", "bb", "ccc"], |s: &str| {
-        if s.len() > 1 { Some(s.len()) } else { None }
+        if s.len() > 1 {
+            Some(s.len())
+        } else {
+            None
+        }
     });
     assert_eq!(result, vec![2, 3]);
 }
@@ -160,7 +193,11 @@ fn test_filter_map_with_string_lengths() {
 #[test]
 fn test_filter_map_with_type_conversion() {
     let result: Vec<String> = filter_map_with(&[1, 2, 3, 4, 5], |x| {
-        if x % 2 == 0 { Some(format!("even:{}", x)) } else { None }
+        if x % 2 == 0 {
+            Some(format!("even:{}", x))
+        } else {
+            None
+        }
     });
     assert_eq!(result, vec!["even:2", "even:4"]);
 }
@@ -278,17 +315,26 @@ fn test_filter_in_range_single_value_range() {
 
 #[test]
 fn test_filter_in_range_negative_range() {
-    assert_eq!(filter_in_range(&[-5, -3, -1, 0, 1, 3, 5], -3, 1), vec![-3, -1, 0, 1]);
+    assert_eq!(
+        filter_in_range(&[-5, -3, -1, 0, 1, 3, 5], -3, 1),
+        vec![-3, -1, 0, 1]
+    );
 }
 
 #[test]
 fn test_filter_in_range_boundary_values() {
-    assert_eq!(filter_in_range(&[0, 1, 2, 3, 4, 5], 0, 5), vec![0, 1, 2, 3, 4, 5]);
+    assert_eq!(
+        filter_in_range(&[0, 1, 2, 3, 4, 5], 0, 5),
+        vec![0, 1, 2, 3, 4, 5]
+    );
 }
 
 #[test]
 fn test_filter_in_range_large_range() {
-    assert_eq!(filter_in_range(&[100, 200, 300], 0, 1000), vec![100, 200, 300]);
+    assert_eq!(
+        filter_in_range(&[100, 200, 300], 0, 1000),
+        vec![100, 200, 300]
+    );
 }
 
 // ==================== first_matching tests ====================
@@ -327,7 +373,10 @@ fn test_first_matching_multiple_matches() {
 #[test]
 fn test_first_matching_with_strings() {
     let strings = vec!["apple", "banana", "cherry"];
-    assert_eq!(first_matching(&strings, |s| s.starts_with('b')), Some("banana"));
+    assert_eq!(
+        first_matching(&strings, |s| s.starts_with('b')),
+        Some("banana")
+    );
 }
 
 #[test]
@@ -359,11 +408,11 @@ fn test_parse_then_filter() {
 fn test_take_and_skip_complement() {
     let numbers = vec![1, 2, 3, 4, 5];
     // take_while + skip_while should cover all elements for a boundary condition
-    let taken = take_while_positive(&numbers);  // [1, 2, 3, 4, 5]
+    let taken = take_while_positive(&numbers); // [1, 2, 3, 4, 5]
     assert_eq!(taken.len(), 5);
 
     let numbers_with_negative = vec![-1, -2, 3, 4, 5];
-    let skipped = skip_while_negative(&numbers_with_negative);  // [3, 4, 5]
+    let skipped = skip_while_negative(&numbers_with_negative); // [3, 4, 5]
     assert_eq!(skipped, vec![3, 4, 5]);
 }
 
@@ -371,10 +420,8 @@ fn test_take_and_skip_complement() {
 fn test_filter_map_chain() {
     // Parse strings, filter positives, then double
     let strings = vec!["1", "-2", "3", "invalid", "-4", "5"];
-    let numbers = parse_valid_numbers(&strings);  // [1, -2, 3, -4, 5]
-    let result: Vec<i32> = filter_map_with(&numbers, |x| {
-        if x > 0 { Some(x * 2) } else { None }
-    });
+    let numbers = parse_valid_numbers(&strings); // [1, -2, 3, -4, 5]
+    let result: Vec<i32> = filter_map_with(&numbers, |x| if x > 0 { Some(x * 2) } else { None });
     assert_eq!(result, vec![2, 6, 10]);
 }
 
@@ -390,8 +437,8 @@ fn test_first_matching_with_filter() {
 fn test_complex_pipeline() {
     // Start with strings, parse, filter range, find first matching condition
     let data = vec!["5", "10", "abc", "15", "20", "xyz", "25", "30"];
-    let numbers = parse_valid_numbers(&data);  // [5, 10, 15, 20, 25, 30]
-    let in_range = filter_in_range(&numbers, 10, 25);  // [10, 15, 20, 25]
+    let numbers = parse_valid_numbers(&data); // [5, 10, 15, 20, 25, 30]
+    let in_range = filter_in_range(&numbers, 10, 25); // [10, 15, 20, 25]
     let first_odd = first_matching(&in_range, |&x| x % 2 == 1);
     assert_eq!(first_odd, Some(15));
 }
@@ -415,13 +462,28 @@ fn test_filter_with_custom_struct() {
     }
 
     let people = vec![
-        Person { name: "Alice".to_string(), age: 25 },
-        Person { name: "Bob".to_string(), age: 30 },
-        Person { name: "Charlie".to_string(), age: 20 },
+        Person {
+            name: "Alice".to_string(),
+            age: 25,
+        },
+        Person {
+            name: "Bob".to_string(),
+            age: 30,
+        },
+        Person {
+            name: "Charlie".to_string(),
+            age: 20,
+        },
     ];
 
     let adult = first_matching(&people, |p| p.age >= 25);
-    assert_eq!(adult, Some(Person { name: "Alice".to_string(), age: 25 }));
+    assert_eq!(
+        adult,
+        Some(Person {
+            name: "Alice".to_string(),
+            age: 25
+        })
+    );
 
     let elderly = first_matching(&people, |p| p.age >= 65);
     assert_eq!(elderly, None);

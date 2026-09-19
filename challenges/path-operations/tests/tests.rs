@@ -79,12 +79,18 @@ fn test_get_extension_empty_extension() {
 
 #[test]
 fn test_get_file_name_simple() {
-    assert_eq!(get_file_name("document.txt"), Some("document.txt".to_string()));
+    assert_eq!(
+        get_file_name("document.txt"),
+        Some("document.txt".to_string())
+    );
 }
 
 #[test]
 fn test_get_file_name_with_path() {
-    assert_eq!(get_file_name("/home/user/document.txt"), Some("document.txt".to_string()));
+    assert_eq!(
+        get_file_name("/home/user/document.txt"),
+        Some("document.txt".to_string())
+    );
 }
 
 #[test]
@@ -94,7 +100,10 @@ fn test_get_file_name_no_extension() {
 
 #[test]
 fn test_get_file_name_hidden() {
-    assert_eq!(get_file_name("/home/user/.bashrc"), Some(".bashrc".to_string()));
+    assert_eq!(
+        get_file_name("/home/user/.bashrc"),
+        Some(".bashrc".to_string())
+    );
 }
 
 #[test]
@@ -122,7 +131,10 @@ fn test_get_file_stem_simple() {
 
 #[test]
 fn test_get_file_stem_double_extension() {
-    assert_eq!(get_file_stem("archive.tar.gz"), Some("archive.tar".to_string()));
+    assert_eq!(
+        get_file_stem("archive.tar.gz"),
+        Some("archive.tar".to_string())
+    );
 }
 
 #[test]
@@ -142,19 +154,28 @@ fn test_get_file_stem_hidden_with_ext() {
 
 #[test]
 fn test_get_file_stem_with_path() {
-    assert_eq!(get_file_stem("/home/user/report.pdf"), Some("report".to_string()));
+    assert_eq!(
+        get_file_stem("/home/user/report.pdf"),
+        Some("report".to_string())
+    );
 }
 
 // ============== get_parent tests ==============
 
 #[test]
 fn test_get_parent_simple() {
-    assert_eq!(get_parent("/home/user/file.txt"), Some(PathBuf::from("/home/user")));
+    assert_eq!(
+        get_parent("/home/user/file.txt"),
+        Some(PathBuf::from("/home/user"))
+    );
 }
 
 #[test]
 fn test_get_parent_nested() {
-    assert_eq!(get_parent("/var/log/app/error.log"), Some(PathBuf::from("/var/log/app")));
+    assert_eq!(
+        get_parent("/var/log/app/error.log"),
+        Some(PathBuf::from("/var/log/app"))
+    );
 }
 
 #[test]
@@ -170,7 +191,10 @@ fn test_get_parent_single_component() {
 
 #[test]
 fn test_get_parent_relative() {
-    assert_eq!(get_parent("path/to/file.txt"), Some(PathBuf::from("path/to")));
+    assert_eq!(
+        get_parent("path/to/file.txt"),
+        Some(PathBuf::from("path/to"))
+    );
 }
 
 #[test]
@@ -182,17 +206,26 @@ fn test_get_parent_two_levels() {
 
 #[test]
 fn test_change_extension_simple() {
-    assert_eq!(change_extension("report.doc", "pdf"), PathBuf::from("report.pdf"));
+    assert_eq!(
+        change_extension("report.doc", "pdf"),
+        PathBuf::from("report.pdf")
+    );
 }
 
 #[test]
 fn test_change_extension_add_new() {
-    assert_eq!(change_extension("Makefile", "bak"), PathBuf::from("Makefile.bak"));
+    assert_eq!(
+        change_extension("Makefile", "bak"),
+        PathBuf::from("Makefile.bak")
+    );
 }
 
 #[test]
 fn test_change_extension_double() {
-    assert_eq!(change_extension("archive.tar.gz", "bz2"), PathBuf::from("archive.tar.bz2"));
+    assert_eq!(
+        change_extension("archive.tar.gz", "bz2"),
+        PathBuf::from("archive.tar.bz2")
+    );
 }
 
 #[test]
@@ -210,7 +243,10 @@ fn test_change_extension_remove() {
 
 #[test]
 fn test_change_extension_hidden() {
-    assert_eq!(change_extension(".gitignore", "bak"), PathBuf::from(".gitignore.bak"));
+    assert_eq!(
+        change_extension(".gitignore", "bak"),
+        PathBuf::from(".gitignore.bak")
+    );
 }
 
 // ============== is_absolute tests ==============
@@ -279,9 +315,18 @@ fn test_build_and_extract_path() {
     let full = join_paths("/home/user", &["documents", "report.pdf"]);
 
     // Extract components
-    assert_eq!(get_file_name(full.to_str().unwrap()), Some("report.pdf".to_string()));
-    assert_eq!(get_extension(full.to_str().unwrap()), Some("pdf".to_string()));
-    assert_eq!(get_file_stem(full.to_str().unwrap()), Some("report".to_string()));
+    assert_eq!(
+        get_file_name(full.to_str().unwrap()),
+        Some("report.pdf".to_string())
+    );
+    assert_eq!(
+        get_extension(full.to_str().unwrap()),
+        Some("pdf".to_string())
+    );
+    assert_eq!(
+        get_file_stem(full.to_str().unwrap()),
+        Some("report".to_string())
+    );
     assert_eq!(
         get_parent(full.to_str().unwrap()),
         Some(PathBuf::from("/home/user/documents"))
@@ -311,7 +356,12 @@ fn test_path_analysis() {
     ];
 
     for (path, expected_absolute, expected_ext) in paths {
-        assert_eq!(is_absolute(path), expected_absolute, "Failed for path: {}", path);
+        assert_eq!(
+            is_absolute(path),
+            expected_absolute,
+            "Failed for path: {}",
+            path
+        );
         assert_eq!(
             get_extension(path).as_deref(),
             expected_ext,

@@ -124,8 +124,14 @@ pub fn main() {
     println!("UserIds equal: {:?}", id1 == id2);
 
     // Person - equality based on id only
-    let alice1 = Person { name: String::from("Alice"), id: 1 };
-    let alice2 = Person { name: String::from("Alice Smith"), id: 1 };
+    let alice1 = Person {
+        name: String::from("Alice"),
+        id: 1,
+    };
+    let alice2 = Person {
+        name: String::from("Alice Smith"),
+        id: 1,
+    };
     println!("Persons equal (same id): {:?}", alice1 == alice2);
 
     // Status enum

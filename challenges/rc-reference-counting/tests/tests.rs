@@ -853,9 +853,7 @@ mod integration_tests {
         // Shared data accessed by multiple components
         let shared_data = create_shared(vec![1, 2, 3, 4, 5]);
 
-        let processors: Vec<_> = (0..5)
-            .map(|_| clone_shared(&shared_data))
-            .collect();
+        let processors: Vec<_> = (0..5).map(|_| clone_shared(&shared_data)).collect();
 
         assert_eq!(get_strong_count(&shared_data), 6);
 

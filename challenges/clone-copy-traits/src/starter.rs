@@ -60,7 +60,11 @@ pub fn clone_vec<T: Clone>(items: &[T]) -> Vec<T> {
 // Example usage
 pub fn main() {
     // Copy types - original still usable after assignment
-    let color1 = Color { r: 255, g: 128, b: 0 };
+    let color1 = Color {
+        r: 255,
+        g: 128,
+        b: 0,
+    };
     let color2 = color1; // Copy happens here
     println!("Color1: r={}", color1.r); // color1 still valid!
     println!("Color2: r={}", color2.r);
@@ -70,7 +74,10 @@ pub fn main() {
         height: 20.0,
     };
     let (d1, d2) = duplicate_copy(dims);
-    println!("Dimensions: {}x{} and {}x{}", d1.width, d1.height, d2.width, d2.height);
+    println!(
+        "Dimensions: {}x{} and {}x{}",
+        d1.width, d1.height, d2.width, d2.height
+    );
 
     // Clone types - must explicitly clone
     let label1 = Label {

@@ -12,7 +12,6 @@ pub struct Coordinate {
 // TODO: Implement Display for Coordinate
 // The output should be "(x, y)" format, e.g., "(3.5, -2.0)"
 
-
 /// A color representation supporting named colors, RGB, and hex values.
 ///
 /// TODO: Derive Debug trait
@@ -29,7 +28,6 @@ pub enum Color {
 // - Red, Green, Blue -> "Red", "Green", "Blue"
 // - Rgb(r, g, b) -> "rgb(r, g, b)"
 // - Hex(s) -> the hex string itself
-
 
 /// Temperature units.
 ///
@@ -54,7 +52,6 @@ pub struct Temperature {
 // - Fahrenheit: "98.6°F"
 // - Kelvin: "300K" (no degree symbol for Kelvin)
 
-
 /// Log severity levels.
 ///
 /// TODO: Derive Debug trait
@@ -69,7 +66,6 @@ pub enum LogLevel {
 // TODO: Implement Display for LogLevel
 // Output should be uppercase: "ERROR", "WARNING", "INFO", "DEBUG"
 
-
 /// A log message with a severity level and message text.
 ///
 /// TODO: Derive Debug trait
@@ -81,7 +77,6 @@ pub struct LogMessage {
 
 // TODO: Implement Display for LogMessage
 // Output should be "[LEVEL] message", e.g., "[ERROR] Connection failed"
-
 
 /// Returns the debug representation of any Debug type.
 ///
@@ -123,7 +118,10 @@ pub fn main() {
     println!("Hex color: {}", hex);
 
     // Temperature examples
-    let temp = Temperature { value: 25.5, unit: TemperatureUnit::Celsius };
+    let temp = Temperature {
+        value: 25.5,
+        unit: TemperatureUnit::Celsius,
+    };
     println!("Temperature: {}", temp);
 
     // LogMessage examples

@@ -146,10 +146,7 @@ pub fn get_args() -> Vec<String> {
 /// assert!(!cwd.unwrap().is_empty());
 /// ```
 pub fn get_current_dir() -> Option<String> {
-    env::current_dir()
-        .ok()?
-        .to_str()
-        .map(|s| s.to_string())
+    env::current_dir().ok()?.to_str().map(|s| s.to_string())
 }
 
 /// Gets the name of the current executable (just the file name, not the full path).

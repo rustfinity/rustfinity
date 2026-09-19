@@ -100,7 +100,10 @@ pub fn chars_from_words(words: &[&str]) -> Vec<char> {
 /// assert_eq!(expand_ranges(&[(5, 5)]), vec![5]);
 /// ```
 pub fn expand_ranges(ranges: &[(i32, i32)]) -> Vec<i32> {
-    ranges.iter().flat_map(|&(start, end)| start..=end).collect()
+    ranges
+        .iter()
+        .flat_map(|&(start, end)| start..=end)
+        .collect()
 }
 
 /// Flattens only the outer layer of a triply nested vector.
@@ -172,9 +175,5 @@ where
     T: Clone,
     F: Fn(&T) -> bool,
 {
-    nested
-        .into_iter()
-        .flatten()
-        .filter(predicate)
-        .collect()
+    nested.into_iter().flatten().filter(predicate).collect()
 }

@@ -11,7 +11,10 @@ pub struct Config {
 impl Config {
     pub fn config_path() -> Result<PathBuf> {
         let home = dirs::home_dir().context("Could not determine home directory")?;
-        Ok(home.join(".config").join("rustfinity-cloud").join("config.json"))
+        Ok(home
+            .join(".config")
+            .join("rustfinity-cloud")
+            .join("config.json"))
     }
 
     pub fn load() -> Result<Self> {
@@ -26,8 +29,9 @@ impl Config {
     pub fn save(api_key: &str) -> Result<()> {
         let path = Self::config_path()?;
         if let Some(parent) = path.parent() {
-            fs::create_dir_all(parent)
-                .with_context(|| format!("Could not create config directory {}", parent.display()))?;
+            fs::create_dir_all(parent).with_context(|| {
+                format!("Could not create config directory {}", parent.display())
+            })?;
         }
         let config = Config {
             api_key: api_key.to_string(),

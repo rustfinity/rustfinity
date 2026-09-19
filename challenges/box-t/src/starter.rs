@@ -5,10 +5,12 @@ pub struct Animal {
 
 pub fn create_animal(name: &str, age: u8) -> Box<Animal> {
     // Your code here
+    unimplemented!()
 }
 
 pub fn access_animal(animal: Box<Animal>) -> (String, u8) {
     // Your code here
+    unimplemented!()
 }
 
 // Example usage

@@ -62,13 +62,23 @@ pub fn main() {
 
     // Converting to minutes and hours
     let d = Duration::from_secs(7500);
-    println!("{:?} = {} minutes = {} hours", d, to_minutes(d), to_hours(d));
+    println!(
+        "{:?} = {} minutes = {} hours",
+        d,
+        to_minutes(d),
+        to_hours(d)
+    );
 
     // Formatting durations
     let d1 = Duration::from_secs(9045);
     let d2 = Duration::from_secs(45);
     let d3 = Duration::from_secs(1845);
-    println!("Formatted: {}, {}, {}", format_duration(d1), format_duration(d2), format_duration(d3));
+    println!(
+        "Formatted: {}, {}, {}",
+        format_duration(d1),
+        format_duration(d2),
+        format_duration(d3)
+    );
 
     // Adding durations
     let durations = vec![

@@ -61,7 +61,10 @@ fn test_get_env_var_unicode() {
 fn test_get_env_var_or_default_exists() {
     let key = test_var("DEFAULT_EXISTS");
     env::set_var(&key, "actual_value");
-    assert_eq!(get_env_var_or_default(&key, "default"), "actual_value".to_string());
+    assert_eq!(
+        get_env_var_or_default(&key, "default"),
+        "actual_value".to_string()
+    );
     env::remove_var(&key);
 }
 
@@ -69,7 +72,10 @@ fn test_get_env_var_or_default_exists() {
 fn test_get_env_var_or_default_not_exists() {
     let key = test_var("DEFAULT_NOT_EXISTS");
     env::remove_var(&key);
-    assert_eq!(get_env_var_or_default(&key, "default_value"), "default_value".to_string());
+    assert_eq!(
+        get_env_var_or_default(&key, "default_value"),
+        "default_value".to_string()
+    );
 }
 
 #[test]
@@ -417,7 +423,12 @@ fn test_integration_multiple_vars_workflow() {
 
     let host = vars.iter().find(|(k, _)| k == &host_key).unwrap().1.clone();
     let port = vars.iter().find(|(k, _)| k == &port_key).unwrap().1.clone();
-    let debug = vars.iter().find(|(k, _)| k == &debug_key).unwrap().1.clone();
+    let debug = vars
+        .iter()
+        .find(|(k, _)| k == &debug_key)
+        .unwrap()
+        .1
+        .clone();
 
     assert_eq!(host, Some("localhost".to_string()));
     assert_eq!(port, Some("3000".to_string()));

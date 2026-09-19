@@ -5,7 +5,7 @@ use std::time::Instant;
 
 use crate::constants::PLAYGROUND_DIR;
 use crate::regex::extract_unittest_path;
-use crate::utils::{run_command_and_merge_output, write_file};
+use crate::utils::{emit, run_command_and_merge_output, write_file};
 
 pub struct RunTestsParams {
     code_base64: String,
@@ -38,10 +38,8 @@ pub async fn run_tests(params: &RunTestsParams) -> anyhow::Result<String> {
         cargo_toml_base64,
     } = params;
 
-    let mut output = String::new();
-
-    let tests_output = execute_code(&code_base64, &tests_base64, &cargo_toml_base64).await?;
-    output.push_str(&tests_output);
+    // Already streamed to stdout line by line; kept here for the benchmarks.
+    let mut output = execute_code(&code_base64, &tests_base64, &cargo_toml_base64).await?;
 
     let test_binary_path = extract_unittest_path(&output);
 
@@ -49,12 +47,9 @@ pub async fn run_tests(params: &RunTestsParams) -> anyhow::Result<String> {
         let time_output = benchmark_time_min(&test_binary_path, n_tests).await?;
         let memory_output = memory_benchmark(&test_binary_path).await?;
 
-        output.push_str("\n");
-        output.push_str("---");
-        output.push_str("\n");
-        output.push_str(time_output.as_str());
-        output.push_str("\n");
-        output.push_str(memory_output.as_str());
+        let benchmarks = format!("\n---\n{}\n{}\n", time_output, memory_output);
+        emit(&benchmarks)?;
+        output.push_str(&benchmarks);
     }
 
     Ok(output)
@@ -156,7 +151,7 @@ async fn execute_code(
     // Write Cargo.toml
     write_file(&config_toml_path, &config_toml)?;
 
-    let output = run_command_and_merge_output("cargo", &["test"], Some(&cwd)).await?;
+    let result = run_command_and_merge_output("cargo", &["test"], Some(&cwd))?;
 
-    Ok(output)
+    Ok(result.output)
 }

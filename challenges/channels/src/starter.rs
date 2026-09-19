@@ -16,12 +16,14 @@ pub struct Message {
 
 pub fn create_message_channel() -> (Sender<Message>, Receiver<Message>) {
     // 1. Implement this function to create and return a message channel
+    unimplemented!()
 }
 
 pub fn create_producer_thread(messages: Vec<Message>, tx: Sender<Message>) -> JoinHandle<()> {
     // TODO: Create a thread that:
     // - Updates the priority based on content
     // - Sends the updated message through the channel
+    unimplemented!()
 }
 
 pub fn create_consumer_thread(rx: Receiver<Message>) -> JoinHandle<Vec<String>> {
@@ -29,6 +31,7 @@ pub fn create_consumer_thread(rx: Receiver<Message>) -> JoinHandle<Vec<String>> 
     // - Receives messages from the channel
     // - Formats them as "[PRIORITY|SENDER_ID] CONTENT"
     // - Returns a vector of formatted messages
+    unimplemented!()
 }
 
 // Example Usage

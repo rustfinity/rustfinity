@@ -350,12 +350,8 @@ fn merge_with_capacity_negative_values() {
 
 #[test]
 fn merge_with_capacity_large_maps() {
-    let map1: HashMap<String, i32> = (0..100)
-        .map(|i| (format!("key_{}", i), i))
-        .collect();
-    let map2: HashMap<String, i32> = (50..150)
-        .map(|i| (format!("key_{}", i), i))
-        .collect();
+    let map1: HashMap<String, i32> = (0..100).map(|i| (format!("key_{}", i), i)).collect();
+    let map2: HashMap<String, i32> = (50..150).map(|i| (format!("key_{}", i), i)).collect();
     let merged = merge_with_capacity(vec![map1, map2]);
     assert_eq!(merged["key_0"], 0);
     assert_eq!(merged["key_50"], 100); // 50 + 50
@@ -392,12 +388,7 @@ fn integration_capacity_workflow() {
 
 #[test]
 fn integration_bulk_operations() {
-    let items: Vec<(&str, i32)> = vec![
-        ("alpha", 1),
-        ("beta", 2),
-        ("gamma", 3),
-        ("delta", 4),
-    ];
+    let items: Vec<(&str, i32)> = vec![("alpha", 1), ("beta", 2), ("gamma", 3), ("delta", 4)];
     let map = bulk_insert(&items);
     let (len, _) = get_capacity_stats(&map);
     assert_eq!(len, 4);
@@ -406,14 +397,8 @@ fn integration_bulk_operations() {
 #[test]
 fn integration_grouping_and_merging() {
     // Create grouped data
-    let items1 = vec![
-        ("team_a".to_string(), 10),
-        ("team_b".to_string(), 20),
-    ];
-    let items2 = vec![
-        ("team_a".to_string(), 15),
-        ("team_c".to_string(), 25),
-    ];
+    let items1 = vec![("team_a".to_string(), 10), ("team_b".to_string(), 20)];
+    let items2 = vec![("team_a".to_string(), 15), ("team_c".to_string(), 25)];
 
     let grouped1 = group_by_key(&items1, |s| s.split('_').next().unwrap().to_string());
     let grouped2 = group_by_key(&items2, |s| s.split('_').next().unwrap().to_string());
@@ -425,20 +410,14 @@ fn integration_grouping_and_merging() {
 #[test]
 fn integration_merge_multiple_sources() {
     // Simulate merging data from multiple sources
-    let source1: HashMap<String, i32> = [
-        ("sales".to_string(), 100),
-        ("returns".to_string(), 10),
-    ].into();
+    let source1: HashMap<String, i32> =
+        [("sales".to_string(), 100), ("returns".to_string(), 10)].into();
 
-    let source2: HashMap<String, i32> = [
-        ("sales".to_string(), 150),
-        ("expenses".to_string(), 50),
-    ].into();
+    let source2: HashMap<String, i32> =
+        [("sales".to_string(), 150), ("expenses".to_string(), 50)].into();
 
-    let source3: HashMap<String, i32> = [
-        ("sales".to_string(), 200),
-        ("returns".to_string(), 5),
-    ].into();
+    let source3: HashMap<String, i32> =
+        [("sales".to_string(), 200), ("returns".to_string(), 5)].into();
 
     let total = merge_with_capacity(vec![source1, source2, source3]);
     assert_eq!(total["sales"], 450);

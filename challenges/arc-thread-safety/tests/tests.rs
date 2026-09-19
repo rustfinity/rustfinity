@@ -782,10 +782,10 @@ mod integration_tests {
     fn counter_add_and_increment() {
         let counter = AtomicCounter::new_with_value(100);
 
-        counter.add(50);       // 100 + 50 = 150
-        counter.increment();   // 150 + 1 = 151
-        counter.increment();   // 151 + 1 = 152
-        counter.decrement();   // 152 - 1 = 151
+        counter.add(50); // 100 + 50 = 150
+        counter.increment(); // 150 + 1 = 151
+        counter.increment(); // 151 + 1 = 152
+        counter.decrement(); // 152 - 1 = 151
 
         assert_eq!(counter.get(), 151);
     }

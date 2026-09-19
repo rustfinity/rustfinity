@@ -1,5 +1,6 @@
 pub fn find_first_even(numbers: &[i32]) -> Option<i32> {
     // Your code here...
+    unimplemented!()
 }
 
 // Example usage

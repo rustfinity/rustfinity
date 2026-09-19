@@ -260,8 +260,10 @@ pub fn main() {
     // Create test files
     let _ = File::create(test_dir.join("file1.txt")).and_then(|mut f| f.write_all(b"Hello"));
     let _ = File::create(test_dir.join("file2.rs")).and_then(|mut f| f.write_all(b"fn main() {}"));
-    let _ = File::create(test_dir.join("subdir1").join("nested.txt")).and_then(|mut f| f.write_all(b"Nested content"));
-    let _ = File::create(test_dir.join("subdir1").join("code.rs")).and_then(|mut f| f.write_all(b"// code"));
+    let _ = File::create(test_dir.join("subdir1").join("nested.txt"))
+        .and_then(|mut f| f.write_all(b"Nested content"));
+    let _ = File::create(test_dir.join("subdir1").join("code.rs"))
+        .and_then(|mut f| f.write_all(b"// code"));
 
     println!("=== Directory Traversal Examples ===\n");
 

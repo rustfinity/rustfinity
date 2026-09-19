@@ -207,7 +207,11 @@ pub fn main() {
 
     // Shared configuration
     let config = SharedConfig::new("MyApp".to_string(), 100, true);
-    println!("App: {}, Max connections: {}", config.app_name(), config.max_connections());
+    println!(
+        "App: {}, Max connections: {}",
+        config.app_name(),
+        config.max_connections()
+    );
 
     // Atomic counter
     let counter = AtomicCounter::new();

@@ -29,7 +29,10 @@ fn test_create_temp_file_basic() {
 fn test_create_temp_file_contains_prefix() {
     let path = create_temp_file("uniqueprefix", ".tmp").unwrap();
     let filename = path.file_name().unwrap().to_string_lossy();
-    assert!(filename.contains("uniqueprefix"), "Filename should contain prefix");
+    assert!(
+        filename.contains("uniqueprefix"),
+        "Filename should contain prefix"
+    );
     fs::remove_file(&path).unwrap();
 }
 
@@ -37,7 +40,10 @@ fn test_create_temp_file_contains_prefix() {
 fn test_create_temp_file_contains_suffix() {
     let path = create_temp_file("test", ".myext").unwrap();
     let filename = path.file_name().unwrap().to_string_lossy();
-    assert!(filename.ends_with(".myext"), "Filename should end with suffix");
+    assert!(
+        filename.ends_with(".myext"),
+        "Filename should end with suffix"
+    );
     fs::remove_file(&path).unwrap();
 }
 
@@ -304,7 +310,10 @@ fn test_cleanup_temp_files_ignores_directories() {
 
     // File should be deleted, directory should remain
     assert!(!file.exists());
-    assert!(dir.exists(), "Directory should not be deleted by cleanup_temp_files");
+    assert!(
+        dir.exists(),
+        "Directory should not be deleted by cleanup_temp_files"
+    );
 
     fs::remove_dir(&dir).unwrap();
 }
@@ -351,14 +360,20 @@ fn test_integration_tempfile_raii() {
         // All TempFiles are in scope, files should exist
         paths = temps.iter().map(|t| t.path().to_path_buf()).collect();
         for path in &paths {
-            assert!(path.exists(), "File should exist while TempFile is in scope");
+            assert!(
+                path.exists(),
+                "File should exist while TempFile is in scope"
+            );
         }
         // temps goes out of scope here, triggering Drop
     }
 
     // TempFiles dropped, all files should be deleted
     for path in &paths {
-        assert!(!path.exists(), "File should be deleted after TempFile is dropped");
+        assert!(
+            !path.exists(),
+            "File should be deleted after TempFile is dropped"
+        );
     }
 }
 
