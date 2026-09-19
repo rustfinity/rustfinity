@@ -30,10 +30,7 @@ pub fn increment_or_init(map: &mut HashMap<String, i32>, key: &str, init: i32) {
 }
 
 /// Merges two HashMaps. If a key exists in both, the values are summed.
-pub fn merge_maps(
-    map1: HashMap<String, i32>,
-    map2: HashMap<String, i32>,
-) -> HashMap<String, i32> {
+pub fn merge_maps(map1: HashMap<String, i32>, map2: HashMap<String, i32>) -> HashMap<String, i32> {
     // TODO: Use the Entry API to merge maps
     unimplemented!()
 }

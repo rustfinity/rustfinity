@@ -516,13 +516,17 @@ fn modify_if_needed_owned_input() {
 #[test]
 fn modify_if_needed_custom_transform() {
     let cow: Cow<str> = Cow::Borrowed("abc");
-    let result = modify_if_needed(cow, |_| true, |c| {
-        if c == 'a' {
-            'x'
-        } else {
-            c
-        }
-    });
+    let result = modify_if_needed(
+        cow,
+        |_| true,
+        |c| {
+            if c == 'a' {
+                'x'
+            } else {
+                c
+            }
+        },
+    );
     assert_eq!(result, "xbc");
 }
 

@@ -125,7 +125,10 @@ fn get_or_compute_lazy_evaluation() {
         42
     });
     assert_eq!(value, 100);
-    assert!(!called, "Compute function should not be called for existing key");
+    assert!(
+        !called,
+        "Compute function should not be called for existing key"
+    );
 }
 
 #[test]
@@ -410,15 +413,11 @@ fn integration_event_grouping() {
 
 #[test]
 fn integration_complex_merge() {
-    let daily: HashMap<String, i32> = [
-        ("views".to_string(), 100),
-        ("clicks".to_string(), 10),
-    ].into();
+    let daily: HashMap<String, i32> =
+        [("views".to_string(), 100), ("clicks".to_string(), 10)].into();
 
-    let hourly: HashMap<String, i32> = [
-        ("views".to_string(), 50),
-        ("shares".to_string(), 5),
-    ].into();
+    let hourly: HashMap<String, i32> =
+        [("views".to_string(), 50), ("shares".to_string(), 5)].into();
 
     let total = merge_maps(daily, hourly);
     assert_eq!(total["views"], 150);

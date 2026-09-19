@@ -176,15 +176,18 @@ fn case_insensitive_in_hashset() {
 #[test]
 fn case_insensitive_in_hashmap() {
     let mut counts: HashMap<CaseInsensitiveString, u32> = HashMap::new();
-    *counts.entry(CaseInsensitiveString::new("Apple")).or_insert(0) += 1;
-    *counts.entry(CaseInsensitiveString::new("APPLE")).or_insert(0) += 1;
-    *counts.entry(CaseInsensitiveString::new("apple")).or_insert(0) += 1;
+    *counts
+        .entry(CaseInsensitiveString::new("Apple"))
+        .or_insert(0) += 1;
+    *counts
+        .entry(CaseInsensitiveString::new("APPLE"))
+        .or_insert(0) += 1;
+    *counts
+        .entry(CaseInsensitiveString::new("apple"))
+        .or_insert(0) += 1;
 
     assert_eq!(counts.len(), 1);
-    assert_eq!(
-        counts.get(&CaseInsensitiveString::new("ApPlE")),
-        Some(&3)
-    );
+    assert_eq!(counts.get(&CaseInsensitiveString::new("ApPlE")), Some(&3));
 }
 
 #[test]
@@ -296,10 +299,10 @@ fn rgb_different_colors_different_hash() {
 #[test]
 fn rgb_in_hashset() {
     let mut set: HashSet<Rgb> = HashSet::new();
-    set.insert(Rgb::new(255, 0, 0));   // Red
-    set.insert(Rgb::new(0, 255, 0));   // Green
-    set.insert(Rgb::new(0, 0, 255));   // Blue
-    set.insert(Rgb::new(255, 0, 0));   // Duplicate red
+    set.insert(Rgb::new(255, 0, 0)); // Red
+    set.insert(Rgb::new(0, 255, 0)); // Green
+    set.insert(Rgb::new(0, 0, 255)); // Blue
+    set.insert(Rgb::new(255, 0, 0)); // Duplicate red
 
     assert_eq!(set.len(), 3);
 }
@@ -504,13 +507,11 @@ fn group_by_hash_points_by_quadrant() {
         Point { x: 2, y: 2 },
         Point { x: -2, y: -2 },
     ];
-    let by_quadrant = group_by_hash(&points, |p| {
-        match (p.x >= 0, p.y >= 0) {
-            (true, true) => 1,
-            (false, true) => 2,
-            (false, false) => 3,
-            (true, false) => 4,
-        }
+    let by_quadrant = group_by_hash(&points, |p| match (p.x >= 0, p.y >= 0) {
+        (true, true) => 1,
+        (false, true) => 2,
+        (false, false) => 3,
+        (true, false) => 4,
     });
 
     assert_eq!(by_quadrant.get(&1).unwrap().len(), 2); // Q1
@@ -695,11 +696,26 @@ fn integration_complex_grouping() {
     }
 
     let items = vec![
-        Item { category: "A".to_string(), value: 1 },
-        Item { category: "B".to_string(), value: 2 },
-        Item { category: "A".to_string(), value: 3 },
-        Item { category: "C".to_string(), value: 4 },
-        Item { category: "B".to_string(), value: 5 },
+        Item {
+            category: "A".to_string(),
+            value: 1,
+        },
+        Item {
+            category: "B".to_string(),
+            value: 2,
+        },
+        Item {
+            category: "A".to_string(),
+            value: 3,
+        },
+        Item {
+            category: "C".to_string(),
+            value: 4,
+        },
+        Item {
+            category: "B".to_string(),
+            value: 5,
+        },
     ];
 
     let grouped = group_by_hash(&items, |item| item.category.clone());

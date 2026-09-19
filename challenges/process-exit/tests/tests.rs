@@ -13,14 +13,20 @@ fn test_get_process_id_positive() {
 fn test_get_process_id_consistent() {
     let pid1 = get_process_id();
     let pid2 = get_process_id();
-    assert_eq!(pid1, pid2, "Process ID should be consistent within same process");
+    assert_eq!(
+        pid1, pid2,
+        "Process ID should be consistent within same process"
+    );
 }
 
 #[test]
 fn test_get_process_id_reasonable_value() {
     let pid = get_process_id();
     // PIDs are typically within a reasonable range (less than a million on most systems)
-    assert!(pid < 10_000_000, "Process ID should be within reasonable bounds");
+    assert!(
+        pid < 10_000_000,
+        "Process ID should be within reasonable bounds"
+    );
 }
 
 // ==================== exit_code_success tests ====================
@@ -119,7 +125,11 @@ fn test_is_success_code_one() {
 #[test]
 fn test_is_success_code_various_failure_codes() {
     for code in [1, 2, 126, 127, 128, 130, 255] {
-        assert!(!is_success_code(code), "Code {} should not be success", code);
+        assert!(
+            !is_success_code(code),
+            "Code {} should not be success",
+            code
+        );
     }
 }
 
@@ -347,9 +357,15 @@ fn test_integration_success_failure_check_consistency() {
 
 #[test]
 fn test_integration_describe_all_known_codes() {
-    let known_codes = [(0, "success"), (1, "general error"), (2, "misuse of command"),
-                       (126, "command not executable"), (127, "command not found"),
-                       (128, "invalid exit argument"), (130, "script terminated by ctrl-c")];
+    let known_codes = [
+        (0, "success"),
+        (1, "general error"),
+        (2, "misuse of command"),
+        (126, "command not executable"),
+        (127, "command not found"),
+        (128, "invalid exit argument"),
+        (130, "script terminated by ctrl-c"),
+    ];
 
     for (code, expected_desc) in known_codes {
         assert_eq!(describe_exit_code(code), expected_desc);

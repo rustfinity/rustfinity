@@ -76,7 +76,10 @@ fn test_get_file_size_binary_content() {
     let dir = setup_test_dir("size_binary");
     let file_path = dir.join("binary.bin");
     let content: Vec<u8> = (0..=255).collect();
-    File::create(&file_path).unwrap().write_all(&content).unwrap();
+    File::create(&file_path)
+        .unwrap()
+        .write_all(&content)
+        .unwrap();
 
     let size = get_file_size(&file_path).unwrap();
     assert_eq!(size, 256);
@@ -235,10 +238,7 @@ fn test_get_modified_time_after_write() {
     thread::sleep(Duration::from_millis(100));
 
     // Modify the file
-    let mut file = fs::OpenOptions::new()
-        .write(true)
-        .open(&file_path)
-        .unwrap();
+    let mut file = fs::OpenOptions::new().write(true).open(&file_path).unwrap();
     file.write_all(b"new content").unwrap();
     drop(file);
 
@@ -428,10 +428,7 @@ fn test_compare_modified_times_after_modification() {
     thread::sleep(Duration::from_millis(100));
 
     // Modify file1 to make it newer
-    let mut file = fs::OpenOptions::new()
-        .write(true)
-        .open(&file1)
-        .unwrap();
+    let mut file = fs::OpenOptions::new().write(true).open(&file1).unwrap();
     file.write_all(b"modified").unwrap();
     drop(file);
 
@@ -509,9 +506,15 @@ fn test_integration_directory_structure() {
     let file1 = dir.join("file1.txt");
     let file2 = subdir.join("file2.txt");
 
-    File::create(&file1).unwrap().write_all(b"content1").unwrap();
+    File::create(&file1)
+        .unwrap()
+        .write_all(b"content1")
+        .unwrap();
     thread::sleep(Duration::from_millis(100));
-    File::create(&file2).unwrap().write_all(b"content2").unwrap();
+    File::create(&file2)
+        .unwrap()
+        .write_all(b"content2")
+        .unwrap();
 
     // Check types
     assert_eq!(get_file_type(&dir).unwrap(), "directory");
@@ -542,7 +545,13 @@ fn test_integration_multiple_file_comparison() {
     // Files should be in chronological order
     for i in 0..files.len() - 1 {
         let ordering = compare_modified_times(&files[i], &files[i + 1]).unwrap();
-        assert_eq!(ordering, Ordering::Less, "File {} should be older than file {}", i, i + 1);
+        assert_eq!(
+            ordering,
+            Ordering::Less,
+            "File {} should be older than file {}",
+            i,
+            i + 1
+        );
     }
 
     cleanup_test_dir(&dir);

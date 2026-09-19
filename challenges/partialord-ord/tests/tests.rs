@@ -273,10 +273,10 @@ fn player_sorting() {
     assert_eq!(
         players,
         vec![
-            Player::new("Diana", 200),   // Highest score first
-            Player::new("Alice", 100),   // Same score, alphabetical
-            Player::new("Bob", 100),     // Same score, alphabetical
-            Player::new("Charlie", 50),  // Lowest score last
+            Player::new("Diana", 200),  // Highest score first
+            Player::new("Alice", 100),  // Same score, alphabetical
+            Player::new("Bob", 100),    // Same score, alphabetical
+            Player::new("Charlie", 50), // Lowest score last
         ]
     );
 }
@@ -416,7 +416,11 @@ fn is_sorted_strings() {
 
 #[test]
 fn is_sorted_versions() {
-    let versions = [Version::new(1, 0, 0), Version::new(1, 1, 0), Version::new(2, 0, 0)];
+    let versions = [
+        Version::new(1, 0, 0),
+        Version::new(1, 1, 0),
+        Version::new(2, 0, 0),
+    ];
     assert!(is_sorted(&versions));
 }
 
@@ -590,7 +594,7 @@ fn integration_cross_unit_temperature_sorting() {
         Temperature::Celsius(0.0),
         Temperature::Fahrenheit(212.0), // 100°C
         Temperature::Celsius(50.0),
-        Temperature::Fahrenheit(32.0),  // 0°C
+        Temperature::Fahrenheit(32.0), // 0°C
     ];
 
     // Find extremes manually using partial_cmp

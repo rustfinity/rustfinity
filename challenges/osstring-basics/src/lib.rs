@@ -140,10 +140,7 @@ pub fn main() {
     println!("\n=== Path Joining ===");
     let components = &["home", "user", "documents", "file.txt"];
     let joined = join_path_components(components);
-    println!(
-        "join_path_components(&{:?}): {:?}",
-        components, joined
-    );
+    println!("join_path_components(&{:?}): {:?}", components, joined);
 
     // Demonstrate is_valid_utf8
     println!("\n=== UTF-8 Validation ===");

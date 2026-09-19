@@ -37,10 +37,7 @@ fn test_create_sorted_map_single() {
 #[test]
 fn test_create_sorted_map_duplicate_keys() {
     // Later duplicate overwrites earlier
-    let pairs = vec![
-        ("key".to_string(), 1),
-        ("key".to_string(), 2),
-    ];
+    let pairs = vec![("key".to_string(), 1), ("key".to_string(), 2)];
     let map = create_sorted_map(&pairs);
     assert_eq!(map.len(), 1);
     assert_eq!(map.get("key"), Some(&2));
@@ -65,10 +62,7 @@ fn test_create_sorted_map_maintains_order() {
 
 #[test]
 fn test_get_value_exists() {
-    let pairs = vec![
-        ("apple".to_string(), 100),
-        ("banana".to_string(), 200),
-    ];
+    let pairs = vec![("apple".to_string(), 100), ("banana".to_string(), 200)];
     let map = create_sorted_map(&pairs);
     assert_eq!(get_value(&map, "apple"), Some(100));
     assert_eq!(get_value(&map, "banana"), Some(200));
@@ -90,10 +84,7 @@ fn test_get_value_empty_map() {
 
 #[test]
 fn test_get_value_negative_values() {
-    let pairs = vec![
-        ("negative".to_string(), -42),
-        ("zero".to_string(), 0),
-    ];
+    let pairs = vec![("negative".to_string(), -42), ("zero".to_string(), 0)];
     let map = create_sorted_map(&pairs);
     assert_eq!(get_value(&map, "negative"), Some(-42));
     assert_eq!(get_value(&map, "zero"), Some(0));
@@ -200,10 +191,10 @@ fn test_get_range_basic() {
     ];
     let map = create_sorted_map(&pairs);
     let range = get_range(&map, "banana", "date");
-    assert_eq!(range, vec![
-        ("banana".to_string(), 2),
-        ("cherry".to_string(), 3),
-    ]);
+    assert_eq!(
+        range,
+        vec![("banana".to_string(), 2), ("cherry".to_string(), 3),]
+    );
 }
 
 #[test]
@@ -215,19 +206,19 @@ fn test_get_range_full() {
     ];
     let map = create_sorted_map(&pairs);
     let range = get_range(&map, "a", "d");
-    assert_eq!(range, vec![
-        ("a".to_string(), 1),
-        ("b".to_string(), 2),
-        ("c".to_string(), 3),
-    ]);
+    assert_eq!(
+        range,
+        vec![
+            ("a".to_string(), 1),
+            ("b".to_string(), 2),
+            ("c".to_string(), 3),
+        ]
+    );
 }
 
 #[test]
 fn test_get_range_empty_result() {
-    let pairs = vec![
-        ("apple".to_string(), 1),
-        ("banana".to_string(), 2),
-    ];
+    let pairs = vec![("apple".to_string(), 1), ("banana".to_string(), 2)];
     let map = create_sorted_map(&pairs);
     // Range that doesn't include any keys
     let range = get_range(&map, "cherry", "date");
@@ -248,10 +239,7 @@ fn test_get_range_single_element() {
 
 #[test]
 fn test_get_range_start_equals_end() {
-    let pairs = vec![
-        ("a".to_string(), 1),
-        ("b".to_string(), 2),
-    ];
+    let pairs = vec![("a".to_string(), 1), ("b".to_string(), 2)];
     let map = create_sorted_map(&pairs);
     // Empty range when start == end
     let range = get_range(&map, "a", "a");
@@ -371,10 +359,7 @@ fn test_first_and_last_same_element() {
 
 #[test]
 fn test_first_and_last_different() {
-    let pairs = vec![
-        ("a".to_string(), 1),
-        ("z".to_string(), 26),
-    ];
+    let pairs = vec![("a".to_string(), 1), ("z".to_string(), 26)];
     let map = create_sorted_map(&pairs);
     assert_eq!(get_first(&map), Some(("a".to_string(), 1)));
     assert_eq!(get_last(&map), Some(("z".to_string(), 26)));
@@ -417,9 +402,7 @@ fn test_workflow_example() {
 
 #[test]
 fn test_large_map() {
-    let pairs: Vec<(String, i32)> = (0..100)
-        .map(|i| (format!("key_{:03}", i), i))
-        .collect();
+    let pairs: Vec<(String, i32)> = (0..100).map(|i| (format!("key_{:03}", i), i)).collect();
     let map = create_sorted_map(&pairs);
 
     assert_eq!(map.len(), 100);

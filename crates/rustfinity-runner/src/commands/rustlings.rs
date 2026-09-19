@@ -1,8 +1,9 @@
 use anyhow::{Context, Result};
 use base64::prelude::*;
 use std::fs;
-use std::process::Command;
 use tempfile::TempDir;
+
+use crate::utils::{emit, run_command_and_merge_output};
 
 /// Parameters for running a rustlings exercise
 pub struct RustlingsParams {
@@ -22,74 +23,53 @@ impl RustlingsParams {
     }
 }
 
-/// Result of running a rustlings exercise
-pub struct RustlingsResult {
-    pub output: String,
-    pub success: bool,
-}
-
-/// Run rustlings exercise with cargo test
-pub async fn run_rustlings_test(params: &RustlingsParams) -> Result<RustlingsResult> {
+/// Runs a rustlings exercise with cargo test, streaming the output to stdout.
+///
+/// Returns whether the exercise passed.
+pub async fn run_rustlings_test(params: &RustlingsParams) -> Result<bool> {
     let code = params.decode_code()?;
     let temp_dir = create_rustlings_project(&code)?;
+    let cwd = path_str(&temp_dir)?;
 
-    // Run cargo test
-    let output = Command::new("cargo")
-        .args(["test", "--", "--nocapture"])
-        .current_dir(temp_dir.path())
-        .output()
+    // Streams to stdout as cargo compiles and runs the tests.
+    let result = run_command_and_merge_output("cargo", &["test", "--", "--nocapture"], Some(&cwd))
         .context("Failed to run cargo test")?;
 
-    let stdout = String::from_utf8_lossy(&output.stdout);
-    let stderr = String::from_utf8_lossy(&output.stderr);
-
-    Ok(RustlingsResult {
-        output: format!("{}{}", stderr, stdout),
-        success: output.status.success(),
-    })
+    Ok(result.success)
 }
 
-/// Run rustlings exercise with cargo check (compilation only)
-pub async fn run_rustlings_check(params: &RustlingsParams) -> Result<RustlingsResult> {
+/// Checks a rustlings exercise with cargo check (compilation only), streaming
+/// the output to stdout, then runs it if it compiled.
+///
+/// Returns whether the exercise compiled and ran.
+pub async fn run_rustlings_check(params: &RustlingsParams) -> Result<bool> {
     let code = params.decode_code()?;
     let temp_dir = create_rustlings_project(&code)?;
+    let cwd = path_str(&temp_dir)?;
 
-    // Run cargo check
-    let output = Command::new("cargo")
-        .args(["check"])
-        .current_dir(temp_dir.path())
-        .output()
+    let check = run_command_and_merge_output("cargo", &["check"], Some(&cwd))
         .context("Failed to run cargo check")?;
 
-    let stdout = String::from_utf8_lossy(&output.stdout);
-    let stderr = String::from_utf8_lossy(&output.stderr);
-
-    // If check succeeded, also run the code to show output
-    if output.status.success() {
-        let run_output = Command::new("cargo")
-            .args(["run", "--quiet"])
-            .current_dir(temp_dir.path())
-            .output()
-            .context("Failed to run cargo run")?;
-
-        let run_stdout = String::from_utf8_lossy(&run_output.stdout);
-        let run_stderr = String::from_utf8_lossy(&run_output.stderr);
-
-        if run_output.status.success() {
-            return Ok(RustlingsResult {
-                output: format!(
-                    "{}{}Compiling succeeded!\n\nOutput:\n{}{}",
-                    stderr, stdout, run_stderr, run_stdout
-                ),
-                success: true,
-            });
-        }
+    if !check.success {
+        return Ok(false);
     }
 
-    Ok(RustlingsResult {
-        output: format!("{}{}", stderr, stdout),
-        success: false,
-    })
+    // If check succeeded, also run the code to show output
+    let header = "Compiling succeeded!\n\nOutput:\n";
+    emit(header)?;
+
+    let run = run_command_and_merge_output("cargo", &["run", "--quiet"], Some(&cwd))
+        .context("Failed to run cargo run")?;
+
+    Ok(run.success)
+}
+
+fn path_str(temp_dir: &TempDir) -> Result<String> {
+    temp_dir
+        .path()
+        .to_str()
+        .map(ToString::to_string)
+        .context("Temp directory path is not valid UTF-8")
 }
 
 /// Create a temporary Cargo project for the rustlings exercise

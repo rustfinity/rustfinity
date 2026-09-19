@@ -160,13 +160,16 @@ pub fn take_while_sum_under(numbers: &[i32], limit: i32) -> Vec<i32> {
 /// assert_eq!(count_occurrences(&["a", "b", "a"], &"a"), 2);
 /// ```
 pub fn count_occurrences<T: PartialEq>(items: &[T], target: &T) -> usize {
-    items.iter().fold(0, |count, item| {
-        if item == target {
-            count + 1
-        } else {
-            count
-        }
-    })
+    items.iter().fold(
+        0,
+        |count, item| {
+            if item == target {
+                count + 1
+            } else {
+                count
+            }
+        },
+    )
 }
 
 /// Returns running average at each position using scan().

@@ -1,4 +1,10 @@
-use crate::{auth, commands::{deploy, init, link, submit::submit_challenge}, config::Config, constants::api_base_url, download::get_challenge};
+use crate::{
+    auth,
+    commands::{deploy, init, link, submit::submit_challenge},
+    config::Config,
+    constants::api_base_url,
+    download::get_challenge,
+};
 use clap::{Parser, Subcommand};
 use serde::Deserialize;
 

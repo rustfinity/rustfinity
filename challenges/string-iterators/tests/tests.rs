@@ -36,7 +36,10 @@ fn words_to_vec_simple() {
 
 #[test]
 fn words_to_vec_extra_spaces() {
-    assert_eq!(words_to_vec("  spaces  everywhere  "), vec!["spaces", "everywhere"]);
+    assert_eq!(
+        words_to_vec("  spaces  everywhere  "),
+        vec!["spaces", "everywhere"]
+    );
 }
 
 #[test]
@@ -63,7 +66,10 @@ fn words_to_vec_tabs_and_newlines() {
 
 #[test]
 fn lines_to_vec_multiple() {
-    assert_eq!(lines_to_vec("line1\nline2\nline3"), vec!["line1", "line2", "line3"]);
+    assert_eq!(
+        lines_to_vec("line1\nline2\nline3"),
+        vec!["line1", "line2", "line3"]
+    );
 }
 
 #[test]

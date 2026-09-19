@@ -1,5 +1,6 @@
 pub fn get_database_url() -> String {
     // Your code here...
+    unimplemented!()
 }
 
 /// Example usage

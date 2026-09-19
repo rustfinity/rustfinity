@@ -25,8 +25,13 @@ RUN cargo new challenges/playground && rm -rf challenges/playground/.git
 WORKDIR /app/challenges/playground
 RUN cargo add \
   syn \
-  quote \ 
+  quote \
   tempfile@3.23.0
+# Separate: with a pinned `name@version`, `cargo add` matches a qualified
+# `--features tokio/full` against the literal spec rather than the crate name
+# and fails with "feature `full` activated for crate `tokio` but the crate
+# wasn't specified". One crate per invocation takes bare feature names.
+RUN cargo add tokio@1.53.1 --features full,test-util
 
 WORKDIR /app
 RUN cargo build

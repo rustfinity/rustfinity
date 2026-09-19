@@ -1,9 +1,11 @@
 pub fn read_file_to_string(path: &str) -> String {
     // 1. Implement the function
+    unimplemented!()
 }
 
 pub fn get_env_variable(key: &str) -> String {
     // 2. Implement the function
+    unimplemented!()
 }
 
 /// Example usage

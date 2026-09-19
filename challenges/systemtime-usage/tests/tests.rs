@@ -9,9 +9,15 @@ use systemtime_usage::*;
 fn current_unix_timestamp_is_reasonable() {
     let timestamp = current_unix_timestamp();
     // Should be after Jan 1, 2020
-    assert!(timestamp > 1577836800, "Timestamp should be after year 2020");
+    assert!(
+        timestamp > 1577836800,
+        "Timestamp should be after year 2020"
+    );
     // Should be before year 2100
-    assert!(timestamp < 4102444800, "Timestamp should be before year 2100");
+    assert!(
+        timestamp < 4102444800,
+        "Timestamp should be before year 2100"
+    );
 }
 
 #[test]
@@ -268,7 +274,10 @@ fn time_until_future_deadline() {
     // Should be close to 3600 seconds (allowing for some execution time)
     let secs = remaining.unwrap().as_secs();
     assert!(secs <= 3600, "Remaining time should be <= 3600 seconds");
-    assert!(secs >= 3598, "Remaining time should be close to 3600 seconds");
+    assert!(
+        secs >= 3598,
+        "Remaining time should be close to 3600 seconds"
+    );
 }
 
 #[test]

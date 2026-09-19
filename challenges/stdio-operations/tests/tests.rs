@@ -105,9 +105,17 @@ fn test_read_all_lines_windows_newlines() {
 
 #[test]
 fn test_read_all_lines_unicode() {
-    let input = Cursor::new("\u{4E2D}\u{6587}\n\u{65E5}\u{672C}\u{8A9E}\n\u{D55C}\u{AD6D}\u{C5B4}\n");
+    let input =
+        Cursor::new("\u{4E2D}\u{6587}\n\u{65E5}\u{672C}\u{8A9E}\n\u{D55C}\u{AD6D}\u{C5B4}\n");
     let result = read_all_lines_from_reader(input).unwrap();
-    assert_eq!(result, vec!["\u{4E2D}\u{6587}", "\u{65E5}\u{672C}\u{8A9E}", "\u{D55C}\u{AD6D}\u{C5B4}"]);
+    assert_eq!(
+        result,
+        vec![
+            "\u{4E2D}\u{6587}",
+            "\u{65E5}\u{672C}\u{8A9E}",
+            "\u{D55C}\u{AD6D}\u{C5B4}"
+        ]
+    );
 }
 
 // ==================== write_to_writer tests ====================
@@ -209,7 +217,10 @@ fn test_write_and_flush_multiple() {
 fn test_write_error_simple() {
     let mut output = Vec::new();
     write_error_to_writer(&mut output, "File not found").unwrap();
-    assert_eq!(String::from_utf8(output).unwrap(), "[ERROR] File not found\n");
+    assert_eq!(
+        String::from_utf8(output).unwrap(),
+        "[ERROR] File not found\n"
+    );
 }
 
 #[test]
@@ -223,14 +234,20 @@ fn test_write_error_empty() {
 fn test_write_error_with_details() {
     let mut output = Vec::new();
     write_error_to_writer(&mut output, "Connection refused: timeout after 30s").unwrap();
-    assert_eq!(String::from_utf8(output).unwrap(), "[ERROR] Connection refused: timeout after 30s\n");
+    assert_eq!(
+        String::from_utf8(output).unwrap(),
+        "[ERROR] Connection refused: timeout after 30s\n"
+    );
 }
 
 #[test]
 fn test_write_error_unicode() {
     let mut output = Vec::new();
     write_error_to_writer(&mut output, "\u{9519}\u{8BEF}").unwrap();
-    assert_eq!(String::from_utf8(output).unwrap(), "[ERROR] \u{9519}\u{8BEF}\n");
+    assert_eq!(
+        String::from_utf8(output).unwrap(),
+        "[ERROR] \u{9519}\u{8BEF}\n"
+    );
 }
 
 #[test]
@@ -238,7 +255,10 @@ fn test_write_error_multiple() {
     let mut output = Vec::new();
     write_error_to_writer(&mut output, "Error 1").unwrap();
     write_error_to_writer(&mut output, "Error 2").unwrap();
-    assert_eq!(String::from_utf8(output).unwrap(), "[ERROR] Error 1\n[ERROR] Error 2\n");
+    assert_eq!(
+        String::from_utf8(output).unwrap(),
+        "[ERROR] Error 1\n[ERROR] Error 2\n"
+    );
 }
 
 // ==================== Integration tests ====================
@@ -251,7 +271,10 @@ fn test_integration_read_then_echo() {
 
     let mut output = Vec::new();
     writeln_to_writer(&mut output, &format!("You entered: {}", line)).unwrap();
-    assert_eq!(String::from_utf8(output).unwrap(), "You entered: User input here\n");
+    assert_eq!(
+        String::from_utf8(output).unwrap(),
+        "You entered: User input here\n"
+    );
 }
 
 #[test]
@@ -261,7 +284,10 @@ fn test_integration_prompt_pattern() {
 
     // Write prompt without newline and flush
     write_and_flush(&mut output, "Enter your name: ").unwrap();
-    assert_eq!(String::from_utf8(output.clone()).unwrap(), "Enter your name: ");
+    assert_eq!(
+        String::from_utf8(output.clone()).unwrap(),
+        "Enter your name: "
+    );
 
     // Simulate user input
     let input = Cursor::new("Alice\n");
@@ -269,7 +295,10 @@ fn test_integration_prompt_pattern() {
 
     // Write response
     writeln_to_writer(&mut output, &format!("Hello, {}!", name)).unwrap();
-    assert_eq!(String::from_utf8(output).unwrap(), "Enter your name: Hello, Alice!\n");
+    assert_eq!(
+        String::from_utf8(output).unwrap(),
+        "Enter your name: Hello, Alice!\n"
+    );
 }
 
 #[test]
@@ -283,7 +312,10 @@ fn test_integration_read_process_write() {
         writeln_to_writer(&mut output, &line.to_uppercase()).unwrap();
     }
 
-    assert_eq!(String::from_utf8(output).unwrap(), "APPLE\nBANANA\nCHERRY\n");
+    assert_eq!(
+        String::from_utf8(output).unwrap(),
+        "APPLE\nBANANA\nCHERRY\n"
+    );
 }
 
 #[test]
@@ -296,8 +328,14 @@ fn test_integration_error_handling_pattern() {
     write_error_to_writer(&mut stderr, "Warning: file is empty").unwrap();
     writeln_to_writer(&mut stdout, "Done.").unwrap();
 
-    assert_eq!(String::from_utf8(stdout).unwrap(), "Processing file...\nDone.\n");
-    assert_eq!(String::from_utf8(stderr).unwrap(), "[ERROR] Warning: file is empty\n");
+    assert_eq!(
+        String::from_utf8(stdout).unwrap(),
+        "Processing file...\nDone.\n"
+    );
+    assert_eq!(
+        String::from_utf8(stderr).unwrap(),
+        "[ERROR] Warning: file is empty\n"
+    );
 }
 
 #[test]

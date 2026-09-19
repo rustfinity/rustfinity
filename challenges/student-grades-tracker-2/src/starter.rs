@@ -8,10 +8,12 @@ pub struct Student {
 impl Student {
     pub fn add_grade(&mut self, grade: u8) {
         // Implement here
+        unimplemented!()
     }
 
     pub fn average_grade(&self) -> f64 {
         // Implement here
+        unimplemented!()
     }
 }
 

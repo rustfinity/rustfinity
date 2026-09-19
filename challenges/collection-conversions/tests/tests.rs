@@ -279,10 +279,7 @@ fn test_merge_vecs_single_vec() {
 
 #[test]
 fn test_merge_vecs_strings() {
-    let merged = merge_vecs(vec![
-        vec!["hello".to_string()],
-        vec!["world".to_string()],
-    ]);
+    let merged = merge_vecs(vec![vec!["hello".to_string()], vec!["world".to_string()]]);
     assert_eq!(merged, vec!["hello", "world"]);
 }
 

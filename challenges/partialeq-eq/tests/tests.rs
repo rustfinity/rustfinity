@@ -169,7 +169,7 @@ fn approx_float_within_epsilon() {
 #[test]
 fn approx_float_at_epsilon_boundary() {
     let f1 = ApproximateFloat(1.0);
-    let f2 = ApproximateFloat(1.00009);  // Just under epsilon
+    let f2 = ApproximateFloat(1.00009); // Just under epsilon
     assert_eq!(f1, f2);
 }
 
@@ -293,51 +293,93 @@ fn userid_in_hashmap_key() {
 
 #[test]
 fn person_equal_same_id_same_name() {
-    let p1 = Person { name: String::from("Alice"), id: 1 };
-    let p2 = Person { name: String::from("Alice"), id: 1 };
+    let p1 = Person {
+        name: String::from("Alice"),
+        id: 1,
+    };
+    let p2 = Person {
+        name: String::from("Alice"),
+        id: 1,
+    };
     assert_eq!(p1, p2);
 }
 
 #[test]
 fn person_equal_same_id_different_name() {
-    let p1 = Person { name: String::from("Alice"), id: 1 };
-    let p2 = Person { name: String::from("Alice Smith"), id: 1 };
+    let p1 = Person {
+        name: String::from("Alice"),
+        id: 1,
+    };
+    let p2 = Person {
+        name: String::from("Alice Smith"),
+        id: 1,
+    };
     assert_eq!(p1, p2);
 }
 
 #[test]
 fn person_not_equal_different_id() {
-    let p1 = Person { name: String::from("Alice"), id: 1 };
-    let p2 = Person { name: String::from("Alice"), id: 2 };
+    let p1 = Person {
+        name: String::from("Alice"),
+        id: 1,
+    };
+    let p2 = Person {
+        name: String::from("Alice"),
+        id: 2,
+    };
     assert_ne!(p1, p2);
 }
 
 #[test]
 fn person_not_equal_different_people() {
-    let alice = Person { name: String::from("Alice"), id: 1 };
-    let bob = Person { name: String::from("Bob"), id: 2 };
+    let alice = Person {
+        name: String::from("Alice"),
+        id: 1,
+    };
+    let bob = Person {
+        name: String::from("Bob"),
+        id: 2,
+    };
     assert_ne!(alice, bob);
 }
 
 #[test]
 fn person_reflexive() {
-    let p = Person { name: String::from("Test"), id: 42 };
+    let p = Person {
+        name: String::from("Test"),
+        id: 42,
+    };
     assert_eq!(p, p);
 }
 
 #[test]
 fn person_symmetric() {
-    let p1 = Person { name: String::from("Alice"), id: 1 };
-    let p2 = Person { name: String::from("Bob"), id: 1 };  // Same id
+    let p1 = Person {
+        name: String::from("Alice"),
+        id: 1,
+    };
+    let p2 = Person {
+        name: String::from("Bob"),
+        id: 1,
+    }; // Same id
     assert_eq!(p1, p2);
     assert_eq!(p2, p1);
 }
 
 #[test]
 fn person_transitive() {
-    let p1 = Person { name: String::from("A"), id: 1 };
-    let p2 = Person { name: String::from("B"), id: 1 };
-    let p3 = Person { name: String::from("C"), id: 1 };
+    let p1 = Person {
+        name: String::from("A"),
+        id: 1,
+    };
+    let p2 = Person {
+        name: String::from("B"),
+        id: 1,
+    };
+    let p3 = Person {
+        name: String::from("C"),
+        id: 1,
+    };
     assert_eq!(p1, p2);
     assert_eq!(p2, p3);
     assert_eq!(p1, p3);
@@ -345,8 +387,14 @@ fn person_transitive() {
 
 #[test]
 fn person_zero_id() {
-    let p1 = Person { name: String::from("Zero"), id: 0 };
-    let p2 = Person { name: String::from("Also Zero"), id: 0 };
+    let p1 = Person {
+        name: String::from("Zero"),
+        id: 0,
+    };
+    let p2 = Person {
+        name: String::from("Also Zero"),
+        id: 0,
+    };
     assert_eq!(p1, p2);
 }
 
@@ -510,9 +558,9 @@ fn count_matches_case_insensitive_strings() {
 fn count_matches_approx_floats() {
     let floats = [
         ApproximateFloat(1.0),
-        ApproximateFloat(1.00005),  // Within epsilon of 1.0
+        ApproximateFloat(1.00005), // Within epsilon of 1.0
         ApproximateFloat(2.0),
-        ApproximateFloat(1.00009),  // Within epsilon of 1.0
+        ApproximateFloat(1.00009), // Within epsilon of 1.0
     ];
     let target = ApproximateFloat(1.0);
     assert_eq!(count_matches(&floats, &target), 3);
@@ -593,7 +641,10 @@ fn integration_filter_by_status() {
         (String::from("Task 4"), Status::Pending),
     ];
 
-    let active_count = items.iter().filter(|(_, status)| *status == Status::Active).count();
+    let active_count = items
+        .iter()
+        .filter(|(_, status)| *status == Status::Active)
+        .count();
     assert_eq!(active_count, 2);
 }
 
@@ -607,11 +658,29 @@ fn integration_deduplicate_userids() {
 #[test]
 fn integration_person_lookup() {
     let mut people: HashMap<u64, Person> = HashMap::new();
-    people.insert(1, Person { name: String::from("Alice"), id: 1 });
-    people.insert(2, Person { name: String::from("Bob"), id: 2 });
+    people.insert(
+        1,
+        Person {
+            name: String::from("Alice"),
+            id: 1,
+        },
+    );
+    people.insert(
+        2,
+        Person {
+            name: String::from("Bob"),
+            id: 2,
+        },
+    );
 
     let alice = people.get(&1).unwrap();
-    assert_eq!(alice, &Person { name: String::from("Different Name"), id: 1 });  // Same id = equal
+    assert_eq!(
+        alice,
+        &Person {
+            name: String::from("Different Name"),
+            id: 1
+        }
+    ); // Same id = equal
 }
 
 #[test]
@@ -641,10 +710,12 @@ fn integration_approximate_clustering() {
         ApproximateFloat(3.0),
     ];
 
-    let near_one: Vec<_> = values.iter()
+    let near_one: Vec<_> = values
+        .iter()
         .filter(|v| **v == ApproximateFloat(1.0))
         .collect();
-    let near_two: Vec<_> = values.iter()
+    let near_two: Vec<_> = values
+        .iter()
         .filter(|v| **v == ApproximateFloat(2.0))
         .collect();
 
@@ -666,7 +737,7 @@ fn integration_find_and_count() {
 
     // Check if all remaining elements after first are the same
     let rest = &numbers[first_idx.unwrap() + 1..];
-    assert!(!are_all_equal(rest));  // [15, 10, 20, 10] - not all equal
+    assert!(!are_all_equal(rest)); // [15, 10, 20, 10] - not all equal
 }
 
 #[test]
@@ -679,9 +750,18 @@ fn integration_equality_chain() {
     assert!(a == b && b == c && a == c);
 
     // Test with Person (id-based equality)
-    let p1 = Person { name: String::from("Alice"), id: 100 };
-    let p2 = Person { name: String::from("Bob"), id: 100 };
-    let p3 = Person { name: String::from("Charlie"), id: 100 };
+    let p1 = Person {
+        name: String::from("Alice"),
+        id: 100,
+    };
+    let p2 = Person {
+        name: String::from("Bob"),
+        id: 100,
+    };
+    let p3 = Person {
+        name: String::from("Charlie"),
+        id: 100,
+    };
 
     assert!(p1 == p2 && p2 == p3 && p1 == p3);
 }

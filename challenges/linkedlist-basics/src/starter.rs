@@ -66,7 +66,10 @@ fn main() {
     add_back(&mut list, 2);
     add_front(&mut list, 1);
     add_back(&mut list, 3);
-    println!("After adding 1 at front, 2 and 3 at back: {:?}", list.iter().collect::<Vec<_>>());
+    println!(
+        "After adding 1 at front, 2 and 3 at back: {:?}",
+        list.iter().collect::<Vec<_>>()
+    );
 
     // Remove elements
     let mut list = create_list(&[10, 20, 30]);
@@ -76,9 +79,15 @@ fn main() {
 
     // LRU-style move to front
     let mut list = create_list(&[1, 2, 3, 4, 5]);
-    println!("Before move_to_front(&3): {:?}", list.iter().collect::<Vec<_>>());
+    println!(
+        "Before move_to_front(&3): {:?}",
+        list.iter().collect::<Vec<_>>()
+    );
     move_to_front(&mut list, &3);
-    println!("After move_to_front(&3): {:?}", list.iter().collect::<Vec<_>>());
+    println!(
+        "After move_to_front(&3): {:?}",
+        list.iter().collect::<Vec<_>>()
+    );
 
     // Concatenate lists
     let list1 = create_list(&[1, 2]);

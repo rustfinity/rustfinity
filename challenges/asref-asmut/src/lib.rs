@@ -94,9 +94,7 @@ impl Text {
     /// let text2 = Text::new(String::from("world"));
     /// ```
     pub fn new(s: impl Into<String>) -> Self {
-        Text {
-            content: s.into(),
-        }
+        Text { content: s.into() }
     }
 
     /// Returns the inner string content.

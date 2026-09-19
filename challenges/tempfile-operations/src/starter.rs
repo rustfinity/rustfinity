@@ -17,7 +17,11 @@ pub fn create_temp_file(prefix: &str, suffix: &str) -> io::Result<PathBuf> {
 }
 
 /// Creates a temporary file with the given content and returns its path.
-pub fn create_temp_file_with_content(prefix: &str, suffix: &str, content: &str) -> io::Result<PathBuf> {
+pub fn create_temp_file_with_content(
+    prefix: &str,
+    suffix: &str,
+    content: &str,
+) -> io::Result<PathBuf> {
     // TODO: Implement this function
     unimplemented!()
 }

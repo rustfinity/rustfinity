@@ -1,0 +1,7 @@
+[package]
+name = "first-async-function"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.53.1", features = ["full", "test-util"] }

@@ -4,4 +4,5 @@ pub enum TrafficLight {
 
 pub fn light_action(light: &TrafficLight) -> &'static str {
     // Your code here...
+    unimplemented!()
 }

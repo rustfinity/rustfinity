@@ -11,7 +11,7 @@ Your task is to implement a function `validate_user(age: i32, email: &str) -> Re
 Here's an example of how to use the **early return** technique:
 
 ```rust {3,7}
-fn early_return(name: &str, age: i32) -> Result<(), String> {
+fn validate(name: &str, age: i32) -> Result<(), String> {
     if name.is_empty() {
         return Err("Name is empty".to_string());
     }

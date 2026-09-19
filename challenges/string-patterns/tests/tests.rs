@@ -281,14 +281,8 @@ fn test_extract_between_not_found() {
 
 #[test]
 fn test_extract_between_empty_content() {
-    assert_eq!(
-        extract_between("[]", "[", "]"),
-        Some("".to_string())
-    );
-    assert_eq!(
-        extract_between("<></>", "<>", "</>"),
-        Some("".to_string())
-    );
+    assert_eq!(extract_between("[]", "[", "]"), Some("".to_string()));
+    assert_eq!(extract_between("<></>", "<>", "</>"), Some("".to_string()));
 }
 
 #[test]

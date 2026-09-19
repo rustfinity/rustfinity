@@ -151,10 +151,7 @@ fn parse_key_value_no_equals() {
 fn parse_key_value_url_value() {
     assert_eq!(
         parse_key_value("url=https://example.com?foo=bar"),
-        Ok((
-            "url".to_string(),
-            "https://example.com?foo=bar".to_string()
-        ))
+        Ok(("url".to_string(), "https://example.com?foo=bar".to_string()))
     );
 }
 

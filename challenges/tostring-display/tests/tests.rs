@@ -34,7 +34,10 @@ fn point_format_macro() {
 
 #[test]
 fn point_large_values() {
-    let p = Point { x: i32::MAX, y: i32::MIN };
+    let p = Point {
+        x: i32::MAX,
+        y: i32::MIN,
+    };
     assert_eq!(p.to_string(), format!("({}, {})", i32::MAX, i32::MIN));
 }
 
@@ -308,10 +311,7 @@ fn list_to_string_strings() {
 
 #[test]
 fn list_to_string_points() {
-    let points = vec![
-        Point { x: 1, y: 2 },
-        Point { x: 3, y: 4 },
-    ];
+    let points = vec![Point { x: 1, y: 2 }, Point { x: 3, y: 4 }];
     assert_eq!(list_to_string(&points), "[(1, 2), (3, 4)]");
 }
 
@@ -363,10 +363,7 @@ fn format_table_empty_rows() {
 #[test]
 fn format_table_single_column() {
     let headers = vec!["Name"];
-    let rows = vec![
-        vec!["Alice".to_string()],
-        vec!["Bob".to_string()],
-    ];
+    let rows = vec![vec!["Alice".to_string()], vec!["Bob".to_string()]];
     let table = format_table(&headers, &rows);
     assert!(table.contains("Name"));
     assert!(table.contains("Alice"));
@@ -418,8 +415,14 @@ fn integration_nested_display() {
 #[test]
 fn integration_list_of_custom_types() {
     let people = vec![
-        Person { name: "Alice".to_string(), age: 30 },
-        Person { name: "Bob".to_string(), age: 25 },
+        Person {
+            name: "Alice".to_string(),
+            age: 30,
+        },
+        Person {
+            name: "Bob".to_string(),
+            age: 25,
+        },
     ];
     let result = list_to_string(&people);
     assert_eq!(result, "[Alice (age 30), Bob (age 25)]");
@@ -428,8 +431,14 @@ fn integration_list_of_custom_types() {
 #[test]
 fn integration_money_in_table() {
     let headers = vec!["Item", "Price"];
-    let m1 = Money { amount: 1099, currency: "USD".to_string() };
-    let m2 = Money { amount: 2500, currency: "USD".to_string() };
+    let m1 = Money {
+        amount: 1099,
+        currency: "USD".to_string(),
+    };
+    let m2 = Money {
+        amount: 2500,
+        currency: "USD".to_string(),
+    };
     let rows = vec![
         vec!["Coffee".to_string(), m1.to_string()],
         vec!["Sandwich".to_string(), m2.to_string()],
@@ -456,7 +465,10 @@ fn integration_to_string_vs_format() {
     // Both should produce the same result
     assert_eq!(color.to_string(), format!("{}", color));
 
-    let money = Money { amount: 4567, currency: "EUR".to_string() };
+    let money = Money {
+        amount: 4567,
+        currency: "EUR".to_string(),
+    };
     assert_eq!(money.to_string(), format!("{}", money));
 }
 

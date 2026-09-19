@@ -1,6 +1,7 @@
 pub fn read_file(file_path: &str) -> Option<String> {
     // TODO: Implement this function
     // Hint: Use `File::open` and `.read_to_string()` with `?` to propagate errors.
+    unimplemented!()
 }
 
 // Example usage

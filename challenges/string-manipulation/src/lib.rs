@@ -82,7 +82,10 @@ pub fn main() {
 
     let original = "hello world world";
     println!("\nOriginal: '{}'", original);
-    println!("Replace 'world' with 'Rust': '{}'", replace_word(original, "world", "Rust"));
+    println!(
+        "Replace 'world' with 'Rust': '{}'",
+        replace_word(original, "world", "Rust")
+    );
 
     let csv = "  apple ,  banana  , cherry ";
     println!("\nCSV: '{}'", csv);

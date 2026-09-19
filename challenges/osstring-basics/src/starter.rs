@@ -71,10 +71,7 @@ pub fn main() {
     // Test join_path_components
     let components = &["home", "user", "documents"];
     let joined = join_path_components(components);
-    println!(
-        "join_path_components(&{:?}): {:?}",
-        components, joined
-    );
+    println!("join_path_components(&{:?}): {:?}", components, joined);
 
     // Test is_valid_utf8
     let os_str = OsStr::new("valid utf8 string");

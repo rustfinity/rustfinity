@@ -335,10 +335,7 @@ fn sum_finite_with_infinity() {
 
 #[test]
 fn sum_finite_mixed_special() {
-    assert_eq!(
-        sum_finite(&[1.0, f64::NAN, 2.0, f64::INFINITY, 3.0]),
-        6.0
-    );
+    assert_eq!(sum_finite(&[1.0, f64::NAN, 2.0, f64::INFINITY, 3.0]), 6.0);
 }
 
 #[test]
@@ -373,10 +370,7 @@ fn integration_validate_then_operate() {
     let values = vec![1.0, 2.0, f64::NAN, 4.0, f64::INFINITY];
 
     // Filter valid numbers and compute their sum
-    let sum: f64 = values
-        .iter()
-        .filter(|&&x| is_valid_number(x))
-        .sum();
+    let sum: f64 = values.iter().filter(|&&x| is_valid_number(x)).sum();
     assert_eq!(sum, 7.0);
 
     // Same result as sum_finite
@@ -386,13 +380,27 @@ fn integration_validate_then_operate() {
 #[test]
 fn integration_classify_and_count() {
     let values = vec![
-        0.0, 1.0, -1.0, f64::NAN, f64::INFINITY,
-        f64::NEG_INFINITY, f64::MIN_POSITIVE / 2.0,
+        0.0,
+        1.0,
+        -1.0,
+        f64::NAN,
+        f64::INFINITY,
+        f64::NEG_INFINITY,
+        f64::MIN_POSITIVE / 2.0,
     ];
 
-    let nan_count = values.iter().filter(|&&x| classify_float(x) == "nan").count();
-    let infinite_count = values.iter().filter(|&&x| classify_float(x) == "infinite").count();
-    let zero_count = values.iter().filter(|&&x| classify_float(x) == "zero").count();
+    let nan_count = values
+        .iter()
+        .filter(|&&x| classify_float(x) == "nan")
+        .count();
+    let infinite_count = values
+        .iter()
+        .filter(|&&x| classify_float(x) == "infinite")
+        .count();
+    let zero_count = values
+        .iter()
+        .filter(|&&x| classify_float(x) == "zero")
+        .count();
 
     assert_eq!(nan_count, 1);
     assert_eq!(infinite_count, 2);
@@ -431,14 +439,12 @@ fn integration_safe_divide_chain() {
     let b = 4.0;
     let c = 5.0;
 
-    let result = safe_divide(a, b)
-        .and_then(|r| safe_divide(r, c));
+    let result = safe_divide(a, b).and_then(|r| safe_divide(r, c));
 
     assert_eq!(result, Some(5.0));
 
     // Chain with zero
-    let result2 = safe_divide(a, b)
-        .and_then(|r| safe_divide(r, 0.0));
+    let result2 = safe_divide(a, b).and_then(|r| safe_divide(r, 0.0));
 
     assert_eq!(result2, None);
 }
@@ -447,7 +453,11 @@ fn integration_safe_divide_chain() {
 fn integration_real_world_average() {
     // Calculate average of valid numbers
     let data = vec![10.0, 20.0, f64::NAN, 30.0, f64::INFINITY, 40.0];
-    let valid_data: Vec<f64> = data.iter().filter(|&&x| is_valid_number(x)).copied().collect();
+    let valid_data: Vec<f64> = data
+        .iter()
+        .filter(|&&x| is_valid_number(x))
+        .copied()
+        .collect();
 
     if !valid_data.is_empty() {
         let sum = sum_finite(&valid_data);

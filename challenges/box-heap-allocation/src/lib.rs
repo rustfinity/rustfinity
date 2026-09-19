@@ -181,7 +181,9 @@ impl LargeData {
 
     /// Creates new LargeData filled with the given value.
     pub fn filled(value: u8) -> Self {
-        LargeData { data: [value; 1000] }
+        LargeData {
+            data: [value; 1000],
+        }
     }
 }
 

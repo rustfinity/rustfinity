@@ -108,10 +108,7 @@ fn test_elements_with_next_empty() {
 
 #[test]
 fn test_elements_with_next_two_elements() {
-    assert_eq!(
-        elements_with_next(&[1, 2]),
-        vec![(1, Some(2)), (2, None)]
-    );
+    assert_eq!(elements_with_next(&[1, 2]), vec![(1, Some(2)), (2, None)]);
 }
 
 #[test]
@@ -150,10 +147,7 @@ fn test_group_consecutive_duplicates_no_duplicates() {
 
 #[test]
 fn test_group_consecutive_duplicates_all_same() {
-    assert_eq!(
-        group_consecutive_duplicates(&[5, 5, 5, 5]),
-        vec![(5, 4)]
-    );
+    assert_eq!(group_consecutive_duplicates(&[5, 5, 5, 5]), vec![(5, 4)]);
 }
 
 #[test]
@@ -245,10 +239,7 @@ fn test_find_first_repeated_two_different() {
 
 #[test]
 fn test_find_first_repeated_strings() {
-    assert_eq!(
-        find_first_repeated(&["a", "b", "b", "c"]),
-        Some("b")
-    );
+    assert_eq!(find_first_repeated(&["a", "b", "b", "c"]), Some("b"));
 }
 
 // ==================== collect_with_trace tests ====================

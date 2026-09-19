@@ -269,21 +269,18 @@ fn test_average_duration_multiple() {
 
 #[test]
 fn test_average_duration_even() {
-    let durations = vec![
-        Duration::from_secs(100),
-        Duration::from_secs(200),
-    ];
+    let durations = vec![Duration::from_secs(100), Duration::from_secs(200)];
     assert_eq!(average_duration(&durations), Some(Duration::from_secs(150)));
 }
 
 #[test]
 fn test_average_duration_preserves_precision() {
-    let durations = vec![
-        Duration::from_secs(10),
-        Duration::from_secs(11),
-    ];
+    let durations = vec![Duration::from_secs(10), Duration::from_secs(11)];
     // Average is 10.5 seconds - Duration division preserves subsecond precision
-    assert_eq!(average_duration(&durations), Some(Duration::from_millis(10500)));
+    assert_eq!(
+        average_duration(&durations),
+        Some(Duration::from_millis(10500))
+    );
 }
 
 #[test]
@@ -299,7 +296,10 @@ fn test_average_duration_with_millis() {
         Duration::from_millis(2000),
         Duration::from_millis(3000),
     ];
-    assert_eq!(average_duration(&durations), Some(Duration::from_millis(2000)));
+    assert_eq!(
+        average_duration(&durations),
+        Some(Duration::from_millis(2000))
+    );
 }
 
 // =============================================================================
@@ -308,17 +308,26 @@ fn test_average_duration_with_millis() {
 
 #[test]
 fn test_is_longer_than_true() {
-    assert!(is_longer_than(Duration::from_secs(10), Duration::from_secs(5)));
+    assert!(is_longer_than(
+        Duration::from_secs(10),
+        Duration::from_secs(5)
+    ));
 }
 
 #[test]
 fn test_is_longer_than_false_equal() {
-    assert!(!is_longer_than(Duration::from_secs(5), Duration::from_secs(5)));
+    assert!(!is_longer_than(
+        Duration::from_secs(5),
+        Duration::from_secs(5)
+    ));
 }
 
 #[test]
 fn test_is_longer_than_false_shorter() {
-    assert!(!is_longer_than(Duration::from_secs(3), Duration::from_secs(5)));
+    assert!(!is_longer_than(
+        Duration::from_secs(3),
+        Duration::from_secs(5)
+    ));
 }
 
 #[test]
@@ -330,8 +339,14 @@ fn test_is_longer_than_zero() {
 
 #[test]
 fn test_is_longer_than_millis() {
-    assert!(is_longer_than(Duration::from_millis(1001), Duration::from_secs(1)));
-    assert!(!is_longer_than(Duration::from_millis(999), Duration::from_secs(1)));
+    assert!(is_longer_than(
+        Duration::from_millis(1001),
+        Duration::from_secs(1)
+    ));
+    assert!(!is_longer_than(
+        Duration::from_millis(999),
+        Duration::from_secs(1)
+    ));
 }
 
 #[test]

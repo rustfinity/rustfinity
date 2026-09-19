@@ -251,10 +251,7 @@ fn concat_empty_separator() {
 
 #[test]
 fn concat_longer_separator() {
-    assert_eq!(
-        concat_with_separator(&["x", "y"], " <=> "),
-        "x <=> y"
-    );
+    assert_eq!(concat_with_separator(&["x", "y"], " <=> "), "x <=> y");
 }
 
 #[test]

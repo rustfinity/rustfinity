@@ -95,17 +95,26 @@ pub fn main() {
 
     // Binary formatting
     println!("format_binary(10) = {}", format_binary(10));
-    println!("format_binary_prefixed(10) = {}", format_binary_prefixed(10));
+    println!(
+        "format_binary_prefixed(10) = {}",
+        format_binary_prefixed(10)
+    );
 
     // Hexadecimal formatting
     println!("format_hex_lower(255) = {}", format_hex_lower(255));
-    println!("format_hex_upper_prefixed(255) = {}", format_hex_upper_prefixed(255));
+    println!(
+        "format_hex_upper_prefixed(255) = {}",
+        format_hex_upper_prefixed(255)
+    );
 
     // Octal formatting
     println!("format_octal(8) = {}", format_octal(8));
 
     // Float precision
-    println!("format_float_precision(3.14159, 2) = {}", format_float_precision(3.14159, 2));
+    println!(
+        "format_float_precision(3.14159, 2) = {}",
+        format_float_precision(3.14159, 2)
+    );
 
     // Scientific notation
     println!("format_scientific(1234.5) = {}", format_scientific(1234.5));

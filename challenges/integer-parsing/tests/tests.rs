@@ -67,7 +67,10 @@ fn parse_binary_one() {
 
 #[test]
 fn parse_binary_max_u32() {
-    assert_eq!(parse_binary("11111111111111111111111111111111"), Some(u32::MAX));
+    assert_eq!(
+        parse_binary("11111111111111111111111111111111"),
+        Some(u32::MAX)
+    );
 }
 
 #[test]
@@ -433,19 +436,25 @@ fn integration_same_value_different_bases() {
 #[test]
 fn integration_detect_and_parse_equivalence() {
     // Verify detect_and_parse gives same results as specific parsers
-    assert_eq!(detect_and_parse("0xFF"), Some(parse_hex("FF").unwrap() as i64));
-    assert_eq!(detect_and_parse("0b1010"), Some(parse_binary("1010").unwrap() as i64));
-    assert_eq!(detect_and_parse("0o77"), Some(parse_octal("77").unwrap() as i64));
+    assert_eq!(
+        detect_and_parse("0xFF"),
+        Some(parse_hex("FF").unwrap() as i64)
+    );
+    assert_eq!(
+        detect_and_parse("0b1010"),
+        Some(parse_binary("1010").unwrap() as i64)
+    );
+    assert_eq!(
+        detect_and_parse("0o77"),
+        Some(parse_octal("77").unwrap() as i64)
+    );
 }
 
 #[test]
 fn integration_parse_config_values() {
     // Simulating parsing a config with mixed formats
     let values = vec!["0xFF", "256", "0b1000", "0o777"];
-    let parsed: Vec<i64> = values
-        .iter()
-        .filter_map(|s| detect_and_parse(s))
-        .collect();
+    let parsed: Vec<i64> = values.iter().filter_map(|s| detect_and_parse(s)).collect();
     assert_eq!(parsed, vec![255, 256, 8, 511]);
 }
 

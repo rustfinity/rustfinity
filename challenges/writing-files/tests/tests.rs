@@ -202,7 +202,10 @@ fn test_write_lines_with_empty_strings() {
 fn test_write_lines_unicode() {
     let file = TestFile::new("lines_unicode");
     write_lines(file.path(), &["\u{4E16}\u{754C}", "\u{1F600}\u{1F600}"]).unwrap();
-    assert_eq!(file.read_contents(), "\u{4E16}\u{754C}\n\u{1F600}\u{1F600}\n");
+    assert_eq!(
+        file.read_contents(),
+        "\u{4E16}\u{754C}\n\u{1F600}\u{1F600}\n"
+    );
 }
 
 #[test]

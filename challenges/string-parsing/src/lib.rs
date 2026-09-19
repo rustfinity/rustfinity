@@ -54,7 +54,9 @@ pub fn parse_bool(s: &str) -> Result<bool, String> {
 pub fn parse_key_value(s: &str) -> Result<(String, String), String> {
     let mut parts = s.splitn(2, '=');
     let key = parts.next().ok_or("Empty input")?;
-    let value = parts.next().ok_or_else(|| format!("No '=' found in '{}'", s))?;
+    let value = parts
+        .next()
+        .ok_or_else(|| format!("No '=' found in '{}'", s))?;
     Ok((key.trim().to_string(), value.trim().to_string()))
 }
 

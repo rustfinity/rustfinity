@@ -73,8 +73,14 @@ pub fn main() {
     println!("Missing var: {:?}", get_env_var("NONEXISTENT"));
 
     // Test with default
-    println!("With default: {}", get_env_var_or_default("MY_APP_NAME", "default"));
-    println!("Missing with default: {}", get_env_var_or_default("NONEXISTENT", "default"));
+    println!(
+        "With default: {}",
+        get_env_var_or_default("MY_APP_NAME", "default")
+    );
+    println!(
+        "Missing with default: {}",
+        get_env_var_or_default("NONEXISTENT", "default")
+    );
 
     // Test multiple variables
     let vars = get_multiple_env_vars(&["MY_APP_NAME", "MY_APP_PORT", "NONEXISTENT"]);

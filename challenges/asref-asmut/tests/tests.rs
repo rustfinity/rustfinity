@@ -340,10 +340,7 @@ fn test_get_extension_dotfile() {
 
 #[test]
 fn test_get_extension_multiple_dots() {
-    assert_eq!(
-        get_extension("archive.tar.gz"),
-        Some("gz".to_string())
-    );
+    assert_eq!(get_extension("archive.tar.gz"), Some("gz".to_string()));
 }
 
 #[test]

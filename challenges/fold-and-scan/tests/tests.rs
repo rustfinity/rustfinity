@@ -342,7 +342,10 @@ fn test_running_max_monotonically_non_decreasing() {
     let maxes = running_max(&numbers);
 
     for i in 1..maxes.len() {
-        assert!(maxes[i] >= maxes[i - 1], "Running max should be non-decreasing");
+        assert!(
+            maxes[i] >= maxes[i - 1],
+            "Running max should be non-decreasing"
+        );
     }
 }
 
@@ -386,7 +389,10 @@ fn test_complex_pipeline() {
 #[test]
 fn test_count_with_custom_type() {
     #[derive(PartialEq)]
-    struct Point { x: i32, y: i32 }
+    struct Point {
+        x: i32,
+        y: i32,
+    }
 
     let points = vec![
         Point { x: 0, y: 0 },

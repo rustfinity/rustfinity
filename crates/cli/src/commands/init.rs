@@ -102,7 +102,12 @@ fn is_valid_package_name(name: &str) -> bool {
 fn write_template(dir: &Dir<'_>, dest: &Path, project_name: &str) -> Result<()> {
     for file in dir.files() {
         // Rename .template files back to their original names (e.g., Cargo.toml.template -> Cargo.toml)
-        let file_path = if file.path().extension().map(|e| e == "template").unwrap_or(false) {
+        let file_path = if file
+            .path()
+            .extension()
+            .map(|e| e == "template")
+            .unwrap_or(false)
+        {
             dest.join(file.path().with_extension(""))
         } else {
             dest.join(file.path())
@@ -115,9 +120,14 @@ fn write_template(dir: &Dir<'_>, dest: &Path, project_name: &str) -> Result<()> 
         let contents = file.contents();
 
         // Replace package name in Cargo.toml
-        if file_path.file_name().map(|f| f == "Cargo.toml").unwrap_or(false) {
+        if file_path
+            .file_name()
+            .map(|f| f == "Cargo.toml")
+            .unwrap_or(false)
+        {
             let text = std::str::from_utf8(contents)?;
-            let replaced = text.replace("name = \"my-app\"", &format!("name = \"{}\"", project_name));
+            let replaced =
+                text.replace("name = \"my-app\"", &format!("name = \"{}\"", project_name));
             fs::write(&file_path, replaced)?;
         } else {
             fs::write(&file_path, contents)?;

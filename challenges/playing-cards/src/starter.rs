@@ -4,4 +4,5 @@ pub enum Card {
 
 pub fn card_description(card: &Card) -> String {
     // Your code here...
+    unimplemented!()
 }

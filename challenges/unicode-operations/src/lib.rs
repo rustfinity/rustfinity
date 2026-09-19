@@ -108,14 +108,8 @@ pub fn main() {
     println!("\n=== Safe Substring ===");
     let text = "Привет мир";
     println!("Original: \"{}\"", text);
-    println!(
-        "Substring [0..3]: {:?}",
-        safe_substring(text, 0, 3)
-    );
-    println!(
-        "Substring [0..100]: {:?}",
-        safe_substring(text, 0, 100)
-    );
+    println!("Substring [0..3]: {:?}", safe_substring(text, 0, 3));
+    println!("Substring [0..100]: {:?}", safe_substring(text, 0, 100));
 
     // Demonstrate char_at
     println!("\n=== Character At Index ===");

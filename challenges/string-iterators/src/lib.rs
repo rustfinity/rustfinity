@@ -85,9 +85,7 @@ pub fn capitalize_words(s: &str) -> String {
             let mut chars = word.chars();
             match chars.next() {
                 None => String::new(),
-                Some(first) => {
-                    first.to_uppercase().to_string() + &chars.as_str().to_lowercase()
-                }
+                Some(first) => first.to_uppercase().to_string() + &chars.as_str().to_lowercase(),
             }
         })
         .collect::<Vec<_>>()

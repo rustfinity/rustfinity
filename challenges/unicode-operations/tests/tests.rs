@@ -229,7 +229,7 @@ fn test_special_unicode() {
 #[test]
 fn test_combining_characters() {
     // 'é' can be represented as single char or as 'e' + combining accent
-    let single = "é";       // U+00E9
+    let single = "é"; // U+00E9
     let combined = "e\u{0301}"; // 'e' + combining acute accent
 
     assert_eq!(char_count(single), 1);
@@ -243,10 +243,10 @@ fn test_combining_characters() {
 fn test_full_char_byte_comparison() {
     // Table of different scripts
     let tests = [
-        ("Hello", 5, 5),           // ASCII: 1 byte per char
-        ("Привет", 6, 12),         // Cyrillic: 2 bytes per char
-        ("你好世界", 4, 12),        // Chinese: 3 bytes per char
-        ("🎉🎊🎁🎄", 4, 16),       // Emojis: 4 bytes per char
+        ("Hello", 5, 5),     // ASCII: 1 byte per char
+        ("Привет", 6, 12),   // Cyrillic: 2 bytes per char
+        ("你好世界", 4, 12), // Chinese: 3 bytes per char
+        ("🎉🎊🎁🎄", 4, 16), // Emojis: 4 bytes per char
     ];
 
     for (text, expected_chars, expected_bytes) in tests {
