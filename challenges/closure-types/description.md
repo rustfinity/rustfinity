@@ -12,7 +12,7 @@ Implement the following closures and their respective behaviors:
 
 - `calculate_total`: An `Fn` closure that calculates the total price of an item, including tax (`price + price * tax_rate`).
 - `apply_discount`: An `FnMut` closure that mutates the cart total by subtracting a given discount.
-- `checkout_cart`: An `FnOnce` closure that consumes the cart's details (a `String`) and returns a confirmation message.
+- `checkout_cart`: An `Fn` closure that takes ownership of the cart's details (a `String`), prepends a confirmation message, and returns the result.
 
 ## Hints
 
