@@ -11,9 +11,11 @@ fn test_add_student() {
 fn test_add_duplicate_student() {
     let mut tracker = StudentGrades::new();
     tracker.add_student("Alice");
+    tracker.students.get_mut("Alice").unwrap().name = "Original Alice".to_string();
     tracker.add_student("Alice"); // Adding a duplicate student should not overwrite
     assert_eq!(tracker.students.len(), 1);
     assert!(tracker.students.contains_key("Alice"));
+    assert_eq!(tracker.students.get("Alice").unwrap().name, "Original Alice");
 }
 
 #[test]
