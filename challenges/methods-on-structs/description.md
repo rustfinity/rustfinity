@@ -47,7 +47,7 @@ If you're stuck, you can check out these hints:
 <details>
     <summary>Click here to reveal hints</summary>
 
-- Fort he `increment` and `decrement` methods, use `&mut self` as the parameter type.
+- For the `increment` and `decrement` methods, use `&mut self` as the parameter type.
 - Use `self.count += 1` to modify the counter in the `increment` method.
 - Use `self.count -= 1` to modify the counter in the `decrement` method.
 - For `get_count`, use `&self` and return the value of `self.count`.
