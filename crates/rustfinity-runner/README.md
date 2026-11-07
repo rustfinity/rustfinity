@@ -19,9 +19,9 @@ It's best to run this in a docker container to be completely isolated from the o
    ```js
    const code = `fn main() {
        println!("Hello, world!");
-   }`
+   }`;
 
-   const base64Code = Buffer.from(code).toString("base64")
+   const base64Code = Buffer.from(code).toString("base64");
    ```
 
 3. Run the code using the CLI

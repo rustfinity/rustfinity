@@ -1,4 +1,4 @@
-Some parallel algorithms run in rounds. Every worker does its part of round 1, and only when *all* of them are finished may anyone start round 2. Cellular automata, iterative solvers, and simulation ticks all have this shape.
+Some parallel algorithms run in rounds. Every worker does its part of round 1, and only when _all_ of them are finished may anyone start round 2. Cellular automata, iterative solvers, and simulation ticks all have this shape.
 
 `std::sync::Barrier` is the tool. You build it with a number of parties, and every thread that calls `wait()` blocks until that many threads have arrived. Then all of them are released together.
 
@@ -49,7 +49,7 @@ Give every cell its own thread. In each round, a cell becomes itself plus its ri
 [1, 2, 3] -> [3, 5, 4] -> [8, 9, 7]
 ```
 
-Every cell must read the *old* values of the round, so the read phase and the write phase have to be separated by a barrier. Return the cells after `rounds` rounds. An empty input, or zero rounds, returns the input unchanged.
+Every cell must read the _old_ values of the round, so the read phase and the write phase have to be separated by a barrier. Return the cells after `rounds` rounds. An empty input, or zero rounds, returns the input unchanged.
 
 ### Implement `count_leaders`
 

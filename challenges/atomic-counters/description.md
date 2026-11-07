@@ -8,13 +8,13 @@ hits.fetch_add(1, Ordering::Relaxed);
 assert_eq!(hits.load(Ordering::Relaxed), 1);
 ```
 
-Every atomic method takes an `Ordering`, which says how strongly this operation is ordered against the *other* memory your thread touches:
+Every atomic method takes an `Ordering`, which says how strongly this operation is ordered against the _other_ memory your thread touches:
 
 - `Relaxed` guarantees the atomic operation itself is not torn or lost, and nothing more. This is what a standalone statistics counter wants.
 - `Acquire` / `Release` pair up to publish other writes: a `Release` store makes everything the thread wrote beforehand visible to a thread that later does an `Acquire` load.
 - `SeqCst` adds a single global order over all `SeqCst` operations. It is the safest default and the slowest.
 
-If the counter is only ever read for its own sake, `Relaxed` is correct. If reading it is a signal that some *other* data is ready, you need `Acquire` / `Release`.
+If the counter is only ever read for its own sake, `Relaxed` is correct. If reading it is a signal that some _other_ data is ready, you need `Acquire` / `Release`.
 
 `swap` is the other operation worth knowing: it stores a new value and returns the old one in the same atomic step. That makes "read and reset" safe even while other threads are still incrementing.
 
@@ -72,7 +72,7 @@ assert_eq!(stats.snapshot(), (0, 0));
 
 ### Notes
 
-- `Relaxed` is the right ordering throughout this challenge, and the tests do not check which one you used. Understanding *why* it is enough matters more than the keyword.
+- `Relaxed` is the right ordering throughout this challenge, and the tests do not check which one you used. Understanding _why_ it is enough matters more than the keyword.
 - `drain` reads two separate counters, so it is not atomic as a whole. That is fine for statistics; it would not be for an invariant spanning both.
 
 ## Hints

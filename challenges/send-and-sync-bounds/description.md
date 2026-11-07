@@ -1,6 +1,6 @@
 `Send` and `Sync` are the two marker traits that make Rust's threading safe, and you mostly never mention them. They are auto-implemented for anything built out of parts that already have them, and the compiler checks them at every thread boundary.
 
-- **`Send`** means a value can be *moved* to another thread.
+- **`Send`** means a value can be _moved_ to another thread.
 - **`Sync`** means `&T` can be shared with another thread. Equivalently, `T: Sync` exactly when `&T: Send`.
 
 `Rc<T>` is neither. Its reference count is a plain non-atomic integer, so two threads bumping it at once would corrupt it, and the compiler simply refuses:

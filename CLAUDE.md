@@ -175,3 +175,4 @@ When modifying challenges:
 ## Scripts
 
 - **scripts/run-challenge-in-docker.py**: Utility for running challenges in Docker environment
+- **scripts/format.sh**: Formats the repo with its own settings: Markdown, JSON and YAML with Prettier (`.prettierrc` / `.prettierignore`), every `Cargo.toml` with Taplo, and crate sources with `cargo fmt --all`. Challenge `src/starter.rs` files are deliberately not formatted: they are not crate targets, and some are intentionally incomplete. Run it after editing any of these files; `scripts/format.sh --check` is what CI runs, and it fails the build on unformatted files.

@@ -1,0 +1,6 @@
+target/
+node_modules/
+# AI-related files
+CLAUDE.md
+AGENTS.md
+.claude/

@@ -1,4 +1,4 @@
-`mpsc::channel()` gives you an *unbounded* queue. `send` never blocks, never fails while the receiver lives, and never says "slow down". That sounds convenient until the producer is faster than the consumer, which it usually is. The queue then grows for as long as the program runs, and the only thing that eventually stops it is the allocator.
+`mpsc::channel()` gives you an _unbounded_ queue. `send` never blocks, never fails while the receiver lives, and never says "slow down". That sounds convenient until the producer is faster than the consumer, which it usually is. The queue then grows for as long as the program runs, and the only thing that eventually stops it is the allocator.
 
 `mpsc::sync_channel(capacity)` is the bounded version:
 
@@ -8,7 +8,7 @@ let (tx, rx) = mpsc::sync_channel(4);
 
 At most four items sit in the buffer. The fifth `send` parks the producer thread until the consumer takes one out. That pause is **backpressure**: the consumer's speed becomes the producer's speed limit, and memory use stays flat no matter how long the pipeline runs.
 
-The extreme case is capacity `0`, called a *rendezvous* channel. Nothing is buffered at all. A `send` waits for a matching `recv`, and the two threads meet in the middle:
+The extreme case is capacity `0`, called a _rendezvous_ channel. Nothing is buffered at all. A `send` waits for a matching `recv`, and the two threads meet in the middle:
 
 ```rust
 let (tx, rx) = mpsc::sync_channel(0);

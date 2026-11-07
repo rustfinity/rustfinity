@@ -1,4 +1,4 @@
-An `mpsc` channel is *multi producer, single consumer*. The `Sender` can be cloned as many times as you like; the `Receiver` cannot. That makes it the natural fit for fan-in: many workers producing, one thread collecting.
+An `mpsc` channel is _multi producer, single consumer_. The `Sender` can be cloned as many times as you like; the `Receiver` cannot. That makes it the natural fit for fan-in: many workers producing, one thread collecting.
 
 ```rust
 let (tx, rx) = mpsc::channel();
@@ -21,7 +21,7 @@ for value in rx {
 }
 ```
 
-ends when the channel is *disconnected*, which means when the last `Sender` has been dropped. The workers drop their clones as they finish, but the `tx` that `channel()` handed you is still alive in this function, so the receiver keeps waiting for a message that will never come. The loop hangs.
+ends when the channel is _disconnected_, which means when the last `Sender` has been dropped. The workers drop their clones as they finish, but the `tx` that `channel()` handed you is still alive in this function, so the receiver keeps waiting for a message that will never come. The loop hangs.
 
 The fix is one line:
 
@@ -84,7 +84,7 @@ Messages arrive in an order you do not choose, so the worker index has to travel
 <details>
     <summary>Click here to reveal hints</summary>
 
-- The order is: create the channel, spawn all workers with `tx.clone()`, `drop(tx)`, *then* drain the receiver.
+- The order is: create the channel, spawn all workers with `tx.clone()`, `drop(tx)`, _then_ drain the receiver.
 - If a test hangs instead of failing, you forgot the `drop`.
 - `collect_all` can `let mut out: Vec<u64> = rx.iter().collect();` and then `out.sort_unstable()`.
 - For `sum_by_worker`, allocate `vec![0; chunks.len()]` first, then `for (index, value) in rx { sums[index] += value; }`.
