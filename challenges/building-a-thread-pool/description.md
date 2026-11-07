@@ -29,7 +29,7 @@ loop {
 
 The line to stare at is `let job = ...recv();`. The temporary guard is dropped at the end of that statement, before `job()` runs, so the other workers can pull their own jobs while this one is busy. Write it as `while let Ok(job) = receiver.lock().unwrap().recv()` and the guard lives for the whole body: your pool has as many threads as you asked for and exactly one of them ever works.
 
-Shutdown is the other half. `recv` returns `Err` when every `Sender` is gone, which is the signal for a worker to break out of its loop. So `Drop` has to drop the pool's sender *before* joining:
+Shutdown is the other half. `recv` returns `Err` when every `Sender` is gone, which is the signal for a worker to break out of its loop. So `Drop` has to drop the pool's sender _before_ joining:
 
 ```rust
 fn drop(&mut self) {

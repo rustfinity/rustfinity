@@ -175,3 +175,4 @@ When modifying challenges:
 ## Scripts
 
 - **scripts/run-challenge-in-docker.py**: Utility for running challenges in Docker environment
+- **scripts/format.sh**: Formats every Markdown file with Prettier using this repo's own `.prettierrc` / `.prettierignore`. Run it after editing any `.md` file; `scripts/format.sh --check` is what CI runs, and it fails the build on unformatted files.
