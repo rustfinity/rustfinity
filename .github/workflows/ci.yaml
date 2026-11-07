@@ -37,7 +37,11 @@ jobs:
         with:
           node-version: 22
 
-      - name: Check Markdown and JSON formatting
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
+
+      - name: Check formatting (Prettier, Taplo, cargo fmt)
         run: scripts/format.sh --check
 
   publish:
