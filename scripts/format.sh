@@ -1,5 +1,5 @@
 #!/bin/bash
-# Format the Markdown in this repo with its own Prettier settings
+# Format the Markdown and JSON in this repo with its own Prettier settings
 # (.prettierrc / .prettierignore here, not the parent monorepo's).
 #
 #   scripts/format.sh          rewrite files
@@ -13,7 +13,7 @@ mode="--write"
 [ "${1:-}" = "--check" ] && mode="--check"
 
 if command -v bunx >/dev/null 2>&1; then
-  bunx "$PRETTIER" "$mode" "**/*.md"
+  bunx "$PRETTIER" "$mode" "**/*.{md,json}"
 else
-  npx --yes "$PRETTIER" "$mode" "**/*.md"
+  npx --yes "$PRETTIER" "$mode" "**/*.{md,json}"
 fi

@@ -37,7 +37,7 @@ jobs:
         with:
           node-version: 22
 
-      - name: Check Markdown formatting
+      - name: Check Markdown and JSON formatting
         run: scripts/format.sh --check
 
   publish:
