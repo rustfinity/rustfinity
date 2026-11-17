@@ -6,7 +6,7 @@ You are provided with a helper function `prints_values` that takes two parameter
 
 The `calculate_area` function should:
 
-1. Declare variables for `width` and `height`.
+1. Declare variables for `width` and `height` with example values such as 100 and 200.
 2. Use the `prints_values` function to display the values of the `width` and `height`.
 3. Return the calculated area of the rectangle by multiplying `width` and `height`.
 
