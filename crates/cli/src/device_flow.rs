@@ -18,6 +18,11 @@ struct TokenResponse {
     error: Option<String>,
 }
 
+fn is_web_url(url: &str) -> bool {
+    let lower = url.to_ascii_lowercase();
+    lower.starts_with("https://") || lower.starts_with("http://")
+}
+
 pub async fn device_login() -> Result<String> {
     let client = reqwest::Client::new();
     let base_url = api_base_url();
@@ -51,6 +56,12 @@ pub async fn device_login() -> Result<String> {
     println!("  └─────────────────────────────────────────┘");
     println!();
 
+    // Only hand http(s) URLs to the OS opener; anything else (file://, custom
+    // schemes, ...) from the server would be opened by an arbitrary handler.
+    if !is_web_url(&device.verification_url) {
+        bail!("Unexpected verification URL from API");
+    }
+
     if webbrowser::open(&device.verification_url).is_err() {
         println!("Could not open browser. Please visit:");
         println!("  {}", device.verification_url);
@@ -60,7 +71,8 @@ pub async fn device_login() -> Result<String> {
     println!("Waiting for authorization...");
 
     // Step 3: Poll for token
-    let interval = Duration::from_secs(device.interval);
+    // Never poll faster than once a second, even if the server says 0.
+    let interval = Duration::from_secs(device.interval.max(1));
 
     loop {
         tokio::time::sleep(interval).await;
@@ -85,5 +97,19 @@ pub async fn device_login() -> Result<String> {
             Some(err) => bail!("Unexpected error: {}", err),
             None => bail!("Unexpected response from API"),
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn only_web_urls_are_opened() {
+        assert!(is_web_url("https://www.rustfinity.com/device"));
+        assert!(is_web_url("HTTP://localhost:3000/device"));
+        assert!(!is_web_url("file:///etc/passwd"));
+        assert!(!is_web_url("javascript:alert(1)"));
+        assert!(!is_web_url("smb://evil/share"));
     }
 }

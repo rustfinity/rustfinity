@@ -38,7 +38,13 @@ RUN cargo build
 
 COPY --from=builder /app/target/release/rustfinity-runner /app/
 
-RUN chown -R 1000:1000 /app
+# Submitted code runs as 1000:1000. Only what `cargo test`/`cargo run` must
+# write (the playground project, the build cache and the lockfile) is owned by
+# that user. The runner binary, the syntest crate and the workspace manifest
+# stay root-owned so a submission cannot replace the runner or tamper with the
+# test harness.
+RUN chown -R 1000:1000 /app/challenges /app/target /app/Cargo.lock \
+  && chmod 0755 /app/rustfinity-runner
 
 USER 1000:1000
 
