@@ -10,7 +10,28 @@ const FILES: [&'static str; 4] = [
     "tests/tests.rs",
 ];
 
+/// Challenge slugs are lowercase kebab-case (`printing-hello-world`).
+///
+/// The slug is used both in the download URL and as the local directory the
+/// files are written to, so anything else (`..`, `/`, `\`, `?`, `#`, ...) could
+/// make the CLI write outside the current directory or fetch an unexpected URL.
+fn is_valid_slug(slug: &str) -> bool {
+    !slug.is_empty()
+        && slug.len() <= 100
+        && !slug.starts_with('-')
+        && slug
+            .bytes()
+            .all(|b| b.is_ascii_lowercase() || b.is_ascii_digit() || b == b'-')
+}
+
 pub async fn get_challenge(challenge: &str) -> anyhow::Result<()> {
+    if !is_valid_slug(challenge) {
+        anyhow::bail!(
+            "Invalid challenge name {:?}. Challenge names only contain lowercase letters, digits and dashes, e.g. printing-hello-world",
+            challenge
+        );
+    }
+
     if !challenge_exists(challenge).await? {
         println!("Challenge does not exist 🥺\n\nPlease make sure you've written the challenge name correctly.");
         return Ok(());
@@ -89,6 +110,19 @@ mod tests {
     use super::*;
     use serial_test::serial;
     use tempfile::tempdir;
+
+    #[test]
+    fn test_slug_validation() {
+        assert!(is_valid_slug("printing-hello-world"));
+        assert!(is_valid_slug("fizz-buzz2"));
+
+        for bad in [
+            "", "..", "../etc", "foo/bar", "foo\\bar", "/tmp", "Foo", "foo?x=1", "foo#x", "-rf",
+            "foo bar",
+        ] {
+            assert!(!is_valid_slug(bad), "{bad:?} should be rejected");
+        }
+    }
 
     mod download {
         const CHALLENGES: [&'static str; 7] = [
